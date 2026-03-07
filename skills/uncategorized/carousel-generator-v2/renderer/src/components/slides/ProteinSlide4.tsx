@@ -1,0 +1,118 @@
+import React from 'react';
+import { SlideLayout } from '../SlideLayout';
+import { Calculator, Scale, Target } from 'lucide-react';
+
+export function ProteinSlide4() {
+  const backgroundElements = (
+    <>
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E4F1EF] via-[#F8F9FA] to-[#E4F1EF]"></div>
+      
+      {/* Decorative circles */}
+      <div className="absolute top-24 right-20 w-[200px] h-[200px] rounded-full" style={{ backgroundColor: 'rgba(32, 113, 120, 0.08)' }}></div>
+      <div className="absolute bottom-28 left-20 w-[260px] h-[260px] rounded-full" style={{ backgroundColor: 'rgba(242, 140, 129, 0.06)' }}></div>
+    </>
+  );
+
+  return (
+    <SlideLayout slideNumber="04/08" backgroundElements={backgroundElements}>
+      <div className="px-8">
+        {/* Icon */}
+        <div className="flex justify-center mb-5">
+          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#207178] to-[#E4F1EF] flex items-center justify-center shadow-lg">
+            <Target size={44} color="#F8F9FA" strokeWidth={3} />
+          </div>
+        </div>
+        
+        {/* Title */}
+        <h2 style={{ 
+          fontFamily: 'Inter, sans-serif',
+          fontSize: '48px',
+          fontWeight: 700,
+          color: '#207178',
+          lineHeight: '1.2',
+          marginBottom: '24px',
+          textAlign: 'center'
+        }}>
+          The Magic Number You Need
+        </h2>
+        
+        {/* RDA formula */}
+        <div className="max-w-[900px] mx-auto mb-6 rounded-3xl p-6" style={{ backgroundColor: 'rgba(32, 113, 120, 0.15)', border: '3px solid #207178' }}>
+          <div className="flex items-start gap-4 mb-4">
+            <Calculator size={38} color="#207178" strokeWidth={3} className="flex-shrink-0 mt-1" />
+            <p style={{ 
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '32px',
+              fontWeight: 700,
+              color: '#207178',
+              lineHeight: '1.3'
+            }}>
+              Recommended Daily Allowance:
+            </p>
+          </div>
+          <p style={{ 
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '38px',
+            fontWeight: 700,
+            color: '#E63946',
+            lineHeight: '1.4',
+            textAlign: 'center',
+            marginBottom: '12px'
+          }}>
+            0.83 g per kg body weight per day
+          </p>
+          <p style={{ 
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#333333',
+            lineHeight: '1.4',
+            textAlign: 'center'
+          }}>
+            Weigh 70 kg? You need about 58 grams daily.
+          </p>
+        </div>
+        
+        {/* Percentage */}
+        <div className="max-w-[900px] mx-auto rounded-3xl p-6 mb-5" style={{ backgroundColor: 'rgba(242, 140, 129, 0.15)', border: '3px solid #F28C81' }}>
+          <p style={{ 
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '36px',
+            fontWeight: 700,
+            color: '#F28C81',
+            lineHeight: '1.3',
+            textAlign: 'center',
+            marginBottom: '12px'
+          }}>
+            In simpler terms:
+          </p>
+          <p style={{ 
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '40px',
+            fontWeight: 700,
+            color: '#E63946',
+            lineHeight: '1.4',
+            textAlign: 'center'
+          }}>
+            10-15% of total calories from protein
+          </p>
+        </div>
+        
+        {/* The problem */}
+        <div className="max-w-[880px] mx-auto rounded-2xl p-5" style={{ backgroundColor: 'rgba(230, 57, 70, 0.12)' }}>
+          <p style={{ 
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '30px',
+            fontWeight: 700,
+            color: '#E63946',
+            lineHeight: '1.3',
+            textAlign: 'center'
+          }}>
+            When your plate is dominated by rice or roti, hitting even this baseline becomes nearly impossible.
+          </p>
+        </div>
+      </div>
+    </SlideLayout>
+  );
+}

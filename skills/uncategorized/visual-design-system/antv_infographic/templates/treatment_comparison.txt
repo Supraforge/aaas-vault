@@ -1,0 +1,11 @@
+infographic list-row-simple-horizontal-arrow
+data
+  items:
+    - label: Treatment A
+      desc: SGLT2 Inhibitor - 26% mortality reduction
+    - label: Treatment B
+      desc: ARNI - 20% mortality reduction
+    - label: Treatment C
+      desc: Beta-blocker - 35% mortality reduction
+    - label: Treatment D
+      desc: MRA - 30% mortality reduction

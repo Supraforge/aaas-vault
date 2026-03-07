@@ -1,0 +1,1199 @@
+{
+    "name": "Lead Magnet System (B2G)",
+    "flow": [
+        {
+            "id": 8,
+            "module": "paperform:submission",
+            "version": 1,
+            "parameters": {
+                "__IMTHOOK__": 1160186
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 150
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTHOOK__": {
+                            "label": "My New Submission webhook",
+                            "data": {
+                                "editable": "false"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTHOOK__",
+                        "type": "hook:paperform",
+                        "label": "Webhook",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 150
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 11,
+                            "module": "anthropic-claude:createAMessage",
+                            "version": 1,
+                            "parameters": {
+                                "__IMTCONN__": 1528134
+                            },
+                            "mapper": {
+                                "model": "claude-3-5-sonnet-20240620",
+                                "max_tokens": "4000",
+                                "messages": [
+                                    {
+                                        "role": "user",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "You are a professional business strategist specializing in wellness entrepreneurship. Using the client's form responses, create a beautifully formatted, actionable 90-day business plan. Follow these specific instructions:\n\nANALYSIS PROCESS:\nFirst, analyze their form responses:\n\n   - Current business stage: {{8.data.`49ui`.value}}\n   - Chosen wellness services/products: {{8.data.`83lu7`.value}}\n   - 12-month goals: {{8.data.`8o3sk`.value}}\n   - Current challenges: {{8.data.`1cm7o`.value}}\n   - Skills/experience: {{8.data.bbdcf.value}}\n\nDOCUMENT STRUCTURE:\nAnalyze form responses for [NAME]:\n- Current business stage\n- Monthly revenue\n- Services/products\n- Goals and timeline\n- Challenges\n- Skills/experience\n\nDOCUMENT STRUCTURE:\n\n1. PERSONAL GREETING ✨\n- \"Hey {{8.data.`7h7j0`.value}}!\" \n- Current stage acknowledgment\n- Vision alignment\n- 90-day roadmap preview\n\n2. THE GAME PLAN 🎯\n- Business sweet spot\n- Ideal clients\n- Revenue streams\n- Success metrics\n\n3. WEEKLY ACTION PLANS 📅\n[Select appropriate path based on stage]\n\nSTARTUP PATH 🚀 (Just Starting):\nWeek 1: Foundation Setup ✨\n- Business basics setup\n- Initial offering design\n- Basic web presence\n\nWeek 2: Brand Development 💫\n- Brand story creation\n- Visual identity basics\n- Core messaging\n\nWeek 3: Online Presence 💻\n- Social media setup\n- Basic website/landing page\n- Email foundation\n\nWeek 4: First Offer Launch 🎯\n- Service/product packaging\n- Pricing strategy\n- Launch plan\n\nWeek 5: Client Journey 🤝\n- Client onboarding\n- Service delivery plan\n- Feedback system\n\nWeek 6: Basic Marketing 📣\n- Content planning\n- Social strategy\n- Network building\n\nWeek 7: Sales Process 💰\n- Consultation structure\n- Follow-up system\n- Payment processing\n\nWeek 8: Client Experience 🌟\n- Service refinement\n- Testimonial collection\n- Referral system\n\nWeek 9: Time Management ⚡\n- Weekly schedule\n- Task prioritization\n- Basic automation\n\nWeek 10: Content System 📱\n- Content calendar\n- Creation process\n- Distribution plan\n\nWeek 11: Growth Planning 📈\n- Performance review\n- Opportunity mapping\n- Resource planning\n\nWeek 12: Scale Prep 🚀\n- System documentation\n- Growth strategy\n- Next phase planning\n\nGROWTH PATH 📈 ($1-3k/month):\n[Similar 12-week breakdown with focus on optimization]\n\nSCALING PATH ⭐ ($3k+/month):\n[Similar 12-week breakdown with focus on expansion]\n\nHTML OUTPUT STRUCTURE:\n\n<!DOCTYPE html>\n<html>\n<head>\n    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            font-family: 'Montserrat', sans-serif;\n            line-height: 1.6;\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            color: #2c3e50;\n            background: #f9fafb;\n        }\n        \n        .header {\n            background: linear-gradient(135deg, #83a4d4, #b6fbff);\n            padding: 40px;\n            border-radius: 15px;\n            color: #2c3e50;\n            margin-bottom: 30px;\n        }\n        \n        .personal-greeting {\n            font-size: 2em;\n            margin-bottom: 20px;\n        }\n        \n        .stage-indicator {\n            background: white;\n            padding: 15px;\n            border-radius: 10px;\n            margin-bottom: 20px;\n            display: flex;\n            align-items: center;\n            gap: 10px;\n        }\n        \n        .week-card {\n            background: white;\n            padding: 25px;\n            margin-bottom: 20px;\n            border-radius: 15px;\n            box-shadow: 0 2px 15px rgba(0,0,0,0.05);\n            transition: transform 0.2s;\n        }\n        \n        .week-card:hover {\n            transform: translateY(-2px);\n        }\n        \n        .task-list {\n            list-style-type: none;\n            padding: 0;\n        }\n        \n        .task-item {\n            display: flex;\n            align-items: center;\n            margin: 12px 0;\n            padding: 10px;\n            background: #f8f9fa;\n            border-radius: 8px;\n            transition: background-color 0.2s;\n        }\n        \n        .task-item:hover {\n            background: #e9ecef;\n        }\n        \n        .checkbox {\n            margin-right: 15px;\n            width: 20px;\n            height: 20px;\n            cursor: pointer;\n            border: 2px solid #83a4d4;\n            border-radius: 4px;\n            transition: all 0.2s;\n        }\n        \n        .checkbox:checked {\n            background-color: #83a4d4;\n        }\n        \n        .win-card {\n            background: #e3f2fd;\n            padding: 15px;\n            border-radius: 8px;\n            margin: 15px 0;\n        }\n        \n        .emoji-title {\n            font-size: 24px;\n            margin-bottom: 20px;\n            display: flex;\n            align-items: center;\n            gap: 10px;\n        }\n        \n        .quick-win {\n            border-left: 4px solid #83a4d4;\n            padding-left: 15px;\n            margin: 15px 0;\n            background: #f8f9fa;\n            border-radius: 0 8px 8px 0;\n        }\n        \n        .progress-section {\n            background: white;\n            padding: 20px;\n            border-radius: 10px;\n            margin: 20px 0;\n            box-shadow: 0 2px 15px rgba(0,0,0,0.05);\n        }\n        \n        .milestone {\n            padding: 10px;\n            margin: 10px 0;\n            background: #f8f9fa;\n            border-radius: 8px;\n            display: flex;\n            align-items: center;\n            gap: 10px;\n        }\n\n        .call-to-action {\n            background: linear-gradient(135deg, #83a4d4, #b6fbff);\n            padding: 30px;\n            border-radius: 15px;\n            margin: 40px 0;\n            text-align: center;\n        }\n\n        .call-to-action h3 {\n            margin-bottom: 15px;\n            font-size: 1.5em;\n        }\n\n        .booking-button {\n            background: white;\n            color: #2c3e50;\n            padding: 12px 25px;\n            border-radius: 8px;\n            text-decoration: none;\n            display: inline-block;\n            margin-top: 15px;\n            font-weight: 600;\n            transition: transform 0.2s;\n        }\n\n        .booking-button:hover {\n            transform: translateY(-2px);\n        }\n    </style>\n</head>\n<body>\n    <!-- Template structure for each stage -->\n</body>\n</html>\n```\n\nWEEKLY TASK STRUCTURE:\n\n<div class=\"week-card\">\n    <div class=\"emoji-title\">\n        <span class=\"emoji\">[WEEK-EMOJI]</span>\n        <h2>Week [X]: [THEME]</h2>\n    </div>\n    \n    <div class=\"task-list\">\n        <div class=\"task-item\">\n            <input type=\"checkbox\" class=\"checkbox\" id=\"task-[X]-[Y]\">\n            <label for=\"task-[X]-[Y]\">[TASK-DESCRIPTION]</label>\n        </div>\n        <!-- Repeat for each task -->\n    </div>\n    \n    <div class=\"quick-win\">\n        <h4>🎯 Quick Win</h4>\n        <p>[WIN-DESCRIPTION]</p>\n    </div>\n</div>\n\n\n\nEND SECTION:\n\nhtml\n<div class=\"call-to-action\">\n    <h3>Ready to make this happen? 🚀</h3>\n    <p>Let's review your progress and plan your next steps</p>\n    <a href=\"https://calendly.com\" class=\"booking-button\">Book Your Strategy Call</a>\n</div>\n\n\nWRITING GUIDELINES:\n1. Keep it real and conversational - write like you're talking to a friend\n2. Break down big tasks into smaller, doable steps\n3. Include specific examples based on their wellness niche\n4. Add encouraging notes that feel genuine, not cheesy\n5. Focus on progress, not perfection\n\nFor each week, include:\n- The main thing to focus on\n- 3-5 specific tasks with checkboxes\n- A quick win to celebrate\n- Tips for common roadblocks\n- Rough time estimates (be realistic!)\n\nEND WITH:\n- Quick review of progress\n- Natural invitation to book their call\n- Simple checklist of major milestones\n\nRemember to:\n- Keep everything specific to their wellness niche\n- Be realistic with time estimates\n- Include alternatives for different situations\n- Keep the tone friendly and supportive, but not overly peppy\n- Use examples that match their experience level\n- do not add any comments or anything additional other than the html output\n- you MUST include 12 weeks of content (week 1, week 2.... up to week 12)\n- the button to book a call should go to here: https://calendly.com/itsssssjack/30min"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "metadata": {},
+                                "temperature": "1"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 0,
+                                    "name": "90 Day Plan"
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My Anthropic Claude connection",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "anthropic-claude"
+                                            }
+                                        }
+                                    },
+                                    "expect": {
+                                        "model": {
+                                            "mode": "chose",
+                                            "label": "claude-3-5-sonnet-20240620"
+                                        },
+                                        "messages": {
+                                            "mode": "chose",
+                                            "items": [
+                                                {
+                                                    "role": {
+                                                        "mode": "chose",
+                                                        "label": "User"
+                                                    },
+                                                    "content": {
+                                                        "mode": "chose",
+                                                        "items": [
+                                                            {
+                                                                "type": {
+                                                                    "mode": "chose",
+                                                                    "label": "Text"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "stop_sequences": {
+                                            "mode": "chose"
+                                        },
+                                        "additionalParameters": {
+                                            "mode": "chose"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:anthropic-claude",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "model",
+                                        "type": "select",
+                                        "label": "Model",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "max_tokens",
+                                        "type": "uinteger",
+                                        "label": "Max Tokens",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "messages",
+                                        "type": "array",
+                                        "label": "Messages",
+                                        "required": true,
+                                        "spec": {
+                                            "spec": [
+                                                {
+                                                    "name": "role",
+                                                    "type": "select",
+                                                    "label": "Role",
+                                                    "options": [
+                                                        {
+                                                            "label": "User",
+                                                            "value": "user",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "content",
+                                                                    "spec": {
+                                                                        "spec": [
+                                                                            {
+                                                                                "help": "You can send image content blocks starting with Claude 3 models.",
+                                                                                "name": "type",
+                                                                                "type": "select",
+                                                                                "label": "Type",
+                                                                                "options": [
+                                                                                    {
+                                                                                        "label": "Text",
+                                                                                        "value": "text",
+                                                                                        "nested": [
+                                                                                            {
+                                                                                                "help": "Content of the message on behalf of the selected **Role** .",
+                                                                                                "name": "text",
+                                                                                                "type": "text",
+                                                                                                "label": "Text",
+                                                                                                "required": true
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "label": "Image",
+                                                                                        "value": "image",
+                                                                                        "nested": [
+                                                                                            {
+                                                                                                "name": "source",
+                                                                                                "spec": [
+                                                                                                    {
+                                                                                                        "help": "File name, including the extension, for example, `image.jpg`.",
+                                                                                                        "name": "filename",
+                                                                                                        "type": "filename",
+                                                                                                        "label": "Filename",
+                                                                                                        "required": true,
+                                                                                                        "semantic": "file:name",
+                                                                                                        "extension": [
+                                                                                                            "jpeg",
+                                                                                                            "jpg",
+                                                                                                            "png",
+                                                                                                            "gif",
+                                                                                                            "webp"
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "help": "Binary data of the image. For example, you can retrieve the binary data of your image using the **HTTP: Get a file** module.",
+                                                                                                        "name": "data",
+                                                                                                        "type": "buffer",
+                                                                                                        "label": "Data",
+                                                                                                        "required": true,
+                                                                                                        "semantic": "file:data"
+                                                                                                    }
+                                                                                                ],
+                                                                                                "type": "collection",
+                                                                                                "label": "Source",
+                                                                                                "required": true
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "label": "Tool Result",
+                                                                                        "value": "tool_result",
+                                                                                        "nested": [
+                                                                                            {
+                                                                                                "name": "tool_use_id",
+                                                                                                "type": "text",
+                                                                                                "label": "Tool Use ID",
+                                                                                                "required": true
+                                                                                            },
+                                                                                            {
+                                                                                                "name": "content",
+                                                                                                "type": "text",
+                                                                                                "label": "Content",
+                                                                                                "required": true
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ],
+                                                                                "required": true
+                                                                            }
+                                                                        ],
+                                                                        "type": "collection",
+                                                                        "label": "Content"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "label": "Content",
+                                                                    "labels": {
+                                                                        "add": "Add content"
+                                                                    },
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "Assistant",
+                                                            "value": "assistant",
+                                                            "nested": [
+                                                                {
+                                                                    "help": "If the request ends with an assistant turn, then the response content will continue directly from that last turn.",
+                                                                    "name": "content",
+                                                                    "type": "text",
+                                                                    "label": "Content",
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "Tool Assistant",
+                                                            "value": "tool_assistant",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "content",
+                                                                    "spec": {
+                                                                        "spec": [
+                                                                            {
+                                                                                "help": "You can send image content blocks starting with Claude 3 models.",
+                                                                                "name": "type",
+                                                                                "type": "select",
+                                                                                "label": "Type",
+                                                                                "options": [
+                                                                                    {
+                                                                                        "label": "Text",
+                                                                                        "value": "text",
+                                                                                        "nested": [
+                                                                                            {
+                                                                                                "help": "Content of the message on behalf of the selected **Role** .",
+                                                                                                "name": "text",
+                                                                                                "type": "text",
+                                                                                                "label": "Text",
+                                                                                                "required": true
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "label": "Tool Use",
+                                                                                        "value": "tool_use",
+                                                                                        "nested": [
+                                                                                            {
+                                                                                                "name": "id",
+                                                                                                "type": "text",
+                                                                                                "label": "Tool Use ID",
+                                                                                                "required": true
+                                                                                            },
+                                                                                            {
+                                                                                                "name": "name",
+                                                                                                "type": "text",
+                                                                                                "label": "Tool Name",
+                                                                                                "required": true
+                                                                                            },
+                                                                                            {
+                                                                                                "name": "input",
+                                                                                                "type": "any",
+                                                                                                "label": "Input",
+                                                                                                "required": true
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ],
+                                                                                "required": true
+                                                                            }
+                                                                        ],
+                                                                        "type": "collection",
+                                                                        "label": "Content"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "label": "Content",
+                                                                    "labels": {
+                                                                        "add": "Add content"
+                                                                    },
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "required": true
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Message",
+                                            "name": "value"
+                                        }
+                                    },
+                                    {
+                                        "name": "system",
+                                        "type": "text",
+                                        "label": "System Prompt"
+                                    },
+                                    {
+                                        "name": "metadata",
+                                        "type": "collection",
+                                        "label": "Metadata",
+                                        "spec": [
+                                            {
+                                                "name": "user_id",
+                                                "type": "text",
+                                                "label": "User ID"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "stop_sequences",
+                                        "type": "array",
+                                        "label": "Stop Sequences",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Stop Sequence",
+                                            "name": "value"
+                                        }
+                                    },
+                                    {
+                                        "name": "temperature",
+                                        "type": "number",
+                                        "label": "Temperature",
+                                        "validate": {
+                                            "max": 1,
+                                            "min": 0
+                                        }
+                                    },
+                                    {
+                                        "name": "top_p",
+                                        "type": "number",
+                                        "label": "Top P",
+                                        "validate": {
+                                            "max": 1
+                                        }
+                                    },
+                                    {
+                                        "name": "top_k",
+                                        "type": "uinteger",
+                                        "label": "Top K"
+                                    },
+                                    {
+                                        "name": "additionalParameters",
+                                        "type": "array",
+                                        "label": "Other Input Parameters",
+                                        "spec": {
+                                            "spec": [
+                                                {
+                                                    "name": "key",
+                                                    "type": "text",
+                                                    "label": "Parameter Name",
+                                                    "required": true
+                                                },
+                                                {
+                                                    "name": "type",
+                                                    "type": "select",
+                                                    "label": "Input Type",
+                                                    "options": [
+                                                        {
+                                                            "label": "Text",
+                                                            "value": "text",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "value",
+                                                                    "type": "text",
+                                                                    "label": "Parameter Value"
+                                                                }
+                                                            ],
+                                                            "default": true
+                                                        },
+                                                        {
+                                                            "label": "Number",
+                                                            "value": "number",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "value",
+                                                                    "type": "number",
+                                                                    "label": "Parameter Value"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "Boolean",
+                                                            "value": "boolean",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "value",
+                                                                    "type": "boolean",
+                                                                    "label": "Parameter Value"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "Date",
+                                                            "value": "date",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "value",
+                                                                    "type": "date",
+                                                                    "label": "Parameter Value"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "Tools",
+                                                            "value": "tools",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "value",
+                                                                    "spec": {
+                                                                        "type": "text",
+                                                                        "label": "Parameter Value"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "label": "Parameter Values",
+                                                                    "labels": {
+                                                                        "add": "Add parameter value"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "label": "Any",
+                                                            "value": "any",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "value",
+                                                                    "type": "any",
+                                                                    "label": "Parameter Value"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Input Parameter",
+                                            "name": "value"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 12,
+                            "module": "pdf-co:HTMLtoPDF",
+                            "version": 1,
+                            "parameters": {
+                                "__IMTCONN__": 3014965
+                            },
+                            "mapper": {
+                                "convert": {
+                                    "convertType": "fromHtml",
+                                    "html": "{{11.textResponse}}"
+                                },
+                                "name": "{{8.data.`7h7j0`.value}}.pdf",
+                                "orientation": "portrait",
+                                "paperSize": "letter",
+                                "printBackground": true,
+                                "doNotWaitFullLoad": false,
+                                "async": 15000,
+                                "expiration": "60",
+                                "export": {
+                                    "exportType": "downloadFile"
+                                }
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 900,
+                                    "y": 0
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My PDF.co connection",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "pdf-co"
+                                            }
+                                        }
+                                    },
+                                    "expect": {
+                                        "convert": {
+                                            "nested": {
+                                                "convertType": {
+                                                    "label": "HTML to PDF"
+                                                }
+                                            }
+                                        },
+                                        "orientation": {
+                                            "label": "Portrait"
+                                        },
+                                        "paperSize": {
+                                            "label": "Letter"
+                                        },
+                                        "printBackground": {
+                                            "mode": "chose"
+                                        },
+                                        "doNotWaitFullLoad": {
+                                            "mode": "chose"
+                                        },
+                                        "async": {
+                                            "mode": "chose",
+                                            "label": "Async"
+                                        },
+                                        "export": {
+                                            "nested": {
+                                                "exportType": {
+                                                    "label": "Download a File"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:pdf-co",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "convert",
+                                        "type": "collection",
+                                        "label": "Convert Options",
+                                        "required": true,
+                                        "spec": [
+                                            {
+                                                "name": "convertType",
+                                                "type": "select",
+                                                "label": "Convert Type",
+                                                "required": true,
+                                                "validate": {
+                                                    "enum": [
+                                                        "fromHtml",
+                                                        "fromHtmlTemplate",
+                                                        "fromWebsite"
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "name": "html",
+                                                "type": "text",
+                                                "label": "Input HTML Code",
+                                                "required": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Output File Name"
+                                    },
+                                    {
+                                        "name": "orientation",
+                                        "type": "select",
+                                        "label": "Orientation",
+                                        "validate": {
+                                            "enum": [
+                                                "portrait",
+                                                "landscape"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "paperSize",
+                                        "type": "select",
+                                        "label": "Paper Size ",
+                                        "validate": {
+                                            "enum": [
+                                                "a0",
+                                                "a1",
+                                                "a2",
+                                                "a3",
+                                                "a4",
+                                                "a5",
+                                                "a6",
+                                                "legal",
+                                                "letter",
+                                                "tabloid",
+                                                "custom"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "printBackground",
+                                        "type": "boolean",
+                                        "label": "Render Page Background"
+                                    },
+                                    {
+                                        "name": "doNotWaitFullLoad",
+                                        "type": "boolean",
+                                        "label": "Do not wait for full load"
+                                    },
+                                    {
+                                        "name": "margins",
+                                        "type": "text",
+                                        "label": "Margins"
+                                    },
+                                    {
+                                        "name": "async",
+                                        "type": "select",
+                                        "label": "Execution Mode",
+                                        "validate": {
+                                            "enum": [
+                                                false,
+                                                15000,
+                                                "asyncCheckLater"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "profiles",
+                                        "type": "text",
+                                        "label": "Profiles"
+                                    },
+                                    {
+                                        "name": "expiration",
+                                        "type": "number",
+                                        "label": "Output Links Expiration"
+                                    },
+                                    {
+                                        "name": "export",
+                                        "type": "collection",
+                                        "label": "Export Options",
+                                        "required": true,
+                                        "spec": [
+                                            {
+                                                "name": "exportType",
+                                                "type": "select",
+                                                "label": "Export Type",
+                                                "required": true,
+                                                "validate": {
+                                                    "enum": [
+                                                        "downloadFile",
+                                                        "inline"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 13,
+                            "module": "google-email:ActionCreateDraft",
+                            "version": 2,
+                            "parameters": {
+                                "account": 3625948
+                            },
+                            "mapper": {
+                                "folder": "[Gmail]/Drafts",
+                                "to": [
+                                    "{{8.data.cnml4.value}}"
+                                ],
+                                "subject": "{{8.data.`7h7j0`.value}}'s Automation",
+                                "html": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Your Personalized 90-Day Wellness Business Plan</title>\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');\n        \n        body {\n            font-family: 'Montserrat', Arial, sans-serif;\n            line-height: 1.6;\n            margin: 0;\n            padding: 0;\n            background-color: #f9fafb;\n        }\n        \n        .email-container {\n            max-width: 600px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: white;\n        }\n        \n        .header {\n            background: linear-gradient(135deg, #83a4d4, #b6fbff);\n            padding: 40px 20px;\n            text-align: center;\n            border-radius: 15px 15px 0 0;\n            color: #2c3e50;\n        }\n        \n        .content {\n            padding: 30px 20px;\n            background: white;\n            border-radius: 0 0 15px 15px;\n        }\n        \n        .button {\n            display: inline-block;\n            padding: 12px 25px;\n            background: linear-gradient(135deg, #ff416c, #ff4b2b);\n            color: white;\n            text-decoration: none;\n            border-radius: 8px;\n            font-weight: 600;\n            margin: 20px 0;\n            transition: transform 0.2s ease;\n        }\n        \n        .button:hover {\n            transform: translateY(-2px);\n        }\n        \n        .highlights {\n            background: #f8f9fa;\n            padding: 20px;\n            border-radius: 8px;\n            margin: 20px 0;\n        }\n        \n        .footer {\n            text-align: center;\n            padding: 20px;\n            color: #666;\n            font-size: 0.9em;\n        }\n        \n        .emoji {\n            font-size: 1.2em;\n        }\n        \n        @media only screen and (max-width: 600px) {\n            .email-container {\n                width: 100% !important;\n                padding: 10px;\n            }\n        }\n    </style>\n</head>\n<body>\n    <div class=\"email-container\">\n        <div class=\"header\">\n            <h1>Your Personalized Plan Is Ready! </h1>\n        </div>\n        \n        <div class=\"content\">\n            <p>Hey {{8.data.`7h7j0`.value}}! 👋</p>\n            \n            <p>I'm excited to share your customized 90-day wellness business plan! Based on your responses, I've created a detailed roadmap tailored specifically for your [BUSINESS_TYPE] business.</p>\n            \n            <div class=\"highlights\">\n                <p><strong>Inside your plan, you'll find:</strong></p>\n                <ul>\n                    <li>🎯 Week-by-week action steps</li>\n                    <li>📈 Growth strategies for your stage</li>\n                    <li>✅ Clear, achievable milestones</li>\n                    <li>⚡ Quick wins to build momentum</li>\n                </ul>\n            </div>\n            \n            <p>I've attached your complete plan to this email. To make the most of it:</p>\n            <ol>\n                <li>📥 Download and save your plan</li>\n                <li>👀 Review the week 1 action items</li>\n                <li>📅 Book your strategy call to discuss your plan</li>\n            </ol>\n            \n            <p style=\"text-align: left;\">\n                <a href=\"https://calendly.com\" class=\"button\">\n                    Book Your Strategy Call 🗓️\n                </a>\n            </p>\n            \n            <p>During our call, we'll:</p>\n            <ul>\n                <li>🎯 Review your immediate priorities</li>\n                <li>💡 Answer any questions about your plan</li>\n                <li>🚀 Set you up for success</li>\n            </ul>\n            \n            <p>Can't wait to help you bring this plan to life!</p>\n            \n            <p>Best wishes,<br>Jack</p>\n        </div>\n        \n        <div class=\"footer\">\n            <p>If you have any questions before our call, just reply to this email!</p>\n        </div>\n    </div>\n</body>\n</html>",
+                                "attachments": [
+                                    {
+                                        "fileName": "{{12.name}}",
+                                        "data": "{{12.data}}"
+                                    }
+                                ],
+                                "cc": [],
+                                "bcc": []
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1200,
+                                    "y": 0
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "account": {
+                                            "label": "My Google Restricted connection (jack@aiautomationswithjack.com)",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "google-restricted"
+                                            }
+                                        }
+                                    },
+                                    "expect": {
+                                        "folder": {
+                                            "mode": "chose",
+                                            "path": [
+                                                "Drafts",
+                                                "Drafts"
+                                            ]
+                                        },
+                                        "to": {
+                                            "mode": "chose",
+                                            "items": [
+                                                null
+                                            ]
+                                        },
+                                        "attachments": {
+                                            "mode": "chose",
+                                            "items": [
+                                                null
+                                            ]
+                                        },
+                                        "cc": {
+                                            "mode": "chose"
+                                        },
+                                        "bcc": {
+                                            "mode": "chose"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "account",
+                                        "type": "account:google-restricted",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "folder",
+                                        "type": "folder",
+                                        "label": "Folder",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "to",
+                                        "type": "array",
+                                        "label": "To",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Email address",
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "subject",
+                                        "type": "text",
+                                        "label": "Subject"
+                                    },
+                                    {
+                                        "name": "html",
+                                        "type": "text",
+                                        "label": "Content"
+                                    },
+                                    {
+                                        "name": "attachments",
+                                        "type": "array",
+                                        "label": "Attachments",
+                                        "spec": [
+                                            {
+                                                "name": "fileName",
+                                                "label": "File name",
+                                                "type": "filename",
+                                                "required": true,
+                                                "semantic": "file:name"
+                                            },
+                                            {
+                                                "name": "data",
+                                                "label": "Data",
+                                                "type": "buffer",
+                                                "required": true,
+                                                "semantic": "file:data"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cc",
+                                        "type": "array",
+                                        "label": "Copy recipient",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Email address",
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "bcc",
+                                        "type": "array",
+                                        "label": "Blind copy recipient",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Email address",
+                                            "required": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 10,
+                            "module": "mailchimp:addUpdateASubscriber",
+                            "version": 2,
+                            "parameters": {
+                                "__IMTCONN__": 1534098
+                            },
+                            "mapper": {
+                                "select": "list",
+                                "email_address": "{{8.data.cnml4.value}}",
+                                "createOrUpdate": false,
+                                "status": "subscribed",
+                                "email_type": "html",
+                                "language": "en",
+                                "note": "{{8.data.`8o3sk`.value}}",
+                                "list": "a8282349d1",
+                                "merge_fields": {
+                                    "FNAME": "{{8.data.`7h7j0`.value}}",
+                                    "ADDRESS": {}
+                                },
+                                "interests": {}
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 300
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My MailChimp connection (itsssssjack)",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "mailchimp"
+                                            }
+                                        }
+                                    },
+                                    "expect": {
+                                        "select": {
+                                            "label": "Select from the list"
+                                        },
+                                        "status": {
+                                            "mode": "chose",
+                                            "label": "Subscribed"
+                                        },
+                                        "vip": {
+                                            "mode": "chose"
+                                        },
+                                        "email_type": {
+                                            "mode": "chose",
+                                            "label": "HTML"
+                                        },
+                                        "language": {
+                                            "mode": "chose",
+                                            "label": "English"
+                                        },
+                                        "tags": {
+                                            "mode": "chose"
+                                        },
+                                        "list": {
+                                            "label": "IttttttsJack"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:mailchimp",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "select",
+                                        "type": "select",
+                                        "label": "Enter a List ID",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "map",
+                                                "list"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "email_address",
+                                        "type": "email",
+                                        "label": "Email Address",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "createOrUpdate",
+                                        "type": "boolean",
+                                        "label": "Create a new customer or update an existing one",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "status",
+                                        "type": "select",
+                                        "label": "Status",
+                                        "validate": {
+                                            "enum": [
+                                                "subscribed",
+                                                "unsubscribed",
+                                                "cleaned",
+                                                "pending",
+                                                "transactional"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "vip",
+                                        "type": "boolean",
+                                        "label": "VIP"
+                                    },
+                                    {
+                                        "name": "email_type",
+                                        "type": "select",
+                                        "label": "Email Type",
+                                        "validate": {
+                                            "enum": [
+                                                "html",
+                                                "text"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "language",
+                                        "type": "select",
+                                        "label": "Language Code",
+                                        "validate": {
+                                            "enum": [
+                                                "en",
+                                                "ar",
+                                                "af",
+                                                "be",
+                                                "bg",
+                                                "ca",
+                                                "zh",
+                                                "hr",
+                                                "cs",
+                                                "da",
+                                                "nl",
+                                                "et",
+                                                "fa",
+                                                "fi",
+                                                "fr",
+                                                "fr_CA",
+                                                "de",
+                                                "el",
+                                                "he",
+                                                "hi",
+                                                "hu",
+                                                "is",
+                                                "id",
+                                                "ga",
+                                                "it",
+                                                "ja",
+                                                "km",
+                                                "ko",
+                                                "lv",
+                                                "lt",
+                                                "mt",
+                                                "ms",
+                                                "mk",
+                                                "no",
+                                                "pl",
+                                                "pt",
+                                                "pt_PT",
+                                                "ro",
+                                                "ru",
+                                                "sr",
+                                                "sk",
+                                                "sl",
+                                                "es",
+                                                "es_ES",
+                                                "sw",
+                                                "sv",
+                                                "ta",
+                                                "th",
+                                                "tr",
+                                                "uk",
+                                                "vi"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "tags",
+                                        "type": "array",
+                                        "label": "Tags",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Names",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "status",
+                                                "type": "select",
+                                                "label": "Status",
+                                                "options": [
+                                                    {
+                                                        "label": "Active (To add a tag)",
+                                                        "value": "active",
+                                                        "default": true
+                                                    },
+                                                    {
+                                                        "label": "Inactive (To remove a tag)",
+                                                        "value": "inactive"
+                                                    }
+                                                ],
+                                                "required": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "note",
+                                        "type": "text",
+                                        "label": "Note"
+                                    },
+                                    {
+                                        "name": "list",
+                                        "type": "select",
+                                        "label": "List ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "merge_fields",
+                                        "type": "collection",
+                                        "label": "List Fields",
+                                        "spec": [
+                                            {
+                                                "name": "FNAME",
+                                                "type": "text",
+                                                "label": "First Name",
+                                                "metadata": {
+                                                    "order": 2
+                                                }
+                                            },
+                                            {
+                                                "name": "LNAME",
+                                                "type": "text",
+                                                "label": "Last Name",
+                                                "metadata": {
+                                                    "order": 3
+                                                }
+                                            },
+                                            {
+                                                "name": "ADDRESS",
+                                                "type": "collection",
+                                                "label": "Address",
+                                                "metadata": {
+                                                    "order": 4
+                                                },
+                                                "spec": [
+                                                    {
+                                                        "name": "addr1",
+                                                        "type": "text",
+                                                        "label": "Address 1"
+                                                    },
+                                                    {
+                                                        "name": "addr2",
+                                                        "type": "text",
+                                                        "label": "Address 2"
+                                                    },
+                                                    {
+                                                        "name": "city",
+                                                        "type": "text",
+                                                        "label": "City"
+                                                    },
+                                                    {
+                                                        "name": "state",
+                                                        "type": "text",
+                                                        "label": "State"
+                                                    },
+                                                    {
+                                                        "name": "zip",
+                                                        "type": "text",
+                                                        "label": "Zip"
+                                                    },
+                                                    {
+                                                        "name": "country",
+                                                        "type": "text",
+                                                        "label": "Country"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "PHONE",
+                                                "type": "text",
+                                                "label": "Phone Number",
+                                                "metadata": {
+                                                    "order": 5
+                                                }
+                                            },
+                                            {
+                                                "name": "BIRTHDAY",
+                                                "type": "text",
+                                                "label": "Birthday",
+                                                "metadata": {
+                                                    "order": 6
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "interests",
+                                        "type": "collection",
+                                        "label": "Groups",
+                                        "spec": []
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": [],
+            "notes": [
+                {
+                    "text": "",
+                    "filter": true
+                }
+            ]
+        },
+        "zone": "eu2.make.com"
+    }
+}

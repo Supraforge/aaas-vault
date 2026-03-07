@@ -1,0 +1,181 @@
+{
+    "name": "Generate 2/3",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 531231,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -107,
+                    "y": 0,
+                    "name": "Grabs 4 images"
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "data": {
+                                "editable": "true"
+                            },
+                            "label": "Test for midjourney"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "account_hash",
+                        "type": "text"
+                    },
+                    {
+                        "name": "hash",
+                        "type": "text"
+                    },
+                    {
+                        "name": "webhook_url",
+                        "type": "text"
+                    },
+                    {
+                        "name": "webhook_type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "callback_id",
+                        "type": "text"
+                    },
+                    {
+                        "name": "prompt",
+                        "type": "text"
+                    },
+                    {
+                        "name": "type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "progress",
+                        "type": "number"
+                    },
+                    {
+                        "name": "status",
+                        "type": "text"
+                    },
+                    {
+                        "name": "result",
+                        "type": "text"
+                    },
+                    {
+                        "name": "status_reason",
+                        "type": "text"
+                    },
+                    {
+                        "name": "prefilter_result",
+                        "type": "array"
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "userapi-ai:Upscale",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1572117
+            },
+            "mapper": {
+                "hash": "{{1.hash}}",
+                "choice": "1",
+                "webhook_url": "https://hook.eu2.make.com/rvv3xuksahn6n2jb8f5l5ie9krj6mryw"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 247,
+                    "y": 0,
+                    "name": "Upscaler"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Userapi.AI connection (itssssjaaaack@gmail.com)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "userapi-ai"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:userapi-ai",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "hash",
+                        "type": "uuid",
+                        "label": "The hash of the task that needs to be upscaled",
+                        "required": true
+                    },
+                    {
+                        "name": "choice",
+                        "type": "integer",
+                        "label": "The position of the image that needs to be upscaled"
+                    },
+                    {
+                        "name": "webhook_url",
+                        "type": "url",
+                        "label": "Webhook Url. You will be POSTed by this url about result of generation"
+                    },
+                    {
+                        "name": "callback_id",
+                        "type": "text",
+                        "label": "Callback ID. This unique identifier will be sent back to you via POST request in webhook to track the progress/result of the task"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

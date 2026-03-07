@@ -1,0 +1,632 @@
+{
+    "name": "Stripe Customer Creation 2/3",
+    "flow": [
+        {
+            "id": 4,
+            "module": "stripe:watchEvents",
+            "version": 1,
+            "parameters": {
+                "__IMTHOOK__": 947584
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -453,
+                    "y": -47
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTHOOK__": {
+                            "data": {
+                                "editable": "false"
+                            },
+                            "label": "My Watch Events webhook"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTHOOK__",
+                        "type": "hook:stripe2",
+                        "label": "Webhook",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "created",
+                        "type": "date",
+                        "label": "Created"
+                    },
+                    {
+                        "name": "event_type",
+                        "type": "text",
+                        "label": "Event Type"
+                    },
+                    {
+                        "name": "event_id",
+                        "type": "text",
+                        "label": "Event ID"
+                    },
+                    {
+                        "name": "object",
+                        "spec": [
+                            {
+                                "name": "id",
+                                "type": "text",
+                                "label": "ID"
+                            },
+                            {
+                                "name": "object",
+                                "type": "text",
+                                "label": "Object"
+                            },
+                            {
+                                "name": "application_fee_percent",
+                                "type": "text",
+                                "label": "Application fee percent"
+                            },
+                            {
+                                "name": "billing",
+                                "type": "text",
+                                "label": "Billing"
+                            },
+                            {
+                                "name": "billing_cycle_anchor",
+                                "type": "number",
+                                "label": "Billing cycle anchor"
+                            },
+                            {
+                                "name": "cancel_at_period_end",
+                                "type": "boolean",
+                                "label": "Cancel at perion end"
+                            },
+                            {
+                                "name": "canceled_at",
+                                "type": "text",
+                                "label": "Canceled at"
+                            },
+                            {
+                                "name": "created",
+                                "type": "number",
+                                "label": "Created"
+                            },
+                            {
+                                "name": "current_period_end",
+                                "type": "number",
+                                "label": "Current period end"
+                            },
+                            {
+                                "name": "current_period_start",
+                                "type": "number",
+                                "label": "Current period start"
+                            },
+                            {
+                                "name": "customer",
+                                "type": "text",
+                                "label": "Customer"
+                            },
+                            {
+                                "name": "days_until_due",
+                                "type": "text",
+                                "label": "Days until due"
+                            },
+                            {
+                                "name": "discount",
+                                "type": "text",
+                                "label": "Discount"
+                            },
+                            {
+                                "name": "ended_at",
+                                "type": "text",
+                                "label": "Ended at"
+                            },
+                            {
+                                "name": "items",
+                                "spec": [
+                                    {
+                                        "name": "object",
+                                        "type": "text",
+                                        "label": "Object"
+                                    },
+                                    {
+                                        "name": "data",
+                                        "spec": [
+                                            {
+                                                "name": "id",
+                                                "type": "text",
+                                                "label": "ID"
+                                            },
+                                            {
+                                                "name": "object",
+                                                "type": "text",
+                                                "label": "Object"
+                                            },
+                                            {
+                                                "name": "created",
+                                                "type": "number",
+                                                "label": "Created"
+                                            },
+                                            {
+                                                "name": "metadata",
+                                                "spec": [],
+                                                "type": "collection",
+                                                "label": "Metadata"
+                                            },
+                                            {
+                                                "name": "plan",
+                                                "spec": [
+                                                    {
+                                                        "name": "id",
+                                                        "type": "text",
+                                                        "label": "ID"
+                                                    },
+                                                    {
+                                                        "name": "object",
+                                                        "type": "text",
+                                                        "label": "Object"
+                                                    },
+                                                    {
+                                                        "name": "amount",
+                                                        "type": "number",
+                                                        "label": "Amount"
+                                                    },
+                                                    {
+                                                        "name": "created",
+                                                        "type": "number",
+                                                        "label": "Created"
+                                                    },
+                                                    {
+                                                        "name": "currency",
+                                                        "type": "text",
+                                                        "label": "Currency"
+                                                    },
+                                                    {
+                                                        "name": "interval",
+                                                        "type": "text",
+                                                        "label": "Interval"
+                                                    },
+                                                    {
+                                                        "name": "interval_count",
+                                                        "type": "number",
+                                                        "label": "Interval count"
+                                                    },
+                                                    {
+                                                        "name": "livemode",
+                                                        "type": "boolean",
+                                                        "label": "Livemode"
+                                                    },
+                                                    {
+                                                        "name": "metadata",
+                                                        "spec": [],
+                                                        "type": "collection",
+                                                        "label": "Metadata"
+                                                    },
+                                                    {
+                                                        "name": "nickname",
+                                                        "type": "text",
+                                                        "label": "Nickname"
+                                                    },
+                                                    {
+                                                        "name": "product",
+                                                        "type": "text",
+                                                        "label": "Product"
+                                                    },
+                                                    {
+                                                        "name": "trial_period_days",
+                                                        "type": "text",
+                                                        "label": "Trial period days"
+                                                    },
+                                                    {
+                                                        "name": "statement_descriptor",
+                                                        "type": "text",
+                                                        "label": "Statement descriptor"
+                                                    },
+                                                    {
+                                                        "name": "name",
+                                                        "type": "text",
+                                                        "label": "Name"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Plan"
+                                            },
+                                            {
+                                                "name": "quantity",
+                                                "type": "number",
+                                                "label": "Quantity"
+                                            },
+                                            {
+                                                "name": "subscription",
+                                                "type": "text",
+                                                "label": "Subscription"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Data"
+                                    },
+                                    {
+                                        "name": "has_more",
+                                        "type": "boolean",
+                                        "label": "Has more"
+                                    },
+                                    {
+                                        "name": "total_count",
+                                        "type": "number",
+                                        "label": "Total count"
+                                    },
+                                    {
+                                        "name": "url",
+                                        "type": "text",
+                                        "label": "URL"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Items"
+                            },
+                            {
+                                "name": "livemode",
+                                "type": "boolean",
+                                "label": "Livemode"
+                            },
+                            {
+                                "name": "metadata",
+                                "spec": [],
+                                "type": "collection",
+                                "label": "Metadata"
+                            },
+                            {
+                                "name": "plan",
+                                "spec": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    },
+                                    {
+                                        "name": "object",
+                                        "type": "text",
+                                        "label": "Object"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "type": "number",
+                                        "label": "Amount"
+                                    },
+                                    {
+                                        "name": "created",
+                                        "type": "number",
+                                        "label": "Created"
+                                    },
+                                    {
+                                        "name": "currency",
+                                        "type": "text",
+                                        "label": "Currency"
+                                    },
+                                    {
+                                        "name": "interval",
+                                        "type": "text",
+                                        "label": "Interval"
+                                    },
+                                    {
+                                        "name": "interval_count",
+                                        "type": "number",
+                                        "label": "Interval count"
+                                    },
+                                    {
+                                        "name": "livemode",
+                                        "type": "boolean",
+                                        "label": "Livemode"
+                                    },
+                                    {
+                                        "name": "metadata",
+                                        "spec": [],
+                                        "type": "collection",
+                                        "label": "Metadata"
+                                    },
+                                    {
+                                        "name": "nickname",
+                                        "type": "text",
+                                        "label": "Nickname"
+                                    },
+                                    {
+                                        "name": "product",
+                                        "type": "text",
+                                        "label": "Product"
+                                    },
+                                    {
+                                        "name": "trial_period_days",
+                                        "type": "text",
+                                        "label": "Trial period days"
+                                    },
+                                    {
+                                        "name": "statement_descriptor",
+                                        "type": "text",
+                                        "label": "Statement descriptor"
+                                    },
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Name"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Plan"
+                            },
+                            {
+                                "name": "quantity",
+                                "type": "number",
+                                "label": "Quantity"
+                            },
+                            {
+                                "name": "start",
+                                "type": "number",
+                                "label": "Start"
+                            },
+                            {
+                                "name": "status",
+                                "type": "text",
+                                "label": "Status"
+                            },
+                            {
+                                "name": "tax_percent",
+                                "type": "text",
+                                "label": "Tax percent"
+                            },
+                            {
+                                "name": "trial_end",
+                                "type": "text",
+                                "label": "Trial end"
+                            },
+                            {
+                                "name": "trial_start",
+                                "type": "text",
+                                "label": "Trial start"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Object"
+                    },
+                    {
+                        "name": "raw",
+                        "spec": [],
+                        "type": "collection",
+                        "label": "Raw Webhook Data"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "module": "stripe:retrieveCustomer",
+            "version": 1,
+            "parameters": {},
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -57,
+                    "y": -52
+                },
+                "restore": {}
+            }
+        },
+        {
+            "id": 6,
+            "module": "airtable:ActionCreateRecord",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818
+            },
+            "mapper": {
+                "base": "appDhY6aNMXDA11hW",
+                "typecast": false,
+                "useColumnId": false,
+                "table": "tblNl2QjyTC0uvjmQ",
+                "record": {
+                    "fldFf119O3m4PXaCj": "{{5.name}}",
+                    "flds3xuEXdyNFfEzm": "{{5.email}}"
+                }
+            },
+            "metadata": {
+                "designer": {
+                    "x": 243,
+                    "y": -52
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "base": {
+                            "label": "Customer Database YouTube 📈"
+                        },
+                        "typecast": {
+                            "mode": "chose"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        },
+                        "table": {
+                            "nested": [
+                                {
+                                    "name": "record",
+                                    "spec": [
+                                        {
+                                            "name": "fldFf119O3m4PXaCj",
+                                            "label": "Name",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "flds3xuEXdyNFfEzm",
+                                            "label": "Email 📧",
+                                            "type": "text",
+                                            "multiline": true
+                                        },
+                                        {
+                                            "name": "fldXO4deaaS6CA7CH",
+                                            "label": "Membership Status 🟢🔴",
+                                            "type": "select",
+                                            "mode": "edit",
+                                            "dynamic": true,
+                                            "validate": false,
+                                            "options": [
+                                                {
+                                                    "label": "Churned",
+                                                    "value": "Churned"
+                                                },
+                                                {
+                                                    "label": "Declined",
+                                                    "value": "Declined"
+                                                },
+                                                {
+                                                    "label": "Paying Subscriber 🔥",
+                                                    "value": "Paying Subscriber 🔥"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Record"
+                                }
+                            ],
+                            "label": "Table 1"
+                        },
+                        "record": {
+                            "nested": {
+                                "fldXO4deaaS6CA7CH": {
+                                    "mode": "edit"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "typecast",
+                        "type": "boolean",
+                        "label": "Smart links",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "record",
+                        "type": "collection",
+                        "label": "Record",
+                        "spec": [
+                            {
+                                "name": "fldFf119O3m4PXaCj",
+                                "type": "text",
+                                "label": "Name"
+                            },
+                            {
+                                "name": "flds3xuEXdyNFfEzm",
+                                "type": "text",
+                                "label": "Email 📧"
+                            },
+                            {
+                                "name": "fldXO4deaaS6CA7CH",
+                                "type": "select",
+                                "label": "Membership Status 🟢🔴",
+                                "mode": "edit"
+                            }
+                        ]
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Name",
+                        "label": "Name",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Email 📧",
+                        "label": "Email 📧",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Unique ID 🆔",
+                        "label": "Unique ID 🆔",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Membership Status 🟢🔴",
+                        "label": "Membership Status 🟢🔴",
+                        "type": "text"
+                    },
+                    {
+                        "name": "created time",
+                        "label": "created time",
+                        "type": "date"
+                    },
+                    {
+                        "name": "Last modified time",
+                        "label": "Last modified time",
+                        "type": "date"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

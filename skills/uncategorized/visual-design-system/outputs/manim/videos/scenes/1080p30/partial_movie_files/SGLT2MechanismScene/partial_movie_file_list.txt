@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/1697185472_452212004_223132457.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_1685722709_1196145307.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_617894032_4163940530.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_754576992_2183177057.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_2597873454_1937566262.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_2603453580_2487145510.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_2320631816_4263845766.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_3844228758_1558158576.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/SGLT2MechanismScene/2038921957_2819690770_617289154.mp4'

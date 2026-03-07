@@ -1,0 +1,267 @@
+# Pitch Deck Data Template
+# Fill in this template with your company information
+# Then run: python3 scripts/generate_pptx.py --data this_file.yaml
+
+# =============================================================================
+# COMPANY INFORMATION
+# =============================================================================
+company:
+  name: "Your Company Name"
+  tagline: "One-line description of what you do"
+  logo_path: ""  # Path to logo file (PNG/SVG recommended)
+  website: "https://yourcompany.com"
+  founded: "2024"
+  contact_email: "founder@yourcompany.com"
+
+# =============================================================================
+# SLIDE 1: TITLE (with optional traction headline)
+# =============================================================================
+title:
+  headline: ""  # Optional: "$2M ARR | 50K users | Growing 30% MoM"
+  presenter_name: "Your Name"
+  presenter_title: "Co-founder & CEO"
+
+# =============================================================================
+# SLIDE 2: THE PROBLEM
+# =============================================================================
+problem:
+  headline: "The Problem We're Solving"
+  pain_point: "Describe the core problem in one sentence"
+  who_affected: "Who experiences this problem? How many?"
+  current_solutions: "What do people do today? Why is it broken?"
+  cost_of_problem: "$X billion wasted annually on..."
+  story: |
+    Optional: A relatable story that illustrates the problem.
+    "Every day, Sarah spends 3 hours doing X when she could..."
+
+# =============================================================================
+# SLIDE 3: THE SOLUTION
+# =============================================================================
+solution:
+  headline: "Our Solution"
+  product_name: "ProductName"
+  one_liner: "We help [customer] do [outcome] by [mechanism]"
+  how_it_works: "Brief explanation of how the product works"
+  key_benefits:
+    - "Benefit 1 (outcome, not feature)"
+    - "Benefit 2"
+    - "Benefit 3"
+  aha_moment: "The 'of course!' realization that makes the solution obvious"
+
+# =============================================================================
+# SLIDE 4: PRODUCT/DEMO
+# =============================================================================
+product:
+  headline: "How It Works"
+  screenshot_path: ""  # Path to product screenshot
+  key_features:
+    - feature: "Feature Name"
+      description: "What it does for the user"
+    - feature: "Feature Name"
+      description: "What it does for the user"
+    - feature: "Feature Name"
+      description: "What it does for the user"
+  demo_video_url: ""  # Optional: Link to demo video
+
+# =============================================================================
+# SLIDE 5: MARKET OPPORTUNITY
+# =============================================================================
+market:
+  headline: "Market Opportunity"
+  tam: "$50B"          # Total Addressable Market
+  tam_description: "All businesses that could use this"
+  sam: "$10B"          # Serviceable Addressable Market
+  sam_description: "Businesses in our target segment"
+  som: "$500M"         # Serviceable Obtainable Market
+  som_description: "What we can capture in 5 years"
+  growth_rate: "15% CAGR"
+  why_now:
+    - "Technology shift enabling this"
+    - "Market behavior change"
+    - "Regulatory tailwind"
+
+# =============================================================================
+# SLIDE 6: BUSINESS MODEL
+# =============================================================================
+business_model:
+  headline: "How We Make Money"
+  model_type: "SaaS subscription"  # SaaS, marketplace, transactional, etc.
+  pricing:
+    - tier: "Starter"
+      price: "$29/month"
+      features: "Basic features for small teams"
+    - tier: "Pro"
+      price: "$99/month"
+      features: "Advanced features + support"
+    - tier: "Enterprise"
+      price: "Custom"
+      features: "Full platform + dedicated success"
+  unit_economics:
+    cac: "$150"           # Customer Acquisition Cost
+    ltv: "$2,400"         # Lifetime Value
+    ltv_cac_ratio: "16x"
+    payback_months: "3"
+    gross_margin: "85%"
+
+# =============================================================================
+# SLIDE 7: TRACTION
+# =============================================================================
+traction:
+  headline: "Traction & Growth"
+  current_revenue: "$100K ARR"
+  current_users: "500 active users"
+  growth_metrics:
+    - metric: "Revenue"
+      current: "$100K ARR"
+      growth: "40% MoM"
+    - metric: "Users"
+      current: "500"
+      growth: "25% MoM"
+    - metric: "Retention"
+      current: "95%"
+      growth: "Month-over-month"
+  milestones:
+    - date: "Jan 2024"
+      milestone: "Product launch"
+    - date: "Mar 2024"
+      milestone: "First 100 users"
+    - date: "Jun 2024"
+      milestone: "$50K ARR"
+  customer_logos:
+    - "Company A"
+    - "Company B"
+    - "Company C"
+  testimonial:
+    quote: "This product changed how we work..."
+    author: "Jane Doe, VP Product at BigCo"
+
+# =============================================================================
+# SLIDE 8: COMPETITION
+# =============================================================================
+competition:
+  headline: "Competitive Landscape"
+  positioning_matrix:
+    x_axis: "Ease of Use"
+    y_axis: "Capability"
+    your_position: "Top-right"
+  competitors:
+    - name: "Competitor A"
+      weakness: "Too complex for SMBs"
+    - name: "Competitor B"
+      weakness: "Limited features"
+    - name: "Legacy solutions"
+      weakness: "Slow, expensive"
+  your_differentiators:
+    - "Differentiator 1"
+    - "Differentiator 2"
+    - "Differentiator 3"
+  moat: "What makes you defensible? (Network effects, data, brand, switching costs)"
+
+# =============================================================================
+# SLIDE 9: GO-TO-MARKET
+# =============================================================================
+go_to_market:
+  headline: "Go-to-Market Strategy"
+  channels:
+    - channel: "Content Marketing"
+      description: "SEO, blog, thought leadership"
+    - channel: "Outbound Sales"
+      description: "SDR team targeting enterprises"
+    - channel: "Partnerships"
+      description: "Integration partners, resellers"
+  sales_cycle: "30 days average"
+  expansion_strategy: "Land and expand within organizations"
+
+# =============================================================================
+# SLIDE 10: TEAM
+# =============================================================================
+team:
+  headline: "The Team"
+  founders:
+    - name: "Your Name"
+      title: "CEO & Co-founder"
+      photo_path: ""
+      background: "Previously VP Product at BigTech. 10 years in industry."
+      linkedin: ""
+    - name: "Co-founder Name"
+      title: "CTO & Co-founder"
+      photo_path: ""
+      background: "Ex-Google engineer. Built systems at scale."
+      linkedin: ""
+  key_hires:
+    - role: "Head of Sales"
+      name: "Hire Name"
+      background: "15 years enterprise sales"
+  advisors:
+    - name: "Advisor Name"
+      role: "Former CEO of RelevantCo"
+  why_us: "We've lived this problem. Built and scaled similar products. Unique insight into the market."
+
+# =============================================================================
+# SLIDE 11: FINANCIALS (Optional)
+# =============================================================================
+financials:
+  headline: "Financial Projections"
+  historical:
+    - year: "2023"
+      revenue: "$50K"
+    - year: "2024"
+      revenue: "$250K"
+  projections:
+    - year: "2025"
+      revenue: "$1M"
+    - year: "2026"
+      revenue: "$5M"
+    - year: "2027"
+      revenue: "$15M"
+  key_assumptions:
+    - "20 new enterprise customers per quarter"
+    - "Net revenue retention of 120%"
+    - "CAC payback under 12 months"
+
+# =============================================================================
+# SLIDE 12: THE ASK
+# =============================================================================
+the_ask:
+  headline: "The Ask"
+  amount: "$2M"
+  round_type: "Seed"
+  pre_money_valuation: "$8M"  # Optional
+  use_of_funds:
+    - category: "Engineering"
+      percentage: 40
+      details: "Hire 3 engineers, scale infrastructure"
+    - category: "Sales & Marketing"
+      percentage: 35
+      details: "Hire sales lead, demand generation"
+    - category: "Operations"
+      percentage: 15
+      details: "Customer success, tooling"
+    - category: "G&A"
+      percentage: 10
+      details: "Legal, accounting, buffer"
+  runway: "18 months"
+  milestones:
+    - "$1M ARR"
+    - "50 enterprise customers"
+    - "Series A ready"
+
+# =============================================================================
+# SLIDE 13: VISION (Optional)
+# =============================================================================
+vision:
+  headline: "The Vision"
+  long_term: "Become the operating system for [industry]"
+  market_leadership: "Category leader in [market] by 2028"
+  potential_outcomes: "IPO or strategic acquisition at $1B+"
+
+# =============================================================================
+# APPENDIX (for Q&A deep dives)
+# =============================================================================
+appendix:
+  include_slides:
+    - "Detailed financials"
+    - "Technical architecture"
+    - "Customer case studies"
+    - "Market research data"
+    - "Cap table"

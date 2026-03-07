@@ -1,0 +1,162 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Visual Design System - Typography Tokens",
+  "description": "Nature/JACC/NEJM compliant typography specifications",
+  "version": "1.0.0",
+
+  "fonts": {
+    "primary": {
+      "family": "Helvetica, Arial, sans-serif",
+      "fallbacks": ["Arial", "Liberation Sans", "sans-serif"],
+      "description": "Main font for all text elements"
+    },
+    "monospace": {
+      "family": "Courier New, Courier, monospace",
+      "fallbacks": ["Liberation Mono", "monospace"],
+      "description": "Code, gene names, identifiers"
+    }
+  },
+
+  "sizes": {
+    "figure_elements": {
+      "panel_label": {
+        "value": "8pt",
+        "pixels": 11,
+        "description": "Panel labels (a, b, c) - must be bold lowercase"
+      },
+      "axis_title": {
+        "value": "7pt",
+        "pixels": 9,
+        "description": "X and Y axis titles"
+      },
+      "axis_tick": {
+        "value": "6pt",
+        "pixels": 8,
+        "description": "Axis tick labels, numbers"
+      },
+      "legend": {
+        "value": "6pt",
+        "pixels": 8,
+        "description": "Legend text"
+      },
+      "annotation": {
+        "value": "6pt",
+        "pixels": 8,
+        "description": "In-figure annotations, callouts"
+      },
+      "caption": {
+        "value": "7pt",
+        "pixels": 9,
+        "description": "Figure captions (below figure)"
+      }
+    },
+    "infographic_elements": {
+      "headline": {
+        "value": "24pt",
+        "pixels": 32,
+        "description": "Big stat numbers"
+      },
+      "subheadline": {
+        "value": "14pt",
+        "pixels": 19,
+        "description": "Section headers"
+      },
+      "body": {
+        "value": "10pt",
+        "pixels": 13,
+        "description": "Body text in infographics"
+      },
+      "small": {
+        "value": "8pt",
+        "pixels": 11,
+        "description": "Source citations, footnotes"
+      }
+    },
+    "social_media": {
+      "carousel_title": {
+        "value": "28pt",
+        "pixels": 37,
+        "description": "Carousel slide titles"
+      },
+      "carousel_body": {
+        "value": "16pt",
+        "pixels": 21,
+        "description": "Carousel body text"
+      },
+      "carousel_stat": {
+        "value": "48pt",
+        "pixels": 64,
+        "description": "Big numbers on carousel slides"
+      }
+    }
+  },
+
+  "weights": {
+    "regular": {
+      "value": 400,
+      "css": "normal"
+    },
+    "medium": {
+      "value": 500,
+      "css": "500"
+    },
+    "semibold": {
+      "value": 600,
+      "css": "600"
+    },
+    "bold": {
+      "value": 700,
+      "css": "bold"
+    }
+  },
+
+  "usage_rules": {
+    "panel_labels": {
+      "font": "primary",
+      "size": "8pt",
+      "weight": "bold",
+      "case": "lowercase",
+      "example": "a, b, c (not A, B, C)"
+    },
+    "axis_labels": {
+      "font": "primary",
+      "size": "6pt",
+      "weight": "regular",
+      "case": "sentence",
+      "spacing": "normal"
+    },
+    "gene_names": {
+      "font": "primary",
+      "style": "italic",
+      "example": "BRCA1, TP53"
+    },
+    "protein_names": {
+      "font": "primary",
+      "style": "normal",
+      "example": "p53, BRCA1 protein"
+    },
+    "statistics": {
+      "font": "primary",
+      "style": "italic",
+      "examples": ["P = 0.001", "n = 100", "r = 0.85"]
+    }
+  },
+
+  "line_height": {
+    "tight": 1.1,
+    "normal": 1.4,
+    "relaxed": 1.6
+  },
+
+  "letter_spacing": {
+    "tight": "-0.02em",
+    "normal": "0",
+    "wide": "0.05em"
+  },
+
+  "text_rendering": {
+    "anti_aliasing": true,
+    "subpixel_rendering": false,
+    "notes": "Use grayscale antialiasing for publication to ensure consistent rendering across systems"
+  }
+}

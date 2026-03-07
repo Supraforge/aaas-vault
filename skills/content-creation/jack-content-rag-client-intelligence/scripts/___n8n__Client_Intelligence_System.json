@@ -1,0 +1,1255 @@
+{
+  "name": "🧠 n8n: Client Intelligence System",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        60,
+        960
+      ],
+      "id": "ebd806c2-d892-4528-8d03-7ec5a33286d5",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "VARz8tBAjDobMUh6",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract and structure client data from Airtable records\nconst clients = $input.all().map(item => {\n  return {\n    clientName: item.json[\"Client\"] || \"\",\n    domain: item.json[\"Client Website\"] ? item.json[\"Client Website\"].toLowerCase() : \"\",\n    email: item.json[\"Email\"] ? item.json[\"Email\"].toLowerCase() : \"\"\n  };\n});\n\n// Return structured client data\nreturn {\n  json: {\n    clients: clients\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        960
+      ],
+      "id": "b622051a-c4b2-40a9-8bdc-513db43c7684",
+      "name": "Format Airtable Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get client list from Format Airtable Data node\nconst clients = $input.first().json.clients || [];\n\n// Get email data from Gmail Trigger\nconst gmailData = $('Gmail Trigger').first().json || {};\nconst headers = gmailData.headers || {};\n\n// Extract email fields, ensuring they're strings\nconst subject = String(headers.subject || \"\").toLowerCase();\nconst fromHeader = String(headers.from || \"\").toLowerCase();\nconst body = String(gmailData.text || \"\").toLowerCase();\n\n// Debug logging\nconsole.log(\"Processing email:\");\nconsole.log(\"- Subject:\", subject);\nconsole.log(\"- From:\", fromHeader);\nconsole.log(\"- Available clients:\", JSON.stringify(clients));\n\n// Initialize variables\nlet isMatch = false;\nlet matchedClient = null;\nlet matchReason = \"No match found\";\n\n// Check each client for matches\nfor (const client of clients) {\n  if (!client.clientName) continue;\n  \n  const clientName = client.clientName.toLowerCase();\n  const domain = client.domain ? client.domain.toLowerCase() : \"\";\n  const clientEmail = client.email ? client.email.toLowerCase() : \"\";\n  \n  console.log(`Checking client: ${clientName}, email: ${clientEmail}, domain: ${domain}`);\n  \n  // Check if sender email matches client email directly\n  if (clientEmail && fromHeader.includes(clientEmail)) {\n    isMatch = true;\n    matchedClient = client.clientName;\n    matchReason = `Email match: ${clientEmail}`;\n    break;\n  }\n  \n  // Check for client name in subject\n  if (clientName && subject.includes(clientName)) {\n    isMatch = true;\n    matchedClient = client.clientName;\n    matchReason = `Subject contains client name: ${client.clientName}`;\n    break;\n  }\n  \n  // Check for client name in body\n  if (clientName && body.includes(clientName)) {\n    isMatch = true;\n    matchedClient = client.clientName;\n    matchReason = `Body contains client name: ${client.clientName}`;\n    break;\n  }\n  \n  // Check for domain in sender\n  if (domain && fromHeader.includes(domain)) {\n    isMatch = true;\n    matchedClient = client.clientName;\n    matchReason = `Sender contains client domain: ${domain}`;\n    break;\n  }\n  \n  // Special case for \"Grind\" vs \"Grind Coffee\"\n  if ((clientName === \"grind coffee\" && subject.includes(\"grind\")) ||\n      (clientName === \"grind\" && subject.includes(\"grind\"))) {\n    isMatch = true;\n    matchedClient = client.clientName;\n    matchReason = `Subject contains partial client name: ${client.clientName}`;\n    break;\n  }\n}\n\n// Final decision\nconst decision = isMatch ? \"Save\" : \"Delete\";\n\n// Return result\nreturn {\n  json: {\n    decision,\n    isClientEmail: isMatch,\n    matchReason,\n    matchedClient,\n    emailSubject: headers.subject || \"\",\n    emailFrom: headers.from || \"\",\n    emailId: gmailData.id || headers[\"message-id\"] || \"\",\n    emailBody: gmailData.text || \"\"\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        960
+      ],
+      "id": "287b2926-8384-454d-8bd9-570a1e2c17b5",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "name": "RagMemory",
+        "description": "Retrieve data about clients, including all previous emails and meetings with those clients"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        120
+      ],
+      "id": "7ba7054e-d129-4d8b-a47a-92e06cd68e45",
+      "name": "Answer questions with a vector store"
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "business",
+          "mode": "list",
+          "cachedResultName": "business"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        300
+      ],
+      "id": "21fe1afe-0783-4749-8f86-a225701ef799",
+      "name": "Pinecone Vector Store1",
+      "credentials": {
+        "pineconeApi": {
+          "id": "3ORSKXHNqrQpRBb3",
+          "name": "PineconeApi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1500,
+        460
+      ],
+      "id": "b34d7791-9fa5-4605-a572-7bc1b7e28822",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "0zsUHU0F8xKDAzoO",
+          "name": "OpenAi account 14"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 🧠 Memory\n",
+        "height": 620,
+        "width": 600
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1200,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "f70ea610-af9d-4593-a766-5f84cebb5cc3",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "folderId": "1ZnjGp_tzNgtiUx_QfcYUHv6LTYL19NXH",
+        "title": "={{ $now }}"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1500,
+        960
+      ],
+      "id": "d059bcc1-ec5e-4c49-abd8-42f76e6d7dd7",
+      "name": "Google Docs",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "1tDXMRYFi4lLvvJ6",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 🤖 AI Agent\n",
+        "height": 720,
+        "width": 1120,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "5d64f679-b174-45f2-8248-4fec2436b7c9",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.fireflies.ai/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"query\": \"query Transcripts($limit: Int) { transcripts(limit: $limit) { id title date } }\",\n  \"variables\": {\n    \"limit\": 5\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        1760
+      ],
+      "id": "a0203628-ead7-4e98-ab8f-753536eed32d",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.fireflies.ai/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"query Transcript($id: String!) { transcript(id: $id) { title sentences { speaker_name text start_time end_time } } }\",\n  \"variables\": {\n    \"id\": \"{{ $json.transcript_id }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        1760
+      ],
+      "id": "1d47f7f7-eb3a-47b0-a7d8-f7d726c94676",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const transcripts = items[0].json.data.transcripts;\n\nreturn transcripts.map(t => ({\n  json: {\n    transcript_id: t.id,\n    title: t.title,\n    date: t.date\n  }\n}));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        540,
+        1760
+      ],
+      "id": "850aa5ca-7ba1-4498-90e2-2ebe25b1edc7",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Get the transcript block from the current item\nconst transcript = $json.data.transcript;\n\n// Safely extract title and sentence list\nconst title = transcript.title;\nconst sentences = transcript.sentences || [];\n\n// Combine all sentence texts into a single transcript\nconst fullTranscriptText = sentences.map(s => `${s.speaker_name}: ${s.text}`).join('\\n');\n\n// Add final formatted values to item\nitem.json.meetingTitle = title;\nitem.json.fullTranscript = fullTranscriptText;\n\nreturn item;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        1760
+      ],
+      "id": "9b1c6905-1c77-4cbe-a574-9cd822c3b37e",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "business",
+          "mode": "list",
+          "cachedResultName": "business"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        1760
+      ],
+      "id": "4f836b3c-0bba-4fed-930b-b3446fdbd1e5",
+      "name": "Pinecone Vector Store3",
+      "credentials": {
+        "pineconeApi": {
+          "id": "3ORSKXHNqrQpRBb3",
+          "name": "PineconeApi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1780,
+        1980
+      ],
+      "id": "febd8006-a2d1-42af-aa45-685526f7f8a5",
+      "name": "Embeddings OpenAI3",
+      "credentials": {
+        "openAiApi": {
+          "id": "0zsUHU0F8xKDAzoO",
+          "name": "OpenAi account 14"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        1980,
+        1960
+      ],
+      "id": "cabbfdd0-7aae-45dc-90cf-67f070715983",
+      "name": "Default Data Loader2"
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 150,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        2060,
+        2140
+      ],
+      "id": "1144b5be-7f77-459a-be2b-6fee5ea01af5",
+      "name": "Recursive Character Text Splitter2"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "business",
+          "mode": "list",
+          "cachedResultName": "business"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        2440,
+        960
+      ],
+      "id": "26b8ad7d-2bf4-4ea8-b27a-315afab1c1d9",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "3ORSKXHNqrQpRBb3",
+          "name": "PineconeApi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        2580,
+        1140
+      ],
+      "id": "75f09592-2ac0-4ca9-b6cf-bee97ac655ad",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 150,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        1320
+      ],
+      "id": "d6c23d05-c7e4-4322-973e-2388f1cd9e99",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2400,
+        1160
+      ],
+      "id": "f70a6605-09d2-4f21-b141-721d3d892148",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "0zsUHU0F8xKDAzoO",
+          "name": "OpenAi account 14"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "folderId": "1U4NMW9JoqIBzFYz3hAQfUjHqbBE9HfoG",
+        "title": "={{ $json.data.transcript.title }} {{ $now }}"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        1760
+      ],
+      "id": "00488aa2-343d-467a-ad60-6dd43cbeb7a1",
+      "name": "Google Docs4",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "1tDXMRYFi4lLvvJ6",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "=Meeting title: {{ $('Code2').item.json.meetingTitle }}\n\n{{ $('Code2').item.json.fullTranscript }}\n\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1420,
+        1760
+      ],
+      "id": "34cbb310-66e0-4fe8-ac44-5161115b2757",
+      "name": "Google Docs5",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "1tDXMRYFi4lLvvJ6",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.documentId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1640,
+        1760
+      ],
+      "id": "e434cc0f-2145-4c90-a289-4aee3f10448f",
+      "name": "Google Drive1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "UUpiFNAs39jvIMt5",
+          "name": "Google Drive account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 📧 Vectorise Emails",
+        "height": 700,
+        "width": 2920,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        1620
+      ],
+      "typeVersion": 1,
+      "id": "cfa462ce-56c7-47df-868f-97425c923976",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# 📆 Vectorise Meetings",
+        "height": 700,
+        "width": 2960,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        860
+      ],
+      "typeVersion": 1,
+      "id": "e48799b0-09d5-4f33-9994-6daac575e92c",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app8ZxWWESCmijmn6",
+          "mode": "list",
+          "cachedResultName": "Clients",
+          "cachedResultUrl": "https://airtable.com/app8ZxWWESCmijmn6"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblPgeJu0pUUnARnl",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/app8ZxWWESCmijmn6/tblPgeJu0pUUnARnl"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        960
+      ],
+      "id": "6b3f8586-c83b-488d-86f3-72ed2e66047e",
+      "name": "Airtable1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "Xqd3dnjmT0zrv06m",
+          "name": "Airtable Personal Access Token account 6"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $('Edit Fields').first().json.From }}\n{{ $('Edit Fields').first().json.Subject }}\n{{ $('Edit Fields').first().json.Date }}\n{{ $('Edit Fields').first().json.Body }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1740,
+        960
+      ],
+      "id": "3f03e9fb-0b58-452a-8bd7-0a566fd330e6",
+      "name": "Google Docs1",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "1tDXMRYFi4lLvvJ6",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b088e11-e145-4036-9e16-e437e29fc480",
+              "name": "From",
+              "value": "={{ $json.from.value[0].name }}",
+              "type": "string"
+            },
+            {
+              "id": "43e02af6-d5a1-45cf-ad88-3bb8f93f2684",
+              "name": "Subject",
+              "value": "={{ $json.headers.subject }}",
+              "type": "string"
+            },
+            {
+              "id": "7afaecc5-9a7a-4dc6-b406-d19c6e998ce2",
+              "name": "Date",
+              "value": "={{ $json.headers.date }}",
+              "type": "string"
+            },
+            {
+              "id": "f83ea2dd-0cc0-421c-8176-bd60d53cc126",
+              "name": "Body",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        280,
+        960
+      ],
+      "id": "606d41eb-ba9d-4215-88d3-c27cfc686bca",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.documentId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        2060,
+        960
+      ],
+      "id": "0613f30c-2c3c-4815-8c81-1541062e7f11",
+      "name": "Google Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "UUpiFNAs39jvIMt5",
+          "name": "Google Drive account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e756ae1c-b614-4119-8ec9-1ca36f04955b",
+              "leftValue": "={{ $json.isClientEmail }}",
+              "rightValue": "=true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1240,
+        960
+      ],
+      "id": "6657f49b-a102-441e-a5ea-a808657c2113",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        120,
+        1760
+      ],
+      "id": "3388777c-82f8-4854-b9e7-c5943571dc81",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        180,
+        140
+      ],
+      "id": "13c9047d-50e7-43df-abe0-9fe58bbfea48",
+      "name": "When chat message received",
+      "webhookId": "e52b7a7c-d534-483d-a4ef-333361cb7bb6"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1600,
+        240
+      ],
+      "id": "804f73b1-c344-4980-b840-ab67d68522de",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "0zsUHU0F8xKDAzoO",
+          "name": "OpenAi account 14"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=🧾 Role\nYou are a Customer Intelligence Agent. Your primary goal is to answer user questions about companies, clients, or related context by leveraging internal intelligence, structured databases, and external scraping when necessary.\n\n⚙️ Core Principles\n\nPrioritize existing knowledge before initiating any external data gathering.\n\nUse the most contextually appropriate source: RAG Memory, Airtable, or live scrape.\n\nAlways state the source of your answer.\n\n🧭 RESPONSE WORKFLOW\n1️⃣ Check RAG Memory (Primary Source)\nUse RagMemory to answer general or context-based queries, including:\n\nMeeting summaries\n\nEmail correspondence\n\nProject history\n\nClient preferences\n\nStakeholder details\n\nIf an answer is found in RagMemory:\n\nProvide it directly.\n\nCite the source (e.g., “From an internal email…”).\n\nDo not proceed further.\n\nIf not found, continue to Airtable.\n\n2️⃣ Check Airtable Knowledge Base\nSearch Airtable using the company name or provided identifiers.\n\nIf the company is found:\n\nIf the requested information exists in Airtable: return it and cite Airtable.\n\nIf only the company URL is found: move to Step 3.\n\nIf the company or URL is not found:\n\nAsk the user to provide the company’s website URL.\n\nThen proceed to Step 3.\n\n3️⃣ Use Sub-Agent for Real-Time Data (via FireCrawl)\nUse this step only if:\n\nThe data is not in RagMemory\n\nNot available in Airtable\n\nAnd the question relates to data likely found on the company’s website\n\nOnce the URL is known (from Airtable or the user):\n\n🔁 Pass the following four parameters to the sub-agent:\n\nwebsite: The full company website URL\n\nprompt: A clear instruction describing what to extract (e.g., “Get all products and their prices”)\n\nproperty: The specific field name you expect in return (e.g., cheapestProduct)\n\nrequired: Same value as property — explicitly tells the sub-agent what to validate and extract from the result\n\n✅ The sub-agent will:\n\nCall FireCrawl with the given values\n\nWait for the scrape to complete\n\nReturn only the requested field\n\n📢 You must:\n\nWait for the result\n\nPresent the answer to the user\n\nClearly cite that it came from a live web scrape (e.g., “According to the company’s website, scraped just now…”)\n\n🧠 Data Sources\nRagMemory: Internal messages, meetings, documents\n\nAirtable: Structured company database\n\nSub-Agent: Live web scraping via FireCrawl\n\n✅ Behavior Rules\nAlways check RagMemory first, even if the question sounds web-based.\n\nNever ask for the URL if it’s already in Airtable.\n\nOnly call the sub-agent when scraping is clearly required.\n\nAlways pass required = property when triggering the sub-agent.\n\nBe concise, confident, and always cite the data source.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        520,
+        140
+      ],
+      "id": "ccc434a2-8e43-44c0-a3a8-f41ca0e92fcc",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        300,
+        440
+      ],
+      "id": "df550b29-be1a-406d-b66b-96239cf0eb99",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "0zsUHU0F8xKDAzoO",
+          "name": "OpenAi account 14"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        500,
+        500
+      ],
+      "id": "fd486e8b-e3b0-4df4-a2e8-a6f0647c4aab",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app8ZxWWESCmijmn6",
+          "mode": "list",
+          "cachedResultName": "Clients",
+          "cachedResultUrl": "https://airtable.com/app8ZxWWESCmijmn6"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblPgeJu0pUUnARnl",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/app8ZxWWESCmijmn6/tblPgeJu0pUUnARnl"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        680,
+        500
+      ],
+      "id": "7e277cca-8ec8-4916-aabf-a785c03f92a0",
+      "name": "Airtable2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "Xqd3dnjmT0zrv06m",
+          "name": "Airtable Personal Access Token account 6"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "ScrapeandRetrieveData",
+        "description": "Send the website, the prompt and the property to this tool and it will return information from the scrape within 30 seconds.",
+        "workflowId": {
+          "__rl": true,
+          "value": "YFbneVoDL3mdWI4V",
+          "mode": "list",
+          "cachedResultName": "subagent magic"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "website": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('website', ``, 'string') }}",
+            "prompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('prompt', ``, 'string') }}",
+            "property": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('property', ``, 'string') }}",
+            "required": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('required', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "prompt",
+              "displayName": "prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "property",
+              "displayName": "property",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "required",
+              "displayName": "required",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        900,
+        420
+      ],
+      "id": "be156320-b4ac-4c7e-b692-830c1e7b13c1",
+      "name": "Call n8n Workflow Tool"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Airtable Data": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer questions with a vector store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store1": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs": {
+      "main": [
+        [
+          {
+            "node": "Google Docs1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Google Docs4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI3": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store3",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader2": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store3",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter2": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader2",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs4": {
+      "main": [
+        [
+          {
+            "node": "Google Docs5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs5": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive1": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable1": {
+      "main": [
+        [
+          {
+            "node": "Format Airtable Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Airtable1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Google Docs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call n8n Workflow Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b5c4e254-7cba-4596-851e-8252257befc4",
+  "meta": {
+    "instanceId": "1ad5536c7c55ace0cd2d13b5ee509a9d5436e829bf5adf69ed3e58c359b43097"
+  },
+  "id": "JXdMpYEv2prSBlXM",
+  "tags": [
+    {
+      "createdAt": "2025-04-09T10:39:27.999Z",
+      "updatedAt": "2025-04-09T10:39:27.999Z",
+      "id": "C22lP7Wnkig81gDU",
+      "name": "knowledge base"
+    },
+    {
+      "createdAt": "2025-04-09T10:39:32.232Z",
+      "updatedAt": "2025-04-09T10:39:32.232Z",
+      "id": "Yop6w03Y9pO8sp4k",
+      "name": "chatbot"
+    }
+  ]
+}

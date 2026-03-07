@@ -1,0 +1,11 @@
+{
+  "industry insights": ["#IndustryNews", "#MarketTrends", "#BusinessInsights", "#Strategy", "#Innovation"],
+  "product updates": ["#ProductLaunch", "#NewFeatures", "#Update", "#Tech", "#Software"],
+  "team culture": ["#CompanyCulture", "#Teamwork", "#Workplace", "#EmployeeEngagement", "#HR"],
+  "customer stories": ["#CustomerSuccess", "#Testimonial", "#CaseStudy", "#ClientStory", "#Results"],
+  "thought leadership": ["#ThoughtLeadership", "#Expert", "#Insights", "#Leadership", "#BusinessStrategy"],
+  "how-to guides": ["#HowTo", "#Tutorial", "#Guide", "#Tips", "#BestPractices"],
+  "industry trends": ["#Trends", "#Future", "#Digital", "#Transformation", "#EmergingTech"],
+  "company news": ["#News", "#Announcement", "#Update", "#Business", "#Corporate"],
+  "general": ["#SocialMedia", "#Marketing", "#Business", "#Tech", "#Digital", "#Success", "#Growth", "#Entrepreneur"]
+}

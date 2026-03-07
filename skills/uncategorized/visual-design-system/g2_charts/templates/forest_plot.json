@@ -1,0 +1,78 @@
+{
+  "type": "forest_plot",
+  "description": "Meta-analysis forest plot with confidence intervals",
+  "data": [],
+  "marks": [
+    {
+      "type": "interval",
+      "encode": {
+        "x": "study",
+        "y": ["lower_ci", "upper_ci"],
+        "color": "#546e7a"
+      },
+      "style": {
+        "fillOpacity": 0.3,
+        "stroke": "#546e7a",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "type": "point",
+      "encode": {
+        "x": "study",
+        "y": "estimate",
+        "size": "weight",
+        "color": "#1e3a5f"
+      },
+      "style": {
+        "shape": "diamond",
+        "fillOpacity": 1
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "x": "study",
+        "y": ["lower_ci", "upper_ci"]
+      },
+      "style": {
+        "stroke": "#1e3a5f",
+        "strokeWidth": 2
+      }
+    }
+  ],
+  "scales": {
+    "y": {
+      "type": "log",
+      "domain": [0.3, 3],
+      "nice": true
+    },
+    "size": {
+      "type": "linear",
+      "range": [100, 400]
+    }
+  },
+  "coordinate": {
+    "type": "transpose"
+  },
+  "xAxis": {
+    "title": "Study"
+  },
+  "yAxis": {
+    "title": "Hazard Ratio (95% CI)"
+  },
+  "legend": false,
+  "annotations": [
+    {
+      "type": "line",
+      "encode": {
+        "x": 1,
+        "style": {
+          "stroke": "#c62828",
+          "strokeWidth": 2,
+          "lineDash": [4, 4]
+        }
+      }
+    }
+  ]
+}

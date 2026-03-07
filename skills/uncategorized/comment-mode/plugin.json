@@ -1,0 +1,12 @@
+{
+  "name": "comment-mode",
+  "version": "1.0.0",
+  "description": "Granular feedback on drafts without rewriting. Generates highlighted HTML with click-to-reveal inlin",
+  "author": {
+    "name": "Ship Shit Dev",
+    "email": "hello@shipshit.dev",
+    "url": "https://github.com/shipshitdev"
+  },
+  "license": "MIT",
+  "skills": "."
+}

@@ -1,0 +1,296 @@
+---
+name: jack-content-whatsapp-summary-prompt
+description: Analyzes a WhatsApp transcript and summarizes it into an engaging HTML report.
+version: 1.0.0
+author: Jack Roberts / AI Automations
+license: proprietary
+tags:
+  - whatsapp
+  - summary
+  - html
+  - automation
+  - chat
+triggers:
+  - when you need to summarize a whatsapp conversation
+  - when you want to extract key takeaways from whatsapp chats
+allowed-tools: []
+compatibility: openai
+metadata:
+  source: jack-school
+  lesson: 73
+  lesson_title: WhatsApp Automation That Saves Time & Makes Money!
+  difficulty: medium
+  category: content
+  tools_required:
+    - openai
+  estimated_setup_time: 15min
+  extracted_from:
+    - Whatsapp_Part_2.txt
+    - _Whatsapp_Report_Prompt_-_Google_Docs.txt
+    - "\U0001F4AC Whatsapp Report Prompt.txt"
+---
+
+# Content Whatsapp Summary Prompt
+
+## When to Use
+
+Use this skill when you need to:
+- when you need to summarize a whatsapp conversation
+- when you want to extract key takeaways from whatsapp chats
+
+## What This Does
+
+Analyzes a WhatsApp transcript and summarizes it into an engaging HTML report.
+
+## Workflow
+
+Instructions:
+You will receive a transcript of a WhatsApp conversation. Your task is to analyze, summarize, and present the content in an engaging, visually appealing format using HTML . Follow these steps carefully:
+
+
+Step 1: Overview Summary (Key Takeaways - 4 Max with Emojis)
+Provide a concise summary of the most important themes or outcomes from the conversation. Represent each takeaway concisely using emojis and brief descriptions. Ensure they are clear, actionable, and relevant to the discussion.
+Format:
+<h2 style="font-family: Avenir, sans-serif; color: #333;">Overview Summary</h2>
+<ul style="font-family: Avenir, sans-serif; line-height: 1.6;">
+ <li>🌟 [Key Takeaway 1]</li>
+ <li>🔑 [Key Takeaway 2]</li>
+ <li>💡 [Key Takeaway 3]</li>
+ <li>⚡ [Key Takeaway 4]</li>
+</ul>
+
+
+Step 2: General Updates/Points of Interest
+Summarize any general updates, announcements, or points of interest that don't fit into specific topics but are still worth noting. Use bullet points and include links if mentioned in the conversation (e.g., websites, articles, videos). Add as many updates as are relevant to the conversation.
+
+
+Format Example:
+<h2 style="font-family: Avenir, sans-serif; color: #333;">📢 General Updates/Points of Interest</h2>
+<ul style="font-family: Avenir, sans-serif; line-height: 1.6;">
+ <li><strong>Update 1:</strong> Brief description (<a href="#" style="color: #007BFF; text-decoration: none;">Link</a>).</li>
+ <li><strong>Update 2:</strong> Brief description (<a href="#" style="color: #007BFF; text-decoration: none;">Link</a>).</li>
+ <li><strong>Point of Interest:</strong> Something interesting shared by someone (<a href="#" style="color: #007BFF; text-decoration: none;">Link</a>).</li>
+</ul>
+
+
+Step 3: Make It Beautiful
+Use Avenir font throughout the output. Ensure the design is clean and professional with appropriate spacing, colors, and formatting. Links should be styled in blue (#007BFF) with no underline for a modern look. Keep paragraphs short and focused.
+
+
+Example HTML for output:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>WhatsApp Conversation Summary</title>
+ <style>
+ body {
+ font-family: Avenir, 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+ background-color: #f9fcff;
+ color: #333;
+ padding: 30px;
+ line-height: 1.6;
+ max-width: 900px;
+ margin: 0 auto;
+ }
+
+ .container {
+ background-color: white;
+ border-radius: 15px;
+ box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+ padding: 40px;
+ margin-top: 20px;
+ }
+
+ header {
+ text-align: center;
+ margin-bottom: 30px;
+ padding-bottom: 20px;
+ border-bottom: 1px solid #eaeef3;
+ }
+
+ header h1 {
+ color: #205375;
+ font-weight: 700;
+ font-size: 32px;
+ margin-bottom: 10px;
+ }
+
+ header p {
+ color: #6c757d;
+ font-size: 18px;
+ }
+
+ .date-container {
+ text-align: center;
+ margin-bottom: 30px;
+ }
+
+ .date-badge {
+ display: inline-block;
+ background-color: #f0f7ff;
+ color: #3a7bd5;
+ padding: 8px 20px;
+ border-radius: 50px;
+ font-size: 16px;
+ font-weight: 600;
+ }
+
+ h2 {
+ color: #205375;
+ margin: 35px 0 15px 0;
+ font-weight: 600;
+ font-size: 24px;
+ display: flex;
+ align-items: center;
+ }
+
+ h2::after {
+ content: "";
+ flex-grow: 1;
+ height: 1px;
+ background-color: #e9ecef;
+ margin-left: 15px;
+ }
+
+ ul {
+ list-style-type: none;
+ padding-left: 5px;
+ }
+
+ ul li {
+ position: relative;
+ padding: 12px 0 12px 35px;
+ margin-bottom: 5px;
+ }
+
+ ul li::before {
+ content: "";
+ position: absolute;
+ left: 0;
+ top: 16px;
+ height: 12px;
+ width: 12px;
+ border-radius: 50%;
+ background-color: #3a7bd5;
+ opacity: 0.7;
+ }
+
+ .summary-list li {
+ background-color: #f8f9fa;
+ border-radius: 8px;
+ padding: 15px 15px 15px 50px;
+ margin-bottom: 15px;
+ transition: transform 0.2s, box-shadow 0.2s;
+ }
+
+ .summary-list li:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+ }
+
+ .summary-list li::before {
+ content: attr(data-emoji);
+ position: absolute;
+ left: 15px;
+ top: 50%;
+ transform: translateY(-50%);
+ background: none;
+ height: auto;
+ width: auto;
+ font-size: 24px;
+ opacity: 1;
+ }
+
+ .updates-list li {
+ border-bottom: 1px solid #f0f0f0;
+ padding-bottom: 15px;
+ }
+
+ .updates-list li:last-child {
+ border-bottom: none;
+ }
+
+ a {
+ color: #007BFF;
+ text-decoration: none;
+ transition: color 0.2s;
+ font-weight: 500;
+ }
+
+ a:hover {
+ color: #0056b3;
+ text-decoration: underline;
+ }
+
+ .highlight {
+ background-color: #ffefd1;
+ padding: 0 3px;
+ border-radius: 3px;
+ }
+
+ strong {
+ color: #205375;
+ font-weight: 600;
+ }
+
+ footer {
+ text-align: center;
+ margin-top: 50px;
+ color: #6c757d;
+ font-size: 14px;
+ }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <!-- Header with Group Chat Name -->
+ <header>
+ <h1>[Group Chat Name]</h1>
+ <p>A concise overview of your group conversation</p>
+ </header>
+
+ <div class="date-container">
+ <div class="date-badge">📅 February 20, 2025</div>
+ </div>
+
+ <!-- Overview Summary -->
+ <h2>Overview Summary</h2>
+ <ul class="summary-list">
+ <li data-emoji="🌟">Finalized plans for Saturday dinner at 7 PM at La Pasta House.</li>
+ <li data-emoji="🔑">Agreed on splitting costs equally among 8 participants for all group activities.</li>
+ <li data-emoji="💡">Selected Italian restaurant after comparing three venues (<a href="#">Menu Link</a>).</li>
+ <li data-emoji="⚡">Resolved transportation with 2 carpools; drivers confirmed.</li>
+ </ul>
+
+ <!-- General Updates/Points of Interest -->
+ <h2>📢 General Updates/Points of Interest</h2>
+ <ul class="updates-list">
+ <li><strong>Event Reminder:</strong> Team planning meeting scheduled for tomorrow at 10 AM (<a href="#">Zoom Link</a>). Please prepare your quarterly reports.</li>
+ <li><strong>Interesting Article:</strong> Sarah shared research on successful team dynamics that might help with our project (<a href="#">Article Link</a>).</li>
+ <li><strong>Upcoming Deadline:</strong> All expense reports for the quarter must be submitted by Friday, February 22nd.</li>
+ <li><strong>Fun Activity:</strong> John proposed a team-building escape room challenge for next month. Current vote count: 7 yes, 2 undecided.</li>
+ <li><strong>New Tool:</strong> Marketing team recommended we try Notion for project management (<a href="#">Notion Template</a>).</li>
+ </ul>
+
+ <footer>
+ Generated on February 20, 2025 • WhatsApp Conversation Summary
+ </footer>
+ </div>
+</body>
+</html>
+
+## Configuration
+
+**Required tools/platforms:**
+- openai
+
+## Rules & Constraints
+
+- This skill is extracted from Jack Roberts' AI Automations course
+- Adapt prompts and workflows to your specific use case
+- Replace placeholder values (names, URLs, API keys) before use
+- Test in a staging environment before production deployment

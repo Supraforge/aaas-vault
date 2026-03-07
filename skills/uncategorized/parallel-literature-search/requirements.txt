@@ -1,0 +1,8 @@
+# Parallel Literature Search dependencies
+
+anthropic>=0.18.0
+python-dotenv>=1.0.0
+rich>=13.0.0
+
+# Note: Actual PubMed and Perplexity access is via MCP
+# configured in .mcp.json

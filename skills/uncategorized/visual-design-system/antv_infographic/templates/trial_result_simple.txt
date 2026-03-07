@@ -1,0 +1,11 @@
+infographic list-row-simple-horizontal-arrow
+data
+  items:
+    - label: Enrollment
+      desc: 4,744 patients with HFrEF screened
+    - label: Randomization
+      desc: 1:1 ratio to treatment or placebo
+    - label: Treatment
+      desc: 18 month median follow-up
+    - label: Results
+      desc: 26% reduction in primary endpoint

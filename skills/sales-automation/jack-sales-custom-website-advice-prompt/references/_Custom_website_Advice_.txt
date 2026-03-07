@@ -1,0 +1,125 @@
+📈 Custom website Advice 📈
+
+
+
+
+  
+
+
+
+Prompt 💎
+
+
+Create a persuasive 80-100 word video script for business outreach, adhering to the following strict guidelines:
+
+
+1. Start exactly with: "Hey there, it's Jack. I wanted to share one quick AI hack a lot of people in your industry are using."
+
+
+2. In the body of the script:
+   a. Reference at least two specific, factual observations about the recipient's website.
+   b. Based on the below information, share one AI automation concept that could help improve their sales or customer acquisition (for example, “I see that you’re targeting Small start-ups; many businesses are using AI to scrape instagram, Tik-Tok and Google to find leads”
+   c. Use a friendly, conversational tone suitable for spoken delivery.
+   d. Ensure smooth transitions between ideas.
+
+
+3. End exactly with: "If you’d like more info, I’m happy to help."
+
+
+4. Maintain a total word count between 80-100 words.
+
+
+5. Focus solely on the script content - do not include any introductions, explanations, or additional text.
+
+
+6. Ensure the script flows naturally when spoken aloud.
+
+
+7. Tailor the content to be relevant and valuable to the specific business based on their website information.
+
+
+8. Use persuasive language that encourages the recipient to consider your offer without being overly pushy.
+
+
+9. Make the language conversational and natural.
+
+
+10.  the total number of final words cannot exceed 100
+
+
+
+
+Combine the provided information about the recipient's website and your business services to create a compelling, personalized outreach script that follows all these requirements precisely.
+
+
+
+
+Details 🔥
+
+
+Overview of their website: {{20.textResponse}}
+
+
+
+
+The website: {{19.text}}
+
+
+
+
+Information about our business 👀
+Ways in which companies could save money/improve their business with AI:
+
+
+Automation Planet is a cutting-edge AI automation agency that specializes in optimizing processes, automating workflows, and elevating businesses through the power of artificial intelligence. Our team of experienced tech experts from diverse backgrounds, including fintech, crypto startups, design agencies, media giants, and blue-chip companies, is dedicated to helping businesses streamline their operations and focus on their core objectives.
+
+
+Services:
+
+
+1. AI-Driven 301 Redirect Mapping
+   - Utilize natural language processing (NLP) to accurately map web pages
+   - Increase accuracy and reduce the overall required time by up to 80%
+   - Example: Successfully mapped 10,000 URLs for a client's website migration, saving them 200 hours of manual work
+
+
+2. High-Volume Copy Generation
+   - Employ hybrid workflows that allow copywriters to interact with cutting-edge 'long short-term memory' neural networks and NLP
+   - Create large volumes of highly-crafted, SEO-friendly copy
+   - Example: Generated 500 product descriptions for an e-commerce client in just 2 days, a task that would have taken a human writer weeks to complete
+
+
+3. Intelligent Lead Generation and Qualification
+   - Develop custom chatbots and AI tools to efficiently generate and qualify leads
+   - Integrate with existing CRM systems for seamless lead management
+   - Example: Implemented an AI-powered chatbot for a B2B client, resulting in a 30% increase in qualified leads and a 20% reduction in lead response time
+
+
+4. CRM Automation
+   - Automate lead assignment, follow-ups, and data entry tasks
+   - Optimize lead management processes for improved efficiency and effectiveness
+   - Example: Automated the lead assignment process for a sales team, reducing manual effort by 80% and increasing lead conversion rates by 15%
+
+
+5. Sales Funnel Optimization
+   - Design and oversee result-oriented sales funnels
+   - Monitor performance and make data-driven optimizations for maximum efficiency
+   - Example: Restructured a client's sales funnel using AI-driven insights, resulting in a 25% increase in conversion rates and a 40% reduction in customer acquisition costs
+
+
+6. Predictive Analytics
+   - Leverage AI and machine learning to analyze customer data and make accurate predictions
+   - Identify high-value opportunities and potential risks for proactive decision-making
+   - Example: Developed a predictive model for a retail client, accurately forecasting demand for key products and optimizing inventory management, leading to a 20% reduction in stockouts and a 15% increase in revenue
+
+
+7. Workflow Automation
+   - Identify and automate repetitive tasks across various departments
+   - Streamline processes and reduce manual effort, allowing teams to focus on high-value activities
+   - Example: Automated the expense reporting process for a client's finance department, reducing processing time by 70% and eliminating errors associated with manual data entry
+
+
+At Automation Planet, we are committed to helping businesses harness the power of AI and automation to optimize their processes, automate workflows, and elevate their performance. Our tailored solutions are designed to address the unique needs of each client, ensuring maximum efficiency and measurable results.
+
+
+Displaying b056325636174795aa1796bb5a8c5f691e037765e59e46c28da429d7d3fc3dbe.

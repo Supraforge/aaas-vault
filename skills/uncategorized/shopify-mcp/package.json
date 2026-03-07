@@ -1,0 +1,22 @@
+{
+  "name": "shopify-mcp",
+  "version": "1.0.0",
+  "description": "Shopify MCP integration for e-commerce automation",
+  "main": "scripts/shopify_mcp_server.js",
+  "scripts": {
+    "start": "node scripts/shopify_mcp_server.js",
+    "test": "bash test.sh",
+    "products": "python3 scripts/shopify_products.py",
+    "orders": "python3 scripts/shopify_orders.py",
+    "analytics": "python3 scripts/shopify_analytics.py"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "shopify-api-node": "^3.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

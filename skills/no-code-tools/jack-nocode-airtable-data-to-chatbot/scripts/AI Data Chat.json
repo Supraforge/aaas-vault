@@ -1,0 +1,726 @@
+{
+    "name": "AI Data chat",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 807338,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -263,
+                    "y": -38
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "label": "AI Data Chat",
+                            "data": {
+                                "editable": "true"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818
+            },
+            "mapper": {
+                "base": "appDXvlJNmcQDpd7K",
+                "useColumnId": false,
+                "table": "tbljjRKkdulIJb08s",
+                "maxRecords": "100",
+                "fields": [
+                    "Month 📆",
+                    "Sales 💸",
+                    "Churn 📉",
+                    "Subscribers 🤩"
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 37,
+                    "y": -38
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "Bobby Tanks 🎽"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "Table 1"
+                        },
+                        "sort": {
+                            "mode": "chose"
+                        },
+                        "view": {
+                            "mode": "chose",
+                            "label": "Empty"
+                        },
+                        "fields": {
+                            "mode": "chose",
+                            "label": [
+                                "Month 📆",
+                                "Sales 💸",
+                                "Churn 📉",
+                                "Subscribers 🤩"
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "array",
+                        "label": "Sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "options": [],
+                                "dynamic": true
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "label": "Total number of bundles",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "label": "Bundle order position",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Month 📆",
+                        "label": "Month 📆",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Sales 💸",
+                        "label": "Sales 💸",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Churn 📉",
+                        "label": "Churn 📉",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Subscribers 🤩",
+                        "label": "Subscribers 🤩",
+                        "type": "text",
+                        "multiline": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 2
+            },
+            "mapper": {
+                "Month 📆": "{{2.`Month 📆`}}",
+                "Sales 💸": "{{2.`Sales 💸`}}",
+                "Churn 📉": "{{2.`Churn 📉`}}",
+                "Subscribers 🤩": "{{2.`Subscribers 🤩`}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 337,
+                    "y": -38
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Airtable - Search Records [2]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 4,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "rowSeparator": "",
+                "feeder": 3
+            },
+            "mapper": {
+                "value": "Month: {{3.array[0].`Month 📆`}}\nSales: {{3.array[0].`Sales 💸`}}\nChurn {{3.array[0].`Churn 📉`}}\nSubscribers: {{3.array[0].`Subscribers 🤩`}}\n\nMonth: {{3.array[1].`Month 📆`}}\nSales: {{3.array[1].`Sales 💸`}}\nChurn {{3.array[1].`Churn 📉`}}\nSubscribers: {{3.array[1].`Subscribers 🤩`}}\n\nMonth: {{3.array[2].`Month 📆`}}\nSales: {{3.array[2].`Sales 💸`}}\nChurn {{3.array[2].`Churn 📉`}}\nSubscribers: {{3.array[2].`Subscribers 🤩`}}\n\nMonth: {{3.array[3].`Month 📆`}}\nSales: {{3.array[3].`Sales 💸`}}\nChurn {{3.array[3].`Churn 📉`}}\nSubscribers: {{3.array[3].`Subscribers 🤩`}}\n\nMonth: {{3.array[4].`Month 📆`}}\nSales: {{3.array[4].`Sales 💸`}}\nChurn {{3.array[4].`Churn 📉`}}\nSubscribers: {{3.array[4].`Subscribers 🤩`}}\n\nMonth: {{3.array[5].`Month 📆`}}\nSales: {{3.array[5].`Sales 💸`}}\nChurn {{3.array[5].`Churn 📉`}}\nSubscribers: {{3.array[5].`Subscribers 🤩`}}\n\nMonth: {{3.array[6].`Month 📆`}}\nSales: {{3.array[6].`Sales 💸`}}\nChurn {{3.array[6].`Churn 📉`}}\nSubscribers: {{3.array[6].`Subscribers 🤩`}}\n\nMonth: {{3.array[7].`Month 📆`}}\nSales: {{3.array[7].`Sales 💸`}}\nChurn {{3.array[7].`Churn 📉`}}\nSubscribers: {{3.array[7].`Subscribers 🤩`}}\n\nMonth: {{3.array[8].`Month 📆`}}\nSales: {{3.array[8].`Sales 💸`}}\nChurn {{3.array[8].`Churn 📉`}}\nSubscribers: {{3.array[8].`Subscribers 🤩`}}\n\nMonth: {{3.array[9].`Month 📆`}}\nSales: {{3.array[9].`Sales 💸`}}\nChurn {{3.array[9].`Churn 📉`}}\nSubscribers: {{3.array[9].`Subscribers 🤩`}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 637,
+                    "y": -38
+                },
+                "restore": {
+                    "parameters": {
+                        "rowSeparator": {
+                            "label": "Empty"
+                        }
+                    },
+                    "extra": {
+                        "feeder": {
+                            "label": "Array aggregator [3]"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "rowSeparator",
+                        "type": "select",
+                        "label": "Row separator",
+                        "validate": {
+                            "enum": [
+                                "\n",
+                                "\t",
+                                "other"
+                            ]
+                        }
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "value",
+                        "type": "text",
+                        "label": "Text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "module": "openai-gpt-3:CreateCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1425946
+            },
+            "mapper": {
+                "select": "chat",
+                "max_tokens": "0",
+                "temperature": "1",
+                "top_p": "1",
+                "n_completions": "1",
+                "response_format": "text",
+                "model": "gpt-4o",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": "You are a highly knowledgeable and friendly chatbot named \"DataExpert,\" designed to help clients understand their business data and make better decisions.\n\nYou have access to all business data, including sales, churn, and subscriber information. You also have access to any files the client has attached for review. Your goal is to provide insights and support based on the client's data and inquiries. Here's how you should proceed:\n\nGreet the User:\nStart with a friendly greeting. Acknowledge any previous interactions if applicable.\n\nExample: \"Hello! Welcome back! How can I assist you with your business data today?\"\n\nUnderstand User Needs:\nAsk questions to understand the client's specific requirements. Consider factors such as the type of data they need help with, the decisions they are trying to make, and any specific metrics they are focusing on.\n\nExample: \"Could you please tell me what specific data you need help with today? Are you looking to understand your sales trends, churn rates, or subscriber growth?\"\n\nProvide Insights and Recommendations:\nBased on the client's input and the data available, provide insights and recommendations. Highlight key findings, trends, and any notable metrics.\n\nExample: \"Based on the sales data for the last quarter, there is a noticeable upward trend in your product sales. However, there is also an increase in churn rate. I recommend focusing on customer retention strategies to balance this.\"\n\nAnswer Questions:\nBe ready to answer any specific questions the client may have about their data, such as interpreting specific metrics, trends, or anomalies.\n\nExample: \"The increase in churn rate this month is primarily from the North region. It might be beneficial to investigate any regional factors that could be contributing to this.\"\n\nEncourage User Interaction:\nPrompt the client to ask more questions or provide additional details.\n\nExample: \"Is there anything else you’d like to know about your business data? Or perhaps you need insights on a different aspect?\"\n\nClose the Conversation:\nEnd the conversation with a friendly note and an invitation to return if they need further assistance.\n\nExample: \"I hope these insights help you make informed decisions! Feel free to reach out if you have any more questions. Have a great day!\"\n\nYou will be provided with a conversation. You must reply to the latest message within that conversation.\n\nYour task is to help and chat with the user, with the ultimate objective of providing data-driven insights and recommendations.\n\nRemove all occurrences of asterisks (), stars (), and hashes (#) from the text. Leave all other characters and formatting intact. This should be applied to the entire output, including any lists, headings, or emphasized text. Ensure that the meaning and structure of the content remains clear without these symbols.\n\nBusiness Data: {{4.text}}\n\nThis is the conversation between you and the user, please respond to the latest message here:\n\n{{1.messages[0]}}\n{{1.messages[1]}}\n{{1.messages[2]}}\n{{1.messages[3]}}\n{{1.messages[4]}}\n{{1.messages[5]}}\n{{1.messages[6]}}\n{{1.messages[7]}}\n{{1.messages[8]}}\n{{1.messages[9]}}\n{{1.messages[10]}}\n{{1.messages[11]}}\n{{1.messages[12]}}\n{{1.messages[13]}}\n{{1.messages[14]}}\n{{1.messages[15]}}\n{{1.messages[16]}}\n{{1.messages[17]}}\n{{1.messages[18]}}\n{{1.messages[19]}}\n{{1.messages[20]}}\n{{1.messages[21]}}\n{{1.messages[22]}}\n{{1.messages[23]}}\n{{1.messages[24]}}\n{{1.messages[25]}}\n{{1.messages[26]}}\n{{1.messages[27]}}\n{{1.messages[28]}}\n{{1.messages[29]}}\n{{1.messages[30]}}\n{{1.messages[31]}}\n{{1.messages[32]}}\n{{1.messages[33]}}\n{{1.messages[34]}}\n{{1.messages[35]}}\n{{1.messages[36]}}\n{{1.messages[37]}}\n{{1.messages[38]}}\n{{1.messages[39]}}\n{{1.messages[40]}}\n{{1.messages[41]}}\n{{1.messages[42]}}\n{{1.messages[43]}}\n{{1.messages[44]}}\n{{1.messages[45]}}\n{{1.messages[46]}}\n{{1.messages[47]}}\n{{1.messages[48]}}\n{{1.messages[49]}}\n{{1.messages[50]}}\n{{1.messages[51]}}\n{{1.messages[52]}}\n{{1.messages[53]}}\n{{1.messages[54]}}\n{{1.messages[55]}}\n{{1.messages[56]}}\n{{1.messages[57]}}\n{{1.messages[58]}}\n{{1.messages[59]}}\n{{1.messages[60]}}\n{{1.messages[61]}}\n{{1.messages[62]}}\n{{1.messages[63]}}\n{{1.messages[64]}}\n{{1.messages[65]}}\n{{1.messages[66]}}\n{{1.messages[67]}}\n{{1.messages[68]}}\n{{1.messages[69]}}\n{{1.messages[70]}}\n{{1.messages[71]}}\n{{1.messages[72]}}\n{{1.messages[73]}}\n{{1.messages[74]}}\n{{1.messages[75]}}\n{{1.messages[76]}}\n{{1.messages[77]}}\n{{1.messages[78]}}\n{{1.messages[79]}}\n"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 940,
+                    "y": -44,
+                    "name": "AI Data Brain 🧠"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My OpenAI connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "openai-gpt-3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "select": {
+                            "label": "Create a Chat Completion (GPT Models)"
+                        },
+                        "logit_bias": {
+                            "mode": "chose"
+                        },
+                        "response_format": {
+                            "mode": "chose",
+                            "label": "Text"
+                        },
+                        "stop": {
+                            "mode": "chose"
+                        },
+                        "additionalParameters": {
+                            "mode": "chose"
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "gpt-4o (system)"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:openai-gpt-3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Select Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "chat",
+                                "prompt"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "number",
+                        "label": "Max Tokens",
+                        "required": true
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "n_completions",
+                        "type": "number",
+                        "label": "Number"
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "logit_bias",
+                        "type": "array",
+                        "label": "Token Probability",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "token",
+                                    "type": "text",
+                                    "label": "Token ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "probability",
+                                    "type": "number",
+                                    "label": "Probability",
+                                    "required": true,
+                                    "validate": {
+                                        "max": 100,
+                                        "min": -100
+                                    }
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Token Probability",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "response_format",
+                        "type": "select",
+                        "label": "Response Format",
+                        "validate": {
+                            "enum": [
+                                "text",
+                                "json_object"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "stop",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "validate": {
+                            "maxItems": 4
+                        },
+                        "spec": {
+                            "type": "text",
+                            "label": "Stop Sequence",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "additionalParameters",
+                        "type": "array",
+                        "label": "Other Input Parameters",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "key",
+                                    "type": "text",
+                                    "label": "Parameter Name",
+                                    "required": true
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "select",
+                                    "label": "Input Type",
+                                    "options": [
+                                        {
+                                            "label": "Text",
+                                            "value": "text",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ],
+                                            "default": true
+                                        },
+                                        {
+                                            "label": "Number",
+                                            "value": "number",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "number",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "boolean",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "boolean",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date",
+                                            "value": "date",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "date",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Any",
+                                            "value": "any",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "any",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Input Parameter",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": [
+                                        {
+                                            "label": "System",
+                                            "value": "system"
+                                        },
+                                        {
+                                            "label": "User",
+                                            "value": "user"
+                                        },
+                                        {
+                                            "label": "Assistant",
+                                            "value": "assistant"
+                                        }
+                                    ],
+                                    "required": true
+                                },
+                                {
+                                    "name": "content",
+                                    "type": "text",
+                                    "label": "Message Content"
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message",
+                            "name": "value"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "module": "gateway:WebhookRespond",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "status": "200",
+                "body": "{{5.result}}",
+                "headers": []
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1240,
+                    "y": -44
+                },
+                "restore": {
+                    "expect": {
+                        "headers": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "status",
+                        "type": "uinteger",
+                        "label": "Status",
+                        "validate": {
+                            "min": 100
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "type": "any",
+                        "label": "Body"
+                    },
+                    {
+                        "name": "headers",
+                        "type": "array",
+                        "label": "Custom headers",
+                        "validate": {
+                            "maxItems": 16
+                        },
+                        "spec": [
+                            {
+                                "name": "key",
+                                "label": "Key",
+                                "type": "text",
+                                "required": true,
+                                "validate": {
+                                    "max": 256
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "label": "Value",
+                                "type": "text",
+                                "required": true,
+                                "validate": {
+                                    "max": 4096
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

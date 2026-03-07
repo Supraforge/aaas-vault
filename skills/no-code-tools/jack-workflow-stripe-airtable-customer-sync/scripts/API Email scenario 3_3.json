@@ -1,0 +1,324 @@
+{
+    "name": "API Email scenario 3/3",
+    "flow": [
+        {
+            "id": 1,
+            "module": "airtable:TriggerWatchRecords",
+            "version": 3,
+            "parameters": {
+                "base": "appDhY6aNMXDA11hW",
+                "view": "",
+                "table": "tblNl2QjyTC0uvjmQ",
+                "config": {
+                    "labelField": "Last modified time",
+                    "triggerField": "Last modified time"
+                },
+                "formula": "",
+                "maxRecords": 10,
+                "__IMTCONN__": 1532818,
+                "useColumnId": false
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -266,
+                    "y": -3
+                },
+                "restore": {
+                    "parameters": {
+                        "base": {
+                            "label": "Customer Database YouTube 📈"
+                        },
+                        "view": {
+                            "label": "Empty"
+                        },
+                        "table": {
+                            "label": "Table 1"
+                        },
+                        "config": {
+                            "nested": {
+                                "labelField": {
+                                    "label": "Last modified time"
+                                },
+                                "triggerField": {
+                                    "label": "Last modified time"
+                                }
+                            }
+                        },
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "config",
+                        "spec": [
+                            {
+                                "name": "triggerField",
+                                "type": "select",
+                                "label": "Trigger field",
+                                "required": true
+                            },
+                            {
+                                "name": "triggerField",
+                                "type": "hidden"
+                            },
+                            {
+                                "name": "labelField",
+                                "type": "select",
+                                "label": "Label field",
+                                "required": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Trigger configuration"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Name",
+                        "type": "text",
+                        "label": "Name"
+                    },
+                    {
+                        "name": "Email 📧",
+                        "type": "text",
+                        "label": "Email 📧",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Unique ID 🆔",
+                        "type": "text",
+                        "label": "Unique ID 🆔"
+                    },
+                    {
+                        "name": "Membership Status 🟢🔴",
+                        "type": "text",
+                        "label": "Membership Status 🟢🔴"
+                    },
+                    {
+                        "name": "created time",
+                        "type": "date",
+                        "label": "created time"
+                    },
+                    {
+                        "name": "Last modified time",
+                        "type": "date",
+                        "label": "Last modified time"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "google-email:ActionSendEmail",
+            "version": 2,
+            "parameters": {
+                "account": 1480479
+            },
+            "mapper": {
+                "from": "",
+                "to": [
+                    "{{1.`Email 📧`}}"
+                ],
+                "subject": "Your API Key",
+                "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Your API Code</title>\n    <style>\n        body {\n            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;\n            line-height: 1.6;\n            color: #333;\n            max-width: 600px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #f4f4f4;\n        }\n        .container {\n            background-color: #ffffff;\n            border-radius: 8px;\n            padding: 30px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n        h1 {\n            color: #2c3e50;\n            font-size: 24px;\n            margin-bottom: 20px;\n        }\n        .code {\n            background-color: #e9f5ff;\n            border: 1px solid #b3d4fc;\n            border-radius: 4px;\n            padding: 10px 15px;\n            font-family: monospace;\n            font-size: 18px;\n            margin: 20px 0;\n        }\n        .instructions {\n            margin-top: 20px;\n            font-size: 16px;\n        }\n        .button {\n            display: inline-block;\n            background-color: #3498db;\n            color: #ffffff;\n            text-decoration: none;\n            padding: 10px 20px;\n            border-radius: 4px;\n            margin-top: 20px;\n            cursor: pointer;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>🚀 Your API adventure begins here!</h1>\n        <p>Great news! Your API code is ready to power up your experience. Here it is:</p>\n        <div class=\"code\">\n            {{1.`Unique ID 🆔`}}\n        </div>\n        <div class=\"instructions\">\n            <p>Follow these simple steps to get started:</p>\n            <ol>\n                <li>Fire up Google Chrome (it's our browser of choice for the best experience)</li>\n                <li>Navigate to our API key entry page</li>\n                <li>Copy and paste your shiny new API key into the designated field</li>\n                <li>Hit that 'Submit' button with confidence</li>\n                <li>Sit back, relax, and enjoy the magic! 🎉</li>\n            </ol>\n        </div>\n        <a href=\"#\" class=\"button\" id=\"launchChromeBtn\">Launch Chrome</a>\n    </div>\n\n    <script>\n        document.getElementById('launchChromeBtn').addEventListener('click', function(e) {\n            e.preventDefault();\n            // Attempt to launch Chrome\n            window.location.href = 'googlechrome://';\n            \n            // Fallback: If Chrome doesn't launch after a short delay, open a new tab\n            setTimeout(function() {\n                window.open('https://www.google.com', '_blank');\n            }, 1000);\n        });\n    </script>\n</body>\n</html>",
+                "attachments": [],
+                "cc": [],
+                "bcc": []
+            },
+            "metadata": {
+                "designer": {
+                    "x": 34,
+                    "y": -3
+                },
+                "restore": {
+                    "parameters": {
+                        "account": {
+                            "label": "My Google Restricted connection (jack@aiautomationswithjack.com)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google-restricted"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "to": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "attachments": {
+                            "mode": "chose"
+                        },
+                        "cc": {
+                            "mode": "chose"
+                        },
+                        "bcc": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "account",
+                        "type": "account:google-restricted",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "from",
+                        "type": "text",
+                        "label": "From"
+                    },
+                    {
+                        "name": "to",
+                        "type": "array",
+                        "label": "To",
+                        "required": true,
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address",
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "subject",
+                        "type": "text",
+                        "label": "Subject"
+                    },
+                    {
+                        "name": "html",
+                        "type": "text",
+                        "label": "Content"
+                    },
+                    {
+                        "name": "attachments",
+                        "type": "array",
+                        "label": "Attachments",
+                        "spec": [
+                            {
+                                "name": "fileName",
+                                "label": "File name",
+                                "type": "filename",
+                                "required": true,
+                                "semantic": "file:name"
+                            },
+                            {
+                                "name": "data",
+                                "label": "Data",
+                                "type": "buffer",
+                                "required": true,
+                                "semantic": "file:data"
+                            },
+                            {
+                                "name": "cid",
+                                "label": "Content-ID",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "cc",
+                        "type": "array",
+                        "label": "Copy recipient",
+                        "spec": {
+                            "type": "email",
+                            "label": "Email address",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "bcc",
+                        "type": "array",
+                        "label": "Blind copy recipient",
+                        "spec": {
+                            "type": "email",
+                            "label": "Email address",
+                            "name": "value"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

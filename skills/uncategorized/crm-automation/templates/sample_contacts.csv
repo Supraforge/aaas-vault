@@ -1,0 +1,6 @@
+email,first_name,last_name,company,phone,tags
+john.doe@example.com,John,Doe,Acme Inc,555-123-4567,lead,customer
+jane.smith@company.com,Jane,Smith,Big Corp,555-987-6543,prospect
+bob.johnson@gmail.com,Bob,Johnson,Startup LLC,555-456-7890,lead
+sarah.williams@enterprise.com,Sarah,Williams,Enterprise Co,555-789-0123,customer
+mike.brown@tech.com,Mike,Brown,Tech Solutions,555-234-5678,prospect,hot_lead

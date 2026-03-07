@@ -1,0 +1,36 @@
+{
+  "description": "Example batch carousel generation",
+  "carousels": [
+    {
+      "topic": "GLP-1 for weight loss",
+      "template": "tips_5",
+      "account": 1,
+      "both_ratios": true,
+      "use_ai": false
+    },
+    {
+      "topic": "Statin myths debunked",
+      "template": "myth_busting",
+      "account": 1,
+      "ratio": "4:5"
+    },
+    {
+      "topic": "SGLT2 inhibitor benefits",
+      "template": "data_driven",
+      "account": 2,
+      "both_ratios": false
+    },
+    {
+      "topic": "Blood pressure control tips",
+      "template": "tips_5",
+      "account": 1,
+      "check_quality": true
+    },
+    {
+      "topic": "CAC scoring explained",
+      "template": "how_to",
+      "account": 2,
+      "ratio": "1:1"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "topic": "GLP-1 weight loss",
+  "template": "tips_5",
+  "framework": "actionable",
+  "slide_count": 8,
+  "created": "2026-01-01T12:21:04.914478",
+  "slides": [
+    {
+      "number": 1,
+      "type": "hook",
+      "title": "GLP-1s: not just for weight loss anymore",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 2,
+      "type": "tips",
+      "title": "Tip #1",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 3,
+      "type": "tips",
+      "title": "Tip #2",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 4,
+      "type": "tips",
+      "title": "Tip #3",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 5,
+      "type": "tips",
+      "title": "Tip #4",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 6,
+      "type": "tips",
+      "title": "Tip #5",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 7,
+      "type": "stats",
+      "title": null,
+      "myth": null,
+      "truth": null,
+      "statistic": "15%",
+      "stat_label": "average weight loss with semaglutide 2.4mg"
+    },
+    {
+      "number": 8,
+      "type": "cta",
+      "title": null,
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    }
+  ]
+}

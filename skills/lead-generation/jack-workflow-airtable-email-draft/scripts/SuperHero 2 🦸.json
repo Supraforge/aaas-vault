@@ -1,0 +1,530 @@
+{
+    "name": "Superhero Part 2",
+    "flow": [
+        {
+            "id": 1,
+            "module": "airtable:TriggerWatchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818,
+                "base": "app5SqgP9iR88Swkg",
+                "useColumnId": false,
+                "table": "tblVh9iatyhbQWDFd",
+                "config": {
+                    "triggerField": "Last Modified",
+                    "labelField": "Image URL 🔗"
+                },
+                "maxRecords": 100,
+                "view": "",
+                "formula": ""
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -414,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        },
+                        "base": {
+                            "label": "SuperHero Outreach 🦸‍♂️"
+                        },
+                        "table": {
+                            "label": "Table 1"
+                        },
+                        "config": {
+                            "nested": {
+                                "triggerField": {
+                                    "label": "Last Modified"
+                                },
+                                "labelField": {
+                                    "label": "Image URL 🔗"
+                                }
+                            }
+                        },
+                        "view": {
+                            "label": "Empty"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "config",
+                        "type": "collection",
+                        "label": "Trigger configuration",
+                        "spec": [
+                            {
+                                "name": "triggerField",
+                                "type": "select",
+                                "label": "Trigger field",
+                                "required": true
+                            },
+                            {
+                                "name": "triggerField",
+                                "type": "hidden"
+                            },
+                            {
+                                "name": "labelField",
+                                "type": "select",
+                                "label": "Label field",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Business 💼",
+                        "label": "Business 💼",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Business Description",
+                        "label": "Business Description",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Image URL 🔗",
+                        "label": "Image URL 🔗",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Status",
+                        "label": "Status",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Created Time",
+                        "label": "Created Time",
+                        "type": "date"
+                    },
+                    {
+                        "name": "Last Modified",
+                        "label": "Last Modified",
+                        "type": "date"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": [
+                [
+                    {
+                        "id": 5,
+                        "module": "airtable:TriggerWatchRecords",
+                        "version": 3,
+                        "parameters": {
+                            "__IMTCONN__": 1532818,
+                            "base": "app5SqgP9iR88Swkg",
+                            "useColumnId": false,
+                            "table": "tblVh9iatyhbQWDFd",
+                            "config": {
+                                "triggerField": "Last Modified",
+                                "labelField": "Business 💼"
+                            },
+                            "maxRecords": 10,
+                            "view": "",
+                            "formula": ""
+                        },
+                        "mapper": {},
+                        "metadata": {
+                            "designer": {
+                                "x": -208,
+                                "y": -7,
+                                "messages": [
+                                    {
+                                        "category": "link",
+                                        "severity": "warning",
+                                        "message": "A trigger must be the first module in a scenario."
+                                    }
+                                ]
+                            },
+                            "restore": {
+                                "parameters": {
+                                    "__IMTCONN__": {
+                                        "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                                        "data": {
+                                            "scoped": "true",
+                                            "connection": "airtable3"
+                                        }
+                                    },
+                                    "base": {
+                                        "label": "SuperHero Outreach 🦸‍♂️"
+                                    },
+                                    "table": {
+                                        "label": "Table 1"
+                                    },
+                                    "config": {
+                                        "nested": {
+                                            "triggerField": {
+                                                "label": "Last Modified"
+                                            },
+                                            "labelField": {
+                                                "label": "Business 💼"
+                                            }
+                                        }
+                                    },
+                                    "view": {
+                                        "label": "Empty"
+                                    }
+                                }
+                            },
+                            "parameters": [
+                                {
+                                    "name": "__IMTCONN__",
+                                    "type": "account:airtable3,airtable2",
+                                    "label": "Connection",
+                                    "required": true
+                                },
+                                {
+                                    "name": "base",
+                                    "type": "select",
+                                    "label": "Base",
+                                    "required": true
+                                },
+                                {
+                                    "name": "useColumnId",
+                                    "type": "boolean",
+                                    "label": "Use Column ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "table",
+                                    "type": "select",
+                                    "label": "Table",
+                                    "required": true
+                                },
+                                {
+                                    "name": "config",
+                                    "type": "collection",
+                                    "label": "Trigger configuration",
+                                    "spec": [
+                                        {
+                                            "name": "triggerField",
+                                            "type": "select",
+                                            "label": "Trigger field",
+                                            "required": true
+                                        },
+                                        {
+                                            "name": "triggerField",
+                                            "type": "hidden"
+                                        },
+                                        {
+                                            "name": "labelField",
+                                            "type": "select",
+                                            "label": "Label field",
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "maxRecords",
+                                    "type": "integer",
+                                    "label": "Limit",
+                                    "required": true
+                                },
+                                {
+                                    "name": "view",
+                                    "type": "select",
+                                    "label": "View"
+                                },
+                                {
+                                    "name": "formula",
+                                    "type": "text",
+                                    "label": "Formula"
+                                }
+                            ],
+                            "interface": [
+                                {
+                                    "name": "id",
+                                    "type": "text",
+                                    "label": "ID"
+                                },
+                                {
+                                    "name": "createdTime",
+                                    "type": "date",
+                                    "label": "Created Time"
+                                },
+                                {
+                                    "name": "Business 💼",
+                                    "label": "Business 💼",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Business Description",
+                                    "label": "Business Description",
+                                    "type": "text",
+                                    "multiline": true
+                                },
+                                {
+                                    "name": "Email 📧",
+                                    "label": "Email 📧",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Image URL 🔗",
+                                    "label": "Image URL 🔗",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Status",
+                                    "label": "Status",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Created Time",
+                                    "label": "Created Time",
+                                    "type": "date"
+                                },
+                                {
+                                    "name": "Last Modified",
+                                    "label": "Last Modified",
+                                    "type": "date"
+                                }
+                            ]
+                        },
+                        "data": {
+                            "epoch": {
+                                "date": "2024-08-22T14:06:39.027Z"
+                            }
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "module": "google-email:ActionCreateDraft",
+                        "version": 2,
+                        "parameters": {
+                            "account": 2604341
+                        },
+                        "filter": {
+                            "name": "Approved 👍",
+                            "conditions": [
+                                [
+                                    {
+                                        "a": "{{1.Status}}",
+                                        "o": "text:contain:ci",
+                                        "b": "approved"
+                                    }
+                                ]
+                            ]
+                        },
+                        "mapper": {
+                            "folder": "[Gmail]/Drafts",
+                            "to": [
+                                "test@test.com"
+                            ],
+                            "subject": "Check out this picture of us...",
+                            "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Email from Jack</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n            color: #333;\n            max-width: 600px;\n            margin: 0 auto;\n            padding: 20px;\n        }\n        .container {\n            background-color: #f9f9f9;\n            border-radius: 5px;\n            padding: 20px;\n        }\n        .signature {\n            margin-top: 20px;\n        }\n        .ps {\n            margin-top: 0;\n            font-weight: bold;\n        }\n        .inline-image {\n            max-width: 100%;\n            height: auto;\n            margin: 20px 0;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <p>Hey there,</p>\n\n        <p>You're probably wondering why the hell I sent you this.</p>\n\n        <p>Two reasons.</p>\n\n        <ol>\n            <li>I know you get messages like this all of the time, and I wanted to make you chuckle</li>\n            <li>I can totally picture us working together</li>\n        </ol>\n\n        <img src=\"{{1.`Image URL 🔗`}}\" alt=\"Inline Image\" class=\"inline-image\">\n\n        <p>I checked out your website and funnel, I think you could increase conversions by 20% by doing X.</p>\n\n        <p>We did the same for Y.</p>\n\n        <div class=\"signature\">\n            Best,<br>\n            Jack\n            <p class=\"ps\">PS - let me know if that's interesting and I'll send a 30 second Loom showing you how</p>\n        </div>\n    </div>\n</body>\n</html>",
+                            "attachments": [],
+                            "cc": [],
+                            "bcc": []
+                        },
+                        "metadata": {
+                            "designer": {
+                                "x": 235,
+                                "y": -6,
+                                "messages": [
+                                    {
+                                        "category": "reference",
+                                        "severity": "warning",
+                                        "message": "Referenced module 'Airtable - Watch Records' [1] is not accessible."
+                                    }
+                                ]
+                            },
+                            "restore": {
+                                "parameters": {
+                                    "account": {
+                                        "label": "My Google Restricted connection (jack@aiautomationswithjack.com)",
+                                        "data": {
+                                            "scoped": "true",
+                                            "connection": "google-restricted"
+                                        }
+                                    }
+                                },
+                                "expect": {
+                                    "folder": {
+                                        "mode": "chose",
+                                        "path": [
+                                            "Drafts",
+                                            "Drafts"
+                                        ]
+                                    },
+                                    "to": {
+                                        "mode": "chose",
+                                        "items": [
+                                            null
+                                        ]
+                                    },
+                                    "attachments": {
+                                        "mode": "chose"
+                                    },
+                                    "cc": {
+                                        "mode": "chose"
+                                    },
+                                    "bcc": {
+                                        "mode": "chose"
+                                    }
+                                }
+                            },
+                            "parameters": [
+                                {
+                                    "name": "account",
+                                    "type": "account:google-restricted",
+                                    "label": "Connection",
+                                    "required": true
+                                }
+                            ],
+                            "expect": [
+                                {
+                                    "name": "folder",
+                                    "type": "folder",
+                                    "label": "Folder",
+                                    "required": true
+                                },
+                                {
+                                    "name": "to",
+                                    "type": "array",
+                                    "label": "To",
+                                    "spec": {
+                                        "name": "value",
+                                        "type": "email",
+                                        "label": "Email address",
+                                        "required": true
+                                    }
+                                },
+                                {
+                                    "name": "subject",
+                                    "type": "text",
+                                    "label": "Subject"
+                                },
+                                {
+                                    "name": "html",
+                                    "type": "text",
+                                    "label": "Content"
+                                },
+                                {
+                                    "name": "attachments",
+                                    "type": "array",
+                                    "label": "Attachments",
+                                    "spec": [
+                                        {
+                                            "name": "fileName",
+                                            "label": "File name",
+                                            "type": "filename",
+                                            "required": true,
+                                            "semantic": "file:name"
+                                        },
+                                        {
+                                            "name": "data",
+                                            "label": "Data",
+                                            "type": "buffer",
+                                            "required": true,
+                                            "semantic": "file:data"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "cc",
+                                    "type": "array",
+                                    "label": "Copy recipient",
+                                    "spec": {
+                                        "name": "value",
+                                        "type": "email",
+                                        "label": "Email address",
+                                        "required": true
+                                    }
+                                },
+                                {
+                                    "name": "bcc",
+                                    "type": "array",
+                                    "label": "Blind copy recipient",
+                                    "spec": {
+                                        "name": "value",
+                                        "type": "email",
+                                        "label": "Email address",
+                                        "required": true
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            ]
+        },
+        "zone": "eu2.make.com"
+    }
+}

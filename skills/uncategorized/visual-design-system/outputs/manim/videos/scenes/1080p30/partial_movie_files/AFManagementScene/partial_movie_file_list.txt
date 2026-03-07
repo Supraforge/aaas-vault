@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/1697185472_3638478361_223132457.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/2038921957_1013848248_365966322.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/2038921957_617894032_1232995363.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/2038921957_2672396006_3219784171.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/2038921957_792141349_4089995221.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/2038921957_1860580120_3237311138.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/2038921957_1101350030_4131296302.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/AFManagementScene/2038921957_2819690770_566565190.mp4'

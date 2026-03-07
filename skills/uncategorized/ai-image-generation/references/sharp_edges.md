@@ -1,0 +1,1 @@
+# Ai Image Generation - Sharp Edges

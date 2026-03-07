@@ -1,0 +1,29 @@
+{
+  "name": "visual-design-system-satori",
+  "version": "1.0.0",
+  "description": "React to SVG to PNG pipeline for publication-grade infographics",
+  "main": "renderer.js",
+  "bin": {
+    "render": "./renderer.js"
+  },
+  "scripts": {
+    "render": "node renderer.js",
+    "test": "node renderer.js --template stat-card --data '{\"value\": \"42%\", \"label\": \"Test\"}' -o ../outputs/test.png",
+    "list": "node renderer.js --list"
+  },
+  "keywords": [
+    "satori",
+    "infographic",
+    "svg",
+    "png",
+    "medical",
+    "visualization"
+  ],
+  "author": "Dr. Shailesh Singh",
+  "license": "MIT",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.18.3",
+    "sharp": "^0.34.5"
+  }
+}

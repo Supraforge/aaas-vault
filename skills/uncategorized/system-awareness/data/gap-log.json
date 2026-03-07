@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "created": "2024-12-31T00:00:00",
+    "last_updated": "2025-12-31T16:22:37.941980",
+    "total_gaps": 4,
+    "description": "Log of capability gaps identified during system usage"
+  },
+  "gaps": [
+    {
+      "id": "gap_20251231_162226_89a758",
+      "timestamp": "2025-12-31T16:22:26.581223",
+      "last_seen": "2025-12-31T16:22:26.581226",
+      "request": "Analyze ECG waveforms from uploaded images to detect arrhythmias",
+      "context": null,
+      "category": "medical-imaging",
+      "urgency": "high",
+      "frequency": 1,
+      "similar_requests": [],
+      "potential_skill": "analyze-ecg-waveforms-uploaded",
+      "source": "cli",
+      "status": "resolved",
+      "notes": [
+        "Skill built on 2026-01-01"
+      ],
+      "resolved_at": "2026-01-01T11:12:18.183491"
+    },
+    {
+      "id": "gap_20251231_162237_93863f",
+      "timestamp": "2025-12-31T16:22:37.412594",
+      "last_seen": "2025-12-31T16:22:37.412597",
+      "request": "Transcribe audio from podcast interviews",
+      "context": null,
+      "category": "audio-video",
+      "urgency": "medium",
+      "frequency": 1,
+      "similar_requests": [],
+      "potential_skill": "transcribe-audio-podcast-interviews",
+      "source": "cli",
+      "status": "resolved",
+      "notes": [
+        "Skill built on 2026-01-01"
+      ],
+      "resolved_at": "2026-01-01T11:13:21.844951"
+    },
+    {
+      "id": "gap_20251231_162237_59baec",
+      "timestamp": "2025-12-31T16:22:37.677905",
+      "last_seen": "2025-12-31T16:22:37.677908",
+      "request": "Extract data from uploaded PDF research papers automatically",
+      "context": null,
+      "category": "data-extraction",
+      "urgency": "high",
+      "frequency": 1,
+      "similar_requests": [
+        "Analyze ECG waveforms from uploaded images to detect arrhythmias"
+      ],
+      "potential_skill": "extract-data-uploaded-pdf",
+      "source": "cli",
+      "status": "resolved",
+      "notes": [
+        "Built as research-paper-extractor skill on 2026-01-01"
+      ],
+      "resolved_at": "2026-01-01T11:22:43.231609"
+    },
+    {
+      "id": "gap_20251231_162237_2c6876",
+      "timestamp": "2025-12-31T16:22:37.941951",
+      "last_seen": "2025-12-31T16:22:37.941954",
+      "request": "Analyze chest X-ray images for cardiac abnormalities",
+      "context": null,
+      "category": "medical-imaging",
+      "urgency": "high",
+      "frequency": 1,
+      "similar_requests": [
+        "Analyze ECG waveforms from uploaded images to detect arrhythmias"
+      ],
+      "potential_skill": "analyze-chest-x-ray-images",
+      "source": "cli",
+      "status": "cancelled",
+      "notes": [
+        "Cancelled on 2026-01-01 - Not needed for current workflow"
+      ],
+      "cancelled_at": "2026-01-01T11:20:28.661961"
+    }
+  ]
+}

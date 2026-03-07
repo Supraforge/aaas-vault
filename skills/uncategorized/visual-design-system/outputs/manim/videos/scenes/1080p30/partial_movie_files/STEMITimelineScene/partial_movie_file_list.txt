@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/STEMITimelineScene/1697185472_1809304868_223132457.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/STEMITimelineScene/2038921957_469137721_669621011.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/STEMITimelineScene/2038921957_2819690770_4138803100.mp4'

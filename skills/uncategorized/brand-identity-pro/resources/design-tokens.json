@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "brand_name": "GoodHabitz",
+    "description": "Core design tokens for GoodHabitz UI implementation, derived from research and homepage audit."
+  },
+  "colors": {
+    "primary": "#00D6A1",
+    "accent": "#5914BD",
+    "background": "#FFFFFF",
+    "textPrimary": "#1A1A1A",
+    "link": "#5914BD",
+    "purple_dark": "#2E0A61",
+    "purple_accent": "#914EE7"
+  },
+  "typography": {
+    "font_family_headings": ["Plus Jakarta Sans", "sans-serif"],
+    "font_family_body": ["Plus Jakarta Sans", "Segoe UI", "Helvetica Neue", "Arial", "sans-serif"],
+    "font_sizes": {
+      "h1": "56px",
+      "h2": "18px",
+      "body": "18px"
+    }
+  },
+  "ui": {
+    "border_radius_default": "16px",
+    "border_radius_buttons": "8px",
+    "spacing_base_unit": "4px",
+    "container_padding": "60px"
+  },
+  "assets": {
+    "logo": "https://cdn.prod.website-files.com/68933ae5bf7c6c557708b623/68f8c739d96ff3fb488e2424_goodhabitz-logo.svg",
+    "favicon": "https://cdn.prod.website-files.com/68933ae5bf7c6c557708b623/68c90c082632a260ae999fa6_favicon_gh.png",
+    "ogImage": "https://cdn.prod.website-files.com/68933ae5bf7c6c557708b623/68c986f167e93829d28a4bce_OpenGraph%20Visual%20from%20GoodHabitz.webp"
+  }
+}

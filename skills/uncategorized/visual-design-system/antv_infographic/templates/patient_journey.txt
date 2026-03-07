@@ -1,0 +1,13 @@
+infographic list-row-simple-horizontal-arrow
+data
+  items:
+    - label: Presentation
+      desc: Patient presents with symptoms at clinic
+    - label: Diagnosis
+      desc: ECG, biomarkers, imaging performed
+    - label: Treatment Initiation
+      desc: Evidence-based therapy started
+    - label: Monitoring
+      desc: Regular follow-up and dose optimization
+    - label: Long-term Management
+      desc: Continued care and lifestyle modification

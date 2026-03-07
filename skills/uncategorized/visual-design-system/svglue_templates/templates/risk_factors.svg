@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <style>
+      .title { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f; }
+      .subtitle { font-family: Helvetica, Arial, sans-serif; font-size: 14px; fill: #495057; }
+      .section-title { font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; fill: #212529; text-transform: uppercase; }
+      .risk-label { font-family: Helvetica, Arial, sans-serif; font-size: 12px; fill: #212529; }
+      .risk-value { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: bold; }
+      .risk-percent { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #6c757d; }
+      .stat-number { font-family: Helvetica, Arial, sans-serif; font-size: 36px; font-weight: bold; fill: #1e3a5f; }
+      .stat-label { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #495057; }
+      .footer { font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #6c757d; }
+      .card-bg { fill: #f8f9fa; rx: 8; }
+      .divider { stroke: #e9ecef; stroke-width: 1; }
+      .high-risk { fill: #c62828; }
+      .moderate-risk { fill: #e65100; }
+      .low-risk { fill: #2e7d32; }
+      .bar-bg { fill: #e9ecef; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ffffff"/>
+
+  <!-- Header -->
+  <text id="title" class="title" x="40" y="45">CARDIOVASCULAR RISK FACTORS</text>
+  <text id="subtitle" class="subtitle" x="40" y="70">Population risk stratification analysis</text>
+
+  <line class="divider" x1="40" y1="90" x2="760" y2="90"/>
+
+  <!-- Overall Risk Score Card -->
+  <rect class="card-bg" x="40" y="110" width="200" height="130"/>
+  <text class="section-title" x="60" y="140">OVERALL RISK</text>
+  <text id="overall_risk_score" class="stat-number" style="font-size: 48px; fill: #c62828;" x="60" y="200">HIGH</text>
+  <text id="overall_risk_value" class="risk-percent" x="60" y="225">10-year ASCVD: 24.5%</text>
+
+  <!-- Risk Category Distribution -->
+  <rect class="card-bg" x="260" y="110" width="500" height="130"/>
+  <text class="section-title" x="280" y="140">RISK DISTRIBUTION</text>
+
+  <!-- High Risk Bar -->
+  <text class="risk-label" x="280" y="170">High Risk</text>
+  <rect class="bar-bg" x="380" y="158" width="300" height="18" rx="3"/>
+  <rect class="high-risk" x="380" y="158" id="high_bar" width="120" height="18" rx="3"/>
+  <text id="high_pct" class="risk-value high-risk" x="690" y="172">40%</text>
+
+  <!-- Moderate Risk Bar -->
+  <text class="risk-label" x="280" y="198">Moderate Risk</text>
+  <rect class="bar-bg" x="380" y="186" width="300" height="18" rx="3"/>
+  <rect class="moderate-risk" x="380" y="186" id="moderate_bar" width="105" height="18" rx="3"/>
+  <text id="moderate_pct" class="risk-value moderate-risk" x="690" y="200">35%</text>
+
+  <!-- Low Risk Bar -->
+  <text class="risk-label" x="280" y="226">Low Risk</text>
+  <rect class="bar-bg" x="380" y="214" width="300" height="18" rx="3"/>
+  <rect class="low-risk" x="380" y="214" id="low_bar" width="75" height="18" rx="3"/>
+  <text id="low_pct" class="risk-value low-risk" x="690" y="228">25%</text>
+
+  <!-- Individual Risk Factors -->
+  <text class="section-title" x="40" y="275">MODIFIABLE RISK FACTORS</text>
+  <line class="divider" x1="40" y1="285" x2="380" y2="285"/>
+
+  <!-- Risk Factor 1: Hypertension -->
+  <text id="rf1_name" class="risk-label" x="60" y="315">Hypertension (BP &gt;140/90)</text>
+  <rect class="bar-bg" x="60" y="325" width="280" height="20" rx="3"/>
+  <rect class="high-risk" x="60" y="325" id="rf1_bar" width="218" height="20" rx="3"/>
+  <text id="rf1_pct" class="risk-percent" x="350" y="340">78%</text>
+
+  <!-- Risk Factor 2: Hyperlipidemia -->
+  <text id="rf2_name" class="risk-label" x="60" y="365">Hyperlipidemia (LDL &gt;130)</text>
+  <rect class="bar-bg" x="60" y="375" width="280" height="20" rx="3"/>
+  <rect class="moderate-risk" x="60" y="375" id="rf2_bar" width="182" height="20" rx="3"/>
+  <text id="rf2_pct" class="risk-percent" x="350" y="390">65%</text>
+
+  <!-- Risk Factor 3: Smoking -->
+  <text id="rf3_name" class="risk-label" x="60" y="415">Current Smoking</text>
+  <rect class="bar-bg" x="60" y="425" width="280" height="20" rx="3"/>
+  <rect class="moderate-risk" x="60" y="425" id="rf3_bar" width="67" height="20" rx="3"/>
+  <text id="rf3_pct" class="risk-percent" x="350" y="440">24%</text>
+
+  <!-- Risk Factor 4: Obesity -->
+  <text id="rf4_name" class="risk-label" x="60" y="465">Obesity (BMI &gt;30)</text>
+  <rect class="bar-bg" x="60" y="475" width="280" height="20" rx="3"/>
+  <rect class="moderate-risk" x="60" y="475" id="rf4_bar" width="126" height="20" rx="3"/>
+  <text id="rf4_pct" class="risk-percent" x="350" y="490">45%</text>
+
+  <!-- Non-Modifiable Risk Factors -->
+  <text class="section-title" x="420" y="275">NON-MODIFIABLE RISK FACTORS</text>
+  <line class="divider" x1="420" y1="285" x2="760" y2="285"/>
+
+  <!-- Risk Factor 5: Age -->
+  <text id="rf5_name" class="risk-label" x="440" y="315">Age &gt;65 years</text>
+  <rect class="bar-bg" x="440" y="325" width="280" height="20" rx="3"/>
+  <rect fill="#4477AA" x="440" y="325" id="rf5_bar" width="168" height="20" rx="3"/>
+  <text id="rf5_pct" class="risk-percent" x="730" y="340">60%</text>
+
+  <!-- Risk Factor 6: Male Sex -->
+  <text id="rf6_name" class="risk-label" x="440" y="365">Male Sex</text>
+  <rect class="bar-bg" x="440" y="375" width="280" height="20" rx="3"/>
+  <rect fill="#4477AA" x="440" y="375" id="rf6_bar" width="190" height="20" rx="3"/>
+  <text id="rf6_pct" class="risk-percent" x="730" y="390">68%</text>
+
+  <!-- Risk Factor 7: Family History -->
+  <text id="rf7_name" class="risk-label" x="440" y="415">Family Hx of Premature CAD</text>
+  <rect class="bar-bg" x="440" y="425" width="280" height="20" rx="3"/>
+  <rect fill="#4477AA" x="440" y="425" id="rf7_bar" width="84" height="20" rx="3"/>
+  <text id="rf7_pct" class="risk-percent" x="730" y="440">30%</text>
+
+  <!-- Risk Factor 8: Diabetes -->
+  <text id="rf8_name" class="risk-label" x="440" y="465">Diabetes Mellitus</text>
+  <rect class="bar-bg" x="440" y="475" width="280" height="20" rx="3"/>
+  <rect fill="#CCBB44" x="440" y="475" id="rf8_bar" width="117" height="20" rx="3"/>
+  <text id="rf8_pct" class="risk-percent" x="730" y="490">42%</text>
+
+  <!-- Legend -->
+  <rect fill="#c62828" x="40" y="520" width="15" height="15" rx="2"/>
+  <text class="risk-percent" x="62" y="532">High Risk</text>
+  <rect fill="#e65100" x="140" y="520" width="15" height="15" rx="2"/>
+  <text class="risk-percent" x="162" y="532">Moderate</text>
+  <rect fill="#2e7d32" x="240" y="520" width="15" height="15" rx="2"/>
+  <text class="risk-percent" x="262" y="532">Low Risk</text>
+  <rect fill="#4477AA" x="340" y="520" width="15" height="15" rx="2"/>
+  <text class="risk-percent" x="362" y="532">Non-modifiable</text>
+
+  <!-- Footer -->
+  <line class="divider" x1="40" y1="555" x2="760" y2="555"/>
+  <text id="source" class="footer" x="40" y="580">Source: ASCVD Risk Calculator / Clinical data</text>
+  <text id="date" class="footer" x="760" y="580" text-anchor="end">January 2026</text>
+</svg>

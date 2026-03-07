@@ -1,0 +1,152 @@
+﻿Resources included:
+* Document Template
+* Email HTML
+
+
+
+
+  
+
+
+
+
+
+{{CLIENT NAME}} ({{CLIENT BUSINESS}})
+
+
+Hey {{CLIENT NAME}} 
+Please see our below proposal, following our conversation.
+
+
+💬 What we Discussed
+{{WhatWeDiscussed}}
+
+
+💎 What you’d like
+{{ProjectOutcomes}}
+
+
+📆 When for
+{{WhenFor}}
+
+
+🤩 Pricing
+The quarterly fee is £20,000, paid in advance. This covers unlimited automation projects during each quarter. We don't limit the number or size of projects you can request. The fee includes all development work, testing, and implementation support needed to complete your automation initiatives. Our typical delivery capacity is one medium-sized automation project per month.
+
+
+🔥 What next
+Purchase here to secure your spot. Once your payment is processed, we'll schedule a kick-off call within 2 business days to discuss your first automation project. 
+
+
+Yours Faithfully,
+Jack Roberts
+07498 XXX XXX
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Email HTML:
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Proposal Summary</title>
+    <style>
+        @import url('https://fonts.cdnjs.com/css2?family=Avenir:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Avenir', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .top-banner {
+            background: linear-gradient(135deg, #4158D0, #C850C0, #FFCC70);
+            color: white;
+            padding: 20px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .signature {
+            margin-top: 30px;
+            border-left: 4px solid #4158D0;
+            padding-left: 15px;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 500;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <h1>Meeting Summary</h1>
+    </div>
+
+
+    <div class="content">
+        <p>Hey [INSERT FIRST NAME],</p>
+        
+        <p>It was excellent to chat 😊</p>
+        
+        <p>Based on our conversation, I've attached a proposal for you.</p>
+
+
+        <p>Please let me know if you have any questions or if there's anything else you'd like to discuss.</p>
+
+
+        <div class="signature">
+            <p>Best regards,<br>
+            <strong>Jack Roberts</strong><br>
+            AI Automations</p>
+        </div>
+    </div>
+</body>
+</html>

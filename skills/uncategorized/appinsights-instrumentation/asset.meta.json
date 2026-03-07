@@ -1,0 +1,19 @@
+{
+  "asset_id": "skill-appinsights-instrumentation",
+  "name": "appinsights-instrumentation",
+  "type": "skill",
+  "source": "awesome-copilot",
+  "zone": "3",
+  "normalized_at": "2026-01-21T22:50:00Z",
+  "files": [
+    "SKILL.md",
+    "LICENSE.txt",
+    "test.sh",
+    "references/NODEJS.md",
+    "references/PYTHON.md",
+    "references/ASPNETCORE.md",
+    "references/AUTO.md",
+    "examples/appinsights.bicep",
+    "scripts/appinsights.ps1"
+  ]
+}

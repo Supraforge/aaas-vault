@@ -1,0 +1,476 @@
+{
+    "name": "🐳 DeepSeek V3",
+    "flow": [
+        {
+            "id": 3,
+            "module": "gateway:CustomMailHook",
+            "version": 1,
+            "parameters": {
+                "hook": 1431559,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -18,
+                    "y": 22,
+                    "name": "👋 Request"
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "data": {
+                                "editable": "false"
+                            },
+                            "label": "🐳 DeepSeek V3 (B2G)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-mailhook",
+                        "label": "Mailhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "module": "open-router:createAChatCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 4624048
+            },
+            "mapper": {
+                "messages": [
+                    {
+                        "content": "You will receive an email and a set of instructions from the user. Your task is to craft a response to the email in HTML format. The response must match the user's tone of voice, as inferred from their instructions and provided context. Do not add any additional content beyond the email response requested by the user. Focus solely on delivering a concise, HTML-structured reply that adheres to their style and requirements.\n\nExample html:\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>DeepSeek V3 Automation Tutorial</title>\n</head>\n<body style=\"margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f6f6f6;\">\n    <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px;\">\n        <!-- Main Content -->\n        <div style=\"padding: 20px 0;\">\n            <h1 style=\"color: #333333; font-size: 24px; margin-bottom: 20px;\">\n                🚀 DeepSeek V3 Just Changed Everything\n            </h1>\n\n            <p style=\"color: #666666; font-size: 16px; line-height: 1.5; margin-bottom: 15px;\">\n                Just dropped: A complete tutorial on building powerful automations with DeepSeek V3 - at 97% less cost than GPT-4.\n            </p>\n\n            <div style=\"background-color: #f9f9f9; border-left: 4px solid #4CAF50; padding: 15px; margin: 20px 0;\">\n                <h2 style=\"color: #333333; font-size: 18px; margin-bottom: 10px;\">\n                    In This Tutorial:\n                </h2>\n                <ul style=\"color: #666666; font-size: 16px; line-height: 1.6;\">\n                    <li>How to set up DeepSeek V3 in Make.com</li>\n                    <li>Build your first automation in under 10 minutes</li>\n                    <li>Save up to 97% on your AI automation costs</li>\n                    <li>Real-world business applications you can use today</li>\n                </ul>\n            </div>\n\n            <!-- CTA Button -->\n            <div style=\"text-align: center; margin: 30px 0;\">\n                <a href=\"#\" style=\"background-color: #4CAF50; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;\">\n                    Watch The Tutorial\n                </a>\n            </div>\n\n            <p style=\"color: #666666; font-size: 16px; line-height: 1.5;\">\n                P.S. The cost savings are real - I'll show you how to run advanced AI automations for less than $2/month.\n            </p>\n        </div>\n\n        <!-- Footer -->\n        <div style=\"border-top: 1px solid #eeeeee; padding-top: 20px; margin-top: 20px; text-align: center;\">\n            <p style=\"color: #999999; font-size: 14px;\">\n                Stay innovative,<br>\n                [Your Name]\n            </p>\n            <div style=\"margin-top: 20px;\">\n                <a href=\"#\" style=\"color: #999999; text-decoration: none; margin: 0 10px;\">YouTube</a>\n                <a href=\"#\" style=\"color: #999999; text-decoration: none; margin: 0 10px;\">Twitter</a>\n                <a href=\"#\" style=\"color: #999999; text-decoration: none; margin: 0 10px;\">LinkedIn</a>\n            </div>\n            <p style=\"color: #999999; font-size: 12px; margin-top: 20px;\">\n                You're receiving this because you subscribed to AI automation updates.<br>\n                <a href=\"#\" style=\"color: #999999;\">Unsubscribe</a>\n            </p>\n        </div>\n    </div>\n</body>\n</html>",
+                        "role": "assistant"
+                    },
+                    {
+                        "content": "{{3.text}}",
+                        "role": "user"
+                    }
+                ],
+                "model": "deepseek/deepseek-chat",
+                "fallback": true,
+                "json_mode": false,
+                "n": "1",
+                "temperature": "1",
+                "top_p": "1"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 289,
+                    "y": 16,
+                    "name": "🐳 DeepSeek"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My OpenRouter connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "open-router-4ur2vj"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "content": {
+                                        "collapsed": true
+                                    },
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "Assistant"
+                                    }
+                                },
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "DeepSeek V3"
+                        },
+                        "fallback": {
+                            "mode": "chose"
+                        },
+                        "json_mode": {
+                            "mode": "chose"
+                        },
+                        "stop": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:open-router-4ur2vj",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": [
+                            {
+                                "name": "content",
+                                "type": "text",
+                                "label": "Content",
+                                "required": true
+                            },
+                            {
+                                "name": "role",
+                                "type": "select",
+                                "label": "Role",
+                                "options": [
+                                    {
+                                        "label": "User",
+                                        "value": "user"
+                                    },
+                                    {
+                                        "label": "Assistant",
+                                        "value": "assistant"
+                                    },
+                                    {
+                                        "label": "System",
+                                        "value": "system"
+                                    }
+                                ],
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "fallback",
+                        "type": "boolean",
+                        "label": "Enable automatic Fallback?"
+                    },
+                    {
+                        "name": "json_mode",
+                        "type": "boolean",
+                        "label": "Enable JSON Mode?"
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "integer",
+                        "label": "Max Tokens"
+                    },
+                    {
+                        "name": "n",
+                        "type": "integer",
+                        "label": "Number of Choices",
+                        "validate": {
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "stop",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "spec": {
+                            "type": "text",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "top_k",
+                        "type": "number",
+                        "label": "Top k"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "module": "microsoft-email:createAMessage",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 4644586
+            },
+            "mapper": {
+                "content": "{{1.choices[].message.content}}",
+                "subject": "🐳 Your DeepSeek reply",
+                "contentType": "html",
+                "toRecipients": [
+                    {
+                        "name": "Jaaaaack",
+                        "address": "itsssssjack@outlook.com"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 589,
+                    "y": 18,
+                    "name": "📧 Outlook"
+                },
+                "restore": {
+                    "expect": {
+                        "replyTo": {
+                            "mode": "chose"
+                        },
+                        "importance": {
+                            "mode": "chose",
+                            "label": "Empty"
+                        },
+                        "attachments": {
+                            "mode": "chose"
+                        },
+                        "contentType": {
+                            "mode": "chose",
+                            "label": "HTML"
+                        },
+                        "ccRecipients": {
+                            "mode": "chose"
+                        },
+                        "toRecipients": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "bccRecipients": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "azure"
+                            },
+                            "label": "My Microsoft connection (Jack Roberts)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:azure",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "subject",
+                        "type": "text",
+                        "label": "Subject",
+                        "required": true
+                    },
+                    {
+                        "name": "contentType",
+                        "type": "select",
+                        "label": "Body Content Type",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "html",
+                                "text"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "content",
+                        "type": "text",
+                        "label": "Body Content",
+                        "required": true
+                    },
+                    {
+                        "name": "importance",
+                        "type": "select",
+                        "label": "Importance",
+                        "validate": {
+                            "enum": [
+                                "Low",
+                                "Normal",
+                                "High"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "toRecipients",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "To Recipients"
+                    },
+                    {
+                        "name": "ccRecipients",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "CC Recipients"
+                    },
+                    {
+                        "name": "bccRecipients",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Bcc Recipients"
+                    },
+                    {
+                        "name": "replyTo",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Reply To"
+                    },
+                    {
+                        "name": "attachments",
+                        "spec": [
+                            {
+                                "name": "filename",
+                                "type": "filename",
+                                "label": "File Name",
+                                "required": true,
+                                "semantic": "file:name"
+                            },
+                            {
+                                "name": "data",
+                                "type": "buffer",
+                                "label": "Data",
+                                "required": true,
+                                "semantic": "file:data"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Attachments"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com",
+        "notes": []
+    }
+}

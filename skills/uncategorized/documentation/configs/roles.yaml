@@ -1,0 +1,69 @@
+# WordPress Test User Roles
+# Used for role-based screenshot capture across all projects
+#
+# NO PASSWORDS STORED - Uses mu-plugin auto-login instead!
+# Install: cp ~/.claude/skills/documentation/templates/mu-auto-login.php
+#          /path/to/wp-content/mu-plugins/dev-auto-login.php
+#
+# Then use ?dev_login=USER_ID to login as any user
+
+# Standard WordPress roles
+# Note: user_id values are site-specific - update for each project
+roles:
+  admin:
+    user_id: 1  # Usually the first user is admin
+    username: "admin"
+    description: "Full admin access"
+
+  author:
+    user_id: 2
+    username: "test_author"
+    description: "Can publish own posts"
+
+  subscriber:
+    user_id: 3
+    username: "test_subscriber"
+    description: "Basic member access"
+
+  contributor:
+    user_id: 4
+    username: "test_contributor"
+    description: "Can write but not publish"
+
+  editor:
+    user_id: 5
+    username: "test_editor"
+    description: "Can edit any post"
+
+# BuddyPress/BuddyBoss member types
+member_types:
+  premium:
+    user_id: 10
+    username: "premium_member"
+    bp_member_type: "premium"
+
+  free:
+    user_id: 11
+    username: "free_member"
+    bp_member_type: "free"
+
+# WooCommerce customer roles
+woo_roles:
+  customer:
+    user_id: 20
+    username: "test_customer"
+    description: "Standard WooCommerce customer"
+
+  shop_manager:
+    user_id: 21
+    username: "test_shop_manager"
+    description: "Shop manager role"
+
+# Usage in capture script:
+#
+# ROLES = {
+#     "admin": {"user_id": 1, "username": "admin"},
+#     "subscriber": {"user_id": 3, "username": "test_subscriber"},
+# }
+#
+# Then login with: page.goto(f"{SITE_URL}/wp-admin/?dev_login=1")

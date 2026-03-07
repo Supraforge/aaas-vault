@@ -1,0 +1,48 @@
+{
+  "dist_path": "./dist",
+  "site_domain": "example.com",
+  "internal_domains": ["example.com", "www.example.com"],
+  "excluded_paths": [
+    "/tag/",
+    "/category/",
+    "/page/",
+    "/author/",
+    "/search/"
+  ],
+  "excluded_extensions": [
+    ".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".svg",
+    ".ico", ".pdf", ".xml", ".txt", ".woff", ".woff2"
+  ],
+  "http": {
+    "timeout": 5,
+    "max_workers": 20,
+    "retry_count": 1,
+    "user_agent": "Mozilla/5.0 (compatible; LinkChecker/1.0)"
+  },
+  "thresholds": {
+    "underlinked_min_inbound": 3,
+    "overlinked_max_outbound": 50,
+    "link_sink_max_outbound": 2,
+    "link_sink_min_inbound": 5
+  },
+  "false_positives": {
+    "bot_blocker_domains": [
+      "linkedin.com",
+      "stackoverflow.com",
+      "twitter.com",
+      "x.com",
+      "facebook.com",
+      "instagram.com"
+    ],
+    "image_sites": [
+      "pixabay.com",
+      "unsplash.com",
+      "pexels.com"
+    ],
+    "ignore_status_codes": [403, 503, 520, 999]
+  },
+  "output": {
+    "data_dir": "./data",
+    "report_dir": "./reports"
+  }
+}

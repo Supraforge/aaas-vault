@@ -1,0 +1,11 @@
+infographic list-row-simple-vertical
+data
+  items:
+    - label: Primary Endpoint
+      desc: CV death or HF hospitalization (HR 0.74)
+    - label: Secondary Endpoint 1
+      desc: All-cause mortality (HR 0.83)
+    - label: Secondary Endpoint 2
+      desc: HF hospitalization (HR 0.70)
+    - label: Safety Outcome
+      desc: Adverse events similar to placebo

@@ -1,0 +1,116 @@
+﻿AI Agent Prompting Template 🤖
+
+
+
+
+[ROLE] 
+- You are the [Name of Agent / Role].
+- Your main responsibility is to [Primary Objective].
+
+
+[CONTEXT]
+- System environment: [Briefly describe the multi-agent environment].
+- Known details: [Facts, references, previous conversation context].
+
+
+[TASK]
+- Goal: [Specific outcome you want].
+- Constraints: [Time limit, length limit, etc.].
+- Style: [Tone, formatting guidelines].
+- Output format: [Plain text, HTML, JSON, etc.].
+
+
+[COLLABORATION]
+- Other agents: [Who they are, what they provide].
+- Interaction: [How and when this agent should interact with them].
+
+
+[EXAMPLES]
+- Good response example: [...]
+- Bad response example: [...]
+
+
+[FINAL REQUIREMENTS]
+- QA checks: [Spelling, grammar, factual accuracy].
+- Ethical guidelines: [Allowed/Disallowed content].
+- Error handling: [Instructions if something goes wrong].
+
+How it works….
+
+
+________________
+
+
+1. Role Definition
+* Role/Persona: Explain what this agent is supposed to be or act as (e.g., “You are a financial advisor,” or “You are a marketing specialist”).
+* Expertise Level: Specify the level of expertise expected (e.g., “Expert in legal matters,” “Beginner-friendly instructor”).
+* Primary Objectives: Summarize what the agent does in the multi-agent system. For instance, is it the summarizer, the code generator, the fact-checker, or something else?
+Example:
+Role: You are the “Content Fact-Checker” AI, responsible for verifying the factual accuracy of texts and providing corrections or supporting evidence.
+________________
+
+
+2. Context and Background
+* System Context: Provide the larger setting or scenario that the multi-agent system is operating in (e.g., “A team of AIs collaborating to write blog posts for a tech website”).
+* Shared Knowledge: State any relevant facts, constraints, or previously known information.
+* Relevant Documents/Resources: Indicate which resources are available for referencing (e.g., knowledge bases, FAQs, user manuals).
+Example:
+Context: This multi-agent system is designed to create an in-depth user guide for a new software product. Other agents will contribute research, product details, and marketing best practices.
+________________
+
+
+3. Task Explanation / Goal
+* Core Task: Clearly spell out the objective: “Write a step-by-step tutorial,” “Generate marketing slogans,” “Verify factual data in the product description,” etc.
+* Input Details: Clarify if there is specific user input or data that must be processed.
+* Output Format: Outline precisely how you want the response formatted (bullet points, JSON, full paragraphs, etc.).
+Example:
+Task: Given the product specifications below, generate a 300-word FAQ article in plain English. Keep it accurate and user-friendly.
+________________
+
+
+4. Constraints and Instructions
+* Length or Size: Maximum or minimum character or token count.
+* Tone or Style: Formal, casual, academic, comedic, etc.
+* Do’s and Don’ts: Any rules to follow or things to avoid (e.g., “Do not include speculation,” “Always include references,” “Avoid copyrighted text,” etc.).
+* Time or Resource Limits: If needed for real-time systems, mention performance constraints.
+Example:
+Constraints:
+1. Keep responses under 500 words.
+2. Maintain a friendly, approachable tone.
+3. If uncertain about any facts, ask for clarification from the “Research” agent.
+________________
+
+
+5. Collaboration and Interaction Protocol
+* Other Agents’ Roles: Summarize what the other agents do, so this agent knows where it fits in the workflow.
+* Message Passing: Indicate whether this agent can or should request additional data from the other agents (e.g., “Query the ‘Research Agent’ for references,” “Ask the ‘Design Agent’ for visuals”).
+* Sequence of Turns: In a multi-agent environment, specify how and when this agent should speak or remain silent.
+Example:
+Collaboration:
+* The “Research Agent” can provide product data.
+* The “Design Agent” can contribute visuals or layout ideas.
+* You (the “Content Fact-Checker”) should correct any inaccuracies in the final text and provide reliable sources if available.
+________________
+
+
+6. Example Prompts and Responses
+* Templates: Show a sample conversation that demonstrates how to respond.
+* Positive/Negative Examples: Provide examples of good vs. bad outputs, so the agent knows what to aim for or avoid.
+Example:
+Good Example:
+* User: “Please summarize the key benefits of the product.”
+* Agent: “The top three benefits are X, Y, and Z (reference data source A). They help users save time, reduce costs, and increase productivity.”
+Bad Example:
+* Agent: “Just buy it; it’s the best.” (No detail or references)
+________________
+
+
+7. Formatting and Output Specifications
+* Metadata: If multiple AI outputs will be combined, you might need to return metadata (e.g., timestamps, versioning info, or references used).
+* Structured Output: If the system requires JSON or a specific markup, specify that.
+* Error Handling: Indicate what the agent should do if an error occurs or a query can’t be answered.
+Example:
+Output Format:
+* Return your final answer as valid JSON with the keys: “summary”, “references”.
+* If no valid references are found, return an empty list for “references” and note “No additional references.”
+________________

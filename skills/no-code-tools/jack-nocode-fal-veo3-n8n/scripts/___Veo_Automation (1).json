@@ -1,0 +1,324 @@
+{
+  "name": "🧙 Veo Automation",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        0
+      ],
+      "id": "3f82bb4d-7f6a-421e-b6a8-c485999ff903",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['Pain Point'] }}\n{{ $json.Setting }}\n{{ $json.Avatar }}\n{{ $json['Client Name'] }}\n\n",
+        "options": {
+          "systemMessage": "# AI Video Content Generator Meta-Prompt\n\n**You are an AI designed to generate personalised business outreach videos. Your output must be formatted as a single-line JSON object and follow all rules below exactly.**\n\n## INPUT VARIABLES:\n- **Client Name**: [Target company/person name]\n- **Pain Point**: [Specific business challenge they face]  \n- **Avatar**: [Character type/appearance description]\n\n## CORE REQUIREMENTS:\n1. **Fixed Message**: \"I don't think [CLIENT NAME] is [PAIN POINT]. Take it from a wise [AVATAR], you're leaving money on the table.\" \n2. **Duration**: 8 seconds maximum\n3. **Style**: Raw, authentic SELFIE video - character recording themselves on their own phone\n4. **Movement**: Character walks while filming themselves, natural selfie shake and movement\n5. **Setting**: Always outdoors regardless of avatar type\n6. **Money Visual**: Include humorous visual element involving money during \"leaving money on the table\" line within selfie frame\n\n## PROMPT STRUCTURE RULES:\n- TRUE SELFIE POV - shot entirely from the character's own phone camera perspective\n- Character based on Avatar input, always professional but with humorous elements\n- ALWAYS outdoors - adapt any avatar to outdoor setting (prefer absurd/unexpected locations)\n- Raw, authentic selfie style - slightly shaky, natural phone movement\n- Character speaks with a posh British accent directly to their own camera while walking\n- Include natural outdoor background noise and ambience\n- During \"leaving money on the table\" line, incorporate visual money gag within selfie frame\n- Direct address using Client Name creates personal connection\n- \"Wise [Avatar]\" phrasing adds humor regardless of avatar type\n- Maintain confident, slightly cheeky tone with British sophistication\n- Describe as authentic selfie video with natural lighting and movement\n- NO third-person perspective - everything from character's own phone view\n\n## OUTPUT FORMAT:\nProvide a detailed video description including: Character appearance and attire, outdoor setting details, walking movement, specific spoken message ending with service mention, camera perspective and movement, lighting, weather conditions, and background audio/ambience. Must be comprehensive enough for video generation.\n\n## EXAMPLE PROCESSING:\n**Input**: Client Name: \"Smith & Associates\", Pain Point: \"getting enough clients\", Avatar: \"Yeti\"\n\n**Expected Output**: \nRaw selfie video of a professional yeti in a business suit recording himself while walking across a massive glacier. The video is shot entirely from the yeti's own phone camera - authentic selfie style with natural shake and movement as he walks on the ice and talks to his camera. Bright, crisp daylight with wind sounds and the distant cracking of ice. The yeti looks directly into his phone camera with a posh British accent saying \"I don't think Smith & Associates is getting enough clients. Take it from a wise yeti, you're leaving money on the table\" - and during the money line, he casually pulls out dollar bills with his free hand and lets them flutter away across the icy landscape, all captured in the selfie frame. Authentic, unpolished selfie aesthetic with slight camera wobble, natural arctic lighting, and the absurd contrast of a suited British yeti giving business advice on a glacier.\n\n---\n\n**Generate your video prompt now based on the provided inputs.**"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -340,
+        0
+      ],
+      "id": "b76ab44d-1ced-48fa-add9-229d0784fae8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/veo3",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key [INSERT API KEY]"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "aspect_ratio",
+              "value": "16:9"
+            },
+            {
+              "name": "duration",
+              "value": "8s"
+            },
+            {
+              "name": "enhance_prompt",
+              "value": "true"
+            },
+            {
+              "name": "generate_audio",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        120,
+        0
+      ],
+      "id": "5101850a-5599-4303-a6aa-0dbe8cae8f72",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        260
+      ],
+      "id": "2ac269d8-c602-46f6-b703-b8bfc408eb2c",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "0zsUHU0F8xKDAzoO",
+          "name": "OpenAi account 14"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        0
+      ],
+      "id": "39cc9ce7-936a-4797-b585-e359a3f8d881",
+      "name": "Wait",
+      "webhookId": "3f2f428f-c72a-4c5b-97ae-07bf892877f3"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/veo3/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key [INSERT API KEY]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        0
+      ],
+      "id": "ea3a57b6-20da-4204-922e-058db8198a2e",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6a195b5f-5a98-48bb-aa45-db83919a2947",
+              "name": "Email",
+              "value": "jack@aiautomationswithjack.com",
+              "type": "string"
+            },
+            {
+              "id": "eced36cc-1472-4cdc-952a-6a27fccb64d2",
+              "name": "Client Name",
+              "value": "Johnson Jackson",
+              "type": "string"
+            },
+            {
+              "id": "f6c4f5b7-9f0b-43cc-b704-b167f418e303",
+              "name": "Pain Point",
+              "value": "Struggles to get clients",
+              "type": "string"
+            },
+            {
+              "id": "f089bc11-3f8f-48d5-ab8c-a601176a9213",
+              "name": "Setting",
+              "value": "On ice caps in Iceland. ",
+              "type": "string"
+            },
+            {
+              "id": "a560246c-5699-4b24-8290-615b7928f9ff",
+              "name": "Avatar",
+              "value": "A Yeti",
+              "type": "string"
+            },
+            {
+              "id": "13a66fdc-cd9c-457f-a772-9381a2ab7259",
+              "name": "Website",
+              "value": "https://grind.co.uk",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -620,
+        0
+      ],
+      "id": "2df9d13b-4f88-48d0-9a3b-faa8f5c9da06",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "a907bf5f-80a0-4042-bab5-5927dcda3e6a",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -900,
+        -180
+      ],
+      "id": "92c2e6bc-44b8-4d52-84b3-93a073f651e8",
+      "name": "Webhook",
+      "webhookId": "a907bf5f-80a0-4042-bab5-5927dcda3e6a"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "Your Video is ready 🤙",
+        "message": "=Here you go, brother:{{ $json.video.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        780,
+        0
+      ],
+      "id": "22e5814f-d2d0-4924-8b8a-096a454e08b4",
+      "name": "Gmail",
+      "webhookId": "f4974052-a69a-46fc-9f96-0a062186f4b5",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "VARz8tBAjDobMUh6",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cfcf9634-5828-470c-9fd7-0262dbbabf29",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "1ad5536c7c55ace0cd2d13b5ee509a9d5436e829bf5adf69ed3e58c359b43097"
+  },
+  "id": "WDlh0U8FBghwqS8R",
+  "tags": []
+}

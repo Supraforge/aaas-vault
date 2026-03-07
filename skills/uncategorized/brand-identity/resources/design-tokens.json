@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "brand_name": "[BRAND_NAME]",
+    "description": "Design tokens for [BRAND_NAME], the AI Quality Layer for Automotive Engineering. Derived from Seed Pitch Deck and industry standards."
+  },
+  "colors": {
+    "primary": {
+      "hex": "#0047FF",
+      "name": "Electric Blue",
+      "usage": "Core brand, primary actions, links"
+    },
+    "accent": {
+      "hex": "#CCFF00",
+      "name": "Neon Green / Safety High-Contrast",
+      "usage": "Success states, 90-Minute metrics, status highlights"
+    },
+    "background": {
+      "hex": "#020617",
+      "name": "Deep Space",
+      "usage": "Main dark background"
+    }
+  },
+  "typography": {
+    "headers": {
+      "family": "JetBrains Mono / Fira Code",
+      "weight": "700",
+      "style": "Technical/Monospaced"
+    },
+    "body": {
+      "family": "Inter",
+      "weight": "400",
+      "style": "Modern Sans-Serif"
+    },
+    "font_sizes": {
+      "h1": "48px",
+      "h2": "32px",
+      "h3": "24px",
+      "body": "16px",
+      "small": "14px"
+    }
+  },
+  "ui": {
+    "border_radius_default": "4px",
+    "border_radius_buttons": "6px",
+    "spacing_base_unit": "8px",
+    "container_padding": "40px"
+  },
+  "assets": {
+    "logo_mock": "[PROJECT_NAME]-AI [Neural Quality Icon]",
+    "favicon": ""
+  }
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <style>
+      .title { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f; }
+      .subtitle { font-family: Helvetica, Arial, sans-serif; font-size: 14px; fill: #495057; }
+      .stat-number { font-family: Helvetica, Arial, sans-serif; font-size: 42px; font-weight: bold; fill: #1e3a5f; }
+      .stat-label { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #495057; text-transform: uppercase; }
+      .stat-context { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #6c757d; }
+      .section-title { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #212529; text-transform: uppercase; }
+      .bar-label { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #212529; }
+      .bar-value { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #495057; }
+      .footer { font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #6c757d; }
+      .card-bg { fill: #f8f9fa; rx: 8; }
+      .divider { stroke: #e9ecef; stroke-width: 1; }
+      .bar-treatment { fill: #0077bb; }
+      .bar-control { fill: #ee7733; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ffffff"/>
+
+  <!-- Header -->
+  <text id="title" class="title" x="40" y="45">PATIENT DEMOGRAPHICS</text>
+  <text id="subtitle" class="subtitle" x="40" y="70">Study population characteristics</text>
+
+  <line class="divider" x1="40" y1="90" x2="760" y2="90"/>
+
+  <!-- Top Stats Row -->
+  <rect class="card-bg" x="40" y="110" width="170" height="100"/>
+  <text id="total_patients" class="stat-number" x="60" y="170">1,234</text>
+  <text class="stat-label" x="60" y="195">Total Patients</text>
+
+  <rect class="card-bg" x="230" y="110" width="170" height="100"/>
+  <text id="treatment_n" class="stat-number" style="fill: #0077bb;" x="250" y="170">617</text>
+  <text class="stat-label" x="250" y="195">Treatment Arm</text>
+
+  <rect class="card-bg" x="420" y="110" width="170" height="100"/>
+  <text id="control_n" class="stat-number" style="fill: #ee7733;" x="440" y="170">617</text>
+  <text class="stat-label" x="440" y="195">Control Arm</text>
+
+  <rect class="card-bg" x="610" y="110" width="150" height="100"/>
+  <text id="sites_n" class="stat-number" style="font-size: 36px;" x="630" y="170">42</text>
+  <text class="stat-label" x="630" y="195">Study Sites</text>
+
+  <!-- Demographics Section -->
+  <text class="section-title" x="40" y="245">DEMOGRAPHICS</text>
+  <line class="divider" x1="40" y1="255" x2="380" y2="255"/>
+
+  <!-- Age -->
+  <text class="bar-label" x="60" y="285">Mean Age</text>
+  <text id="mean_age" class="bar-value" x="180" y="285" text-anchor="end">65.4 years</text>
+  <rect fill="#4477AA" x="200" y="273" width="140" height="16" rx="2"/>
+
+  <!-- Male % -->
+  <text class="bar-label" x="60" y="315">Male</text>
+  <text id="male_pct" class="bar-value" x="180" y="315" text-anchor="end">68%</text>
+  <rect fill="#4477AA" x="200" y="303" id="male_bar" width="136" height="16" rx="2"/>
+
+  <!-- Female % -->
+  <text class="bar-label" x="60" y="345">Female</text>
+  <text id="female_pct" class="bar-value" x="180" y="345" text-anchor="end">32%</text>
+  <rect fill="#66CCEE" x="200" y="333" id="female_bar" width="64" height="16" rx="2"/>
+
+  <!-- BMI -->
+  <text class="bar-label" x="60" y="375">Mean BMI</text>
+  <text id="mean_bmi" class="bar-value" x="180" y="375" text-anchor="end">28.5 kg/m2</text>
+  <rect fill="#228833" x="200" y="363" width="100" height="16" rx="2"/>
+
+  <!-- Comorbidities Section -->
+  <text class="section-title" x="420" y="245">COMORBIDITIES</text>
+  <line class="divider" x1="420" y1="255" x2="760" y2="255"/>
+
+  <!-- Diabetes -->
+  <text class="bar-label" x="440" y="285">Diabetes</text>
+  <text id="diabetes_pct" class="bar-value" x="560" y="285" text-anchor="end">42%</text>
+  <rect fill="#CCBB44" x="580" y="273" id="diabetes_bar" width="84" height="16" rx="2"/>
+
+  <!-- Hypertension -->
+  <text class="bar-label" x="440" y="315">Hypertension</text>
+  <text id="htn_pct" class="bar-value" x="560" y="315" text-anchor="end">78%</text>
+  <rect fill="#EE6677" x="580" y="303" id="htn_bar" width="156" height="16" rx="2"/>
+
+  <!-- Prior MI -->
+  <text class="bar-label" x="440" y="345">Prior MI</text>
+  <text id="mi_pct" class="bar-value" x="560" y="345" text-anchor="end">35%</text>
+  <rect fill="#AA3377" x="580" y="333" id="mi_bar" width="70" height="16" rx="2"/>
+
+  <!-- CKD -->
+  <text class="bar-label" x="440" y="375">CKD Stage 3+</text>
+  <text id="ckd_pct" class="bar-value" x="560" y="375" text-anchor="end">28%</text>
+  <rect fill="#BBBBBB" x="580" y="363" id="ckd_bar" width="56" height="16" rx="2"/>
+
+  <!-- Medications Section -->
+  <text class="section-title" x="40" y="425">BASELINE MEDICATIONS</text>
+  <line class="divider" x1="40" y1="435" x2="380" y2="435"/>
+
+  <text class="bar-label" x="60" y="465">ACE-i/ARB</text>
+  <text id="acei_pct" class="bar-value" x="180" y="465" text-anchor="end">82%</text>
+  <rect fill="#2166ac" x="200" y="453" width="164" height="16" rx="2"/>
+
+  <text class="bar-label" x="60" y="495">Beta-blocker</text>
+  <text id="bb_pct" class="bar-value" x="180" y="495" text-anchor="end">75%</text>
+  <rect fill="#92c5de" x="200" y="483" width="150" height="16" rx="2"/>
+
+  <text class="bar-label" x="60" y="525">Statin</text>
+  <text id="statin_pct" class="bar-value" x="180" y="525" text-anchor="end">88%</text>
+  <rect fill="#67a9cf" x="200" y="513" width="176" height="16" rx="2"/>
+
+  <!-- Lab Values Section -->
+  <text class="section-title" x="420" y="425">BASELINE LABS</text>
+  <line class="divider" x1="420" y1="435" x2="760" y2="435"/>
+
+  <text class="bar-label" x="440" y="465">eGFR (mean)</text>
+  <text id="egfr_value" class="bar-value" x="620" y="465" text-anchor="end">68 mL/min/1.73m2</text>
+
+  <text class="bar-label" x="440" y="495">NT-proBNP (median)</text>
+  <text id="bnp_value" class="bar-value" x="620" y="495" text-anchor="end">1,245 pg/mL</text>
+
+  <text class="bar-label" x="440" y="525">LVEF (mean)</text>
+  <text id="lvef_value" class="bar-value" x="620" y="525" text-anchor="end">32%</text>
+
+  <!-- Footer -->
+  <line class="divider" x1="40" y1="555" x2="760" y2="555"/>
+  <text id="source" class="footer" x="40" y="580">Source: Clinical trial data</text>
+  <text id="date" class="footer" x="760" y="580" text-anchor="end">January 2026</text>
+</svg>

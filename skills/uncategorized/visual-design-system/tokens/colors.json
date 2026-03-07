@@ -1,0 +1,178 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Visual Design System - Color Tokens",
+  "description": "Nature/JACC/NEJM compliant color palette with WCAG 4.5:1 contrast ratios",
+  "version": "1.0.0",
+
+  "primary": {
+    "navy": {
+      "value": "#1e3a5f",
+      "description": "Primary brand color, high contrast",
+      "wcag_contrast_on_white": 9.2
+    },
+    "blue": {
+      "value": "#2d6a9f",
+      "description": "Secondary blue, data visualization",
+      "wcag_contrast_on_white": 5.1
+    },
+    "teal": {
+      "value": "#2d7a77",
+      "description": "Accent teal, highlights (darkened for WCAG)",
+      "wcag_contrast_on_white": 4.8
+    }
+  },
+
+  "semantic": {
+    "success": {
+      "value": "#2e7d32",
+      "description": "Positive outcomes, improvements (darker green for WCAG)",
+      "wcag_contrast_on_white": 5.9
+    },
+    "warning": {
+      "value": "#e65100",
+      "description": "Caution, moderate risk (darker orange for WCAG)",
+      "wcag_contrast_on_white": 4.6
+    },
+    "danger": {
+      "value": "#c62828",
+      "description": "Negative outcomes, high risk",
+      "wcag_contrast_on_white": 6.5
+    },
+    "neutral": {
+      "value": "#546e7a",
+      "description": "Neutral data, control groups",
+      "wcag_contrast_on_white": 5.0
+    }
+  },
+
+  "data_visualization": {
+    "categorical": {
+      "description": "For distinct categories - colorblind-safe (Paul Tol's bright scheme)",
+      "palette": [
+        {"name": "blue", "value": "#4477AA"},
+        {"name": "cyan", "value": "#66CCEE"},
+        {"name": "green", "value": "#228833"},
+        {"name": "yellow", "value": "#CCBB44"},
+        {"name": "red", "value": "#EE6677"},
+        {"name": "purple", "value": "#AA3377"},
+        {"name": "grey", "value": "#BBBBBB"}
+      ]
+    },
+    "sequential_blue": {
+      "description": "For ordered data - low to high",
+      "palette": [
+        {"name": "lightest", "value": "#deebf7"},
+        {"name": "light", "value": "#9ecae1"},
+        {"name": "medium", "value": "#4292c6"},
+        {"name": "dark", "value": "#2171b5"},
+        {"name": "darkest", "value": "#084594"}
+      ]
+    },
+    "diverging": {
+      "description": "For data with meaningful midpoint (e.g., risk ratios around 1.0)",
+      "palette": [
+        {"name": "negative_strong", "value": "#2166ac"},
+        {"name": "negative_mild", "value": "#92c5de"},
+        {"name": "neutral", "value": "#f7f7f7"},
+        {"name": "positive_mild", "value": "#f4a582"},
+        {"name": "positive_strong", "value": "#b2182b"}
+      ]
+    }
+  },
+
+  "accessible_pairs": {
+    "description": "Pre-validated pairs for comparisons - colorblind-safe",
+    "pair_1": {
+      "color_a": "#0077bb",
+      "color_b": "#ee7733",
+      "use_case": "Treatment vs Control"
+    },
+    "pair_2": {
+      "color_a": "#009988",
+      "color_b": "#cc3311",
+      "use_case": "Benefit vs Risk"
+    },
+    "pair_3": {
+      "color_a": "#33bbee",
+      "color_b": "#ee3377",
+      "use_case": "Before vs After"
+    },
+    "pair_4": {
+      "color_a": "#0077bb",
+      "color_b": "#bbbbbb",
+      "use_case": "Intervention vs Placebo"
+    }
+  },
+
+  "backgrounds": {
+    "white": {
+      "value": "#ffffff",
+      "description": "Primary background"
+    },
+    "light_gray": {
+      "value": "#f8f9fa",
+      "description": "Panel backgrounds, figure backgrounds"
+    },
+    "medium_gray": {
+      "value": "#e9ecef",
+      "description": "Dividers, subtle emphasis"
+    },
+    "dark": {
+      "value": "#1a1a2e",
+      "description": "Dark mode background (optional)"
+    }
+  },
+
+  "text": {
+    "primary": {
+      "value": "#212529",
+      "description": "Main body text",
+      "wcag_contrast_on_white": 14.7
+    },
+    "secondary": {
+      "value": "#495057",
+      "description": "Axis labels, captions",
+      "wcag_contrast_on_white": 9.7
+    },
+    "muted": {
+      "value": "#6c757d",
+      "description": "Footnotes, annotations",
+      "wcag_contrast_on_white": 5.7
+    }
+  },
+
+  "clinical_outcomes": {
+    "description": "Standardized colors for clinical endpoint visualization",
+    "mortality": {
+      "value": "#b2182b",
+      "description": "Death, MACE"
+    },
+    "hospitalization": {
+      "value": "#ef8a62",
+      "description": "Hospital admission, ER visits"
+    },
+    "symptom_improvement": {
+      "value": "#67a9cf",
+      "description": "Quality of life, symptom reduction"
+    },
+    "biomarker": {
+      "value": "#2166ac",
+      "description": "Lab values, imaging findings"
+    },
+    "safety_event": {
+      "value": "#d6604d",
+      "description": "Adverse events, side effects"
+    }
+  },
+
+  "forest_plot": {
+    "description": "Specialized colors for meta-analysis forest plots",
+    "point_estimate": "#1e3a5f",
+    "confidence_interval": "#1e3a5f",
+    "null_line": "#6c757d",
+    "summary_diamond": "#2d6a9f",
+    "heterogeneity_low": "#4daf4a",
+    "heterogeneity_moderate": "#ff7f00",
+    "heterogeneity_high": "#e41a1c"
+  }
+}

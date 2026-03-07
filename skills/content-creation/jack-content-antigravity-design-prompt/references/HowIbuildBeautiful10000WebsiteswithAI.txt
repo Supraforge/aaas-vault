@@ -1,0 +1,461 @@
+AI-Powered Design Intelligence for Gorgeous, Modern UIs
+Purpose: This framework provides a comprehensive template for prompting AI agents to create beautiful, functional, and high-performing user interfaces. Based on the UI/UX Pro Max methodology with 67+ design styles, 95+ color palettes, and proven interaction patterns.
+Simply copy and paste your desired sections here 👉 https://aistudio.google.com/apps
+📋 The Complete Design Prompt Template
+When requesting a design from an AI agent, structure your prompt using these 5 Core Dimensions:
+1. PATTERN & LAYOUT (The Skeleton)
+2. STYLE & AESTHETIC (The Skin)
+3. COLOR & THEME (The Palette)
+4. TYPOGRAPHY (The Voice)
+5. ANIMATIONS & INTERACTIONS (The Soul)
+🏗️ DIMENSION 1: Pattern & Layout
+Don't just say: "Create a landing page"
+Instead, specify the functional pattern based on your product type:
+Product-Specific Patterns
+SaaS (General)
+Pattern: Hero + Features + Social Proof + CTA
+Focus: Value proposition first, feature showcase second
+Layout: Full-width hero, 3-column features, testimonial carousel, sticky CTA
+
+​
+Micro SaaS
+Pattern: Minimal & Direct + Live Demo
+Focus: Get straight to product utility, show don't tell
+Layout: Centered hero with embedded demo, minimal navigation, single CTA
+
+​
+E-commerce (Luxury)
+Pattern: Feature-Rich Showcase + Immersive Gallery
+Focus: Large imagery, high-end feel, storytelling
+Layout: Full-screen hero slider, grid gallery, product details with zoom
+
+​
+Fintech/Crypto
+Pattern: Conversion-Optimized + Trust Signals
+Focus: Clear data visualization, security badges, transparent pricing
+Layout: Split hero (visual + form), live stats dashboard, trust indicators
+
+​
+Analytics Dashboard
+Pattern: Bento Grid + Actionable Insights
+Focus: Data density with clarity, scannable metrics
+Layout: Modular card system, hierarchical information, quick filters
+
+​
+Portfolio/Agency
+Pattern: Storytelling + Case Studies
+Focus: Visual impact, project showcases, personality
+Layout: Full-screen sections, horizontal scroll galleries, immersive transitions
+
+​
+🎨 DIMENSION 2: Style & Aesthetic
+Glassmorphism
+Keywords: Frosted glass, transparent layers, blurred background, depth, vibrant backdrop
+Technical: backdrop-filter: blur(10px), rgba backgrounds, layered cards
+Use When: Modern apps, dashboards, overlays, modals
+Avoid: Low-contrast backgrounds, accessibility issues
+
+​
+Aurora UI
+Keywords: Vibrant gradients, smooth blend, Northern Lights effect, mesh gradient, luminous
+Technical: Multi-stop gradients, animated hue rotation, glow effects
+Use When: Landing pages, hero sections, creative portfolios
+Avoid: Text-heavy interfaces, professional/corporate contexts
+
+​
+Soft UI Evolution (Neumorphism 2.0)
+Keywords: Soft shadows, subtle gradients, rounded corners (12-16px), monochromatic, tactile
+Technical: box-shadow: inset + outset, same-color palette, minimal contrast
+Use When: Mobile apps, minimalist interfaces, wellness/health apps
+Avoid: Complex data displays, accessibility-critical applications
+
+​
+Linear/Vercel Aesthetic
+Keywords: Dark mode, subtle borders (1px), high contrast, minimalist, developer-centric
+Technical: #0A0A0A background, #1A1A1A cards, #333 borders, white text
+Use When: Developer tools, SaaS platforms, technical products
+Avoid: Consumer-facing, playful brands
+
+​
+Bento Grid
+Keywords: Modular, clean, organized, information-dense, modern, structured
+Technical: CSS Grid, varying card sizes, consistent gaps (16-24px)
+Use When: Dashboards, feature showcases, content-heavy pages
+Avoid: Simple single-purpose pages
+
+​
+Liquid Glass
+Keywords: Fluid shapes, blurred transparency, organic movement, glossy, dynamic
+Technical: SVG blobs, backdrop-filter, animated transforms
+Use When: Creative agencies, modern SaaS, interactive experiences
+Avoid: Traditional industries, conservative audiences
+
+​
+Additional High-Impact Styles
+Brutalism: Raw, bold, unconventional, high-contrast, geometric
+Y2K Revival: Metallic, chrome effects, bold colors, retro-futuristic
+Claymorphism: 3D inflated, soft shadows, playful, tactile
+Gradient Mesh: Complex multi-color gradients, organic flow
+Minimalist Luxury: Maximum white space, serif typography, subtle gold accents
+Cyberpunk: Neon colors, glitch effects, tech-noir, high energy
+Organic/Biomorphic: Nature-inspired shapes, earth tones, flowing forms
+🎨 DIMENSION 3: Color & Theme
+Specify color moods to set the right emotional tone:
+Color Psychology & Palettes
+Trust & Professionalism (Finance, Healthcare, Enterprise)
+--primary: #0F172A (Navy)
+--cta: #0369A1 (Blue)
+--background: #F8FAFC (Light Grey)
+--text: #1E293B (Slate)
+--accent: #3B82F6 (Bright Blue)
+
+Mood: Reliable, secure, established
+
+​
+Vibrant & Modern (Tech Startups, Creative Tools)
+--primary: #6366F1 (Indigo)
+--cta: #10B981 (Emerald)
+--background: #FFFFFF (Pure White)
+--text: #1E293B (Slate)
+--accent: #F59E0B (Amber)
+
+Mood: Innovative, energetic, forward-thinking
+
+​
+Luxury & Premium (High-end Products, Fashion)
+--primary: #1C1917 (Stone Dark)
+--cta: #CA8A04 (Gold)
+--background: #FAFAF9 (Cream)
+--text: #292524 (Warm Black)
+--accent: #78716C (Taupe)
+
+Mood: Sophisticated, exclusive, timeless
+
+​
+Healthcare/Wellness (Medical, Fitness, Mental Health)
+--primary: #0891B2 (Cyan)
+--cta: #059669 (Health Green)
+--background: #FFFFFF (Clean White)
+--text: #0F172A (Deep Blue)
+--accent: #06B6D4 (Bright Cyan)
+
+Mood: Calm, trustworthy, clean
+
+​
+Creative/Playful (Consumer Apps, Entertainment)
+--primary: #EC4899 (Pink)
+--cta: #8B5CF6 (Purple)
+--background: #FEF3C7 (Warm Cream)
+--text: #1F2937 (Charcoal)
+--accent: #F59E0B (Orange)
+
+Mood: Fun, approachable, energetic
+
+​
+Dark Mode Excellence
+--background: #0A0A0A (True Black)
+--surface: #1A1A1A (Card Background)
+--border: #333333 (Subtle Borders)
+--text: #FFFFFF (Pure White)
+--text-secondary: #A3A3A3 (Grey)
+--accent: #3B82F6 (Blue) or #10B981 (Green)
+
+Technical: Ensure 15:1 contrast ratio for text
+
+​
+Color System Best Practices
+✅ DO:
+- Use 60-30-10 rule (60% dominant, 30% secondary, 10% accent)
+- Ensure WCAG AA compliance (4.5:1 for text)
+- Create semantic color tokens (--color-success, --color-error)
+- Test in both light and dark modes
+
+❌ DON'T:
+- Use more than 3 primary colors
+- Use pure black (#000) on pure white (#FFF) - too harsh
+- Rely on color alone for information (accessibility)
+- Use low-contrast grey text (#CCC on #FFF)
+
+​
+✍️ DIMENSION 4: Typography
+Font pairings create personality. Match fonts to your brand voice:
+Strategic Font Pairings
+Modern/Tech (SaaS, Developer Tools)
+Headings: Inter (Variable Font)
+Body: Roboto or System UI
+Mono: JetBrains Mono (for code)
+
+Personality: Clean, scalable, professional
+Weights: 400 (regular), 600 (semibold), 700 (bold)
+
+​
+Elegant/Luxury (Fashion, Premium Services)
+Headings: Playfair Display
+Body: Montserrat
+Accents: Cormorant Garamond
+
+Personality: Sophisticated, high-contrast, editorial
+Weights: 300 (light), 400 (regular), 700 (bold)
+
+​
+Friendly/Consumer (Apps, E-commerce)
+Headings: Poppins
+Body: Open Sans
+Alternative: Nunito + Lato
+
+Personality: Approachable, balanced, warm
+Weights: 400 (regular), 600 (semibold), 800 (extrabold)
+
+​
+Brutalist/Bold (Creative Agencies, Art)
+Headings: Space Grotesk
+Body: JetBrains Mono or IBM Plex Sans
+Alternative: Archivo Black + Work Sans
+
+Personality: Raw, technical, unconventional
+Weights: 400 (regular), 700 (bold)
+
+​
+Editorial/Content-Heavy (Blogs, News)
+Headings: Merriweather
+Body: Source Sans Pro
+Alternative: Lora + Raleway
+
+Personality: Readable, trustworthy, classic
+Weights: 300 (light), 400 (regular), 700 (bold), 900 (black)
+
+​
+✨ DIMENSION 5: Animations & Interactions
+This is what transforms "good" into "Pro Max". Explicitly request these:
+Micro-Interactions
+Button Interactions
+/* Hover Effects */
+- Scale up: transform: scale(1.02)
+- Lift: box-shadow elevation + translateY(-2px)
+- Ripple: Radial gradient animation from click point
+- Glow: Outer glow on hover (box-shadow with color)
+- Border beam: Animated gradient border (Linear-style)
+
+/* Timing */
+- Duration: 150-300ms
+- Easing: cubic-bezier(0.4, 0, 0.2, 1)
+
+​
+Input Focus States
+/* Focus Glow */
+- Ring: 2-4px outline with brand color at 50% opacity
+- Glow: Soft box-shadow with brand color
+- Border shift: Border color change + subtle scale
+- Label float: Animated label moving up on focus
+
+/* Accessibility */
+- Always visible focus indicators
+- Minimum 3px outline width
+- High contrast (3:1 ratio)
+
+​
+Card Hover Effects
+/* Premium Card Interactions */
+- Lift + Shadow: translateY(-4px) + shadow increase
+- Tilt: 3D perspective tilt on hover (subtle, 2-3deg)
+- Glow border: Animated gradient border reveal
+- Content reveal: Hidden content slides in on hover
+- Image zoom: Scale image 1.05x inside container
+
+​
+Scroll Animations
+Reveal on Scroll
+// Staggered Entrance
+- Fade up: opacity 0→1 + translateY(20px→0)
+- Stagger delay: 100ms between elements
+- Trigger: When element is 20% in viewport
+- Duration: 600ms
+- Easing: ease-out
+
+​
+Parallax Effects
+// Layered Depth
+- Hero background: Scroll speed 0.5x
+- Foreground elements: Scroll speed 1.2x
+- Subtle only: Max 20-30px movement
+- Performance: Use transform, not position
+
+​
+Progress Indicators
+/* Reading Progress */
+- Top bar: Fixed position, width based on scroll %
+- Circular: SVG circle with stroke-dashoffset
+- Smooth: transition: width 100ms linear
+
+​
+Page Transitions
+Route Changes
+/* Smooth Navigation */
+- Fade: opacity transition 200ms
+- Slide: translateX(-100%→0) 300ms
+- Blur: filter: blur(0→10px→0)
+- Crossfade: Overlap old/new content
+
+​
+Modal/Dialog Animations
+/* Entrance */
+- Backdrop: opacity 0→1 (200ms)
+- Content: scale(0.95→1) + opacity 0→1 (300ms)
+- Stagger: Backdrop first, then content
+
+/* Exit */
+- Reverse animation
+- Faster duration (200ms)
+
+​
+Loading States
+Skeleton Loaders
+/* Content Placeholders */
+- Shimmer effect: Linear gradient animation
+- Shape matching: Match final content layout
+- Color: Light grey (#E5E7EB) on white
+- Animation: 1.5s infinite ease-in-out
+
+​
+Spinners & Progress
+/* Loading Indicators */
+- Spinner: Rotating circle with gradient
+- Progress bar: Indeterminate animation
+- Pulse: Scale + opacity animation
+- Duration: 1-2s infinite
+
+​
+Advanced Effects
+Beams & Glows (Linear/Vercel Style)
+/* Border Beams */
+- Animated gradient border
+- Conic gradient rotation
+- Subtle glow effect
+- Use for: CTAs, featured cards, premium elements
+
+/* Implementation */
+background: linear-gradient(90deg, transparent, #3B82F6, transparent);
+animation: beam 2s infinite;
+
+​
+Mesh Gradients
+/* Animated Backgrounds */
+- Multi-color gradient mesh
+- Slow hue rotation (60s+)
+- Blur for organic feel
+- Use for: Hero sections, backgrounds
+
+​
+Glassmorphism Blur
+/* Glass Effect */
+backdrop-filter: blur(10px) saturate(180%);
+background: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+
+​
+Animation Performance Rules
+✅ DO:
+- Use transform and opacity (GPU accelerated)
+- Set will-change for animated elements
+- Use requestAnimationFrame for JS animations
+- Debounce scroll events
+- Prefer CSS animations over JS when possible
+- Test on low-end devices
+
+❌ DON'T:
+- Animate width, height, or position
+- Use animations longer than 500ms for interactions
+- Animate during user input (blocks interaction)
+- Use too many simultaneous animations
+- Forget prefers-reduced-motion media query
+- Animate on scroll without throttling
+
+​
+Accessibility Considerations
+/* Respect User Preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+​
+🚫 Anti-Patterns: What to AVOID
+Tell the agent explicitly what NOT to do:
+Design Anti-Patterns
+❌ Flash Over Function
+- No animations that block user action
+- No transitions longer than 300ms for interactions
+- No auto-playing videos with sound
+- No infinite scroll without pagination option
+
+❌ Low Contrast Crimes
+- No light grey (#CCC) on white backgrounds
+- No pure white text on pure black (too harsh)
+- Ensure WCAG AA minimum (4.5:1 for text)
+- Test with color blindness simulators
+
+❌ Over-Cluttered Chaos
+- No more than 3 primary colors
+- No more than 2 font families
+- No more than 5 font sizes in a single view
+- No inconsistent spacing (use 8px grid system)
+
+❌ Mystery Meat Navigation
+- Icons must have labels or tooltips
+- No hamburger menus on desktop
+- No hidden navigation without clear affordance
+- No "clever" navigation that confuses users
+
+❌ Mobile Hostility
+- No tiny tap targets (minimum 44x44px)
+- No horizontal scrolling (unless intentional carousel)
+- No hover-dependent interactions on touch
+- No fixed elements that cover content
+
+❌ Performance Sins
+- No unoptimized images (use WebP, lazy loading)
+- No render-blocking resources
+- No layout shifts (CLS > 0.1)
+- No heavy animations on page load
+
+​
+UX Anti-Patterns
+❌ Form Frustrations
+- No labels inside inputs (accessibility issue)
+- No "clear all" without confirmation
+- No validation only on submit
+- No disabled submit buttons (show errors instead)
+
+❌ Content Crimes
+- No walls of text without hierarchy
+- No auto-playing carousels (users miss content)
+- No "click here" links (not descriptive)
+- No Lorem Ipsum in production
+
+❌ Accessibility Failures
+- No keyboard navigation traps
+- No missing alt text on images
+- No color-only information conveyance
+- No auto-focus on page load (except search)
+
+​
+Vercel MCP:
+Grab API key here 👉  https://vercel.com/account/tokens
+Replace "INSERT_VERCEL_API_KEY" with your token.
+Copy and paste the below prompt. 
+I would like you to add the below Vercel MCP to my MCP config within Antigravity. Please confirm when this is done and that you have access.
+"vercel": {
+"command": "npx",
+"args": [
+"-y",
+"@robinson_ai_systems/vercel-mcp"
+],
+"env": {
+"VERCEL_TOKEN": "INSERT_VERCEL_API_KEY"
+}
+}
+ui/ux skills
+https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git

@@ -1,0 +1,54 @@
+{
+  "type": "multi_panel",
+  "description": "Multi-panel figure with faceted subplots",
+  "data": [],
+  "marks": [
+    {
+      "type": "point",
+      "encode": {
+        "x": "x",
+        "y": "y",
+        "color": "category",
+        "facet": "panel"
+      },
+      "style": {
+        "size": 3,
+        "fillOpacity": 0.7
+      }
+    },
+    {
+      "type": "line",
+      "encode": {
+        "x": "x",
+        "y": "y_smooth",
+        "color": "category",
+        "facet": "panel"
+      },
+      "style": {
+        "lineWidth": 2
+      }
+    }
+  ],
+  "scales": {
+    "color": {
+      "range": ["#4477AA", "#66CCEE", "#228833", "#CCBB44"]
+    }
+  },
+  "facet": {
+    "type": "rect",
+    "encode": {
+      "x": "panel"
+    }
+  },
+  "xAxis": {
+    "title": "Time",
+    "grid": true
+  },
+  "yAxis": {
+    "title": "Measurement",
+    "grid": true
+  },
+  "legend": {
+    "position": "top"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "linkedin-ads-mcp",
+  "version": "1.0.0",
+  "description": "LinkedIn Ads MCP integration",
+  "main": "linkedin_ads_api.js",
+  "scripts": {
+    "test": "node linkedin_ads_api.js --test",
+    "start": "node linkedin_ads_api.js",
+    "mcp-server": "node mcp_server.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.0",
+    "csv-writer": "^1.6.0",
+    "pdf-lib": "^1.17.1",
+    "linkedin-api-client": "^2.0.0"
+  },
+  "keywords": ["linkedin", "ads", "mcp", "api", "marketing", "b2b"],
+  "author": "SkillBuilder",
+  "license": "MIT"
+}

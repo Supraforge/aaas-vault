@@ -1,0 +1,108 @@
+{
+  "squr_sections": {
+    "company_overview": {
+      "emoji": "brain",
+      "title": "Company Overview",
+      "sources": [
+        {"file": "company.md", "blocks": ["overview", "product"]}
+      ],
+      "required_elements": ["name", "offering", "mission", "key_promise"]
+    },
+    "product_highlights": {
+      "emoji": "lock",
+      "title": "Product Highlights",
+      "sources": [
+        {"file": "company.md", "blocks": ["features", "use-cases", "product"]},
+        {"file": "strategy.md", "blocks": ["ai-strategy"]}
+      ],
+      "required_elements": ["core_capabilities", "differentiators", "technical_features"]
+    },
+    "target_audience": {
+      "emoji": "busts_in_silhouette",
+      "title": "Target Audience",
+      "sources": [
+        {"file": "audience.md", "blocks": ["audience", "segments"]},
+        {"file": "company.md", "blocks": ["audience"]}
+      ],
+      "required_elements": ["roles", "company_types", "industries"]
+    },
+    "market_focus": {
+      "emoji": "globe_with_meridians",
+      "title": "Market Focus",
+      "sources": [
+        {"file": "market.md", "blocks": ["market", "market-insights", "market-size"]}
+      ],
+      "required_elements": ["primary_region", "secondary_regions", "market_segment"]
+    },
+    "ai_governance": {
+      "emoji": "brain",
+      "title": "AI & Governance",
+      "sources": [
+        {"file": "company.md", "blocks": ["product", "positioning"]},
+        {"file": "strategy.md", "blocks": ["ai-strategy"]}
+      ],
+      "required_elements": ["ai_capabilities", "governance", "safety", "compliance"]
+    },
+    "competitive_landscape": {
+      "emoji": "crossed_swords",
+      "title": "Competitive Landscape",
+      "sources": [
+        {"file": "competitors.md", "blocks": ["competitors", "competitor.summary"]}
+      ],
+      "required_elements": ["primary_competitors", "differentiators"]
+    },
+    "strategic_positioning": {
+      "emoji": "chart_with_upwards_trend",
+      "title": "Strategic Positioning",
+      "sources": [
+        {"file": "brand.md", "blocks": ["voice", "messages"]},
+        {"file": "strategy.md", "blocks": ["strategy", "angle-library"]},
+        {"file": "company.md", "blocks": ["positioning"]}
+      ],
+      "required_elements": ["messaging_pillars", "emotional_appeal", "positioning_statements"]
+    },
+    "demand_gen": {
+      "emoji": "fire",
+      "title": "Demand Gen Themes & Tactics",
+      "sources": [
+        {"file": "strategy.md", "blocks": ["growth-loops", "gtm", "angle-library"]}
+      ],
+      "required_elements": ["themes", "channels", "tactics"]
+    },
+    "use_cases": {
+      "emoji": "dart",
+      "title": "Use Case Scenarios",
+      "sources": [
+        {"file": "company.md", "blocks": ["use-cases"]},
+        {"file": "audience.md", "blocks": ["jobs-to-be-done", "pains"]}
+      ],
+      "required_elements": ["primary_use_cases", "buyer_scenarios"]
+    },
+    "source_anchors": {
+      "emoji": "books",
+      "title": "Source Material Anchors",
+      "sources": [
+        {"file": "all", "blocks": ["sources_used"]}
+      ],
+      "required_elements": ["primary_sources", "secondary_sources"]
+    }
+  },
+  "section_order": [
+    "company_overview",
+    "product_highlights",
+    "target_audience",
+    "market_focus",
+    "ai_governance",
+    "competitive_landscape",
+    "strategic_positioning",
+    "demand_gen",
+    "use_cases",
+    "source_anchors"
+  ],
+  "formatting_rules": {
+    "line_target": {"min": 80, "max": 110},
+    "bullet_format": "**Bold Label:** Concrete statement",
+    "confidence_marker": "[LOW CONFIDENCE]",
+    "header_format": "## {emoji} {title}"
+  }
+}

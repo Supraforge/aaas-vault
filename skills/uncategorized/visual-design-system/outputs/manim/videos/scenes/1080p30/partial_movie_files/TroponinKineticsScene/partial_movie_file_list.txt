@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/TroponinKineticsScene/1697185472_2991259037_223132457.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/TroponinKineticsScene/2038921957_3449357308_4131466794.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/TroponinKineticsScene/2038921957_4187805176_509952816.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/TroponinKineticsScene/2038921957_2819690770_1072995019.mp4'

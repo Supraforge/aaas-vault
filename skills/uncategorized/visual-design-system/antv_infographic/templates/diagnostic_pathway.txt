@@ -1,0 +1,13 @@
+infographic list-row-simple-horizontal-arrow
+data
+  items:
+    - label: Clinical Suspicion
+      desc: Symptoms suggest cardiac etiology
+    - label: Initial Testing
+      desc: ECG, troponin, BNP measurement
+    - label: Risk Stratification
+      desc: HEART score or TIMI risk score
+    - label: Advanced Imaging
+      desc: Echo, stress test, or CT angiography
+    - label: Treatment Decision
+      desc: Medical therapy vs intervention

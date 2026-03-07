@@ -1,0 +1,278 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "version": "2.0",
+  "name": "Dr. Shailesh Singh Carousel Design Tokens",
+
+  "colors": {
+    "primary": {
+      "value": "#16697A",
+      "type": "color",
+      "description": "Primary Teal (Deep Calm) - titles, CTAs, primary branding",
+      "rgb": [22, 105, 122]
+    },
+    "secondary": {
+      "value": "#218380",
+      "type": "color",
+      "description": "Secondary Teal (Panel BG) - darker sections, risk/alert boxes",
+      "rgb": [33, 131, 128]
+    },
+    "accent": {
+      "value": "#EF5350",
+      "type": "color",
+      "description": "Accent Coral (Callout/CTA) - vivid coral for visual energy",
+      "rgb": [239, 83, 80]
+    },
+    "backgroundWash": {
+      "value": "#E8F5F4",
+      "type": "color",
+      "description": "Soft Aqua - pale bluish tint for background depth",
+      "rgb": [232, 245, 244]
+    },
+    "neutralLight": {
+      "value": "#F9FAFB",
+      "type": "color",
+      "description": "Neutral Gray-White - cards, containers, clean backgrounds",
+      "rgb": [249, 250, 251]
+    },
+    "neutralDark": {
+      "value": "#2F3E46",
+      "type": "color",
+      "description": "Text Gray (Body Copy) - warm dark gray for legibility",
+      "rgb": [47, 62, 70]
+    },
+    "alert": {
+      "value": "#E74C3C",
+      "type": "color",
+      "description": "Highlight Red - emergencies, alerts, important emphasis",
+      "rgb": [231, 76, 60]
+    },
+    "success": {
+      "value": "#27AE60",
+      "type": "color",
+      "description": "Success Green - truth, positive outcomes, confirmations",
+      "rgb": [39, 174, 96]
+    },
+    "mythRed": {
+      "value": "#FF6B6B",
+      "type": "color",
+      "description": "Myth Red - softer red for myth backgrounds",
+      "rgb": [255, 107, 107]
+    },
+    "white": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Pure white - text on dark backgrounds",
+      "rgb": [255, 255, 255]
+    },
+    "black": {
+      "value": "#000000",
+      "type": "color",
+      "description": "Pure black - rare use only",
+      "rgb": [0, 0, 0]
+    }
+  },
+
+  "colorModes": {
+    "light": {
+      "background": "{colors.backgroundWash}",
+      "surface": "{colors.neutralLight}",
+      "text": "{colors.neutralDark}",
+      "textSecondary": "#5A6B73",
+      "heading": "{colors.primary}",
+      "accent": "{colors.accent}",
+      "border": "{colors.backgroundWash}"
+    },
+    "dark": {
+      "background": "{colors.primary}",
+      "surface": "{colors.secondary}",
+      "text": "{colors.white}",
+      "textSecondary": "{colors.backgroundWash}",
+      "heading": "{colors.white}",
+      "accent": "{colors.accent}",
+      "border": "#3A9A97"
+    },
+    "minimal": {
+      "background": "{colors.white}",
+      "surface": "{colors.neutralLight}",
+      "text": "{colors.neutralDark}",
+      "textSecondary": "#6B7C85",
+      "heading": "{colors.neutralDark}",
+      "accent": "{colors.primary}",
+      "border": "#E0E0E0"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "primary": "Inter",
+      "fallback": ["Helvetica", "Arial", "sans-serif"]
+    },
+    "headline": {
+      "fontSize": 48,
+      "fontWeight": 700,
+      "lineHeight": 1.2,
+      "letterSpacing": -0.5,
+      "description": "Main slide titles"
+    },
+    "subheadline": {
+      "fontSize": 36,
+      "fontWeight": 600,
+      "lineHeight": 1.3,
+      "letterSpacing": 0,
+      "description": "Section titles, subtitles"
+    },
+    "body": {
+      "fontSize": 28,
+      "fontWeight": 400,
+      "lineHeight": 1.5,
+      "letterSpacing": 0,
+      "description": "Body text, bullet points"
+    },
+    "bodyLarge": {
+      "fontSize": 32,
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": 0,
+      "description": "Emphasized body text"
+    },
+    "caption": {
+      "fontSize": 22,
+      "fontWeight": 500,
+      "lineHeight": 1.4,
+      "letterSpacing": 0.2,
+      "description": "Footer, small text"
+    },
+    "stat": {
+      "fontSize": 72,
+      "fontWeight": 700,
+      "lineHeight": 1.0,
+      "letterSpacing": -1,
+      "description": "Large statistics display"
+    },
+    "statLabel": {
+      "fontSize": 24,
+      "fontWeight": 500,
+      "lineHeight": 1.3,
+      "letterSpacing": 0.5,
+      "description": "Labels for statistics"
+    }
+  },
+
+  "dimensions": {
+    "instagram4x5": {
+      "width": 1080,
+      "height": 1350,
+      "aspectRatio": "4:5",
+      "description": "Instagram optimized (10% higher engagement)"
+    },
+    "instagram1x1": {
+      "width": 1080,
+      "height": 1080,
+      "aspectRatio": "1:1",
+      "description": "Square for multi-platform"
+    }
+  },
+
+  "spacing": {
+    "margin": 80,
+    "padding": 40,
+    "gapSmall": 16,
+    "gapMedium": 24,
+    "gapLarge": 40,
+    "footerHeight": 150,
+    "iconSize": 48,
+    "iconSizeLarge": 64,
+    "bulletSize": 12
+  },
+
+  "footer": {
+    "height": 150,
+    "photoSize": 100,
+    "separatorWidth": 2,
+    "separatorColor": "{colors.secondary}",
+    "nameFont": "{typography.caption}",
+    "handleFont": "{typography.caption}",
+    "handleColor": "{colors.primary}"
+  },
+
+  "accounts": {
+    "1": {
+      "handle": "@heartdocshailesh",
+      "name": "Dr. Shailesh Singh",
+      "description": "Primary cardiology content"
+    },
+    "2": {
+      "handle": "@dr.shailesh.singh",
+      "name": "Dr. Shailesh Singh",
+      "description": "Professional/clinical"
+    }
+  },
+
+  "accessibility": {
+    "minContrastRatio": 4.5,
+    "minFontSize": 22,
+    "maxWordsPerSlide": 15,
+    "contrastPairs": {
+      "whiteOnPrimary": 7.53,
+      "primaryOnWhite": 7.53,
+      "darkOnLight": 12.63,
+      "accentOnWhite": 3.21
+    }
+  },
+
+  "qualityGates": {
+    "maxWordsPerSlide": 15,
+    "minContrastRatio": 4.5,
+    "optimalSlideCount": {
+      "min": 8,
+      "max": 10
+    },
+    "mobileReadability": {
+      "minHeadlineSize": 36,
+      "minBodySize": 24
+    }
+  },
+
+  "templateDefaults": {
+    "HookSlide": {
+      "colorMode": "dark",
+      "iconStyle": "filled"
+    },
+    "TipsSlide": {
+      "colorMode": "light",
+      "iconStyle": "outline"
+    },
+    "StatsSlide": {
+      "colorMode": "light",
+      "iconStyle": "filled"
+    },
+    "ComparisonSlide": {
+      "colorMode": "light",
+      "iconStyle": "outline"
+    },
+    "StorySlide": {
+      "colorMode": "light",
+      "iconStyle": "outline"
+    },
+    "DataSlide": {
+      "colorMode": "light",
+      "iconStyle": "none"
+    },
+    "StepsSlide": {
+      "colorMode": "light",
+      "iconStyle": "filled"
+    },
+    "MythSlide": {
+      "colorMode": "light",
+      "iconStyle": "filled"
+    },
+    "QuoteSlide": {
+      "colorMode": "dark",
+      "iconStyle": "none"
+    },
+    "CTASlide": {
+      "colorMode": "dark",
+      "iconStyle": "filled"
+    }
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "version": "2.0.0",
+  "description": "Comprehensive medical icon library manifest for visual content system (212 icons)",
+  "lastUpdated": "2026-01-02",
+  "sources": [
+    {
+      "name": "medical-webfont",
+      "repo": "https://github.com/samcome/webfont-medical-icons",
+      "license": "MIT",
+      "path": "medical-webfont/packages/svg",
+      "count": 144
+    },
+    {
+      "name": "medic-icons",
+      "repo": "https://github.com/medic/icon-library",
+      "license": "Apache-2.0",
+      "path": "medic-icons/forms_tasks_targets/SVGs",
+      "count": 68
+    }
+  ],
+  "categories": {
+    "cardiology": {
+      "description": "Heart and cardiovascular icons - PRIMARY for Dr. Singh's content",
+      "priority": 1,
+      "icons": [
+        { "name": "cardiology", "file": "medical-webfont/packages/svg/cardiology.svg", "keywords": ["heart", "cardiac", "cardiovascular"] },
+        { "name": "cardiology-inverse", "file": "medical-webfont/packages/svg/i-cardiology.svg", "keywords": ["heart", "cardiac", "dark"] },
+        { "name": "cath-lab", "file": "medical-webfont/packages/svg/cath-lab.svg", "keywords": ["catheter", "intervention", "stent"] },
+        { "name": "cath-lab-inverse", "file": "medical-webfont/packages/svg/i-cath-lab.svg", "keywords": ["catheter", "dark"] },
+        { "name": "cardiovascular", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-cardiovascular.svg", "keywords": ["heart disease", "cvd"] },
+        { "name": "intensive-care", "file": "medical-webfont/packages/svg/intensive-care.svg", "keywords": ["icu", "critical", "monitoring"] },
+        { "name": "intensive-care-inverse", "file": "medical-webfont/packages/svg/i-intensive-care.svg", "keywords": ["icu", "dark"] }
+      ]
+    },
+    "diagnostics": {
+      "description": "Imaging, scans, and diagnostic tools",
+      "priority": 2,
+      "icons": [
+        { "name": "ultrasound", "file": "medical-webfont/packages/svg/ultrasound.svg", "keywords": ["echo", "imaging"] },
+        { "name": "ultrasound-inverse", "file": "medical-webfont/packages/svg/i-ultrasound.svg", "keywords": ["echo", "dark"] },
+        { "name": "mri", "file": "medical-webfont/packages/svg/imaging-alternative-mri.svg", "keywords": ["scan", "imaging"] },
+        { "name": "mri-inverse", "file": "medical-webfont/packages/svg/i-imaging-alternative-mri.svg", "keywords": ["scan", "dark"] },
+        { "name": "ct-scan", "file": "medical-webfont/packages/svg/imaging-alternative-ct.svg", "keywords": ["cac", "calcium score"] },
+        { "name": "ct-scan-inverse", "file": "medical-webfont/packages/svg/i-imaging-alternative-ct.svg", "keywords": ["cac", "dark"] },
+        { "name": "pet-scan", "file": "medical-webfont/packages/svg/imaging-alternative-pet.svg", "keywords": ["nuclear", "imaging"] },
+        { "name": "pet-scan-inverse", "file": "medical-webfont/packages/svg/i-imaging-alternative-pet.svg", "keywords": ["nuclear", "dark"] },
+        { "name": "mri-pet", "file": "medical-webfont/packages/svg/mri-pet.svg", "keywords": ["hybrid", "imaging"] },
+        { "name": "mri-pet-inverse", "file": "medical-webfont/packages/svg/i-mri-pet.svg", "keywords": ["hybrid", "dark"] },
+        { "name": "imaging-root", "file": "medical-webfont/packages/svg/imaging-root-category.svg", "keywords": ["radiology", "imaging"] },
+        { "name": "radiology", "file": "medical-webfont/packages/svg/radiology.svg", "keywords": ["xray", "imaging"] },
+        { "name": "radiology-inverse", "file": "medical-webfont/packages/svg/i-radiology.svg", "keywords": ["xray", "dark"] },
+        { "name": "mammography", "file": "medical-webfont/packages/svg/mammography.svg", "keywords": ["breast", "screening"] },
+        { "name": "mammography-inverse", "file": "medical-webfont/packages/svg/i-mammography.svg", "keywords": ["breast", "dark"] },
+        { "name": "laboratory", "file": "medical-webfont/packages/svg/laboratory.svg", "keywords": ["blood test", "lipid panel"] },
+        { "name": "laboratory-inverse", "file": "medical-webfont/packages/svg/i-laboratory.svg", "keywords": ["blood test", "dark"] },
+        { "name": "pathology", "file": "medical-webfont/packages/svg/pathology.svg", "keywords": ["biopsy", "tissue"] },
+        { "name": "pathology-inverse", "file": "medical-webfont/packages/svg/i-pathology.svg", "keywords": ["biopsy", "dark"] },
+        { "name": "assessment", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-assessment.svg", "keywords": ["evaluation", "screening"] },
+        { "name": "diagnosis", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-diagnosis.svg", "keywords": ["diagnosis", "evaluation"] }
+      ]
+    },
+    "conditions": {
+      "description": "Diseases and health conditions",
+      "priority": 2,
+      "icons": [
+        { "name": "diabetes", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-diabetes.svg", "keywords": ["blood sugar", "glucose", "a1c"] },
+        { "name": "cancer", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-cancer.svg", "keywords": ["oncology", "tumor"] },
+        { "name": "malaria", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-malaria.svg", "keywords": ["infectious", "tropical"] },
+        { "name": "hiv-aids", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-HIV-AIDS.svg", "keywords": ["hiv", "aids", "virus"] },
+        { "name": "pneumonia", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-pneumonia.svg", "keywords": ["lung", "infection"] },
+        { "name": "respiratory-disease", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-respiratory.svg", "keywords": ["copd", "asthma"] },
+        { "name": "outbreak", "file": "medic-icons/forms_tasks_targets/SVGs/icon-disease-outbreak.svg", "keywords": ["epidemic", "spread"] },
+        { "name": "respiratory", "file": "medical-webfont/packages/svg/respiratory.svg", "keywords": ["lungs", "breathing"] },
+        { "name": "respiratory-inverse", "file": "medical-webfont/packages/svg/i-respiratory.svg", "keywords": ["lungs", "dark"] },
+        { "name": "oncology", "file": "medical-webfont/packages/svg/oncology.svg", "keywords": ["cancer", "tumor"] },
+        { "name": "oncology-inverse", "file": "medical-webfont/packages/svg/i-oncology.svg", "keywords": ["cancer", "dark"] },
+        { "name": "neurology", "file": "medical-webfont/packages/svg/neurology.svg", "keywords": ["brain", "stroke", "neuro"] },
+        { "name": "neurology-inverse", "file": "medical-webfont/packages/svg/i-neurology.svg", "keywords": ["brain", "dark"] },
+        { "name": "mental-health", "file": "medical-webfont/packages/svg/mental-health.svg", "keywords": ["psychology", "psychiatry"] },
+        { "name": "mental-health-inverse", "file": "medical-webfont/packages/svg/i-mental-health.svg", "keywords": ["psychology", "dark"] },
+        { "name": "infectious-diseases", "file": "medical-webfont/packages/svg/infectious-diseases.svg", "keywords": ["virus", "bacteria"] },
+        { "name": "infectious-diseases-inverse", "file": "medical-webfont/packages/svg/i-infectious-diseases.svg", "keywords": ["virus", "dark"] }
+      ]
+    },
+    "symptoms": {
+      "description": "Symptoms and clinical signs",
+      "priority": 2,
+      "icons": [
+        { "name": "cough", "file": "medic-icons/forms_tasks_targets/SVGs/icon-condition-cough.svg", "keywords": ["respiratory", "symptom"] },
+        { "name": "diarrhea", "file": "medic-icons/forms_tasks_targets/SVGs/icon-condition-diarrhea.svg", "keywords": ["gi", "symptom"] },
+        { "name": "fever", "file": "medic-icons/forms_tasks_targets/SVGs/icon-condition-fever.svg", "keywords": ["temperature", "infection"] }
+      ]
+    },
+    "treatment": {
+      "description": "Medications and therapy",
+      "priority": 2,
+      "icons": [
+        { "name": "pharmacy", "file": "medical-webfont/packages/svg/pharmacy.svg", "keywords": ["medication", "drugs", "statins"] },
+        { "name": "pharmacy-inverse", "file": "medical-webfont/packages/svg/i-pharmacy.svg", "keywords": ["medication", "dark"] },
+        { "name": "medicine", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-medicine.svg", "keywords": ["pills", "treatment"] },
+        { "name": "surgery", "file": "medical-webfont/packages/svg/surgery.svg", "keywords": ["operation", "intervention"] },
+        { "name": "surgery-inverse", "file": "medical-webfont/packages/svg/i-surgery.svg", "keywords": ["operation", "dark"] },
+        { "name": "anesthesia", "file": "medical-webfont/packages/svg/anesthesia.svg", "keywords": ["sedation", "pain control"] },
+        { "name": "anesthesia-inverse", "file": "medical-webfont/packages/svg/i-anesthesia.svg", "keywords": ["sedation", "dark"] },
+        { "name": "physical-therapy", "file": "medical-webfont/packages/svg/physical-therapy.svg", "keywords": ["rehab", "cardiac rehab", "exercise"] },
+        { "name": "physical-therapy-inverse", "file": "medical-webfont/packages/svg/i-physical-therapy.svg", "keywords": ["rehab", "dark"] },
+        { "name": "immunizations", "file": "medical-webfont/packages/svg/immunizations.svg", "keywords": ["vaccine", "shot"] },
+        { "name": "immunizations-inverse", "file": "medical-webfont/packages/svg/i-immunizations.svg", "keywords": ["vaccine", "dark"] },
+        { "name": "immunization", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-immunization.svg", "keywords": ["vaccine", "prevention"] },
+        { "name": "alternative-complementary", "file": "medical-webfont/packages/svg/alternative-complementary.svg", "keywords": ["natural", "holistic"] },
+        { "name": "alternative-complementary-inverse", "file": "medical-webfont/packages/svg/i-alternative-complementary.svg", "keywords": ["natural", "dark"] }
+      ]
+    },
+    "facilities": {
+      "description": "Hospital and healthcare facilities",
+      "priority": 3,
+      "icons": [
+        { "name": "hospital", "file": "medical-webfont/packages/svg/hospital.svg", "keywords": ["building", "healthcare"] },
+        { "name": "hospital-inverse", "file": "medical-webfont/packages/svg/i-hospital.svg", "keywords": ["building", "dark"] },
+        { "name": "emergency", "file": "medical-webfont/packages/svg/emergency.svg", "keywords": ["er", "urgent", "ambulance"] },
+        { "name": "emergency-inverse", "file": "medical-webfont/packages/svg/i-emergency.svg", "keywords": ["er", "dark"] },
+        { "name": "ambulance", "file": "medical-webfont/packages/svg/ambulance.svg", "keywords": ["ems", "transport"] },
+        { "name": "ambulance-inverse", "file": "medical-webfont/packages/svg/i-ambulance.svg", "keywords": ["ems", "dark"] },
+        { "name": "inpatient", "file": "medical-webfont/packages/svg/inpatient.svg", "keywords": ["admitted", "hospital stay"] },
+        { "name": "inpatient-inverse", "file": "medical-webfont/packages/svg/i-inpatient.svg", "keywords": ["admitted", "dark"] },
+        { "name": "outpatient", "file": "medical-webfont/packages/svg/outpatient.svg", "keywords": ["clinic", "office"] },
+        { "name": "outpatient-inverse", "file": "medical-webfont/packages/svg/i-outpatient.svg", "keywords": ["clinic", "dark"] },
+        { "name": "labor-delivery", "file": "medical-webfont/packages/svg/labor-delivery.svg", "keywords": ["birth", "maternity"] },
+        { "name": "labor-delivery-inverse", "file": "medical-webfont/packages/svg/i-labor-delivery.svg", "keywords": ["birth", "dark"] },
+        { "name": "nursery", "file": "medical-webfont/packages/svg/nursery.svg", "keywords": ["nicu", "newborn"] },
+        { "name": "nursery-inverse", "file": "medical-webfont/packages/svg/i-nursery.svg", "keywords": ["nicu", "dark"] },
+        { "name": "waiting-area", "file": "medical-webfont/packages/svg/waiting-area.svg", "keywords": ["lobby", "reception"] },
+        { "name": "waiting-area-inverse", "file": "medical-webfont/packages/svg/i-waiting-area.svg", "keywords": ["lobby", "dark"] },
+        { "name": "registration", "file": "medical-webfont/packages/svg/registration.svg", "keywords": ["checkin", "admissions"] },
+        { "name": "registration-inverse", "file": "medical-webfont/packages/svg/i-registration.svg", "keywords": ["checkin", "dark"] },
+        { "name": "medical-records", "file": "medical-webfont/packages/svg/medical-records.svg", "keywords": ["ehr", "chart"] },
+        { "name": "medical-records-inverse", "file": "medical-webfont/packages/svg/i-medical-records.svg", "keywords": ["ehr", "dark"] },
+        { "name": "medical-library", "file": "medical-webfont/packages/svg/medical-library.svg", "keywords": ["research", "education"] },
+        { "name": "medical-library-inverse", "file": "medical-webfont/packages/svg/i-medical-library.svg", "keywords": ["research", "dark"] }
+      ]
+    },
+    "specialties": {
+      "description": "Medical specialty icons",
+      "priority": 3,
+      "icons": [
+        { "name": "internal-medicine", "file": "medical-webfont/packages/svg/internal-medicine.svg", "keywords": ["general", "medicine"] },
+        { "name": "internal-medicine-inverse", "file": "medical-webfont/packages/svg/i-internal-medicine.svg", "keywords": ["general", "dark"] },
+        { "name": "family-practice", "file": "medical-webfont/packages/svg/family-practice.svg", "keywords": ["primary care", "gp"] },
+        { "name": "family-practice-inverse", "file": "medical-webfont/packages/svg/i-family-practice.svg", "keywords": ["primary care", "dark"] },
+        { "name": "pediatrics", "file": "medical-webfont/packages/svg/pediatrics.svg", "keywords": ["children", "kids"] },
+        { "name": "pediatrics-inverse", "file": "medical-webfont/packages/svg/i-pediatrics.svg", "keywords": ["children", "dark"] },
+        { "name": "womens-health", "file": "medical-webfont/packages/svg/womens-health.svg", "keywords": ["obgyn", "gynecology"] },
+        { "name": "womens-health-inverse", "file": "medical-webfont/packages/svg/i-womens-health.svg", "keywords": ["obgyn", "dark"] },
+        { "name": "dermatology", "file": "medical-webfont/packages/svg/dermatology.svg", "keywords": ["skin", "rash"] },
+        { "name": "dermatology-inverse", "file": "medical-webfont/packages/svg/i-dermatology.svg", "keywords": ["skin", "dark"] },
+        { "name": "ophthalmology", "file": "medical-webfont/packages/svg/ophthalmology.svg", "keywords": ["eyes", "vision"] },
+        { "name": "ophthalmology-inverse", "file": "medical-webfont/packages/svg/i-ophthalmology.svg", "keywords": ["eyes", "dark"] },
+        { "name": "ear-nose-throat", "file": "medical-webfont/packages/svg/ear-nose-throat.svg", "keywords": ["ent", "otolaryngology"] },
+        { "name": "ear-nose-throat-inverse", "file": "medical-webfont/packages/svg/i-ear-nose-throat.svg", "keywords": ["ent", "dark"] },
+        { "name": "dental", "file": "medical-webfont/packages/svg/dental.svg", "keywords": ["teeth", "dentist"] },
+        { "name": "dental-inverse", "file": "medical-webfont/packages/svg/i-dental.svg", "keywords": ["teeth", "dark"] },
+        { "name": "genetics", "file": "medical-webfont/packages/svg/genetics.svg", "keywords": ["dna", "hereditary"] },
+        { "name": "genetics-inverse", "file": "medical-webfont/packages/svg/i-genetics.svg", "keywords": ["dna", "dark"] },
+        { "name": "social-services", "file": "medical-webfont/packages/svg/social-services.svg", "keywords": ["social work", "support"] },
+        { "name": "social-services-inverse", "file": "medical-webfont/packages/svg/i-social-services.svg", "keywords": ["social work", "dark"] }
+      ]
+    },
+    "lifestyle": {
+      "description": "Lifestyle, prevention, and education - KEY for cardiology content",
+      "priority": 1,
+      "icons": [
+        { "name": "nutrition", "file": "medical-webfont/packages/svg/nutrition.svg", "keywords": ["diet", "food", "dash"] },
+        { "name": "nutrition-inverse", "file": "medical-webfont/packages/svg/i-nutrition.svg", "keywords": ["diet", "dark"] },
+        { "name": "child-nutrition", "file": "medic-icons/forms_tasks_targets/SVGs/icon-child-nutrition.svg", "keywords": ["pediatric", "diet"] },
+        { "name": "smoking", "file": "medical-webfont/packages/svg/smoking.svg", "keywords": ["tobacco", "cigarette", "risk factor"] },
+        { "name": "smoking-inverse", "file": "medical-webfont/packages/svg/i-smoking.svg", "keywords": ["tobacco", "dark"] },
+        { "name": "no-smoking", "file": "medical-webfont/packages/svg/no-smoking.svg", "keywords": ["quit smoking", "cessation"] },
+        { "name": "no-smoking-inverse", "file": "medical-webfont/packages/svg/i-no-smoking.svg", "keywords": ["quit", "dark"] },
+        { "name": "health-education", "file": "medical-webfont/packages/svg/health-education.svg", "keywords": ["learning", "awareness"] },
+        { "name": "health-education-inverse", "file": "medical-webfont/packages/svg/i-health-education.svg", "keywords": ["learning", "dark"] },
+        { "name": "diabetes-education", "file": "medical-webfont/packages/svg/diabetes-education.svg", "keywords": ["glucose", "management"] },
+        { "name": "diabetes-education-inverse", "file": "medical-webfont/packages/svg/i-diabetes-education.svg", "keywords": ["glucose", "dark"] },
+        { "name": "household-education", "file": "medic-icons/forms_tasks_targets/SVGs/icon-household-education.svg", "keywords": ["family", "learning"] },
+        { "name": "family-planning", "file": "medic-icons/forms_tasks_targets/SVGs/icon-family-planning.svg", "keywords": ["contraception", "planning"] },
+        { "name": "bednet", "file": "medic-icons/forms_tasks_targets/SVGs/icon-household-bednet.svg", "keywords": ["prevention", "malaria"] },
+        { "name": "equity", "file": "medic-icons/forms_tasks_targets/SVGs/icon-household-equity.svg", "keywords": ["access", "disparity"] },
+        { "name": "food-security", "file": "medic-icons/forms_tasks_targets/SVGs/icon-household-foodsecurity.svg", "keywords": ["hunger", "nutrition"] }
+      ]
+    },
+    "people": {
+      "description": "Healthcare workers, patients, and families",
+      "priority": 2,
+      "icons": [
+        { "name": "family", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-family.svg", "keywords": ["household", "relatives"] },
+        { "name": "nurse", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-nurse-crop.svg", "keywords": ["rn", "healthcare worker"] },
+        { "name": "chw-female", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-CHW-female.svg", "keywords": ["community health worker", "woman"] },
+        { "name": "chw-male", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-CHW-male.svg", "keywords": ["community health worker", "man"] },
+        { "name": "chw", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-CHW-crop.svg", "keywords": ["community health worker"] },
+        { "name": "manager", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-manager-crop.svg", "keywords": ["supervisor", "admin"] },
+        { "name": "woman", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-woman.svg", "keywords": ["female", "patient"] },
+        { "name": "man", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-man.svg", "keywords": ["male", "patient"] },
+        { "name": "child", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-child.svg", "keywords": ["kid", "pediatric"] },
+        { "name": "children", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-children.svg", "keywords": ["kids", "pediatric"] },
+        { "name": "baby", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-baby.svg", "keywords": ["infant", "newborn"] },
+        { "name": "mother-baby", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-woman-baby.svg", "keywords": ["maternal", "newborn"] },
+        { "name": "pregnant", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-pregnant.svg", "keywords": ["pregnancy", "expecting"] },
+        { "name": "woman-child", "file": "medic-icons/forms_tasks_targets/SVGs/icon-people-woman-child.svg", "keywords": ["mother", "pediatric"] }
+      ]
+    },
+    "status": {
+      "description": "Warnings, alerts, and status indicators",
+      "priority": 1,
+      "icons": [
+        { "name": "warning-red", "file": "medic-icons/forms_tasks_targets/SVGs/icon-warning-red.svg", "keywords": ["danger", "alert", "high risk"] },
+        { "name": "warning-amber", "file": "medic-icons/forms_tasks_targets/SVGs/icon-warning-amber.svg", "keywords": ["caution", "moderate"] },
+        { "name": "warning-black", "file": "medic-icons/forms_tasks_targets/SVGs/icon-warning-black.svg", "keywords": ["warning", "notice"] },
+        { "name": "danger-sign", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-warning.svg", "keywords": ["hazard", "critical"] },
+        { "name": "anc-danger", "file": "medic-icons/forms_tasks_targets/SVGs/icon-ANC-danger-sign.svg", "keywords": ["prenatal", "risk"] },
+        { "name": "iccm-danger", "file": "medic-icons/forms_tasks_targets/SVGs/icon-ICCM-danger-sign.svg", "keywords": ["child", "critical"] },
+        { "name": "pnc-danger", "file": "medic-icons/forms_tasks_targets/SVGs/icon-PNC-danger-sign.svg", "keywords": ["postnatal", "risk"] },
+        { "name": "first-aid", "file": "medical-webfont/packages/svg/first-aid.svg", "keywords": ["emergency", "help"] },
+        { "name": "first-aid-inverse", "file": "medical-webfont/packages/svg/i-first-aid.svg", "keywords": ["emergency", "dark"] },
+        { "name": "shield", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-shield.svg", "keywords": ["protection", "prevention"] }
+      ]
+    },
+    "organs": {
+      "description": "Organ and anatomy icons",
+      "priority": 2,
+      "icons": [
+        { "name": "kidney", "file": "medical-webfont/packages/svg/kidney.svg", "keywords": ["renal", "ckd"] },
+        { "name": "kidney-inverse", "file": "medical-webfont/packages/svg/i-kidney.svg", "keywords": ["renal", "dark"] }
+      ]
+    },
+    "child-health": {
+      "description": "Pediatric and child development icons",
+      "priority": 3,
+      "icons": [
+        { "name": "child-growth", "file": "medic-icons/forms_tasks_targets/SVGs/icon-child-growth.svg", "keywords": ["development", "growth chart"] },
+        { "name": "child-cognition", "file": "medic-icons/forms_tasks_targets/SVGs/icon-child-cognition.svg", "keywords": ["brain", "development"] }
+      ]
+    },
+    "maternal-health": {
+      "description": "Pregnancy, delivery, and maternal care",
+      "priority": 3,
+      "icons": [
+        { "name": "delivery", "file": "medic-icons/forms_tasks_targets/SVGs/icon-delivery.svg", "keywords": ["birth", "labor"] },
+        { "name": "followup", "file": "medic-icons/forms_tasks_targets/SVGs/icon-followup-general.svg", "keywords": ["checkup", "postnatal"] },
+        { "name": "form-general", "file": "medic-icons/forms_tasks_targets/SVGs/icon-form-general.svg", "keywords": ["documentation", "form"] }
+      ]
+    },
+    "death-mortality": {
+      "description": "Mortality and death-related icons",
+      "priority": 4,
+      "icons": [
+        { "name": "death-general", "file": "medic-icons/forms_tasks_targets/SVGs/icon-death-general.svg", "keywords": ["mortality", "deceased"] },
+        { "name": "death-coffin", "file": "medic-icons/forms_tasks_targets/SVGs/icon-death-coffin.svg", "keywords": ["burial", "mortality"] },
+        { "name": "death-maternal", "file": "medic-icons/forms_tasks_targets/SVGs/icon-death-coffin-maternal.svg", "keywords": ["maternal mortality"] },
+        { "name": "death-neonatal", "file": "medic-icons/forms_tasks_targets/SVGs/icon-death-coffin-neonatal.svg", "keywords": ["infant mortality"] }
+      ]
+    },
+    "community": {
+      "description": "Community and public health icons",
+      "priority": 3,
+      "icons": [
+        { "name": "community", "file": "medic-icons/forms_tasks_targets/SVGs/icon-community.svg", "keywords": ["population", "public health"] },
+        { "name": "community-meeting", "file": "medic-icons/forms_tasks_targets/SVGs/icon-community-meeting-tree.svg", "keywords": ["gathering", "education"] }
+      ]
+    },
+    "communication": {
+      "description": "Messaging and communication icons",
+      "priority": 4,
+      "icons": [
+        { "name": "messages-on", "file": "medic-icons/forms_tasks_targets/SVGs/icon-messages-on.svg", "keywords": ["sms", "notification"] },
+        { "name": "messages-off", "file": "medic-icons/forms_tasks_targets/SVGs/icon-messages-off.svg", "keywords": ["muted", "off"] }
+      ]
+    },
+    "accessibility": {
+      "description": "Accessibility and accommodation icons",
+      "priority": 4,
+      "icons": [
+        { "name": "accessibility", "file": "medical-webfont/packages/svg/accessibility.svg", "keywords": ["wheelchair", "disability"] },
+        { "name": "accessibility-inverse", "file": "medical-webfont/packages/svg/i-accessibility.svg", "keywords": ["wheelchair", "dark"] },
+        { "name": "hearing-assistance", "file": "medical-webfont/packages/svg/hearing-assistance.svg", "keywords": ["deaf", "hearing aid"] },
+        { "name": "hearing-assistance-inverse", "file": "medical-webfont/packages/svg/i-hearing-assistance.svg", "keywords": ["deaf", "dark"] },
+        { "name": "interpreter-services", "file": "medical-webfont/packages/svg/interpreter-services.svg", "keywords": ["translation", "language"] },
+        { "name": "interpreter-services-inverse", "file": "medical-webfont/packages/svg/i-interpreter-services.svg", "keywords": ["translation", "dark"] },
+        { "name": "volume-control", "file": "medical-webfont/packages/svg/volume-control.svg", "keywords": ["sound", "audio"] },
+        { "name": "volume-control-inverse", "file": "medical-webfont/packages/svg/i-volume-control.svg", "keywords": ["sound", "dark"] },
+        { "name": "text-telephone", "file": "medical-webfont/packages/svg/text-telephone.svg", "keywords": ["tty", "deaf"] },
+        { "name": "text-telephone-inverse", "file": "medical-webfont/packages/svg/i-text-telephone.svg", "keywords": ["tty", "dark"] }
+      ]
+    },
+    "wayfinding": {
+      "description": "Navigation and wayfinding icons",
+      "priority": 5,
+      "icons": [
+        { "name": "elevators", "file": "medical-webfont/packages/svg/elevators.svg", "keywords": ["lift", "floor"] },
+        { "name": "elevators-inverse", "file": "medical-webfont/packages/svg/i-elevators.svg", "keywords": ["lift", "dark"] },
+        { "name": "stairs", "file": "medical-webfont/packages/svg/stairs.svg", "keywords": ["steps", "floor"] },
+        { "name": "stairs-inverse", "file": "medical-webfont/packages/svg/i-stairs.svg", "keywords": ["steps", "dark"] },
+        { "name": "restrooms", "file": "medical-webfont/packages/svg/restrooms.svg", "keywords": ["bathroom", "toilet"] },
+        { "name": "restrooms-inverse", "file": "medical-webfont/packages/svg/i-restrooms.svg", "keywords": ["bathroom", "dark"] },
+        { "name": "information", "file": "medical-webfont/packages/svg/information-us.svg", "keywords": ["help", "info"] },
+        { "name": "information-inverse", "file": "medical-webfont/packages/svg/i-information-us.svg", "keywords": ["help", "dark"] }
+      ]
+    },
+    "amenities": {
+      "description": "Hospital amenities and services",
+      "priority": 5,
+      "icons": [
+        { "name": "chapel", "file": "medical-webfont/packages/svg/chapel.svg", "keywords": ["spiritual", "prayer"] },
+        { "name": "chapel-inverse", "file": "medical-webfont/packages/svg/i-chapel.svg", "keywords": ["spiritual", "dark"] },
+        { "name": "coffee-shop", "file": "medical-webfont/packages/svg/coffee-shop.svg", "keywords": ["cafe", "refreshments"] },
+        { "name": "coffee-shop-inverse", "file": "medical-webfont/packages/svg/i-coffee-shop.svg", "keywords": ["cafe", "dark"] },
+        { "name": "gift-shop", "file": "medical-webfont/packages/svg/gift-shop.svg", "keywords": ["flowers", "store"] },
+        { "name": "gift-shop-inverse", "file": "medical-webfont/packages/svg/i-gift-shop.svg", "keywords": ["flowers", "dark"] },
+        { "name": "restaurant", "file": "medical-webfont/packages/svg/restaurant.svg", "keywords": ["cafeteria", "food"] },
+        { "name": "restaurant-inverse", "file": "medical-webfont/packages/svg/i-restaurant.svg", "keywords": ["cafeteria", "dark"] },
+        { "name": "drinking-fountain", "file": "medical-webfont/packages/svg/drinking-fountain.svg", "keywords": ["water", "hydration"] },
+        { "name": "drinking-fountain-inverse", "file": "medical-webfont/packages/svg/i-drinking-fountain.svg", "keywords": ["water", "dark"] }
+      ]
+    },
+    "administrative": {
+      "description": "Administrative and billing icons",
+      "priority": 5,
+      "icons": [
+        { "name": "administration", "file": "medical-webfont/packages/svg/administration.svg", "keywords": ["office", "management"] },
+        { "name": "administration-inverse", "file": "medical-webfont/packages/svg/i-administration.svg", "keywords": ["office", "dark"] },
+        { "name": "billing", "file": "medical-webfont/packages/svg/billing.svg", "keywords": ["payment", "finance"] },
+        { "name": "billing-inverse", "file": "medical-webfont/packages/svg/i-billing.svg", "keywords": ["payment", "dark"] },
+        { "name": "health-services", "file": "medical-webfont/packages/svg/health-services.svg", "keywords": ["hmo", "insurance"] },
+        { "name": "health-services-inverse", "file": "medical-webfont/packages/svg/i-health-services.svg", "keywords": ["hmo", "dark"] },
+        { "name": "care-staff-area", "file": "medical-webfont/packages/svg/care-staff-area.svg", "keywords": ["employees", "staff only"] },
+        { "name": "care-staff-area-inverse", "file": "medical-webfont/packages/svg/i-care-staff-area.svg", "keywords": ["employees", "dark"] }
+      ]
+    },
+    "safety": {
+      "description": "Safety and emergency icons",
+      "priority": 4,
+      "icons": [
+        { "name": "fire-extinguisher", "file": "medical-webfont/packages/svg/fire-extinguisher.svg", "keywords": ["fire", "safety"] },
+        { "name": "fire-extinguisher-inverse", "file": "medical-webfont/packages/svg/i-fire-extinguisher.svg", "keywords": ["fire", "dark"] }
+      ]
+    },
+    "generic": {
+      "description": "Generic healthcare icons",
+      "priority": 4,
+      "icons": [
+        { "name": "healthcare-generic", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-generic.svg", "keywords": ["medical", "health"] },
+        { "name": "healthcare-generic-2", "file": "medic-icons/forms_tasks_targets/SVGs/icon-healthcare-generic-2.svg", "keywords": ["medical", "health"] }
+      ]
+    }
+  },
+  "cardiologyQuickAccess": {
+    "description": "Most commonly used icons for cardiology content",
+    "icons": [
+      "cardiology",
+      "cardiovascular",
+      "cath-lab",
+      "ct-scan",
+      "ultrasound",
+      "laboratory",
+      "pharmacy",
+      "physical-therapy",
+      "diabetes",
+      "nutrition",
+      "no-smoking",
+      "warning-red",
+      "warning-amber",
+      "emergency",
+      "intensive-care",
+      "hospital",
+      "family",
+      "health-education"
+    ]
+  },
+  "searchIndex": {
+    "description": "Keyword-to-icon mapping for quick lookup",
+    "mappings": {
+      "heart": ["cardiology", "cardiology-inverse", "cardiovascular", "intensive-care"],
+      "statin": ["pharmacy", "pharmacy-inverse", "medicine"],
+      "cholesterol": ["pharmacy", "laboratory", "nutrition"],
+      "ldl": ["pharmacy", "laboratory"],
+      "blood pressure": ["cardiology", "laboratory", "warning-red"],
+      "hypertension": ["cardiology", "laboratory", "warning-red"],
+      "diabetes": ["diabetes", "diabetes-education", "nutrition"],
+      "exercise": ["physical-therapy", "physical-therapy-inverse"],
+      "cardiac rehab": ["physical-therapy", "cardiology"],
+      "stent": ["cath-lab", "cath-lab-inverse", "surgery"],
+      "ecg": ["cardiology", "ultrasound"],
+      "echo": ["ultrasound", "ultrasound-inverse"],
+      "cac": ["ct-scan", "ct-scan-inverse"],
+      "calcium score": ["ct-scan", "ct-scan-inverse"],
+      "afib": ["cardiology", "warning-amber"],
+      "stroke": ["neurology", "emergency", "warning-red"],
+      "heart attack": ["emergency", "cardiology", "warning-red"],
+      "mi": ["emergency", "cardiology", "warning-red"],
+      "weight loss": ["nutrition", "physical-therapy"],
+      "glp-1": ["pharmacy", "diabetes"],
+      "ozempic": ["pharmacy", "diabetes"],
+      "sleep": ["mental-health", "warning-amber"],
+      "smoking": ["smoking", "no-smoking"],
+      "diet": ["nutrition", "nutrition-inverse"],
+      "dash": ["nutrition", "nutrition-inverse"],
+      "prevention": ["shield", "health-education", "no-smoking"]
+    }
+  }
+}

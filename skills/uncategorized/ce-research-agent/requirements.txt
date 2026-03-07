@@ -1,0 +1,10 @@
+# CE Research Agent Dependencies
+# Minimal dependencies - scripts primarily generate prompts for Claude
+
+# No external dependencies required for basic operation
+# The scripts use only Python standard library:
+# - json
+# - argparse
+# - pathlib
+# - datetime
+# - re

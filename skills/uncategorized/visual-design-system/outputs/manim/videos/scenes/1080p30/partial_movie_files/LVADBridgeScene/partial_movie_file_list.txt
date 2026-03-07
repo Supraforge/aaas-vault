@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/LVADBridgeScene/1697185472_2238272354_223132457.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/LVADBridgeScene/2038921957_3210134547_1822998638.mp4'
+file 'file:/home/user/integrated_content_OS/skills/cardiology/visual-design-system/outputs/manim/videos/scenes/1080p30/partial_movie_files/LVADBridgeScene/2038921957_2819690770_3608070752.mp4'

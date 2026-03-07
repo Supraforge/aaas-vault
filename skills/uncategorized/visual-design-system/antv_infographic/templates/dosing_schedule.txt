@@ -1,0 +1,11 @@
+infographic list-row-simple-horizontal-arrow
+data
+  items:
+    - label: Week 1-2
+      desc: Initial dose 10mg daily
+    - label: Week 3-4
+      desc: Titrate to 20mg daily if tolerated
+    - label: Week 5-8
+      desc: Target dose 40mg daily
+    - label: Ongoing
+      desc: Maintenance dose with monitoring

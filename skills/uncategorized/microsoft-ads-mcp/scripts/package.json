@@ -1,0 +1,17 @@
+{
+  "name": "microsoft-ads-api",
+  "version": "1.0.0",
+  "description": "Node.js interface for Microsoft Advertising API",
+  "main": "microsoft_ads_api.js",
+  "scripts": {
+    "start": "node microsoft_ads_api.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "consort_flow",
+  "description": "CONSORT diagram flow chart",
+  "data": [],
+  "marks": [
+    {
+      "type": "sankey",
+      "encode": {
+        "source": "from",
+        "target": "to",
+        "value": "n"
+      },
+      "style": {
+        "linkFillOpacity": 0.4,
+        "nodeStrokeWidth": 1,
+        "nodeStroke": "#1e3a5f"
+      }
+    }
+  ],
+  "scales": {
+    "color": {
+      "range": ["#2d6a9f", "#48a9a6", "#4caf50"]
+    }
+  },
+  "legend": false
+}

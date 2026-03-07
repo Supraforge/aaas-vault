@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AntV Infographic: risk_stratification</title>
+  <script src="https://unpkg.com/@antv/infographic@latest/dist/infographic.umd.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    #container {
+      width: 800px;
+      height: 600px;
+      background: white;
+      margin: 0 auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #controls {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    button {
+      background: #1e3a5f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin: 0 5px;
+    }
+    button:hover {
+      background: #2d6a9f;
+    }
+    #spec-view {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 15px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <button onclick="downloadSVG()">Download SVG</button>
+    <button onclick="downloadPNG()">Download PNG</button>
+    <button onclick="toggleSpec()">Toggle Spec</button>
+  </div>
+
+  <div id="container"></div>
+
+  <div id="spec-view" style="display: none;"></div>
+
+  <script>
+    const spec = `infographic list-row-simple-vertical
+data
+  items:
+    - label: Low Risk (0-2 factors)
+      desc: 10-year CV risk <10%, lifestyle modification
+    - label: Moderate Risk (3-4 factors)
+      desc: 10-year CV risk 10-20%, consider statin
+    - label: High Risk (≥5 factors)
+      desc: 10-year CV risk >20%, intensive therapy
+    - label: Very High Risk
+      desc: Known CVD or diabetes, aggressive management
+`;
+
+    // Display spec
+    document.getElementById('spec-view').textContent = spec;
+
+    // Initialize infographic
+    const infographic = new Infographic.Infographic({
+      container: '#container',
+      width: 800,
+      height: 600,
+      editable: true,
+    });
+
+    // Render
+    infographic.render(spec);
+
+    // Download SVG
+    function downloadSVG() {
+      const svgElement = document.querySelector('#container svg');
+      if (!svgElement) {
+        alert('No SVG found');
+        return;
+      }
+
+      const svgData = svgElement.outerHTML;
+      const blob = new Blob([svgData], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'infographic.svg';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Download PNG
+    function downloadPNG() {
+      const svgElement = document.querySelector('#container svg');
+      if (!svgElement) {
+        alert('No SVG found');
+        return;
+      }
+
+      const svgData = new XMLSerializer().serializeToString(svgElement);
+      const canvas = document.createElement('canvas');
+      canvas.width = 800 * 2;  // 2x for better quality
+      canvas.height = 600 * 2;
+      const ctx = canvas.getContext('2d');
+
+      const img = new Image();
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob(function(blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'infographic.png';
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      };
+
+      const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+      img.src = url;
+    }
+
+    // Toggle spec view
+    function toggleSpec() {
+      const specView = document.getElementById('spec-view');
+      specView.style.display = specView.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Auto-extract SVG to console for programmatic access
+    setTimeout(() => {
+      const svgElement = document.querySelector('#container svg');
+      if (svgElement) {
+        console.log('=== SVG OUTPUT START ===');
+        console.log(svgElement.outerHTML);
+        console.log('=== SVG OUTPUT END ===');
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

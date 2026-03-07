@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <style>
+      .title { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f; }
+      .subtitle { font-family: Helvetica, Arial, sans-serif; font-size: 14px; fill: #495057; }
+      .step-number { font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #ffffff; }
+      .step-title { font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; fill: #212529; }
+      .step-desc { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #495057; }
+      .arrow { stroke: #2d6a9f; stroke-width: 3; fill: none; }
+      .arrow-head { fill: #2d6a9f; }
+      .node-bg { fill: #f8f9fa; stroke: #e9ecef; stroke-width: 1; }
+      .node-active { fill: #2d6a9f; }
+      .footer { font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #6c757d; }
+      .drug-label { font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #0077bb; }
+      .target-label { font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #c62828; }
+      .effect-label { font-family: Helvetica, Arial, sans-serif; font-size: 12px; fill: #2e7d32; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon class="arrow-head" points="0 0, 10 3.5, 0 7"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ffffff"/>
+
+  <!-- Header -->
+  <text id="drug_name" class="title" x="40" y="45">Dapagliflozin (SGLT2i)</text>
+  <text id="drug_class" class="subtitle" x="40" y="70">Sodium-Glucose Co-Transporter 2 Inhibitor</text>
+
+  <!-- Divider -->
+  <line stroke="#e9ecef" stroke-width="1" x1="40" y1="90" x2="760" y2="90"/>
+
+  <!-- Step 1: Drug -->
+  <circle class="node-active" cx="120" cy="180" r="35"/>
+  <text class="step-number" x="120" y="187" text-anchor="middle">1</text>
+  <text id="step1_title" class="step-title" x="120" y="240" text-anchor="middle">Oral Administration</text>
+  <text id="step1_desc" class="step-desc" x="120" y="258" text-anchor="middle">10mg once daily</text>
+
+  <!-- Arrow 1→2 -->
+  <path class="arrow" d="M 165,180 L 235,180" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2: Target -->
+  <circle class="node-active" cx="280" cy="180" r="35"/>
+  <text class="step-number" x="280" y="187" text-anchor="middle">2</text>
+  <text id="step2_title" class="step-title" x="280" y="240" text-anchor="middle">SGLT2 Inhibition</text>
+  <text id="step2_desc" class="step-desc" x="280" y="258" text-anchor="middle">Proximal tubule</text>
+
+  <!-- Arrow 2→3 -->
+  <path class="arrow" d="M 325,180 L 395,180" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3: Pathway -->
+  <circle class="node-active" cx="440" cy="180" r="35"/>
+  <text class="step-number" x="440" y="187" text-anchor="middle">3</text>
+  <text id="step3_title" class="step-title" x="440" y="240" text-anchor="middle">Glucosuria</text>
+  <text id="step3_desc" class="step-desc" x="440" y="258" text-anchor="middle">↓ Glucose reabsorption</text>
+
+  <!-- Arrow 3→4 -->
+  <path class="arrow" d="M 485,180 L 555,180" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4: Effect -->
+  <circle class="node-active" cx="600" cy="180" r="35"/>
+  <text class="step-number" x="600" y="187" text-anchor="middle">4</text>
+  <text id="step4_title" class="step-title" x="600" y="240" text-anchor="middle">Cardioprotection</text>
+  <text id="step4_desc" class="step-desc" x="600" y="258" text-anchor="middle">↓ HF hospitalization</text>
+
+  <!-- Key Target Box -->
+  <rect class="node-bg" x="40" y="310" width="340" height="140" rx="8"/>
+  <text class="target-label" x="60" y="340">PRIMARY TARGET</text>
+  <text id="target_name" class="step-title" x="60" y="370" style="font-size: 16px;">SGLT2 Receptor</text>
+  <text id="target_mechanism" class="step-desc" x="60" y="395">Blocks sodium-glucose cotransporter 2 in kidney</text>
+  <text id="target_result" class="step-desc" x="60" y="415">Increased urinary glucose excretion (50-80g/day)</text>
+  <text id="target_binding" class="step-desc" x="60" y="435">IC50 = 1.1 nM (highly selective)</text>
+
+  <!-- Clinical Effects Box -->
+  <rect class="node-bg" x="420" y="310" width="340" height="140" rx="8"/>
+  <text class="effect-label" x="440" y="340">CLINICAL EFFECTS</text>
+  <text id="effect1" class="step-title" x="440" y="370" style="font-size: 14px;">Reduced HF hospitalization (-30%)</text>
+  <text id="effect2" class="step-desc" x="440" y="395">Weight loss (2-4 kg)</text>
+  <text id="effect3" class="step-desc" x="440" y="420">Blood pressure reduction (-4 mmHg)</text>
+  <text id="effect4" class="step-desc" x="440" y="445" style="fill: #c62828;">Risk: Genital infections (5-8%)</text>
+
+  <!-- Key Stats Row -->
+  <rect fill="#f8f9fa" x="40" y="470" width="180" height="70" rx="6"/>
+  <text id="bioavail_value" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f;" x="60" y="510">78%</text>
+  <text id="bioavail_label" class="step-desc" x="60" y="530">Bioavailability</text>
+
+  <rect fill="#f8f9fa" x="240" y="470" width="180" height="70" rx="6"/>
+  <text id="halflife_value" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f;" x="260" y="510">12.9h</text>
+  <text id="halflife_label" class="step-desc" x="260" y="530">Half-life</text>
+
+  <rect fill="#f8f9fa" x="440" y="470" width="180" height="70" rx="6"/>
+  <text id="onset_value" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f;" x="460" y="510">2h</text>
+  <text id="onset_label" class="step-desc" x="460" y="530">Tmax</text>
+
+  <rect fill="#f8f9fa" x="640" y="470" width="120" height="70" rx="6"/>
+  <text id="dose_value" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f;" x="660" y="510">10mg</text>
+  <text id="dose_label" class="step-desc" x="660" y="530">Standard dose</text>
+
+  <!-- Footer -->
+  <line stroke="#e9ecef" stroke-width="1" x1="40" y1="560" x2="760" y2="560"/>
+  <text id="source" class="footer" x="40" y="580">FDA Label / DAPA-HF Trial Data</text>
+  <text id="date" class="footer" x="760" y="580" text-anchor="end">January 2026</text>
+</svg>

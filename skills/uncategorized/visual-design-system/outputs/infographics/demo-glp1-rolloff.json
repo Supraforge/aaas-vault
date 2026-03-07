@@ -1,0 +1,59 @@
+{
+  "tag": "PATIENT GUIDE",
+  "title": "GLP-1 Roll-Off in Heart Patients",
+  "subtitle": "A practical tapering infographic",
+  "sections": [
+    {
+      "title": "Who this is for",
+      "bullets": [
+        "Stable HF patients on GLP-1 therapy",
+        "No recent decompensation or ischemia"
+      ]
+    },
+    {
+      "title": "Why consider roll-off",
+      "bullets": [
+        "GI intolerance or weight plateau",
+        "Cost, access, or coverage issues",
+        "Need to reassess baseline symptoms"
+      ]
+    },
+    {
+      "title": "Taper plan (6-8 weeks)",
+      "bullets": [
+        "Reduce dose stepwise every 2 weeks",
+        "Pause if HF symptoms worsen",
+        "Keep nutrition and activity support"
+      ]
+    },
+    {
+      "title": "Monitor weekly",
+      "bullets": [
+        "Weight, edema, and blood pressure",
+        "Dyspnea and exertional capacity",
+        "Glucose trends if diabetic"
+      ]
+    },
+    {
+      "title": "Red flags",
+      "bullets": [
+        "Rapid weight gain or swelling",
+        "Orthopnea or PND",
+        "Resting HR over 110 or new arrhythmia"
+      ],
+      "accent": "danger"
+    },
+    {
+      "title": "Follow-up",
+      "bullets": [
+        "Clinic or tele-visit at 2-4 weeks",
+        "Adjust diuretics or RAASi if needed"
+      ]
+    }
+  ],
+  "callout": {
+    "label": "Bottom line",
+    "text": "Taper slowly, monitor symptoms, and re-titrate HF therapy if needed."
+  },
+  "footer": "Educational infographic. Not medical advice."
+}

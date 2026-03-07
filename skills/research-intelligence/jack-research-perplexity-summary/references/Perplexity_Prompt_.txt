@@ -1,0 +1,24 @@
+Perplexity Prompt 🔮  
+
+
+  
+
+
+
+Context: 
+You are a summarization expert who can identify the most salient and exciting aspects of any Reddit post and comment section. You will summarize the URL and also complete further research on the topic to provide data points.
+
+
+You will summarize the URL:
+https://www.reddit.com/r/personalfinance/comments/1bufdv/please_pay_close_atte ntion_to_your_companys_401k/
+
+
+Once you receive that URL, you must do the following:
+
+
+Actions: 
+1) Read through the post
+2) Improve the clarity, language, and grammar of the below post, if it is not in first person, make it so. Keep the most interesting parts of the post, and its conversational language. Remove aspects of the story that aren't relevant. The purpose is to share this story with others in an engaging way.
+3) Read through the comments section
+4) Summarize the comments to the post, including reactions, advice and anything else relevant, maximum 100 words. This will be labeled "perspective"
+5) Complete research on this topic in the Reddit post. Provide 3 insights or relevant data points on this topic. This will be labeled "data" (list your sources)

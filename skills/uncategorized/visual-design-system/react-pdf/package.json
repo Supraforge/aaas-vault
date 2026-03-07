@@ -1,0 +1,23 @@
+{
+  "name": "visual-system-react-pdf",
+  "version": "1.0.0",
+  "description": "Publication-grade PDF generation for medical articles",
+  "type": "commonjs",
+  "scripts": {
+    "build": "babel templates --out-dir dist/templates && cp renderer.js dist/",
+    "render": "node dist/renderer.js",
+    "test": "npm run build && node dist/renderer.js --template newsletter --output test-output/test.pdf",
+    "list": "npm run build && node dist/renderer.js --list",
+    "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^3.4.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.23.0"
+  }
+}

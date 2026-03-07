@@ -1,0 +1,279 @@
+{
+    "name": "New LEVEL 💙 4/4",
+    "flow": [
+        {
+            "id": 9,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 542863,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -189,
+                    "y": -68
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "label": "New Level 4 💙",
+                            "data": {
+                                "editable": "true"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "account_hash",
+                        "type": "text"
+                    },
+                    {
+                        "name": "hash",
+                        "type": "text"
+                    },
+                    {
+                        "name": "webhook_url",
+                        "type": "text"
+                    },
+                    {
+                        "name": "webhook_type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "callback_id",
+                        "type": "text"
+                    },
+                    {
+                        "name": "choice",
+                        "type": "text"
+                    },
+                    {
+                        "name": "type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "status",
+                        "type": "text"
+                    },
+                    {
+                        "name": "result",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "url",
+                                "type": "text"
+                            },
+                            {
+                                "name": "proxy_url",
+                                "type": "text"
+                            },
+                            {
+                                "name": "filename",
+                                "type": "text"
+                            },
+                            {
+                                "name": "content_type",
+                                "type": "text"
+                            },
+                            {
+                                "name": "width",
+                                "type": "number"
+                            },
+                            {
+                                "name": "height",
+                                "type": "number"
+                            },
+                            {
+                                "name": "size",
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "next_actions",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "type",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "choices",
+                                    "type": "array",
+                                    "spec": {
+                                        "type": "text"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "status_reason",
+                        "type": "text"
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "module": "google-docs:addAnImageToADocument",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1416296
+            },
+            "mapper": {
+                "choose": "dropdown",
+                "destination": "drive",
+                "document": "/19vxoEgiKsR74P30iiR9OtMOGH3dJrp_aq5rVyKFY7Bk",
+                "select": "document",
+                "uri": "{{9.result.url}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 138,
+                    "y": -72
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "Google Connection (itssssjaaaack@gmail.com)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "choose": {
+                            "label": "By Dropdown"
+                        },
+                        "destination": {
+                            "label": "My Drive"
+                        },
+                        "document": {
+                            "mode": "chose",
+                            "path": [
+                                "Midjourney Automation 💎"
+                            ]
+                        },
+                        "select": {
+                            "label": "By appending to the document"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:google",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "choose",
+                        "type": "select",
+                        "label": "Select a Document",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "mapping",
+                                "dropdown"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "destination",
+                        "type": "select",
+                        "label": "Choose a Drive",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "drive",
+                                "share",
+                                "team"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "document",
+                        "type": "file",
+                        "label": "Document ID",
+                        "required": true
+                    },
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Insert an Image",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "location",
+                                "document",
+                                "segment"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "uri",
+                        "type": "url",
+                        "label": "Image URL",
+                        "required": true
+                    },
+                    {
+                        "name": "height_magnitude",
+                        "type": "number",
+                        "label": "Height Magnitude in Points"
+                    },
+                    {
+                        "name": "width_magnitude",
+                        "type": "number",
+                        "label": "Width Magnitude in Points"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

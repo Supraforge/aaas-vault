@@ -1,0 +1,108 @@
+{
+  "brand": "SUPRA FORGE",
+  "min_required": 2,
+  "required_terms": [
+    {
+      "term": "Neural Quality Layer",
+      "description": "What [PROJECT_NAME] is - not just a tool, but a layer",
+      "usage": "Describe [PROJECT_NAME]'s core identity"
+    },
+    {
+      "term": "Golden Thread",
+      "description": "Continuous link between requirements and evidence",
+      "usage": "Describe traceability capabilities"
+    },
+    {
+      "term": "See the Risk Before It Sees You",
+      "description": "Primary tagline",
+      "usage": "Headlines, CTAs, key messaging"
+    },
+    {
+      "term": "Audit Blindness",
+      "description": "The enemy - state of not knowing compliance status",
+      "usage": "Problem definition"
+    },
+    {
+      "term": "Manual Compliance Tax",
+      "description": "The wasted 40% of engineering time",
+      "usage": "Pain point quantification"
+    },
+    {
+      "term": "Real-Time Audit Companion",
+      "description": "Our relationship to the user",
+      "usage": "Product positioning"
+    },
+    {
+      "term": "Waze for Compliance",
+      "description": "Analogy - helpful navigation without judgment",
+      "usage": "Explaining the concept"
+    },
+    {
+      "term": "Benevolent Omniscience",
+      "description": "Total vision + total safety",
+      "usage": "Brand philosophy"
+    },
+    {
+      "term": "Quality. Engineered. Not Administered.",
+      "description": "Brand tagline",
+      "usage": "Formal communications"
+    }
+  ],
+  "preferred_phrases": [
+    {
+      "phrase": "compliance at the speed of code",
+      "context": "Describing fast compliance"
+    },
+    {
+      "phrase": "systemic failure",
+      "context": "Describing problems (not just 'problem')"
+    },
+    {
+      "phrase": "late visibility",
+      "context": "Describing delayed feedback"
+    },
+    {
+      "phrase": "evidence-based",
+      "context": "Describing our approach"
+    },
+    {
+      "phrase": "by-product of development",
+      "context": "Describing automated output"
+    },
+    {
+      "phrase": "continuous traceability",
+      "context": "Describing ongoing linking"
+    },
+    {
+      "phrase": "3-month audit cycle",
+      "context": "The old way (to contrast)"
+    },
+    {
+      "phrase": "architecture erosion",
+      "context": "Technical drift over time"
+    },
+    {
+      "phrase": "regulatory scanner",
+      "context": "Always-on monitoring"
+    }
+  ],
+  "industry_terms": [
+    "ASPICE",
+    "ISO 26262",
+    "UN R155",
+    "traceability matrix",
+    "requirements management",
+    "SOP",
+    "Start of Production",
+    "Tier-1",
+    "OEM",
+    "SDV",
+    "Software-Defined Vehicle",
+    "ALM",
+    "PLM",
+    "Jira",
+    "Polarion",
+    "DOORS",
+    "codebeamer"
+  ]
+}

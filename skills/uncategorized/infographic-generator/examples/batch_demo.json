@@ -1,0 +1,183 @@
+[
+  {
+    "template": "infographic-hero",
+    "data": {
+      "stat": "26%",
+      "label": "Mortality Reduction",
+      "context": "HR 0.74 (95% CI 0.65-0.85)",
+      "source": "PARADIGM-HF Trial",
+      "icon": "chart-down",
+      "tag": "LANDMARK TRIAL",
+      "theme": "primary"
+    },
+    "output": "outputs/infographics/batch-hero-paradigm.png"
+  },
+  {
+    "template": "infographic-comparison",
+    "data": {
+      "tag": "TREATMENT COMPARISON",
+      "title": "ACE-I vs ARB in HFrEF",
+      "left": {
+        "label": "ACE Inhibitors",
+        "stat": "22%",
+        "statLabel": "Mortality Reduction",
+        "icon": "pill",
+        "bullets": [
+          "First-line therapy",
+          "More cough (10-15%)"
+        ],
+        "theme": "primary"
+      },
+      "right": {
+        "label": "ARBs",
+        "stat": "18%",
+        "statLabel": "Mortality Reduction",
+        "icon": "shield",
+        "bullets": [
+          "ACE-I intolerant",
+          "Better tolerated"
+        ],
+        "theme": "accent"
+      },
+      "source": "Meta-analysis, Circulation 2022"
+    },
+    "output": "outputs/infographics/batch-comparison-acei.png"
+  },
+  {
+    "template": "infographic-myth",
+    "data": {
+      "tag": "MYTH BUSTED",
+      "title": "Statins cause muscle damage in everyone",
+      "myth": {
+        "text": "Taking statins will definitely give you muscle pain and weakness",
+        "icon": "cross"
+      },
+      "truth": {
+        "text": "Only 5-10% experience symptoms, most can continue therapy with monitoring",
+        "icon": "check"
+      },
+      "evidence": "Meta-analysis of 19 RCTs (n=71,000)",
+      "source": "Lancet 2022"
+    },
+    "output": "outputs/infographics/batch-myth-statins.png"
+  },
+  {
+    "template": "infographic-process",
+    "data": {
+      "tag": "TREATMENT ALGORITHM",
+      "title": "Starting SGLT2 Inhibitors in HFrEF",
+      "subtitle": "Step-by-step initiation guide",
+      "steps": [
+        {
+          "title": "Screen",
+          "description": "Confirm HFrEF diagnosis, check baseline eGFR",
+          "icon": "magnify"
+        },
+        {
+          "title": "Initiate",
+          "description": "Start at recommended dose (no titration needed)",
+          "icon": "pill"
+        },
+        {
+          "title": "Monitor",
+          "description": "Check creatinine and volume status at 1-2 weeks",
+          "icon": "chart-up"
+        },
+        {
+          "title": "Continue",
+          "description": "Maintain therapy unless contraindications develop",
+          "icon": "target"
+        }
+      ],
+      "note": "eGFR ≥20 mL/min/1.73m² for most agents"
+    },
+    "output": "outputs/infographics/batch-process-sglt2.png"
+  },
+  {
+    "template": "infographic-dense",
+    "data": {
+      "tag": "PATIENT GUIDE",
+      "title": "Heart Failure Warning Signs",
+      "subtitle": "When to call your doctor",
+      "icon": "warning",
+      "sections": [
+        {
+          "title": "Immediate Attention",
+          "bullets": [
+            "Sudden severe shortness of breath",
+            "Chest pain or pressure",
+            "Confusion or altered mental state"
+          ],
+          "icon": "ambulance",
+          "accent": "danger"
+        },
+        {
+          "title": "Call Within 24 Hours",
+          "bullets": [
+            "Weight gain >2 kg in 1 week",
+            "Increasing leg swelling",
+            "Can't sleep flat anymore"
+          ],
+          "icon": "warning",
+          "accent": "accent"
+        },
+        {
+          "title": "Routine Follow-up",
+          "bullets": [
+            "Mild exercise intolerance",
+            "Medication side effects",
+            "Diet questions"
+          ],
+          "icon": "clock",
+          "accent": "teal"
+        }
+      ],
+      "callout": {
+        "label": "Remember",
+        "text": "Early intervention prevents hospitalization"
+      }
+    },
+    "output": "outputs/infographics/batch-dense-warning.png"
+  },
+  {
+    "template": "infographic-checklist",
+    "data": {
+      "tag": "PATIENT CHECKLIST",
+      "title": "Before Your Stress Test",
+      "subtitle": "Complete preparation guide",
+      "icon": "heart-pulse",
+      "categories": [
+        {
+          "title": "24 Hours Before",
+          "items": [
+            {"text": "Avoid caffeine (coffee, tea, chocolate)"},
+            {"text": "Continue all medications unless told otherwise"},
+            {"text": "Get good sleep (7-8 hours)"}
+          ]
+        },
+        {
+          "title": "Day of Test",
+          "items": [
+            {"text": "Wear comfortable shoes and loose clothing"},
+            {"text": "Bring list of current medications"},
+            {"text": "Light meal 2-3 hours before (avoid heavy foods)"},
+            {"text": "Arrive 15 minutes early"}
+          ]
+        },
+        {
+          "title": "What to Bring",
+          "items": [
+            {"text": "Photo ID and insurance card"},
+            {"text": "Medication list"},
+            {"text": "Previous test results if available"}
+          ]
+        }
+      ],
+      "callout": {
+        "icon": "warning",
+        "text": "Tell staff immediately if you experience chest pain, dizziness, or severe shortness of breath"
+      }
+    },
+    "output": "outputs/infographics/batch-checklist-stress.png"
+  }
+]

@@ -1,0 +1,120 @@
+Segmentation Prompt 🤖
+
+
+
+
+
+
+Prompt 1 - Micro-level elements:
+
+
+Analyze the given text focusing on the following micro-level elements:
+
+
+1. Vocabulary and word choice
+   - Analyze the writer's use of unique, specialized, or repetitive words and phrases
+   - Identify the frequency and diversity of the writer's vocabulary
+   - Examine the use of jargon, slang, or colloquialisms
+   - Determine the writer's preference for simple or complex words
+   - Look for any distinctive or unusual word choices
+   - Assess the reading age level required to understand the vocabulary used
+
+
+2. Grammatical patterns
+   - Identify the writer's use of specific grammatical structures, such as passive voice, complex tenses, or particular parts of speech
+   - Analyze the writer's use of verb tenses and consistency in tense usage
+   - Examine the writer's use of singular and plural nouns, as well as pronouns
+   - Look for any recurring grammatical errors or deliberate deviations from standard grammar
+
+
+3. Punctuation
+   - Analyze the writer's use of punctuation marks, such as commas, semicolons, dashes, and parentheses
+   - Determine if the writer favors certain punctuation marks over others
+   - Examine how the writer uses punctuation to create rhythm, emphasis, or clarity
+   - Look for any unusual or idiosyncratic punctuation patterns
+
+
+Please provide a detailed guideline for each element, including relevant examples from the given text. It is imperative that your guidelines read as instructions to a language model to emulate this style exactly. For example, ‘when writing sentences use active voice most of the time such as ‘He gladly painted the house’. Provide examples from the written text of what good and bad looks like. Be as helpful and detailed as possible.
+
+
+
+
+
+
+Prompt 2 - Meso-level elements:
+
+
+Analyze the given text focusing on the following meso-level elements:
+
+
+4. Sentence structure and length
+   - Examine the complexity, variety, and average length of the writer's sentences
+   - Identify the writer's use of simple, compound, complex, or compound-complex sentences
+   - Analyze the writer's use of sentence fragments, run-on sentences, or varied sentence beginnings
+   - Determine the writer's preference for short, punchy sentences or longer, more elaborate ones
+   - Calculate the average words per sentence
+   - Identify the percentage of short sentences (e.g., less than 10 words) and long sentences (e.g., more than 30 words)
+
+
+5. Rhetorical devices
+   - Recognize the writer's use of literary techniques, such as metaphors, similes, alliteration, or repetition
+   - Identify the writer's use of rhetorical questions, irony, or hyperbole
+   - Examine the writer's use of analogies, anecdotes, or examples to illustrate points
+   - Look for any distinctive or recurring rhetorical devices in the writer's work
+
+
+6. Paragraph structure
+   - Examine how the writer organizes their paragraphs, including their length, topic sentences, and transitions
+   - Analyze the writer's use of deductive or inductive reasoning in paragraph development
+   - Identify the writer's use of chronological, spatial, or emphatic order in paragraph arrangement
+   - Look for any unique or recurring patterns in the writer's paragraph structure
+
+
+Please provide a detailed guideline for each element, including relevant examples from the given text.
+
+
+It is imperative that your guidelines read as instructions to a language model to emulate this style exactly. For example, ‘when writing sentences use active voice most of the time such as ‘He gladly painted the house’. Provide examples from the written text of what good and bad looks like. Be as helpful and detailed as possible.
+
+
+Prompt 3 - Macro-level elements and additional considerations:
+
+
+Analyze the given text focusing on the following macro-level elements and additional considerations:
+
+
+7. Tone and mood
+   - Analyze the overall emotional tone of the writing, such as formal, casual, humorous, or serious
+   - Identify shifts in tone throughout the piece and examine how the writer achieves these changes
+   - Determine the writer's use of diction, syntax, and imagery to create a specific mood or atmosphere
+   - Look for any inconsistencies or contradictions in the writer's tone
+
+
+8. Overall coherence and cohesion
+   - Analyze how well the writer's ideas flow and connect throughout the piece
+   - Examine the writer's use of transitional words, phrases, or sentences to link ideas
+   - Identify the writer's use of repetition, parallel structure, or other cohesive devices
+   - Determine the writer's ability to maintain focus and unity throughout the piece
+
+
+9. Idiosyncrasies and quirks
+   - Identify any unique or unusual aspects of the writer's style, such as unconventional spellings, made-up words, or distinctive phrases
+   - Look for any recurring stylistic quirks or mannerisms that set the writer apart
+   - Analyze how these idiosyncrasies contribute to or detract from the overall effectiveness of the writing
+
+
+10. Dialogue (if applicable)
+    - Examine how the writer handles dialogue, including punctuation, tags, and formatting
+    - Analyze the authenticity and consistency of each character's voice and speech patterns
+    - Identify any distinctive quirks or mannerisms in the characters' dialogue
+
+
+11. Figurative language
+    - Identify the writer's use of figurative language, such as personification, synecdoche, or metonymy
+    - Analyze how the writer employs figurative language to convey meaning, evoke emotions, or create vivid imagery
+    - Examine the frequency and effectiveness of the writer's figurative language
+
+
+Please provide a detailed guideline for each element, including relevant examples from the given text.
+
+
+It is imperative that your guidelines read as instructions to a language model to emulate this style exactly. For example, ‘when writing sentences use active voice most of the time such as ‘He gladly painted the house’. Provide examples from the written text of what good and bad looks like. Be as helpful and detailed as possible.

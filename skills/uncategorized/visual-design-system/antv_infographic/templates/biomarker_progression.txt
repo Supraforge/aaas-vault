@@ -1,0 +1,11 @@
+infographic list-row-simple-horizontal-arrow
+data
+  items:
+    - label: Baseline
+      desc: BNP 850 pg/mL, elevated
+    - label: 3 Months
+      desc: BNP 520 pg/mL, improving
+    - label: 6 Months
+      desc: BNP 280 pg/mL, near target
+    - label: 12 Months
+      desc: BNP 150 pg/mL, sustained improvement

@@ -1,0 +1,72 @@
+[
+  {
+    "type": "hook",
+    "data": {
+      "slideNumber": 1,
+      "totalSlides": 6,
+      "headline": "5 Statin Myths That Are Keeping You From Living Longer",
+      "subtitle": "What the science actually says",
+      "icon": "Pill",
+      "theme": "teal"
+    }
+  },
+  {
+    "type": "myth",
+    "data": {
+      "slideNumber": 2,
+      "totalSlides": 6,
+      "myth": "Statins cause muscle pain in everyone",
+      "truth": "Only 5-10% experience muscle symptoms, and it's usually mild and reversible",
+      "source": "Lancet 2022"
+    }
+  },
+  {
+    "type": "myth",
+    "data": {
+      "slideNumber": 3,
+      "totalSlides": 6,
+      "myth": "Once you start statins, you can never stop",
+      "truth": "Statins can be stopped if lifestyle changes achieve target cholesterol levels",
+      "source": "JACC 2021"
+    }
+  },
+  {
+    "type": "stat",
+    "data": {
+      "slideNumber": 4,
+      "totalSlides": 6,
+      "stat": "25%",
+      "label": "Reduction in Heart Attack Risk",
+      "context": "For every 1 mmol/L reduction in LDL cholesterol",
+      "source": "CTT Collaboration Meta-analysis",
+      "icon": "Heart",
+      "color": "green"
+    }
+  },
+  {
+    "type": "tips",
+    "data": {
+      "slideNumber": 5,
+      "totalSlides": 6,
+      "title": "3 Ways to Maximize Statin Benefits",
+      "tips": [
+        { "text": "Take your statin at the same time every day", "icon": "Clock" },
+        { "text": "Report any muscle symptoms to your doctor early", "icon": "MessageCircle" },
+        { "text": "Combine with lifestyle changes for best results", "icon": "Salad" }
+      ]
+    }
+  },
+  {
+    "type": "cta",
+    "data": {
+      "slideNumber": 6,
+      "totalSlides": 6,
+      "name": "Dr Shailesh Singh",
+      "credentials": "Cardiologist | Evidence-Based Medicine",
+      "handle": "@dr.shailesh.singh",
+      "valueProposition": "Follow for myth-busting cardiology content",
+      "secondaryText": "New posts every week",
+      "followerCount": "50K+"
+    }
+  }
+]

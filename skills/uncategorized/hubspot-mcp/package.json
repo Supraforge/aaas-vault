@@ -1,0 +1,20 @@
+{
+  "name": "hubspot-mcp",
+  "version": "1.0.0",
+  "description": "HubSpot MCP server for CRM and marketing automation",
+  "main": "scripts/hubspot_mcp_server.js",
+  "scripts": {
+    "start": "node scripts/hubspot_mcp_server.js",
+    "test": "bash test.sh",
+    "crm": "python3 scripts/hubspot_crm.py",
+    "marketing": "python3 scripts/hubspot_marketing.py"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "@hubspot/api-client": "^9.0.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

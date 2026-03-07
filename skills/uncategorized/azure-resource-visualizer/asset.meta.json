@@ -1,0 +1,14 @@
+{
+  "asset_id": "skill-azure-resource-visualizer",
+  "name": "azure-resource-visualizer",
+  "type": "skill",
+  "source": "awesome-copilot",
+  "zone": "3",
+  "normalized_at": "2026-01-21T22:50:00Z",
+  "files": [
+    "SKILL.md",
+    "LICENSE.txt",
+    "test.sh",
+    "assets/template-architecture.md"
+  ]
+}

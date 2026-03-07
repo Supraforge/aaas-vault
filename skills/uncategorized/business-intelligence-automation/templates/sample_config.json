@@ -1,0 +1,50 @@
+{
+  "data_sources": {
+    "sales_data": {
+      "type": "csv",
+      "path": "data/sales_2024.csv",
+      "description": "Monthly sales data for 2024"
+    },
+    "customer_data": {
+      "type": "excel",
+      "path": "data/customers.xlsx",
+      "sheet": "Sheet1",
+      "description": "Customer database"
+    }
+  },
+  "reports": {
+    "weekly_sales": {
+      "type": "sales",
+      "data_source": "sales_data",
+      "schedule": "0 9 * * 1",
+      "recipients": [
+        "sales@company.com",
+        "management@company.com"
+      ],
+      "format": "pdf"
+    },
+    "monthly_marketing": {
+      "type": "marketing",
+      "data_source": "customer_data",
+      "schedule": "0 9 1 * *",
+      "recipients": [
+        "marketing@company.com"
+      ],
+      "format": "html"
+    }
+  },
+  "dashboards": {
+    "executive_dashboard": {
+      "type": "executive",
+      "data_sources": [
+        "sales_data",
+        "customer_data"
+      ],
+      "refresh_interval": "daily",
+      "access": [
+        "ceo@company.com",
+        "cfo@company.com"
+      ]
+    }
+  }
+}

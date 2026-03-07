@@ -1,0 +1,12 @@
+{
+  "name": "artifacts-builder",
+  "version": "1.0.0",
+  "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern fronten",
+  "author": {
+    "name": "Ship Shit Dev",
+    "email": "hello@shipshit.dev",
+    "url": "https://github.com/shipshitdev"
+  },
+  "license": "MIT",
+  "skills": "."
+}

@@ -1,0 +1,134 @@
+---
+name: jack-nocode-deploy-n8n-chatbot
+description: Deploy a customizable chatbot using n8n and a provided HTML snippet.
+version: 1.0.0
+author: Jack Roberts / AI Automations
+license: proprietary
+tags:
+  - chatbot
+  - n8n
+  - automation
+  - javascript
+triggers:
+  - when you need to embed a chatbot on a website using n8n for backend logic.
+allowed-tools: []
+compatibility: n8n
+metadata:
+  source: jack-school
+  lesson: 71
+  lesson_title: Build & Sell This $997/Month AI Automation
+  difficulty: medium
+  category: nocode
+  tools_required:
+    - n8n
+  estimated_setup_time: 30min
+  extracted_from:
+    - "\U0001F47E N8N Chatbot Code \U0001F47E.txt"
+---
+
+# Nocode Deploy N8n Chatbot
+
+## When to Use
+
+Use this skill when you need to:
+- when you need to embed a chatbot on a website using n8n for backend logic.
+
+## What This Does
+
+Deploy a customizable chatbot using n8n and a provided HTML snippet.
+
+## Workflow
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat</title>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+/* Core styles only - more specific and targeted */
+.n8n-chat-header {
+background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%) !important;
+padding: 0.5rem !important; /* Reduced padding for a smaller header */
+min-height: auto !important;
+height: auto !important;
+}
+.n8n-chat-header h3 {
+font-size: 12px !important; /* Reduced font size for header text */
+font-weight: 500 !important;
+margin: 0 !important;
+padding: 0 !important;
+line-height: 1.2 !important;
+}
+/* Message text size */
+.n8n-chat-message {
+font-size: 10px !important; /* Further reduced message text size */
+}
+.n8n-chat-message p {
+font-size: 10px !important; /* Consistent smaller text size */
+margin: 0 !important;
+line-height: 1.4 !important;
+}
+/* Input styling */
+.n8n-chat-input {
+background: white !important;
+border-top: 1px solid rgba(0,0,0,0.1) !important;
+padding: 0.3rem !important; /* Reduced padding for input area */
+}
+.n8n-chat-input textarea {
+font-size: 10px !important; /* Smaller font size for input text */
+padding: 6px !important; /* Reduced padding inside the textarea */
+border: 1px solid rgba(0,0,0,0.1) !important;
+border-radius: 4px !important; /* Slightly smaller border radius */
+min-height: 30px !important; /* Reduced height of the input box */
+width: 100% !important;
+}
+/* Hide footer */
+.n8n-chat-footer {
+display: none !important;
+}
+</style>
+</head>
+<body>
+<div id="n8n-chat"></div>
+<script type="module">
+import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+createChat({
+webhookUrl: 'https://jaaaaaack.app.n8n.cloud/webhook/c9d8cbda-ca07-444b-a2b9-c6660da67b86/chat',
+target: '#n8n-chat',
+mode: 'window',
+showWelcomeScreen: true,
+initialMessages: [
+'Hello! 👋',
+'How can I help you today?'
+],
+i18n: {
+en: {
+title: 'Magoo Enterprises',
+subtitle: '',
+footer: '',
+getStarted: 'Start Chat',
+inputPlaceholder: 'Type a message...',
+}
+}
+});
+</script>
+</body>
+</html>
+```
+
+Replace `webhookUrl` with your n8n webhook URL and customize the `i18n` settings.
+
+## Configuration
+
+**Required tools/platforms:**
+- n8n
+
+## Rules & Constraints
+
+- This skill is extracted from Jack Roberts' AI Automations course
+- Adapt prompts and workflows to your specific use case
+- Replace placeholder values (names, URLs, API keys) before use
+- Test in a staging environment before production deployment

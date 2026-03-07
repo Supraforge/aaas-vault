@@ -1,0 +1,125 @@
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                         SKILL VAULT SYNC WORKFLOW                             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────┐                                    ┌─────────────────────┐
+│   PROJECT FOLDER    │                                    │    GLOBAL VAULT     │
+│   (enora)           │                                    │                     │
+│                     │                                    │                     │
+│  skills/            │                                    │  skills/            │
+│  ├─ brand-identity/ │                                    │  ├─ brand-identity/ │
+│  │  ├─ SKILL.md     │                                    │  │  ├─ SKILL.md     │
+│  │  └─ resources/   │                                    │  │  └─ resources/   │
+│  │     ├─ design-   │                                    │  │     ├─ design-   │
+│  │     │  tokens.   │                                    │  │     │  tokens.   │
+│  │     │  json      │                                    │  │     │  json      │
+│  │     │            │                                    │  │     │            │
+│  │     │ Contains:  │                                    │  │     │ Contains:  │
+│  │     │ "Enora.ai" │                                    │  │     │ [BRAND_    │
+│  │     │ "#0047FF"  │                                    │  │     │  NAME]     │
+│  │     │ "JetBrains │                                    │  │     │ [COLOR_    │
+│  │     │  Mono"     │                                    │  │     │  HEX]      │
+│  │     │            │                                    │  │     │ [HEADER_   │
+│  │     └─ tech-     │                                    │  │     │  FONT]     │
+│  │        stack.md  │                                    │  │     │            │
+│  │                  │                                    │  │     └─ tech-     │
+│  └─ ui-ux-pro-max/  │                                    │  │        stack.md  │
+│                     │                                    │  │                  │
+└──────────┬──────────┘                                    └──────────▲──────────┘
+           │                                                          │
+           │  1. DETECT                                               │
+           │  🔍 Scan for brand content                               │
+           │     • Brand names                                        │
+           │     • Colors (#0047FF)                                   │
+           │     • Fonts                                              │
+           │     • Product descriptions                               │
+           │                                                          │
+           ▼                                                          │
+    ┌──────────────┐                                                 │
+    │   TEMP DIR   │                                                 │
+    │              │                                                 │
+    │  2. DE-BRAND │                                                 │
+    │  ✏️  Replace  │                                                 │
+    │     • "Enora.ai" → [BRAND_NAME]                                │
+    │     • "#0047FF" → [COLOR_HEX]                                  │
+    │     • "JetBrains Mono" → [HEADER_FONT]                         │
+    │     • "AI Quality Layer" → [PRODUCT_CATEGORY]                  │
+    │                                                                │
+    │  3. VALIDATE │                                                 │
+    │  ✅ Check     │                                                 │
+    │     • No brand references remain                               │
+    │     • Placeholders consistent                                  │
+    │     • File structure preserved                                 │
+    │                                                                │
+    └──────┬───────┘                                                 │
+           │                                                          │
+           │  4. SYNC                                                 │
+           │  🔄 Copy to vault                                        │
+           └──────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              SAFETY FEATURES                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  🛡️  BACKUPS                                                                │
+│  └─ skills/brand-identity.backup.1738073681/                               │
+│     └─ (Complete copy before sync)                                         │
+│                                                                             │
+│  📋 LOGGING                                                                 │
+│  └─ sync.log                                                                │
+│     └─ [2026-01-28 12:54:41] Synced: brand-identity from enora (12 reps)   │
+│                                                                             │
+│  👁️  DRY RUN                                                                 │
+│  └─ Preview changes before applying                                        │
+│     └─ Shows diff without modifying files                                  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                           EXAMPLE TRANSFORMATION                              ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                               ║
+║  BEFORE (Project-Specific):                                                  ║
+║  ┌─────────────────────────────────────────────────────────────────────┐    ║
+║  │ {                                                                   │    ║
+║  │   "meta": {                                                         │    ║
+║  │     "brand_name": "Enora.ai",                                       │    ║
+║  │     "description": "AI Quality Layer for Automotive Engineering"    │    ║
+║  │   },                                                                │    ║
+║  │   "colors": {                                                       │    ║
+║  │     "primary": { "hex": "#0047FF", "name": "Electric Blue" }        │    ║
+║  │   }                                                                 │    ║
+║  │ }                                                                   │    ║
+║  └─────────────────────────────────────────────────────────────────────┘    ║
+║                                                                               ║
+║                                    ⬇️                                         ║
+║                            DE-BRANDING PROCESS                                ║
+║                                    ⬇️                                         ║
+║                                                                               ║
+║  AFTER (De-branded):                                                         ║
+║  ┌─────────────────────────────────────────────────────────────────────┐    ║
+║  │ {                                                                   │    ║
+║  │   "meta": {                                                         │    ║
+║  │     "brand_name": "[BRAND_NAME]",                                   │    ║
+║  │     "description": "[PRODUCT_DESCRIPTION]",                         │    ║
+║  │     "synced_from": "enora",                                         │    ║
+║  │     "sync_date": "2026-01-28"                                       │    ║
+║  │   },                                                                │    ║
+║  │   "colors": {                                                       │    ║
+║  │     "primary": { "hex": "[COLOR_HEX]", "name": "[PRIMARY_COLOR]" }  │    ║
+║  │   }                                                                 │    ║
+║  │ }                                                                   │    ║
+║  └─────────────────────────────────────────────────────────────────────┘    ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+USAGE:
+  # Dry run (preview)
+  $ ~/.gemini/antigravity-vault/skills/skill-vault-sync/scripts/sync-to-vault.sh \
+      /Users/user/.gemini/enora brand-identity --dry-run
+
+  # Actually sync
+  $ ~/.gemini/antigravity-vault/skills/skill-vault-sync/scripts/sync-to-vault.sh \
+      /Users/user/.gemini/enora brand-identity
+```

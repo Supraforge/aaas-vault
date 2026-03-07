@@ -1,0 +1,150 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Visual Design System - Spacing Tokens",
+  "description": "Consistent spacing system for publication-grade graphics",
+  "version": "1.0.0",
+
+  "base_unit": {
+    "value": 4,
+    "unit": "px",
+    "description": "All spacing is multiples of 4px"
+  },
+
+  "scale": {
+    "0": {"value": "0px", "name": "none"},
+    "1": {"value": "4px", "name": "xs"},
+    "2": {"value": "8px", "name": "sm"},
+    "3": {"value": "12px", "name": "md"},
+    "4": {"value": "16px", "name": "lg"},
+    "5": {"value": "20px", "name": "xl"},
+    "6": {"value": "24px", "name": "2xl"},
+    "8": {"value": "32px", "name": "3xl"},
+    "10": {"value": "40px", "name": "4xl"},
+    "12": {"value": "48px", "name": "5xl"},
+    "16": {"value": "64px", "name": "6xl"}
+  },
+
+  "figure_layout": {
+    "panel_gap": {
+      "value": "8px",
+      "description": "Space between multi-panel figure elements"
+    },
+    "panel_padding": {
+      "value": "12px",
+      "description": "Internal padding within panels"
+    },
+    "margin_top": {
+      "value": "16px",
+      "description": "Space above figure"
+    },
+    "margin_bottom": {
+      "value": "8px",
+      "description": "Space between figure and caption"
+    },
+    "caption_indent": {
+      "value": "0px",
+      "description": "Caption flush left"
+    }
+  },
+
+  "chart_layout": {
+    "title_to_plot": {
+      "value": "12px",
+      "description": "Space from chart title to plot area"
+    },
+    "plot_to_legend": {
+      "value": "16px",
+      "description": "Space from plot to legend"
+    },
+    "axis_label_offset": {
+      "value": "8px",
+      "description": "Space from axis to label text"
+    },
+    "tick_length": {
+      "value": "4px",
+      "description": "Length of axis tick marks"
+    },
+    "tick_label_offset": {
+      "value": "4px",
+      "description": "Space from tick to tick label"
+    },
+    "legend_item_gap": {
+      "value": "8px",
+      "description": "Space between legend items"
+    },
+    "legend_symbol_gap": {
+      "value": "4px",
+      "description": "Space between legend symbol and text"
+    }
+  },
+
+  "infographic_layout": {
+    "section_gap": {
+      "value": "32px",
+      "description": "Space between major sections"
+    },
+    "element_gap": {
+      "value": "16px",
+      "description": "Space between elements within a section"
+    },
+    "card_padding": {
+      "value": "24px",
+      "description": "Internal padding of stat cards"
+    },
+    "icon_text_gap": {
+      "value": "12px",
+      "description": "Space between icon and accompanying text"
+    }
+  },
+
+  "carousel_layout": {
+    "slide_padding": {
+      "value": "40px",
+      "description": "Edge padding on carousel slides"
+    },
+    "title_to_content": {
+      "value": "24px",
+      "description": "Space below slide title"
+    },
+    "content_gap": {
+      "value": "16px",
+      "description": "Space between content elements"
+    },
+    "footer_margin": {
+      "value": "32px",
+      "description": "Space above footer/source"
+    }
+  },
+
+  "grid": {
+    "columns": 12,
+    "gutter": "16px",
+    "margin": "24px",
+    "breakpoints": {
+      "instagram_square": {"width": 1080, "height": 1080},
+      "instagram_portrait": {"width": 1080, "height": 1350},
+      "twitter_landscape": {"width": 1200, "height": 675},
+      "linkedin_square": {"width": 1200, "height": 1200},
+      "publication_single_column": {"width": 85, "unit": "mm"},
+      "publication_double_column": {"width": 170, "unit": "mm"}
+    }
+  },
+
+  "stroke_widths": {
+    "hairline": "0.5px",
+    "thin": "1px",
+    "regular": "1.5px",
+    "medium": "2px",
+    "thick": "3px",
+    "extra_thick": "4px"
+  },
+
+  "border_radius": {
+    "none": "0",
+    "sm": "2px",
+    "md": "4px",
+    "lg": "8px",
+    "xl": "12px",
+    "full": "9999px"
+  }
+}

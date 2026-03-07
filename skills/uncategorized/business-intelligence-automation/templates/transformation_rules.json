@@ -1,0 +1,23 @@
+[
+  {
+    "type": "aggregate",
+    "group_by": [
+      "region",
+      "month"
+    ],
+    "aggregate": {
+      "sales": "sum",
+      "customers": "count",
+      "revenue": "mean"
+    }
+  },
+  {
+    "type": "calculate",
+    "formula": "df['profit_margin'] = df['profit'] / df['revenue'] * 100",
+    "new_column": "profit_margin"
+  },
+  {
+    "type": "filter",
+    "condition": "revenue > 10000"
+  }
+]

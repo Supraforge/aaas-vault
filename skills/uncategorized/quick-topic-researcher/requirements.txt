@@ -1,0 +1,4 @@
+# Quick Topic Researcher dependencies
+anthropic>=0.18.0
+python-dotenv>=1.0.0
+rich>=13.0.0

@@ -1,0 +1,42 @@
+{
+  "type": "grouped_bars",
+  "description": "Grouped bar chart for treatment arm comparisons",
+  "data": [],
+  "marks": [
+    {
+      "type": "interval",
+      "encode": {
+        "x": "category",
+        "y": "value",
+        "color": "group",
+        "series": "group"
+      },
+      "transform": [
+        {
+          "type": "dodgeX"
+        }
+      ],
+      "style": {
+        "radius": 2
+      }
+    }
+  ],
+  "scales": {
+    "color": {
+      "range": ["#0077bb", "#ee7733", "#009988"]
+    },
+    "y": {
+      "nice": true
+    }
+  },
+  "xAxis": {
+    "title": "Outcome"
+  },
+  "yAxis": {
+    "title": "Event Rate (%)",
+    "grid": true
+  },
+  "legend": {
+    "position": "top"
+  }
+}

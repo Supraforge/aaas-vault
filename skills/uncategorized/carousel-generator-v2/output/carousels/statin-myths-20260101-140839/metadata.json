@@ -1,0 +1,64 @@
+{
+  "topic": "statin myths",
+  "template": "myth_busting",
+  "framework": "actionable",
+  "slide_count": 6,
+  "created": "2026-01-01T14:08:52.645514",
+  "renderer": "Satori",
+  "slides": [
+    {
+      "number": 1,
+      "type": "hook",
+      "title": "5 statin myths debunked by science",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 2,
+      "type": "myth",
+      "title": null,
+      "myth": "Statins cause muscle pain in most people",
+      "truth": "Only 5-10% experience muscle symptoms. Nocebo effect accounts for 90% of reported symptoms in blinded trials.",
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 3,
+      "type": "myth",
+      "title": null,
+      "myth": "Statins damage your liver",
+      "truth": "Liver damage is extremely rare (<0.1%). Routine liver monitoring is no longer recommended by ACC/AHA guidelines.",
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 4,
+      "type": "myth",
+      "title": null,
+      "myth": "Natural alternatives work just as well",
+      "truth": "No supplement matches statin efficacy. Red yeast rice contains lovastatin but with inconsistent dosing and no quality control.",
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 5,
+      "type": "stats",
+      "title": null,
+      "myth": null,
+      "truth": null,
+      "statistic": "25%",
+      "stat_label": "reduction in major cardiovascular events"
+    },
+    {
+      "number": 6,
+      "type": "cta",
+      "title": null,
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    }
+  ]
+}

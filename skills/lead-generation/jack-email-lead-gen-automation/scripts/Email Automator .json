@@ -1,0 +1,1426 @@
+{
+    "name": "Email Automator 📧",
+    "flow": [
+        {
+            "id": 1,
+            "module": "airtable:TriggerWatchRecords",
+            "version": 3,
+            "parameters": {
+                "base": "apppXEcvO7hIxyO8v",
+                "view": "",
+                "table": "tblf4nVIWmF64RaC0",
+                "config": {
+                    "labelField": "Last Modified",
+                    "triggerField": "Last Modified"
+                },
+                "formula": "",
+                "maxRecords": 1000,
+                "__IMTCONN__": 1532818,
+                "useColumnId": false
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "base": {
+                            "label": "Automate Email Outreach"
+                        },
+                        "view": {
+                            "label": "Empty"
+                        },
+                        "table": {
+                            "label": "Table 1"
+                        },
+                        "config": {
+                            "nested": {
+                                "labelField": {
+                                    "label": "Last Modified"
+                                },
+                                "triggerField": {
+                                    "label": "Last Modified"
+                                }
+                            }
+                        },
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "config",
+                        "spec": [
+                            {
+                                "name": "triggerField",
+                                "type": "select",
+                                "label": "Trigger field",
+                                "required": true
+                            },
+                            {
+                                "name": "triggerField",
+                                "type": "hidden"
+                            },
+                            {
+                                "name": "labelField",
+                                "type": "select",
+                                "label": "Label field",
+                                "required": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Trigger configuration"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Company 💼",
+                        "type": "text",
+                        "label": "Company 💼"
+                    },
+                    {
+                        "name": "Email 📧",
+                        "type": "text",
+                        "label": "Email 📧"
+                    },
+                    {
+                        "name": "Website 🔗",
+                        "type": "text",
+                        "label": "Website 🔗",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Status",
+                        "type": "text",
+                        "label": "Status"
+                    },
+                    {
+                        "name": "Notes 📝",
+                        "type": "text",
+                        "label": "Notes 📝",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Created Time",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Last Modified",
+                        "type": "date",
+                        "label": "Last Modified"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "module": "http:ActionGetFile",
+            "version": 3,
+            "parameters": {
+                "handleErrors": false
+            },
+            "mapper": {
+                "url": "{{1.`Website 🔗`}}",
+                "method": "get",
+                "serializeUrl": false,
+                "shareCookies": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {},
+                "parameters": [
+                    {
+                        "name": "handleErrors",
+                        "type": "boolean",
+                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "url",
+                        "type": "url",
+                        "label": "URL",
+                        "required": true
+                    },
+                    {
+                        "name": "serializeUrl",
+                        "type": "boolean",
+                        "label": "Serialize URL",
+                        "required": true
+                    },
+                    {
+                        "name": "method",
+                        "type": "hidden",
+                        "label": "Method"
+                    },
+                    {
+                        "name": "shareCookies",
+                        "type": "boolean",
+                        "label": "Share cookies with other HTTP modules",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "module": "regexp:HTMLToText",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "html": "{{4.data}}",
+                "newline": "lf",
+                "uppercaseHeadings": true
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "newline": {
+                            "label": "LF (\\n) - Unix/Mac OS X"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "html",
+                        "type": "text",
+                        "label": "HTML"
+                    },
+                    {
+                        "name": "newline",
+                        "type": "select",
+                        "label": "Line break",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "lf",
+                                "crlf",
+                                "cr"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "uppercaseHeadings",
+                        "type": "boolean",
+                        "label": "Uppercase headings",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "openai-gpt-3:CreateCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1425946
+            },
+            "mapper": {
+                "select": "chat",
+                "max_tokens": "0",
+                "temperature": "1",
+                "top_p": "1",
+                "n_completions": "1",
+                "response_format": "text",
+                "model": "gpt-4o",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": "You will be provided with the copy of a website. Your task is to carefully read and comprehend the content of the website. After analyzing the text, generate a concise summary of the key points and main ideas discussed in the website. The summary should be informative, helpful, and to the point, with a maximum length of 35 words.\n\nWhen creating the summary, focus on the following aspects:\n\n- Identify the core message or theme of the website.\n- Highlight the most important facts, statistics, or examples that support the main points.\n- If applicable, briefly mention any significant conclusions or recommendations made in the website.\n\nAvoid using unnecessary fluff or filler phrases, and do not include introductory phrases like \"this website is about.\" Instead, concentrate on directly communicating the essential information in a clear and efficient manner.\n\nTo ensure your summary is effective, consider the following tips:\n\n- Use concise and precise language to convey the key ideas.\n- Prioritize information based on its relevance to the main message.\n- Ensure that the summary can be easily understood by someone who hasn't seen the website.\n- Read through your summary to check for clarity, coherence, and adherence to the 35-word limit.\n\nRemember, your goal is to provide a comprehensive yet succinct overview of the website's content, enabling readers to quickly grasp the core message and main takeaways. Do not repeat the title.\n\nThen, write 5 core features about the website in bullets\n\n* 📝 fact 1\n* 🔍 fact 2\n* 📊 fact 3\n* 💡 fact 4\n* ⚡ fact 5\n\nThe website copy: {{5.text}}"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 0,
+                    "name": "Website Snappy 🐊"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My OpenAI connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "openai-gpt-3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "select": {
+                            "label": "Create a Chat Completion (GPT Models)"
+                        },
+                        "logit_bias": {
+                            "mode": "chose"
+                        },
+                        "response_format": {
+                            "mode": "chose",
+                            "label": "Text"
+                        },
+                        "stop": {
+                            "mode": "chose"
+                        },
+                        "additionalParameters": {
+                            "mode": "chose"
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "gpt-4o (system)"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:openai-gpt-3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Select Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "chat",
+                                "prompt"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "number",
+                        "label": "Max Tokens",
+                        "required": true
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "n_completions",
+                        "type": "number",
+                        "label": "Number"
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "logit_bias",
+                        "type": "array",
+                        "label": "Token Probability",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "token",
+                                    "type": "text",
+                                    "label": "Token ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "probability",
+                                    "type": "number",
+                                    "label": "Probability",
+                                    "required": true,
+                                    "validate": {
+                                        "max": 100,
+                                        "min": -100
+                                    }
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Token Probability",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "response_format",
+                        "type": "select",
+                        "label": "Response Format",
+                        "validate": {
+                            "enum": [
+                                "text",
+                                "json_object"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "stop",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "validate": {
+                            "maxItems": 4
+                        },
+                        "spec": {
+                            "type": "text",
+                            "label": "Stop Sequence",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "additionalParameters",
+                        "type": "array",
+                        "label": "Other Input Parameters",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "key",
+                                    "type": "text",
+                                    "label": "Parameter Name",
+                                    "required": true
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "select",
+                                    "label": "Input Type",
+                                    "options": [
+                                        {
+                                            "label": "Text",
+                                            "value": "text",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ],
+                                            "default": true
+                                        },
+                                        {
+                                            "label": "Number",
+                                            "value": "number",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "number",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "boolean",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "boolean",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date",
+                                            "value": "date",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "date",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Any",
+                                            "value": "any",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "any",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Input Parameter",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": [
+                                        {
+                                            "label": "System",
+                                            "value": "system"
+                                        },
+                                        {
+                                            "label": "User",
+                                            "value": "user"
+                                        },
+                                        {
+                                            "label": "Assistant",
+                                            "value": "assistant"
+                                        }
+                                    ],
+                                    "required": true
+                                },
+                                {
+                                    "name": "content",
+                                    "type": "text",
+                                    "label": "Message Content"
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message",
+                            "name": "value"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "app#perplexity-ai-2cmiq4:createAChatCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1367079
+            },
+            "mapper": {
+                "model": "llama-3-70b-instruct",
+                "messages": [
+                    {
+                        "content": "Your task is to uncover 10 fascinating facts about this business:{{1.`Website 🔗`}}. \n\nDive deep into the website and explore a wide range of reliable external sources to gather the most interesting and relevant information. \n\nYou must consult resources external to thr website provided.\n\nFor each fact, make sure it meets the following criteria:1. Well-Sourced: Provide the exact page, section, or article where you found the fact to ensure its credibility. Use in-text citations or footnotes for easy reference.2. High-Quality: Verify the accuracy and reliability of each fact by cross-checking with multiple reputable sources. Avoid using outdated, incorrect, or misleading information.3. Up-to-Date: Prioritize facts from the last 12 months to ensure the information is current and relevant. If historical data is crucial for context, include it but clearly indicate the time period.4. Diverse Coverage: Explore various aspects of the website, such as different topics, categories, or sections, to provide a well-rounded understanding of its content. Don't limit yourself to just one area.5. Relevance Matters: Focus on facts that are significant and valuable for comprehending the main themes, objectives, or unique features of the website. Avoid trivial or unrelated information.6. Clear Documentation: Present each fact clearly and concisely, providing brief explanations or context where necessary. Use bullet points or numbered lists for easy readability.7. Avoid Redundancy: Ensure that each fact is unique and adds new information to the list. Avoid repeating similar facts or restating the same information in different ways.8. Data-Driven Insights: Whenever possible, include interesting statistics, percentages, or data points that support the facts and make them more compelling. Cite the sources for these figures.9. Business Relevance: Focus on facts that provide valuable insights into the company's operations, target market, competitive landscape, or growth opportunities. This information will help you deliver a well-informed consultation to support their business.10. Thought-Provoking: Aim to include at least one or two facts that are surprising, counterintuitive, or thought-provoking. These can be unique insights or lesser-known aspects of the website that spark curiosity and demonstrate your deep understanding of the company.Please present the facts in a numbered list format, with each fact followed by its specific source(s) using in-text citations or footnotes. Include sources as naked urls.\n\n{{1.data.fll64.value}}",
+                        "role": "user"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1200,
+                    "y": 0,
+                    "name": "Research A 🔬🟡"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Perplexity AI connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "app#perplexity-ai-2cmiq4"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "model": {
+                            "mode": "chose",
+                            "label": "llama-3-70b-instruct"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:app#perplexity-ai-2cmiq4",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": [
+                            {
+                                "name": "content",
+                                "type": "text",
+                                "label": "Content",
+                                "required": true
+                            },
+                            {
+                                "name": "role",
+                                "type": "select",
+                                "label": "Role",
+                                "options": [
+                                    {
+                                        "label": "User",
+                                        "value": "user"
+                                    },
+                                    {
+                                        "label": "Assistant",
+                                        "value": "assistant"
+                                    },
+                                    {
+                                        "label": "System",
+                                        "value": "system"
+                                    }
+                                ],
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "number",
+                        "label": "Max Tokens"
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 1.999,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_k",
+                        "type": "number",
+                        "label": "Top K",
+                        "validate": {
+                            "max": 2048,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "min": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "module": "anthropic-claude:createAMessage",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1528134
+            },
+            "mapper": {
+                "model": "claude-3-5-sonnet-20240620",
+                "max_tokens": "4000",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "📧 Email Bot 📧Role: 🚀You are an email bot who creates high quality emails in a prescribed template. You are an expert at identifying relevant information about a prospective client and what to include to create the impression of a well-researched, punch and personalosed outreach to leave an excellent impression. Your goal is to get the client to agree to receive a 3 minute loom video to help them increase their sales.Instructions: 🚀Using an extract from a client’s website, generate a personalized email to encourage them to agree to a 3 minute loom video showing how we could potentially help them increase their sales by 70% in 60 days. Reply to this prompt with the email formatted in HTML.Output: 🚀The only part of the email that you should change are where it says [INSERT COMPANY NAME] and INSERT 1 LINER INTO RELATING TO THE BUSINESS].The will know the company name from their website and/or email.The 1 liner related to their business should show that we have done research on that business, mentioning something interesting, specific or noteworthy about them. For example, it could be an award or accomplishment. This must be a maximum of 20 words.\n\ndo NOT include anything except the HTML. Do not provide any additional text before or after the output, such as telling me what you've done.\n\nOn the one-liner, be specific. It should be as unique as possible base don the data. if they have won award, be specific about that award.\n\nA few examples:Congratulations on winning the Heizer awad this year, that’s incredible.You have a very strong Trustpilot, that is a huge asset for you.I noticed you’ve been in business for over 12 years, and that definitely shows.Make it sound human-like and authentic. Do not make it sound cringe or insincere Every output must be in HTML and follow the below structure.<!DOCTYPE html><html lang=\"en\"><head>    <meta charset=\"UTF-8\">    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">    <title>Sales Pitch Email with Signature</title>    <style>        body, table, td, a {            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;        }    </style></head><body style=\"font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">    <p>Hey there,</p>        <p>I love what you're doing at [INSERT COMPANY NAME]</p>        <p>[INSERT 1 LINER INTO RELATING TO THE BUSINESS]</p>        <p>We've helped several business in your niche increase sales by 70% using our AI conversion system, would you mind if I send over a 3 minute loom explaining how you can do this?</p>        <p>Best,<br>    Jack</p>    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">        <tbody>            <tr>                <td>                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                        <tbody>                            <tr>                                <td style=\"vertical-align: top;\">                                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                                        <tbody>                                            <tr>                                                <td style=\"text-align: center;\">                                                    <img src=\"https://imgs.search.brave.com/5OpbVvWf7_abM4u6uFeDSE7TwtZPkVoNfMAB1rh-0iY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5zcHJvdXRzb2Np/YWwuY29tL3VwbG9h/ZHMvMjAyMi8wNi9w/cm9maWxlLXBpY3R1/cmUuanBlZw\" role=\"presentation\" width=\"130\" style=\"display: block; max-width: 128px;\">                                                </td>                                            </tr>                                            <tr>                                                <td height=\"30\"></td>                                            </tr>                                            <tr>                                                <td style=\"text-align: center;\">                                                    <img src=\"https://imgs.search.brave.com/gOADVY6d-clmGGFzDxY6Ko0b7XF7LEhWNU8BjVYmgEE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/LmNvbS9pbWFnZS1j/ZG4vaW1hZ2VzL2t0/czkyOHBkL3Byb2R1/Y3Rpb24vNWFhNzIw/YzEwODZhNzJhNGJm/OGJkNzE2MGIxYTNh/OTQxODhjNTE5OS01/MDB4Mzc1LndlYnA_/dz0xMDgwJnE9NzIm/Zm09d2VicA\" role=\"presentation\" width=\"130\" style=\"display: block; max-width: 130px;\">                                                </td>                                            </tr>                                            <tr>                                                <td height=\"30\"></td>                                            </tr>                                            <tr>                                                <td style=\"text-align: center;\">                                                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"display: inline-block; vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                                                        <tbody>                                                            <tr style=\"text-align: center;\">                                                                <td>                                                                    <a href=\"//jack.com\" style=\"display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);\">                                                                        <img src=\"https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png\" alt=\"facebook\" width=\"24\" style=\"background-color: rgb(112, 117, 219); max-width: 135px; display: block;\">                                                                    </a>                                                                </td>                                                                <td width=\"5\">                                                                    <div></div>                                                                </td>                                                                <td>                                                                    <a href=\"//jack.com\" style=\"display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);\">                                                                        <img src=\"https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png\" alt=\"twitter\" width=\"24\" style=\"background-color: rgb(112, 117, 219); max-width: 135px; display: block;\">                                                                    </a>                                                                </td>                                                                <td width=\"5\">                                                                    <div></div>                                                                </td>                                                                <td>                                                                    <a href=\"//jack.com\" style=\"display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);\">                                                                        <img src=\"https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png\" alt=\"linkedin\" width=\"24\" style=\"background-color: rgb(112, 117, 219); max-width: 135px; display: block;\">                                                                    </a>                                                                </td>                                                                <td width=\"5\">                                                                    <div></div>                                                                </td>                                                                <td>                                                                    <a href=\"//jack.com\" style=\"display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);\">                                                                        <img src=\"https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png\" alt=\"instagram\" width=\"24\" style=\"background-color: rgb(112, 117, 219); max-width: 135px; display: block;\">                                                                    </a>                                                                </td>                                                                <td width=\"5\">                                                                    <div></div>                                                                </td>                                                            </tr>                                                        </tbody>                                                    </table>                                                </td>                                            </tr>                                        </tbody>                                    </table>                                </td>                                <td width=\"46\">                                    <div></div>                                </td>                                <td style=\"padding: 0px; vertical-align: middle;\">                                    <h2 style=\"margin: 0px; font-size: 18px; color: rgb(0, 0, 0); font-weight: 600;\">                                        <span>Jack</span><span>&nbsp;</span><span>Roberts</span>                                    </h2>                                    <p style=\"margin: 0px; color: rgb(0, 0, 0); font-size: 14px; line-height: 22px;\">                                        <span>Chief Coffee Guy</span>                                    </p>                                    <p style=\"margin: 0px; font-weight: 500; color: rgb(0, 0, 0); font-size: 14px; line-height: 22px;\">                                        <span>AI</span><span>&nbsp;|&nbsp;</span><span>AI Automations by Jack</span>                                    </p>                                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%; vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                                        <tbody>                                            <tr>                                                <td height=\"30\"></td>                                            </tr>                                            <tr>                                                <td style=\"width: 100%; border-bottom: 1px solid rgb(248, 98, 149); border-left: none; display: block;\"></td>                                            </tr>                                            <tr>                                                <td height=\"30\"></td>                                            </tr>                                        </tbody>                                    </table>                                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                                        <tbody>                                            <tr height=\"25\" style=\"vertical-align: middle;\">                                                <td width=\"30\" style=\"vertical-align: middle;\">                                                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                                                        <tbody>                                                            <tr>                                                                <td style=\"vertical-align: bottom;\">                                                                    <span style=\"display: inline-block; background-color: rgb(248, 98, 149);\">                                                                        <img src=\"https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png\" alt=\"mobilePhone\" width=\"13\" style=\"display: block; background-color: rgb(248, 98, 149);\">                                                                    </span>                                                                </td>                                                            </tr>                                                        </tbody>                                                    </table>                                                </td>                                                <td style=\"padding: 0px; color: rgb(0, 0, 0);\">                                                    <a href=\"tel:0777 777 777\" style=\"text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;\">                                                        <span>0777 777 777</span>                                                    </a>                                                </td>                                            </tr>                                            <tr height=\"25\" style=\"vertical-align: middle;\">                                                <td width=\"30\" style=\"vertical-align: middle;\">                                                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                                                        <tbody>                                                            <tr>                                                                <td style=\"vertical-align: bottom;\">                                                                    <span style=\"display: inline-block; background-color: rgb(248, 98, 149);\">                                                                        <img src=\"https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png\" alt=\"website\" width=\"13\" style=\"display: block; background-color: rgb(248, 98, 149);\">                                                                    </span>                                                                </td>                                                            </tr>                                                        </tbody>                                                    </table>                                                </td>                                                <td style=\"padding: 0px;\">                                                    <a href=\"//coffee.ai\" style=\"text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;\">                                                        <span>coffee.ai</span>                                                    </a>                                                </td>                                            </tr>                                            <tr height=\"25\" style=\"vertical-align: middle;\">                                                <td width=\"30\" style=\"vertical-align: middle;\">                                                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;\">                                                        <tbody>                                                            <tr>                                                                <td style=\"vertical-align: bottom;\">                                                                    <span style=\"display: inline-block; background-color: rgb(248, 98, 149);\">                                                                        <img src=\"https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon-2x.png\" alt=\"address\" width=\"13\" style=\"display: block; background-color: rgb(248, 98, 149);\">                                                                    </span>                                                                </td>                                                            </tr>                                                        </tbody>                                                    </table>                                                </td>                                                <td style=\"padding: 0px;\">                                                    <span style=\"font-size: 12px; color: rgb(0, 0, 0);\">                                                        <span>AI Singularity Avenue, NG87 972</span>                                                    </span>                                                </td>                                            </tr>                                        </tbody>                                    </table>                                </td>                            </tr>                        </tbody>                    </table>                </td>            </tr>        </tbody>    </table></body></html>\n\nWebsite summary: {{2.result}}\nResearch: {{3.choices[].message.content}}\nWebsite: {{5.text}}\n"
+                            }
+                        ]
+                    }
+                ],
+                "metadata": {},
+                "temperature": "1"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1500,
+                    "y": 0,
+                    "name": "🤖 Email bot 🤖"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Anthropic Claude connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "anthropic-claude"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "model": {
+                            "mode": "edit"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    },
+                                    "content": {
+                                        "mode": "chose",
+                                        "items": [
+                                            {
+                                                "type": {
+                                                    "mode": "chose",
+                                                    "label": "Text"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "stop_sequences": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:anthropic-claude",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "uinteger",
+                        "label": "Max Tokens",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": [
+                                        {
+                                            "label": "User",
+                                            "value": "user",
+                                            "nested": [
+                                                {
+                                                    "name": "content",
+                                                    "spec": {
+                                                        "spec": [
+                                                            {
+                                                                "help": "You can send image content blocks starting with Claude 3 models.",
+                                                                "name": "type",
+                                                                "type": "select",
+                                                                "label": "Type",
+                                                                "options": [
+                                                                    {
+                                                                        "label": "Text",
+                                                                        "value": "text",
+                                                                        "nested": [
+                                                                            {
+                                                                                "help": "Content of the message on behalf of the selected **Role** .",
+                                                                                "name": "text",
+                                                                                "type": "text",
+                                                                                "label": "Text",
+                                                                                "required": true
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "label": "Image",
+                                                                        "value": "image",
+                                                                        "nested": [
+                                                                            {
+                                                                                "name": "source",
+                                                                                "spec": [
+                                                                                    {
+                                                                                        "help": "File name, including the extension, for example, `image.jpg`.",
+                                                                                        "name": "filename",
+                                                                                        "type": "filename",
+                                                                                        "label": "Filename",
+                                                                                        "required": true,
+                                                                                        "semantic": "file:name",
+                                                                                        "extension": [
+                                                                                            "jpeg",
+                                                                                            "jpg",
+                                                                                            "png",
+                                                                                            "gif",
+                                                                                            "webp"
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "help": "Binary data of the image. For example, you can retrieve the binary data of your image using the **HTTP: Get a file** module.",
+                                                                                        "name": "data",
+                                                                                        "type": "buffer",
+                                                                                        "label": "Data",
+                                                                                        "required": true,
+                                                                                        "semantic": "file:data"
+                                                                                    }
+                                                                                ],
+                                                                                "type": "collection",
+                                                                                "label": "Source",
+                                                                                "required": true
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "required": true
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Content"
+                                                    },
+                                                    "type": "array",
+                                                    "label": "Content",
+                                                    "labels": {
+                                                        "add": "Add content"
+                                                    },
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Assistant",
+                                            "value": "assistant",
+                                            "nested": [
+                                                {
+                                                    "help": "If the request ends with an assistant turn, then the response content will continue directly from that last turn.",
+                                                    "name": "content",
+                                                    "type": "text",
+                                                    "label": "Content",
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "required": true
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "system",
+                        "type": "text",
+                        "label": "System Prompt"
+                    },
+                    {
+                        "name": "metadata",
+                        "type": "collection",
+                        "label": "Metadata",
+                        "spec": [
+                            {
+                                "name": "user_id",
+                                "type": "text",
+                                "label": "User ID"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "stop_sequences",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "spec": {
+                            "type": "text",
+                            "label": "Stop Sequence",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1
+                        }
+                    },
+                    {
+                        "name": "top_k",
+                        "type": "uinteger",
+                        "label": "Top K"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "module": "anthropic-claude:createAMessage",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1528134
+            },
+            "mapper": {
+                "model": "claude-3-5-sonnet-20240620",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "text": "👑 Subject Line Bot 👑You are an email headline writer bot, designed to get the user to click on the email. You do not create clickbait. For context, the email is generate a personalized email to encourage them to say yes to us sending them over a quick, valuable loom video showing them how they could increase sales. You will receive the content of the email. Do not start your output with 'subject line', just provide the outputThe email:Here are some guidelines for creating the best email subject lines based on the information provided:Guidelines for Great Email Subject Lines:1. Keep it short and sweet, ideally under 50 characters. Aim for 6-10 words.2. Make it eye-catching and attention-grabbing. Use strong action verbs, numbers, emojis, or interesting adjectives. 3. Evoke curiosity, emotion, or FOMO (fear of missing out). Tease the email's content without giving too much away.4. Personalize it when possible by using the recipient's name or referencing their interests/actions.5. Align it with your email's content and your brand voice. Don't use clickbait.6. Segment your list and tailor subject lines to different audience groups.7. Use a casual, conversational tone rather than being too formal or salesy. 8. Ask a compelling question that encourages opens.9. Emphasize value by mentioning discounts, exclusive offers, must-see content, etc.10. A/B test different subject lines to see what works best for your specific audience.11. Avoid spam trigger words like \"free,\" \"guarantee,\" \"winner,\" etc.12. Don't use all caps, excessive punctuation!!!!, or weird fonts/formatting.13. Include timely topics and tap into current events, seasons, holidays when relevant.14. Experiment with different lengths, tones, and styles. Variety prevents email fatigue.15. Preview on mobile devices, as many people check email on smartphones.100 Examples of Great Email Subject Lines:1. Hey [Name], check out these 5 must-read articles 2. Shhh... A surprise gift inside! 🎁 Open now3. What do you think about [topic]? 4. ENDS TONIGHT: Get 50% off [product]!5. Hi [Name], thanks for your purchase! What's next?6. You won't believe what just happened... 😮7. Upgrade your [blank] with these genius hacks8. Sneak peek at our Fall Collection! 🍂 9. [Name], earn double rewards if you act now!10. Ideas to boost your [topic] results11. $15 off for the friend you refer!12. Your private invite to our VIP sale 13. Don't open this email! (Reverse psychology 😉)14. Oops, your subscription is expiring!15. The secret to [desired result]16. As seen in [impressive place]!17. Your exclusive promo code inside 🔑 18. Quick favor?19. Hey friend, can you help me out?20. Free download: The ultimate guide to [topic]21. You've been selected for [special thing]22. [Number] of people are reading this RIGHT NOW 👀 23. Wow, did you see [current event]?!24. Get [benefit] without [usual requirement] 25. Which [thing] are you? Take the quiz26. ⏰ Your coupon is ticking...27. Tips from a [expert type]28. Take this 2-minute survey for 20% off29. Your new [month] game plan 📅30. Is it just me or [relatable statement]?31. How [impressive person] gets it done32. Your order's in the kitchen! 👨‍🍳 33. It's here: [anticipated thing]!34. 5 ways to [do something] like a boss35. Try this, not that36. The best [items] for [season/event]37. 1000s sold! Get yours before sold out38. Throwing shade at [pain point]  39. Last day for FREE SHIPPING! 🚢40. Stop wasting $ on [unnecessary item]. Do this instead...41. The ultimate Father's Day gift guide 42. Skip the research. Start seeing [benefit].43. Affordable [usually pricey item]? Yes please!  44. For [Name]'s eyes only 👀45. See what's inside! 👜 46. How to [accomplish something] in [short time]47. These [items] are going fast ⚡48. I thought you might like these... 49. Just say \"maybe\" to [offering]50. Uh oh, your [thing] is expiring soon!51. Good news: [positive announcement]!52. Avoid these [number] [topic] mistakes53. [Shocking number] of [group] do THIS (pic inside!)54. So...I have this crazy idea 💡55. Be the smartest person in the room about [topic]56. Save BIG on [items] this weekend only!57. The results are in... 58. Flash sale! ⌛ Up to X% off [products]59. Is [effort] worth the [cost]?60. Ends soon! Take [number]% off with this code 61. Pssst... We've got a secret 🤫62. Get an extra 25% off at checkout!63. [Exact $ amount] off the [product]! 64. Unlock the power of [topic] 🔓65. ⚠ You don't want to miss this...66. Extra 15% off because you're awesome 😎67. What we're reading: [book titles]68. You deserve [self-care item]  69. Let's be pen pals! Write back for a gift 🖊️70. Trending on the blog this week71. Our most popular [offerings] of 202372. A little Monday motivation for [Name] ☕73. Where to find the best [local offerings]74. Vote now for your favorite [thing]!75. [Surprising fact] + [related offering] 76. 12 [products] that are better together77. Best [items] for an epic [event]78. Because you ❤ [product/topic]...79. [Goal]? These tips make it easy.80. The ultimate cheat sheet for [skill]81. Your [freebie/incentive] awaits...82. Build a better [thing] with these top tools83. Spoiler alert! 🚨 [Tease announcement] 84. Time-sensitive: [benefit] starts now!85. Your name in lights! ⭐ (Ok, just in pixels)86. No more [pain point]! 🙅‍♀️ Here's how...87. ICYMI: [Recap of content]88. Get your [free item] in 3...2...1!89. The #1 key to [achieving specific result] 90. Which [celeb] are you? [Topic] edition91. Turn [negative thing] into [positive result]92. Peek inside the life of [interesting person] 93. The 30-second hack for [tedious task]94. 👋 Hello from [company/person]!95. Our gift to you: [offering] ($X value!)96. XX [product] under $XX 💸97. We tried [experiment] - the results shocked us 😲98. Score [benefit] with this little-known trick99. Only [low number] spots left! 😱100. Swipe right on these [category] deals 👉\n\nEmail data: {{6.textResponse}}\nWebsite summary: {{2.result}}",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ],
+                "metadata": {},
+                "max_tokens": "4000",
+                "temperature": "1"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1800,
+                    "y": 0,
+                    "name": "👑 Subject line 👑"
+                },
+                "restore": {
+                    "expect": {
+                        "model": {
+                            "mode": "edit"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    },
+                                    "content": {
+                                        "mode": "chose",
+                                        "items": [
+                                            {
+                                                "type": {
+                                                    "mode": "chose",
+                                                    "label": "Text"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "stop_sequences": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "anthropic-claude"
+                            },
+                            "label": "My Anthropic Claude connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:anthropic-claude",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "uinteger",
+                        "label": "Max Tokens",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "spec": {
+                            "name": "value",
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": [
+                                        {
+                                            "label": "User",
+                                            "value": "user",
+                                            "nested": [
+                                                {
+                                                    "name": "content",
+                                                    "spec": {
+                                                        "spec": [
+                                                            {
+                                                                "help": "You can send image content blocks starting with Claude 3 models.",
+                                                                "name": "type",
+                                                                "type": "select",
+                                                                "label": "Type",
+                                                                "options": [
+                                                                    {
+                                                                        "label": "Text",
+                                                                        "value": "text",
+                                                                        "nested": [
+                                                                            {
+                                                                                "help": "Content of the message on behalf of the selected **Role** .",
+                                                                                "name": "text",
+                                                                                "type": "text",
+                                                                                "label": "Text",
+                                                                                "required": true
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "label": "Image",
+                                                                        "value": "image",
+                                                                        "nested": [
+                                                                            {
+                                                                                "name": "source",
+                                                                                "spec": [
+                                                                                    {
+                                                                                        "help": "File name, including the extension, for example, `image.jpg`.",
+                                                                                        "name": "filename",
+                                                                                        "type": "filename",
+                                                                                        "label": "Filename",
+                                                                                        "required": true,
+                                                                                        "semantic": "file:name",
+                                                                                        "extension": [
+                                                                                            "jpeg",
+                                                                                            "jpg",
+                                                                                            "png",
+                                                                                            "gif",
+                                                                                            "webp"
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "help": "Binary data of the image. For example, you can retrieve the binary data of your image using the **HTTP: Get a file** module.",
+                                                                                        "name": "data",
+                                                                                        "type": "buffer",
+                                                                                        "label": "Data",
+                                                                                        "required": true,
+                                                                                        "semantic": "file:data"
+                                                                                    }
+                                                                                ],
+                                                                                "type": "collection",
+                                                                                "label": "Source",
+                                                                                "required": true
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "required": true
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Content"
+                                                    },
+                                                    "type": "array",
+                                                    "label": "Content",
+                                                    "labels": {
+                                                        "add": "Add content"
+                                                    },
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Assistant",
+                                            "value": "assistant",
+                                            "nested": [
+                                                {
+                                                    "help": "If the request ends with an assistant turn, then the response content will continue directly from that last turn.",
+                                                    "name": "content",
+                                                    "type": "text",
+                                                    "label": "Content",
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "required": true
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message"
+                        },
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true
+                    },
+                    {
+                        "name": "system",
+                        "type": "text",
+                        "label": "System Prompt"
+                    },
+                    {
+                        "name": "metadata",
+                        "spec": [
+                            {
+                                "name": "user_id",
+                                "type": "text",
+                                "label": "User ID"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Metadata"
+                    },
+                    {
+                        "name": "stop_sequences",
+                        "spec": {
+                            "name": "value",
+                            "type": "text",
+                            "label": "Stop Sequence"
+                        },
+                        "type": "array",
+                        "label": "Stop Sequences"
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1
+                        }
+                    },
+                    {
+                        "name": "top_k",
+                        "type": "uinteger",
+                        "label": "Top K"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "module": "google-email:ActionSendEmail",
+            "version": 2,
+            "parameters": {
+                "account": 1480479
+            },
+            "mapper": {
+                "cc": [],
+                "to": [
+                    "test@test.com"
+                ],
+                "bcc": [],
+                "from": "",
+                "html": "{{6.textResponse}}",
+                "subject": "{{7.textResponse}}",
+                "attachments": []
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2100,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "cc": {
+                            "mode": "chose"
+                        },
+                        "to": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "bcc": {
+                            "mode": "chose"
+                        },
+                        "attachments": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "account": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google-restricted"
+                            },
+                            "label": "My Google Restricted connection (jack@aiautomationswithjack.com)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "account",
+                        "type": "account:google-restricted",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "from",
+                        "type": "text",
+                        "label": "From"
+                    },
+                    {
+                        "name": "to",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address",
+                            "required": true
+                        },
+                        "type": "array",
+                        "label": "To",
+                        "required": true
+                    },
+                    {
+                        "name": "subject",
+                        "type": "text",
+                        "label": "Subject"
+                    },
+                    {
+                        "name": "html",
+                        "type": "text",
+                        "label": "Content"
+                    },
+                    {
+                        "name": "attachments",
+                        "spec": [
+                            {
+                                "name": "fileName",
+                                "type": "filename",
+                                "label": "File name",
+                                "required": true,
+                                "semantic": "file:name"
+                            },
+                            {
+                                "name": "data",
+                                "type": "buffer",
+                                "label": "Data",
+                                "required": true,
+                                "semantic": "file:data"
+                            },
+                            {
+                                "name": "cid",
+                                "type": "text",
+                                "label": "Content-ID"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Attachments"
+                    },
+                    {
+                        "name": "cc",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address"
+                        },
+                        "type": "array",
+                        "label": "Copy recipient"
+                    },
+                    {
+                        "name": "bcc",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address"
+                        },
+                        "type": "array",
+                        "label": "Blind copy recipient"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

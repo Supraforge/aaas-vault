@@ -1,0 +1,4 @@
+treatment_group,primary_endpoint_rate,ci_lower,ci_upper,sample_size,p_value
+Drug A,12.3,10.5,14.1,1500,0.002
+Drug B,15.1,13.2,17.0,1450,0.045
+Placebo,18.7,16.5,20.9,1475,NA

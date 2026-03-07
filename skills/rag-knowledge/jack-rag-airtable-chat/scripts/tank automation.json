@@ -1,0 +1,731 @@
+{
+    "name": "Tank Automation 🎽",
+    "flow": [
+        {
+            "id": 20,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 786422,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -224,
+                    "y": -132
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "data": {
+                                "editable": "true"
+                            },
+                            "label": "Tank Tops 💎"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "message",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 21,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818
+            },
+            "mapper": {
+                "base": "appDXvlJNmcQDpd7K",
+                "useColumnId": false,
+                "table": "tbljjRKkdulIJb08s",
+                "maxRecords": "100",
+                "fields": [
+                    "Product Name",
+                    "Description ⚡️",
+                    "Quantity Left",
+                    "URL"
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 76,
+                    "y": -132
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "Bobby Tanks 🎽"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "Table 1"
+                        },
+                        "sort": {
+                            "mode": "chose"
+                        },
+                        "view": {
+                            "mode": "chose",
+                            "label": "Empty"
+                        },
+                        "fields": {
+                            "mode": "chose",
+                            "label": [
+                                "Product Name",
+                                "Description ⚡️",
+                                "Quantity Left",
+                                "URL"
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "array",
+                        "label": "Sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "options": [],
+                                "dynamic": true
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "label": "Total number of bundles",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "label": "Bundle order position",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Product Name",
+                        "label": "Product Name",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Description ⚡️",
+                        "label": "Description ⚡️",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Quantity Left",
+                        "label": "Quantity Left",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "URL",
+                        "label": "URL",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 22,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 21
+            },
+            "mapper": {
+                "Product Name": "{{21.`Product Name`}}",
+                "Description ⚡️": "{{21.`Description ⚡️`}}",
+                "Quantity Left": "{{21.`Quantity Left`}}",
+                "URL": "{{21.URL}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 376,
+                    "y": -132
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Airtable - Search Records [21]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 23,
+            "module": "util:TextAggregator",
+            "version": 1,
+            "parameters": {
+                "rowSeparator": "",
+                "feeder": 22
+            },
+            "mapper": {
+                "value": "1) {{22.array[0].`Product Name`}}{{22.array[0].`Description ⚡️`}}{{22.array[0].`Quantity Left`}}{{22.array[0].URL}}\n\n2) {{22.array[1].`Product Name`}}{{22.array[1].`Description ⚡️`}}{{22.array[1].`Quantity Left`}}{{22.array[1].URL}}\n\n3) 1) {{22.array[2].`Product Name`}}{{22.array[2].`Description ⚡️`}}{{22.array[2].`Quantity Left`}}{{22.array[2].URL}}\n\n4) 1) {{22.array[3].`Product Name`}}{{22.array[3].`Description ⚡️`}}{{22.array[3].`Quantity Left`}}{{22.array[3].URL}}\n\n5) 1) {{22.array[4].`Product Name`}}{{22.array[4].`Description ⚡️`}}{{22.array[4].`Quantity Left`}}{{22.array[4].URL}}\n\n6) 1) {{22.array[5].`Product Name`}}{{22.array[5].`Description ⚡️`}}{{22.array[5].`Quantity Left`}}{{22.array[5].URL}}\n\n7) 1) {{22.array[6].`Product Name`}}{{22.array[6].`Description ⚡️`}}{{22.array[6].`Quantity Left`}}{{22.array[6].URL}}\n\n8) 1) {{22.array[7].`Product Name`}}{{22.array[7].`Description ⚡️`}}{{22.array[7].`Quantity Left`}}{{22.array[7].URL}}\n\n9) 1) {{22.array[8].`Product Name`}}{{22.array[8].`Description ⚡️`}}{{22.array[8].`Quantity Left`}}{{22.array[8].URL}}\n\n10) 1) {{22.array[9].`Product Name`}}{{22.array[9].`Description ⚡️`}}{{22.array[9].`Quantity Left`}}{{22.array[9].URL}}\n\n11) 1) {{22.array[10].`Product Name`}}{{22.array[10].`Description ⚡️`}}{{22.array[10].`Quantity Left`}}{{22.array[10].URL}}\n\n12) 1) {{22.array[11].`Product Name`}}{{22.array[11].`Description ⚡️`}}{{22.array[11].`Quantity Left`}}{{22.array[11].URL}}\n\n13) 1) {{22.array[12].`Product Name`}}{{22.array[12].`Description ⚡️`}}{{22.array[12].`Quantity Left`}}{{22.array[12].URL}}\n\n14) 1) {{22.array[13].`Product Name`}}{{22.array[13].`Description ⚡️`}}{{22.array[13].`Quantity Left`}}{{22.array[13].URL}}\n\n15) 1) {{22.array[14].`Product Name`}}{{22.array[14].`Description ⚡️`}}{{22.array[14].`Quantity Left`}}{{22.array[14].URL}}\n\n16) 1) {{22.array[15].`Product Name`}}{{22.array[15].`Description ⚡️`}}{{22.array[15].`Quantity Left`}}{{22.array[15].URL}}\n\n17) 1) {{22.array[16].`Product Name`}}{{22.array[16].`Description ⚡️`}}{{22.array[16].`Quantity Left`}}{{22.array[16].URL}}\n\n18) 1) {{22.array[17].`Product Name`}}{{22.array[17].`Description ⚡️`}}{{22.array[17].`Quantity Left`}}{{22.array[17].URL}}\n\n19) 1) {{22.array[18].`Product Name`}}{{22.array[18].`Description ⚡️`}}{{22.array[18].`Quantity Left`}}{{22.array[18].URL}}\n\n20) 1) {{22.array[19].`Product Name`}}{{22.array[19].`Description ⚡️`}}{{22.array[19].`Quantity Left`}}{{22.array[19].URL}}\n\n21) 1) {{22.array[20].`Product Name`}}{{22.array[20].`Description ⚡️`}}{{22.array[20].`Quantity Left`}}{{22.array[20].URL}}\n\n22) 1) {{22.array[21].`Product Name`}}{{22.array[21].`Description ⚡️`}}{{22.array[21].`Quantity Left`}}{{22.array[21].URL}}\n\n23) 1) {{22.array[22].`Product Name`}}{{22.array[22].`Description ⚡️`}}{{22.array[22].`Quantity Left`}}{{22.array[22].URL}}\n\n24) 1) {{22.array[23].`Product Name`}}{{22.array[23].`Description ⚡️`}}{{22.array[23].`Quantity Left`}}{{22.array[23].URL}}\n\n25) 1) {{22.array[24].`Product Name`}}{{22.array[24].`Description ⚡️`}}{{22.array[24].`Quantity Left`}}{{22.array[24].URL}}\n\n26) 1) {{22.array[25].`Product Name`}}{{22.array[25].`Description ⚡️`}}{{22.array[25].`Quantity Left`}}{{22.array[25].URL}}\n\n27) 1) {{22.array[26].`Product Name`}}{{22.array[26].`Description ⚡️`}}{{22.array[26].`Quantity Left`}}{{22.array[26].URL}}\n\n28) 1) {{22.array[27].`Product Name`}}{{22.array[27].`Description ⚡️`}}{{22.array[27].`Quantity Left`}}{{22.array[27].URL}}\n\n29) 1) {{22.array[28].`Product Name`}}{{22.array[28].`Description ⚡️`}}{{22.array[28].`Quantity Left`}}{{22.array[28].URL}}\n\n30) 1) {{22.array[29].`Product Name`}}{{22.array[29].`Description ⚡️`}}{{22.array[29].`Quantity Left`}}{{22.array[29].URL}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 676,
+                    "y": -132
+                },
+                "restore": {
+                    "parameters": {
+                        "rowSeparator": {
+                            "label": "Empty"
+                        }
+                    },
+                    "extra": {
+                        "feeder": {
+                            "label": "Array aggregator [22]"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "rowSeparator",
+                        "type": "select",
+                        "label": "Row separator",
+                        "validate": {
+                            "enum": [
+                                "\n",
+                                "\t",
+                                "other"
+                            ]
+                        }
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "value",
+                        "type": "text",
+                        "label": "Text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 24,
+            "module": "openai-gpt-3:CreateCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1425946
+            },
+            "mapper": {
+                "select": "chat",
+                "max_tokens": "0",
+                "temperature": "1",
+                "top_p": "1",
+                "n_completions": "1",
+                "response_format": "text",
+                "model": "gpt-4o",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": "You are a highly knowledgeable and friendly chatbot named \"TrainersGuru,\" designed to help website visitors find the best tannks for their needs. \n\nYou have access to all product data, including availability. You also have access to the conversation history with the user (see below).\n\nYour goal is to provide personalized recommendations based on the user's preferences, activities, and style. Here's how you should proceed: \n\nGreet the User:\nStart with a friendly greeting. Acknowledge any previous interactions if applicable.\n\nUnderstand User Needs:\nAsk questions to understand the user's specific requirements. Consider factors such as activity type (running, walking, gym, etc.), foot type (flat feet, high arches), preferred brands, budget, and style preferences.\n\nExample: \"Can you tell me what activities you'll be using the trainers for? Do you have any brand preferences or specific features you're looking for?\"Leverage Conversation \n\nProvide Recommendations:\nBased on the user's input, suggest a selection of trainers. Highlight key features, benefits, and customer reviews.\n\nExample: \"Based on your needs, I recommend the XYZ Running Shoes. They offer excellent arch support and have received great reviews for their comfort and durability.\"\n\nAnswer Questions:\nBe ready to answer any specific questions the user may have about the products, such as sizing, return policy, or material.\nExample: \"These trainers run true to size, but if you're between sizes, I suggest going up half a size. We also offer free returns if they don't fit perfectly.\"\n\nEncourage User Interaction:\nPrompt the user to ask more questions or provide additional details.\n\nExample: \"Is there anything else you’d like to know about these trainers? Or perhaps you'd like to see more options?\"Close the \n\nConversation:\nEnd the conversation with a friendly note and an invitation to return if they need further assistance.\n\n\nExample: \"I hope you find the perfect trainers! Feel free to reach out if you have any more questions. Have a great day!\"\n\nYou will be provided with a conversation. You must reply to the latest message within that conversation. \n\nYour task it to help and chat with the user, with the ultimate objetive of finding the right pair of trainers for them and sharing a link to purchase (available below)\n\nYou will also get data from a data source to support your questions. Keep your answers short with no markdown and keep them conversational.\n\nInclude line breaks and new paragraphs\n\nThe conversation:\n1. {{20.messages[0]}}\n2. {{20.messages[1]}}\n3. {{20.messages[2]}}\n4. {{20.messages[3]}}\n5. {{20.messages[4]}}\n6. {{20.messages[5]}}\n7. {{20.messages[6]}}\n8. {{20.messages[7]}}\n9. {{20.messages[8]}}\n10. {{20.messages[9]}}\n11. {{20.messages[10]}}\n12. {{20.messages[11]}}\n13. {{20.messages[12]}}\n14. {{20.messages[13]}}\n15. {{20.messages[14]}}\n16. {{20.messages[15]}}\n17. {{20.messages[16]}}\n18. {{20.messages[17]}}\n19. {{20.messages[18]}}\n20. {{20.messages[19]}}\n21. {{20.messages[20]}}\n22. {{20.messages[21]}}\n23. {{20.messages[22]}}\n24. {{20.messages[23]}}\n25. {{20.messages[24]}}\n26. {{20.messages[25]}}\n27. {{20.messages[26]}}\n28. {{20.messages[27]}}\n29. {{20.messages[28]}}\n30. {{20.messages[29]}}\n31. {{20.messages[30]}}\n32. {{20.messages[31]}}\n33. {{20.messages[32]}}\n34. {{20.messages[33]}}\n35. {{20.messages[34]}}\n36. {{20.messages[35]}}\n37. {{20.messages[36]}}\n38. {{20.messages[37]}}\n39. {{20.messages[38]}}\n40. {{20.messages[39]}}\n41. {{20.messages[40]}}\n42. {{20.messages[41]}}\n43. {{20.messages[42]}}\n44. {{20.messages[43]}}\n45. {{20.messages[44]}}\n46. {{20.messages[45]}}\n47. {{20.messages[46]}}\n48. {{20.messages[47]}}\n49. {{20.messages[48]}}\n50. {{20.messages[49]}}\n51. {{20.messages[50]}}\n52. {{20.messages[51]}}\n53. {{20.messages[52]}}\n54. {{20.messages[53]}}\n55. {{20.messages[54]}}\n56. {{20.messages[55]}}\n57. {{20.messages[56]}}\n58. {{20.messages[57]}}\n59. {{20.messages[58]}}\n60. {{20.messages[59]}}\n61. {{20.messages[60]}}\n62. {{20.messages[61]}}\n63. {{20.messages[62]}}\n64. {{20.messages[63]}}\n65. {{20.messages[64]}}\n66. {{20.messages[65]}}\n67. {{20.messages[66]}}\n68. {{20.messages[67]}}\n69. {{20.messages[68]}}\n70. {{20.messages[69]}}\n71. {{20.messages[70]}}\n72. {{20.messages[71]}}\n73. {{20.messages[72]}}\n74. {{20.messages[73]}}\n75. {{20.messages[74]}}\n76. {{20.messages[75]}}\n77. {{20.messages[76]}}\n78. {{20.messages[77]}}\n79. {{20.messages[78]}}\n80. {{20.messages[79]}}\n\n\nAvailable Stock & product information:\n{{23.text}}"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 964,
+                    "y": -135,
+                    "name": "Our Business Brain 🧠"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My OpenAI connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "openai-gpt-3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "select": {
+                            "label": "Create a Chat Completion (GPT Models)"
+                        },
+                        "logit_bias": {
+                            "mode": "chose"
+                        },
+                        "response_format": {
+                            "mode": "chose",
+                            "label": "Text"
+                        },
+                        "stop": {
+                            "mode": "chose"
+                        },
+                        "additionalParameters": {
+                            "mode": "chose"
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "gpt-4o (system)"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:openai-gpt-3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Select Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "chat",
+                                "prompt"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "number",
+                        "label": "Max Tokens",
+                        "required": true
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "n_completions",
+                        "type": "number",
+                        "label": "Number"
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "logit_bias",
+                        "type": "array",
+                        "label": "Token Probability",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "token",
+                                    "type": "text",
+                                    "label": "Token ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "probability",
+                                    "type": "number",
+                                    "label": "Probability",
+                                    "required": true,
+                                    "validate": {
+                                        "max": 100,
+                                        "min": -100
+                                    }
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Token Probability",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "response_format",
+                        "type": "select",
+                        "label": "Response Format",
+                        "validate": {
+                            "enum": [
+                                "text",
+                                "json_object"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "stop",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "validate": {
+                            "maxItems": 4
+                        },
+                        "spec": {
+                            "type": "text",
+                            "label": "Stop Sequence",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "additionalParameters",
+                        "type": "array",
+                        "label": "Other Input Parameters",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "key",
+                                    "type": "text",
+                                    "label": "Parameter Name",
+                                    "required": true
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "select",
+                                    "label": "Input Type",
+                                    "options": [
+                                        {
+                                            "label": "Text",
+                                            "value": "text",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ],
+                                            "default": true
+                                        },
+                                        {
+                                            "label": "Number",
+                                            "value": "number",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "number",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "boolean",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "boolean",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date",
+                                            "value": "date",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "date",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Any",
+                                            "value": "any",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "any",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Input Parameter",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": [
+                                        {
+                                            "label": "System",
+                                            "value": "system"
+                                        },
+                                        {
+                                            "label": "User",
+                                            "value": "user"
+                                        },
+                                        {
+                                            "label": "Assistant",
+                                            "value": "assistant"
+                                        }
+                                    ],
+                                    "required": true
+                                },
+                                {
+                                    "name": "content",
+                                    "type": "text",
+                                    "label": "Message Content"
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message",
+                            "name": "value"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 26,
+            "module": "gateway:WebhookRespond",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "status": "200",
+                "body": "{{24.result}}",
+                "headers": []
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1312,
+                    "y": -136
+                },
+                "restore": {
+                    "expect": {
+                        "headers": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "status",
+                        "type": "uinteger",
+                        "label": "Status",
+                        "validate": {
+                            "min": 100
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "type": "any",
+                        "label": "Body"
+                    },
+                    {
+                        "name": "headers",
+                        "type": "array",
+                        "label": "Custom headers",
+                        "validate": {
+                            "maxItems": 16
+                        },
+                        "spec": [
+                            {
+                                "name": "key",
+                                "label": "Key",
+                                "type": "text",
+                                "required": true,
+                                "validate": {
+                                    "max": 256
+                                }
+                            },
+                            {
+                                "name": "value",
+                                "label": "Value",
+                                "type": "text",
+                                "required": true,
+                                "validate": {
+                                    "max": 4096
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

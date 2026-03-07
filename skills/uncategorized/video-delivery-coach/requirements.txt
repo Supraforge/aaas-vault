@@ -1,0 +1,19 @@
+# Video Delivery Coach dependencies
+
+# Core (required)
+anthropic>=0.18.0
+python-dotenv>=1.0.0
+rich>=13.0.0
+
+# Voice analysis (required for basic analysis)
+librosa>=0.10.0
+moviepy>=1.0.3
+faster-whisper>=0.10.0
+numpy>=1.24.0
+
+# Facial analysis (optional - for --full mode)
+# These are heavy dependencies, install only if needed
+# opencv-python>=4.8.0
+# mediapipe>=0.10.0
+# deepface>=0.0.79
+# tf-keras>=2.15.0  # Note: ~500MB download

@@ -1,0 +1,265 @@
+{
+    "name": "New LEVEL 💙 2/4",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 542831,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -156,
+                    "y": -2
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "label": "New LEVEL 💙 2/4",
+                            "data": {
+                                "editable": "true"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "airtable:ActionCreateRecord",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818
+            },
+            "mapper": {
+                "base": "apprHAHdUQhU8KzRH",
+                "typecast": false,
+                "useColumnId": false,
+                "table": "tblfUBU4hfT2WtiiH",
+                "record": {
+                    "fldf8CRlUe5MjJH1H": "{{1.result.url}}",
+                    "fldILVBRe2bYG8Iaf": "{{1.hash}}"
+                }
+            },
+            "metadata": {
+                "designer": {
+                    "x": 144,
+                    "y": -2
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "base": {
+                            "label": "Midjourney New Level ⭐️"
+                        },
+                        "typecast": {
+                            "mode": "chose"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        },
+                        "table": {
+                            "nested": [
+                                {
+                                    "name": "record",
+                                    "spec": [
+                                        {
+                                            "name": "fldf8CRlUe5MjJH1H",
+                                            "label": "URL Approval",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "fldILVBRe2bYG8Iaf",
+                                            "label": "Hash",
+                                            "type": "text",
+                                            "multiline": true
+                                        },
+                                        {
+                                            "name": "fldoeusDN5mFKVxRQ",
+                                            "label": "Status",
+                                            "type": "select",
+                                            "mode": "edit",
+                                            "dynamic": true,
+                                            "validate": false,
+                                            "options": [
+                                                {
+                                                    "label": "1",
+                                                    "value": "1"
+                                                },
+                                                {
+                                                    "label": "2",
+                                                    "value": "2"
+                                                },
+                                                {
+                                                    "label": "3",
+                                                    "value": "3"
+                                                },
+                                                {
+                                                    "label": "4",
+                                                    "value": "4"
+                                                },
+                                                {
+                                                    "label": "Re-roll",
+                                                    "value": "Re-roll"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Record"
+                                }
+                            ],
+                            "label": "Table 1"
+                        },
+                        "record": {
+                            "nested": {
+                                "fldoeusDN5mFKVxRQ": {
+                                    "mode": "edit"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "typecast",
+                        "type": "boolean",
+                        "label": "Smart links",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "record",
+                        "type": "collection",
+                        "label": "Record",
+                        "spec": [
+                            {
+                                "name": "fldf8CRlUe5MjJH1H",
+                                "type": "text",
+                                "label": "URL Approval"
+                            },
+                            {
+                                "name": "fldILVBRe2bYG8Iaf",
+                                "type": "text",
+                                "label": "Hash"
+                            },
+                            {
+                                "name": "fldoeusDN5mFKVxRQ",
+                                "type": "select",
+                                "label": "Status",
+                                "mode": "edit"
+                            }
+                        ]
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "URL Approval",
+                        "label": "URL Approval",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Hash",
+                        "label": "Hash",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Status",
+                        "label": "Status",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Created Time",
+                        "label": "Created Time",
+                        "type": "date"
+                    },
+                    {
+                        "name": "last modified time",
+                        "label": "last modified time",
+                        "type": "date"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

@@ -1,0 +1,9 @@
+Document tabs
+Tab 1
+1. Role Definition
+2. Context and Background
+3. Task Explanation / Goal
+4. Constraints and Instructions
+5. Collaboration and Interaction Protocol
+6. Example Prompts and Responses
+7. Formatting and Output Specifications

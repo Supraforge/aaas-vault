@@ -1,0 +1,164 @@
+{
+  "search_metadata": {
+    "timestamp": "2026-01-28T14:22:19.080014",
+    "project": "Enora - AI Quality Layer for Automotive Engineering",
+    "filters": {
+      "industry": [
+        "automotive",
+        "AI",
+        "compliance",
+        "quality-assurance",
+        "SaaS"
+      ],
+      "stage": "Seed",
+      "geography": [
+        "Europe",
+        "USA"
+      ],
+      "check_size": "500K-2M"
+    },
+    "total_found": 8,
+    "returned": 8
+  },
+  "investors": [
+    {
+      "Name": "Future Motion",
+      "Type": "Venture Capital",
+      "Geography": "Amsterdam, Netherlands",
+      "Contact Method": "Form",
+      "Link": "https://futuremotion.vc",
+      "Verticals": "mobility, automotive, AI",
+      "Stage": "Seed",
+      "Check Size": "500K-2M",
+      "relevance_score": 0.96,
+      "match_reasons": [
+        "Industry match: automotive",
+        "Industry match: ai",
+        "Stage match: seed",
+        "Region match: europe",
+        "Check size match: 500K-2M"
+      ]
+    },
+    {
+      "Name": "Automotive Ventures",
+      "Type": "Venture Capital",
+      "Geography": "Detroit, USA",
+      "Contact Method": "Email",
+      "Link": "https://automotiveventures.com",
+      "Verticals": "automotive, mobility, AI, enterprise",
+      "Stage": "Seed",
+      "Check Size": "500K-3M",
+      "relevance_score": 0.93,
+      "match_reasons": [
+        "Industry match: automotive",
+        "Industry match: ai",
+        "Stage match: seed",
+        "Geography match: usa",
+        "Potential check size overlap"
+      ]
+    },
+    {
+      "Name": "Silicon Valley Angels",
+      "Type": "Angel Group",
+      "Geography": "San Francisco, USA",
+      "Contact Method": "LinkedIn",
+      "Link": "https://sva.com",
+      "Verticals": "SaaS, AI, consumer",
+      "Stage": "Pre-Seed",
+      "Check Size": "100K-500K",
+      "relevance_score": 0.93,
+      "match_reasons": [
+        "Industry match: ai",
+        "Industry match: saas",
+        "Stage match: seed",
+        "Geography match: usa",
+        "Potential check size overlap"
+      ]
+    },
+    {
+      "Name": "DeepMind Capital",
+      "Type": "Venture Capital",
+      "Geography": "London, UK",
+      "Contact Method": "Form",
+      "Link": "https://deepmind.vc",
+      "Verticals": "AI, machine learning, deeptech",
+      "Stage": "Seed",
+      "Check Size": "$1M-$5M",
+      "relevance_score": 0.89,
+      "match_reasons": [
+        "Industry match: ai",
+        "Stage match: seed",
+        "Region match: europe",
+        "Potential check size overlap"
+      ]
+    },
+    {
+      "Name": "Euro Mobility Fund",
+      "Type": "Venture Capital",
+      "Geography": "Berlin, Germany",
+      "Contact Method": "Email",
+      "Link": "https://euromobility.com",
+      "Verticals": "automotive, sustainability, logistics",
+      "Stage": "Seed",
+      "Check Size": "250K-1.5M",
+      "relevance_score": 0.89,
+      "match_reasons": [
+        "Industry match: automotive",
+        "Industry match: ai",
+        "Stage match: seed",
+        "Region match: europe",
+        "Potential check size overlap"
+      ]
+    },
+    {
+      "Name": "AI Quality Partners",
+      "Type": "Venture Capital",
+      "Geography": "Munich, Germany",
+      "Contact Method": "Email",
+      "Link": "https://aiquality.vc",
+      "Verticals": "AI, quality assurance, enterprise",
+      "Stage": "Seed",
+      "Check Size": "500K-2.5M",
+      "relevance_score": 0.89,
+      "match_reasons": [
+        "Industry match: ai",
+        "Stage match: seed",
+        "Region match: europe",
+        "Potential check size overlap"
+      ]
+    },
+    {
+      "Name": "Global Auto Fund",
+      "Type": "Venture Capital",
+      "Geography": "Tokyo, Japan",
+      "Contact Method": "Email",
+      "Link": "https://globalauto.com",
+      "Verticals": "automotive, manufacturing, AI",
+      "Stage": "Seed",
+      "Check Size": "1M-5M",
+      "relevance_score": 0.72,
+      "match_reasons": [
+        "Industry match: automotive",
+        "Industry match: ai",
+        "Stage match: seed",
+        "Potential check size overlap"
+      ]
+    },
+    {
+      "Name": "Compliance Tech Partners",
+      "Type": "Venture Capital",
+      "Geography": "Paris, France",
+      "Contact Method": "Email",
+      "Link": "https://compliancetp.com",
+      "Verticals": "regtech, fintech, compliance",
+      "Stage": "Series A",
+      "Check Size": "2M-10M",
+      "relevance_score": 0.64,
+      "match_reasons": [
+        "Industry match: compliance",
+        "Region match: europe",
+        "Potential check size overlap"
+      ]
+    }
+  ]
+}

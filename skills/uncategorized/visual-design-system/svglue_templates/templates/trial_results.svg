@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <style>
+      .title { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f; }
+      .subtitle { font-family: Helvetica, Arial, sans-serif; font-size: 14px; fill: #495057; }
+      .stat-number { font-family: Helvetica, Arial, sans-serif; font-size: 48px; font-weight: bold; }
+      .stat-label { font-family: Helvetica, Arial, sans-serif; font-size: 12px; fill: #495057; }
+      .stat-context { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #6c757d; }
+      .endpoint-title { font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; fill: #212529; }
+      .endpoint-value { font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .endpoint-ci { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #6c757d; font-style: italic; }
+      .footer { font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #6c757d; }
+      .divider { stroke: #e9ecef; stroke-width: 1; }
+      .card-bg { fill: #f8f9fa; rx: 8; }
+      .treatment-color { fill: #0077bb; }
+      .control-color { fill: #ee7733; }
+      .benefit-color { fill: #2e7d32; }
+      .risk-color { fill: #c62828; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ffffff"/>
+
+  <!-- Header Section -->
+  <text id="trial_name" class="title" x="40" y="50">TRIAL NAME</text>
+  <text id="trial_subtitle" class="subtitle" x="40" y="75">Trial description and context</text>
+
+  <!-- Divider -->
+  <line class="divider" x1="40" y1="95" x2="760" y2="95"/>
+
+  <!-- Primary Endpoint Card -->
+  <rect class="card-bg" x="40" y="115" width="340" height="180"/>
+  <text class="stat-label" x="60" y="145">PRIMARY ENDPOINT</text>
+  <text id="primary_endpoint_name" class="endpoint-title" x="60" y="170">All-cause mortality</text>
+  <text id="primary_hr" class="stat-number treatment-color" x="60" y="240">0.85</text>
+  <text class="stat-label" x="180" y="240">HR</text>
+  <text id="primary_ci" class="endpoint-ci" x="60" y="265">95% CI: 0.75-0.96</text>
+  <text id="primary_p" class="endpoint-ci" x="60" y="282">P = 0.008</text>
+
+  <!-- Secondary Endpoint Card -->
+  <rect class="card-bg" x="420" y="115" width="340" height="180"/>
+  <text class="stat-label" x="440" y="145">SECONDARY ENDPOINT</text>
+  <text id="secondary_endpoint_name" class="endpoint-title" x="440" y="170">CV Hospitalization</text>
+  <text id="secondary_hr" class="stat-number control-color" x="440" y="240">0.72</text>
+  <text class="stat-label" x="560" y="240">HR</text>
+  <text id="secondary_ci" class="endpoint-ci" x="440" y="265">95% CI: 0.64-0.82</text>
+  <text id="secondary_p" class="endpoint-ci" x="440" y="282">P &lt; 0.001</text>
+
+  <!-- Key Statistics Section -->
+  <text class="stat-label" x="40" y="330">KEY STATISTICS</text>
+  <line class="divider" x1="40" y1="340" x2="760" y2="340"/>
+
+  <!-- Stat Box 1: Patients -->
+  <rect class="card-bg" x="40" y="360" width="170" height="100"/>
+  <text id="stat1_value" class="stat-number" style="font-size: 32px; fill: #1e3a5f;" x="60" y="410">5,000</text>
+  <text id="stat1_label" class="stat-label" x="60" y="435">Patients enrolled</text>
+
+  <!-- Stat Box 2: Duration -->
+  <rect class="card-bg" x="230" y="360" width="170" height="100"/>
+  <text id="stat2_value" class="stat-number" style="font-size: 32px; fill: #1e3a5f;" x="250" y="410">3.5</text>
+  <text id="stat2_label" class="stat-label" x="250" y="435">Years follow-up</text>
+
+  <!-- Stat Box 3: NNT -->
+  <rect class="card-bg" x="420" y="360" width="170" height="100"/>
+  <text id="stat3_value" class="stat-number" style="font-size: 32px; fill: #2e7d32;" x="440" y="410">25</text>
+  <text id="stat3_label" class="stat-label" x="440" y="435">NNT to prevent 1 event</text>
+
+  <!-- Stat Box 4: ARR -->
+  <rect class="card-bg" x="610" y="360" width="150" height="100"/>
+  <text id="stat4_value" class="stat-number" style="font-size: 32px; fill: #2e7d32;" x="630" y="410">4.0%</text>
+  <text id="stat4_label" class="stat-label" x="630" y="435">Absolute risk reduction</text>
+
+  <!-- Treatment vs Control Labels -->
+  <rect x="40" y="480" width="12" height="12" class="treatment-color"/>
+  <text id="treatment_label" class="stat-context" x="60" y="490">Treatment arm</text>
+  <rect x="180" y="480" width="12" height="12" class="control-color"/>
+  <text id="control_label" class="stat-context" x="200" y="490">Control arm</text>
+
+  <!-- Footer -->
+  <line class="divider" x1="40" y1="520" x2="760" y2="520"/>
+  <text id="source" class="footer" x="40" y="545">Source: Journal Name. Year;Vol:Pages</text>
+  <text id="author" class="footer" x="40" y="560">Prepared by: Dr. Shailesh Singh</text>
+  <text id="date" class="footer" x="760" y="560" text-anchor="end">January 2026</text>
+</svg>

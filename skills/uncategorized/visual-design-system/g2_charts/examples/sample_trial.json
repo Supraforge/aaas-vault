@@ -1,0 +1,8 @@
+{
+  "categories": ["Primary Endpoint", "CV Death", "HF Hospitalization", "Safety Events"],
+  "groups": ["Treatment", "Placebo"],
+  "values": [
+    [12.3, 8.1, 5.2, 3.4],
+    [18.7, 12.5, 9.8, 2.9]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "content-script-developer",
+  "version": "1.0.0",
+  "description": "Expert in browser extension content scripts, DOM integration, and safe page augmentation across mode",
+  "author": {
+    "name": "Ship Shit Dev",
+    "email": "hello@shipshit.dev",
+    "url": "https://github.com/shipshitdev"
+  },
+  "license": "MIT",
+  "skills": "."
+}

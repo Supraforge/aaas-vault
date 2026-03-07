@@ -1,0 +1,644 @@
+{
+    "name": "New LEVEL 💙 3/4",
+    "flow": [
+        {
+            "id": 1,
+            "module": "airtable:TriggerWatchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818,
+                "base": "apprHAHdUQhU8KzRH",
+                "useColumnId": false,
+                "table": "tblfUBU4hfT2WtiiH",
+                "config": {
+                    "triggerField": "last modified time",
+                    "labelField": "Status"
+                },
+                "maxRecords": 10,
+                "view": "",
+                "formula": ""
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -161,
+                    "y": 600
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        },
+                        "base": {
+                            "label": "Midjourney New Level ⭐️"
+                        },
+                        "table": {
+                            "label": "Table 1"
+                        },
+                        "config": {
+                            "nested": {
+                                "triggerField": {
+                                    "label": "last modified time"
+                                },
+                                "labelField": {
+                                    "label": "Status"
+                                }
+                            }
+                        },
+                        "view": {
+                            "label": "Empty"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "config",
+                        "type": "collection",
+                        "label": "Trigger configuration",
+                        "spec": [
+                            {
+                                "name": "triggerField",
+                                "type": "select",
+                                "label": "Trigger field",
+                                "required": true
+                            },
+                            {
+                                "name": "triggerField",
+                                "type": "hidden"
+                            },
+                            {
+                                "name": "labelField",
+                                "type": "select",
+                                "label": "Label field",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "URL Approval",
+                        "label": "URL Approval",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Hash",
+                        "label": "Hash",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Status",
+                        "label": "Status",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Created Time",
+                        "label": "Created Time",
+                        "type": "date"
+                    },
+                    {
+                        "name": "last modified time",
+                        "label": "last modified time",
+                        "type": "date"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "filter": {
+                "name": "Approved 👍",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{1.Status}}",
+                            "o": "text:contain:ci",
+                            "b": "1"
+                        }
+                    ],
+                    [
+                        {
+                            "a": "{{1.Status}}",
+                            "o": "text:contain:ci",
+                            "b": "2"
+                        }
+                    ],
+                    [
+                        {
+                            "a": "{{1.Status}}",
+                            "o": "text:contain:ci",
+                            "b": "3"
+                        }
+                    ],
+                    [
+                        {
+                            "a": "{{1.Status}}",
+                            "o": "text:contain:ci",
+                            "b": "4"
+                        }
+                    ],
+                    [
+                        {
+                            "a": "{{1.Status}}",
+                            "o": "text:contain:ci",
+                            "b": "re"
+                        }
+                    ]
+                ]
+            },
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 600
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 5,
+                            "module": "userapi-ai:Reroll",
+                            "version": 1,
+                            "parameters": {
+                                "__IMTCONN__": 1572117
+                            },
+                            "filter": {
+                                "name": "Re-roll 🎲",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.Status}}",
+                                            "o": "text:contain:ci",
+                                            "b": "re"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "hash": "{{1.Hash}}",
+                                "webhook_url": "https://hook.eu2.make.com/9vmn3hbuu176liraq0s432b4icwjyja4",
+                                "webhook_type": "result"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 0,
+                                    "name": "Re-Roll 🎲"
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My Userapi.AI connection (itssssjaaaack@gmail.com)",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "userapi-ai"
+                                            }
+                                        }
+                                    },
+                                    "expect": {
+                                        "webhook_type": {
+                                            "mode": "chose",
+                                            "label": "POST data once when generation is complete"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:userapi-ai",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "hash",
+                                        "type": "uuid",
+                                        "label": "The hash of the task that needs to be variated",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "webhook_url",
+                                        "type": "url",
+                                        "label": "Webhook Url. You will be POSTed by this url about result of generation"
+                                    },
+                                    {
+                                        "name": "webhook_type",
+                                        "type": "select",
+                                        "label": "Webhook type. If Webhook Url definded - you can specify when you need to get result of your imagine",
+                                        "validate": {
+                                            "enum": [
+                                                "progress",
+                                                "result"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "callback_id",
+                                        "type": "text",
+                                        "label": "Callback ID. This unique identifier will be sent back to you via POST request in webhook to track the progress/result of the task"
+                                    },
+                                    {
+                                        "name": "prompt",
+                                        "type": "text",
+                                        "label": "Should only be defined if the account is in remix mode"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 6,
+                            "module": "userapi-ai:Upscale",
+                            "version": 1,
+                            "parameters": {
+                                "__IMTCONN__": 1572117
+                            },
+                            "filter": {
+                                "name": "Upscale 1",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.Status}}",
+                                            "o": "text:contain:ci",
+                                            "b": "1"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "hash": "{{1.Hash}}",
+                                "choice": "1",
+                                "webhook_url": "https://hook.eu2.make.com/jwf28t96p94v3xyrigkqpzwbcfn3ib2k"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 300,
+                                    "name": "Upscale 1 🔥"
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My Userapi.AI connection (itssssjaaaack@gmail.com)",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "userapi-ai"
+                                            }
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:userapi-ai",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "hash",
+                                        "type": "uuid",
+                                        "label": "The hash of the task that needs to be upscaled",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "choice",
+                                        "type": "integer",
+                                        "label": "The position of the image that needs to be upscaled"
+                                    },
+                                    {
+                                        "name": "webhook_url",
+                                        "type": "url",
+                                        "label": "Webhook Url. You will be POSTed by this url about result of generation"
+                                    },
+                                    {
+                                        "name": "callback_id",
+                                        "type": "text",
+                                        "label": "Callback ID. This unique identifier will be sent back to you via POST request in webhook to track the progress/result of the task"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 7,
+                            "module": "userapi-ai:Upscale",
+                            "version": 1,
+                            "parameters": {
+                                "__IMTCONN__": 1572117
+                            },
+                            "filter": {
+                                "name": "Upscale 2",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.Status}}",
+                                            "o": "text:contain:ci",
+                                            "b": "2"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "hash": "{{1.Hash}}",
+                                "choice": "2",
+                                "webhook_url": "https://hook.eu2.make.com/jwf28t96p94v3xyrigkqpzwbcfn3ib2k"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 600,
+                                    "name": "Upscale 2 🎬"
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My Userapi.AI connection (itssssjaaaack@gmail.com)",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "userapi-ai"
+                                            }
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:userapi-ai",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "hash",
+                                        "type": "uuid",
+                                        "label": "The hash of the task that needs to be upscaled",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "choice",
+                                        "type": "integer",
+                                        "label": "The position of the image that needs to be upscaled"
+                                    },
+                                    {
+                                        "name": "webhook_url",
+                                        "type": "url",
+                                        "label": "Webhook Url. You will be POSTed by this url about result of generation"
+                                    },
+                                    {
+                                        "name": "callback_id",
+                                        "type": "text",
+                                        "label": "Callback ID. This unique identifier will be sent back to you via POST request in webhook to track the progress/result of the task"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 8,
+                            "module": "userapi-ai:Upscale",
+                            "version": 1,
+                            "parameters": {
+                                "__IMTCONN__": 1572117
+                            },
+                            "filter": {
+                                "name": "Upscale 3",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.Status}}",
+                                            "o": "text:contain:ci",
+                                            "b": "3"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "hash": "{{1.Hash}}",
+                                "choice": "3",
+                                "webhook_url": "https://hook.eu2.make.com/jwf28t96p94v3xyrigkqpzwbcfn3ib2k"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 679,
+                                    "y": 946,
+                                    "name": "Upscale 3 🔮"
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My Userapi.AI connection (itssssjaaaack@gmail.com)",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "userapi-ai"
+                                            }
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:userapi-ai",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "hash",
+                                        "type": "uuid",
+                                        "label": "The hash of the task that needs to be upscaled",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "choice",
+                                        "type": "integer",
+                                        "label": "The position of the image that needs to be upscaled"
+                                    },
+                                    {
+                                        "name": "webhook_url",
+                                        "type": "url",
+                                        "label": "Webhook Url. You will be POSTed by this url about result of generation"
+                                    },
+                                    {
+                                        "name": "callback_id",
+                                        "type": "text",
+                                        "label": "Callback ID. This unique identifier will be sent back to you via POST request in webhook to track the progress/result of the task"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 9,
+                            "module": "userapi-ai:Upscale",
+                            "version": 1,
+                            "parameters": {
+                                "__IMTCONN__": 1572117
+                            },
+                            "filter": {
+                                "name": "upscale 4",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.Status}}",
+                                            "o": "text:contain:ci",
+                                            "b": "4"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "hash": "{{1.Hash}}",
+                                "choice": "4",
+                                "webhook_url": "https://hook.eu2.make.com/jwf28t96p94v3xyrigkqpzwbcfn3ib2k"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 1200,
+                                    "name": "Upscale 4 🎉"
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "label": "My Userapi.AI connection (itssssjaaaack@gmail.com)",
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "userapi-ai"
+                                            }
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:userapi-ai",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "hash",
+                                        "type": "uuid",
+                                        "label": "The hash of the task that needs to be upscaled",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "choice",
+                                        "type": "integer",
+                                        "label": "The position of the image that needs to be upscaled"
+                                    },
+                                    {
+                                        "name": "webhook_url",
+                                        "type": "url",
+                                        "label": "Webhook Url. You will be POSTed by this url about result of generation"
+                                    },
+                                    {
+                                        "name": "callback_id",
+                                        "type": "text",
+                                        "label": "Callback ID. This unique identifier will be sent back to you via POST request in webhook to track the progress/result of the task"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

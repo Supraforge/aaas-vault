@@ -1,0 +1,56 @@
+{
+  "type": "kaplan_meier",
+  "description": "Kaplan-Meier survival curve with step function",
+  "data": [],
+  "marks": [
+    {
+      "type": "line",
+      "encode": {
+        "x": "time",
+        "y": "survival",
+        "color": "group"
+      },
+      "style": {
+        "lineWidth": 2.5,
+        "shape": "hv"
+      }
+    },
+    {
+      "type": "area",
+      "encode": {
+        "x": "time",
+        "y": "survival",
+        "color": "group"
+      },
+      "style": {
+        "fillOpacity": 0.1,
+        "shape": "hv"
+      }
+    }
+  ],
+  "scales": {
+    "x": {
+      "type": "linear",
+      "nice": true
+    },
+    "y": {
+      "type": "linear",
+      "domain": [0, 1],
+      "nice": false
+    },
+    "color": {
+      "range": ["#0077bb", "#ee7733"]
+    }
+  },
+  "xAxis": {
+    "title": "Time (months)",
+    "grid": true
+  },
+  "yAxis": {
+    "title": "Survival Probability",
+    "grid": true
+  },
+  "legend": {
+    "position": "top-right"
+  }
+}

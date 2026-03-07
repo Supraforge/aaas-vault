@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <style>
+      .title { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f; }
+      .subtitle { font-family: Helvetica, Arial, sans-serif; font-size: 14px; fill: #495057; }
+      .section-title { font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .stat-number { font-family: Helvetica, Arial, sans-serif; font-size: 48px; font-weight: bold; }
+      .stat-label { font-family: Helvetica, Arial, sans-serif; font-size: 12px; fill: #495057; }
+      .stat-context { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #6c757d; }
+      .change-value { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; }
+      .footer { font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #6c757d; }
+      .card-bg { fill: #f8f9fa; rx: 8; }
+      .before-color { fill: #33bbee; }
+      .after-color { fill: #ee3377; }
+      .improvement { fill: #2e7d32; }
+      .worsening { fill: #c62828; }
+      .arrow-improvement { stroke: #2e7d32; stroke-width: 3; fill: none; }
+      .arrow-worsening { stroke: #c62828; stroke-width: 3; fill: none; }
+    </style>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon fill="#2e7d32" points="0 0, 10 3.5, 0 7"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon fill="#c62828" points="0 0, 10 3.5, 0 7"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ffffff"/>
+
+  <!-- Header -->
+  <text id="title" class="title" x="40" y="45">INTERVENTION COMPARISON</text>
+  <text id="subtitle" class="subtitle" x="40" y="70">Before vs After Treatment Analysis</text>
+
+  <line stroke="#e9ecef" stroke-width="1" x1="40" y1="90" x2="760" y2="90"/>
+
+  <!-- Column Headers -->
+  <rect fill="#33bbee" x="120" y="105" width="200" height="40" rx="6"/>
+  <text id="before_label" class="section-title" style="fill: white;" x="220" y="132" text-anchor="middle">BEFORE</text>
+
+  <rect fill="#ee3377" x="480" y="105" width="200" height="40" rx="6"/>
+  <text id="after_label" class="section-title" style="fill: white;" x="580" y="132" text-anchor="middle">AFTER</text>
+
+  <!-- Metric 1 -->
+  <rect class="card-bg" x="40" y="165" width="340" height="95"/>
+  <text id="metric1_label" class="stat-label" x="60" y="190">PRIMARY OUTCOME</text>
+  <text id="metric1_before" class="stat-number before-color" x="60" y="245">85%</text>
+
+  <rect class="card-bg" x="420" y="165" width="340" height="95"/>
+  <text id="metric1_after" class="stat-number after-color" x="440" y="245">42%</text>
+  <text id="metric1_change" class="change-value improvement" x="600" y="245">-43%</text>
+
+  <path class="arrow-improvement" d="M 365,215 L 405,215" marker-end="url(#arrow-green)"/>
+
+  <!-- Metric 2 -->
+  <rect class="card-bg" x="40" y="275" width="340" height="95"/>
+  <text id="metric2_label" class="stat-label" x="60" y="300">SECONDARY OUTCOME</text>
+  <text id="metric2_before" class="stat-number before-color" x="60" y="355">156</text>
+  <text class="stat-context" x="160" y="355">mmHg</text>
+
+  <rect class="card-bg" x="420" y="275" width="340" height="95"/>
+  <text id="metric2_after" class="stat-number after-color" x="440" y="355">128</text>
+  <text class="stat-context" x="540" y="355">mmHg</text>
+  <text id="metric2_change" class="change-value improvement" x="600" y="355">-28</text>
+
+  <path class="arrow-improvement" d="M 365,325 L 405,325" marker-end="url(#arrow-green)"/>
+
+  <!-- Metric 3 -->
+  <rect class="card-bg" x="40" y="385" width="340" height="95"/>
+  <text id="metric3_label" class="stat-label" x="60" y="410">FUNCTIONAL STATUS</text>
+  <text id="metric3_before" class="stat-number before-color" x="60" y="465">320</text>
+  <text class="stat-context" x="170" y="465">meters</text>
+
+  <rect class="card-bg" x="420" y="385" width="340" height="95"/>
+  <text id="metric3_after" class="stat-number after-color" x="440" y="465">485</text>
+  <text class="stat-context" x="560" y="465">meters</text>
+  <text id="metric3_change" class="change-value improvement" x="600" y="465">+165</text>
+
+  <path class="arrow-improvement" d="M 365,435 L 405,435" marker-end="url(#arrow-green)"/>
+
+  <!-- Summary Stats -->
+  <rect fill="#f8f9fa" x="40" y="500" width="180" height="60" rx="6"/>
+  <text id="stat1_value" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f;" x="60" y="535">12 weeks</text>
+  <text id="stat1_label" class="stat-context" x="60" y="550">Treatment duration</text>
+
+  <rect fill="#f8f9fa" x="240" y="500" width="180" height="60" rx="6"/>
+  <text id="stat2_value" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2e7d32;" x="260" y="535">92%</text>
+  <text id="stat2_label" class="stat-context" x="260" y="550">Response rate</text>
+
+  <rect fill="#f8f9fa" x="440" y="500" width="180" height="60" rx="6"/>
+  <text id="stat3_value" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #1e3a5f;" x="460" y="535">P &lt; 0.001</text>
+  <text id="stat3_label" class="stat-context" x="460" y="550">Statistical significance</text>
+
+  <!-- Legend -->
+  <rect fill="#33bbee" x="640" y="510" width="15" height="15" rx="2"/>
+  <text class="stat-context" x="662" y="522">Before</text>
+  <rect fill="#ee3377" x="710" y="510" width="15" height="15" rx="2"/>
+  <text class="stat-context" x="732" y="522">After</text>
+
+  <!-- Footer -->
+  <line stroke="#e9ecef" stroke-width="1" x1="40" y1="570" x2="760" y2="570"/>
+  <text id="source" class="footer" x="40" y="590">Source: Clinical data</text>
+  <text id="date" class="footer" x="760" y="590" text-anchor="end">January 2026</text>
+</svg>

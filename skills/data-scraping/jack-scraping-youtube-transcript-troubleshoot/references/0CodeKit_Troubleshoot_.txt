@@ -1,0 +1,26 @@
+💎 Youtube 0CodeKit Transcript - Troubleshoot 💎
+
+
+There are issues with 0CodeKit and youtube transcriptions right now. Maybe because YT is blocking 0CodeKit IP's. Here is a solution you can try:
+
+
+
+
+1. Make a http call to the YouTube URL
+
+
+2. Get the html page
+
+
+3. Do some regex to find the transcript link: (https\:\/\/www\.youtube\.com\/api\/timedtext[\S][^"]*)
+
+
+4. Make http call to get the transcript
+
+
+5. Do some cleanup to get the data in your desired output.
+
+
+
+
+Blueprint attached in resources.

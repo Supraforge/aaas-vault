@@ -1,0 +1,194 @@
+﻿📧 Confirmation Email 📧
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haircut Appointment Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #90EE90;
+            padding: 10px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #006400;
+            margin: 0;
+        }
+        .content {
+            padding: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Haircut Appointment Confirmation 🎉</h1>
+    </div>
+    <div class="content">
+        <p>Howdy {{6.data.`68erf`.value}} 👋,</p>
+        <p>This email is to confirm your haircut appointment on <strong>{{6.data.`9n7q2`.value.start_date}} at {{6.data.`9n7q2`.value.start_time}}</strong>.</p>
+        <p>If you have any questions, drop me an email.</p>
+        <p>I look forward to seeing you soon!</p>
+        <p>{{6.data.`1h0ee`.value}}</p>
+    </div>
+    <div class="footer">
+        <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+            <tbody>
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="template1__ImageContainer-sc-nmby7a-0 dBWRiW" style="text-align: center;">
+                                                        <img src="https://imgs.search.brave.com/p-3L5AbXp7Zf7Vowj8wv-UdSlKO3C-Nzb0ztDX6oeT4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzEwLzk3LzE5/LzM2MF9GXzIxMDk3/MTk1OV93WGNCWWZp/ZjdqS2V5S2tIS2hW/eU9uelFXSGF3SWdL/NC5qcGc" role="presentation" width="130" class="image__StyledImage-sc-hupvqm-0 kUXePh" style="display: block; max-width: 128px;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="30"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">
+                                                        <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                            <tbody>
+                                                                <tr style="text-align: center;">
+                                                                    <td>
+                                                                        <a href="//qerger" color="#7075db" style="display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);">
+                                                                            <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png" alt="facebook" color="#7075db" width="24" style="background-color: rgb(112, 117, 219); max-width: 135px; display: block;">
+                                                                        </a>
+                                                                    </td>
+                                                                    <td width="5">
+                                                                        <div></div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="//erg" color="#7075db" style="display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);">
+                                                                            <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png" alt="twitter" color="#7075db" width="24" style="background-color: rgb(112, 117, 219); max-width: 135px; display: block;">
+                                                                        </a>
+                                                                    </td>
+                                                                    <td width="5">
+                                                                        <div></div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="//asdfref" color="#7075db" style="display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);">
+                                                                            <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png" alt="linkedin" color="#7075db" width="24" style="background-color: rgb(112, 117, 219); max-width: 135px; display: block;">
+                                                                        </a>
+                                                                    </td>
+                                                                    <td width="5">
+                                                                        <div></div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="//eqrger" color="#7075db" style="display: inline-block; padding: 0px; background-color: rgb(112, 117, 219);">
+                                                                            <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png" alt="instagram" color="#7075db" width="24" style="background-color: rgb(112, 117, 219); max-width: 135px; display: block;">
+                                                                        </a>
+                                                                    </td>
+                                                                    <td width="5">
+                                                                        <div></div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td width="46">
+                                        <div></div>
+                                    </td>
+                                    <td style="padding: 0px; vertical-align: middle;">
+                                        <h2 color="#000000" style="margin: 0px; font-size: 18px; color: rgb(0, 0, 0); font-weight: 600;">
+                                            <span>Barber Barberr</span><span>&nbsp;</span><span></span>
+                                        </h2>
+                                        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                            <tbody>
+                                                <tr>
+                                                    <td height="30"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td color="#a40c3f" direction="horizontal" width="auto" height="1" style="width: 100%; border-bottom: 1px solid rgb(164, 12, 63); border-left: none; display: block;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="30"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                            <tbody>
+                                                <tr height="25" style="vertical-align: middle;">
+                                                    <td width="30" style="vertical-align: middle;">
+                                                        <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="vertical-align: bottom;">
+                                                                        <span color="#a40c3f" width="11" style="display: inline-block; background-color: rgb(164, 12, 63);">
+                                                                            <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png" color="#a40c3f" alt="mobilePhone" width="13" style="display: block; background-color: rgb(164, 12, 63);">
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td style="padding: 0px; color: rgb(0, 0, 0);">
+                                                        <a href="tel:0777 777 7777 " color="#000000" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">
+                                                            <span>0777 777 7777 </span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr height="25" style="vertical-align: middle;">
+                                                    <td width="30" style="vertical-align: middle;">
+                                                        <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="vertical-align: bottom;">
+                                                                        <span color="#a40c3f" width="11" style="display: inline-block; background-color: rgb(164, 12, 63);">
+                                                                            <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png" color="#a40c3f" alt="website" width="13" style="display: block; background-color: rgb(164, 12, 63);">
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td style="padding: 0px;">
+                                                        <a href="//barberbarberrr.co" color="#000000" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">
+                                                            <span>barberbarberrr.co</span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                            <tbody>
+                                                <tr>
+                                                    <td height="30"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+infographic list-row-simple-vertical
+data
+  items:
+    - label: Common (>10%)
+      desc: Dizziness, fatigue, headache
+    - label: Uncommon (1-10%)
+      desc: Hypotension, hyperkalemia
+    - label: Rare (<1%)
+      desc: Angioedema, renal dysfunction
+    - label: Serious
+      desc: Monitor potassium, creatinine regularly

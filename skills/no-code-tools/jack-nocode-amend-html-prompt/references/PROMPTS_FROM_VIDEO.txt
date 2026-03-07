@@ -1,0 +1,67 @@
+PROMPTS FROM VIDEO
+
+
+
+
+I would like you to create html only code for a web application. Functionalities:
+* user submits question
+* webhook fires with question (webhook address: )
+* It will display 3 different voices in a whatsapp style chat with different colours
+* once submitted do a confetti animation & add a 70 second timer
+* font avenir
+* use the below designs for the html
+
+
+
+
+
+
+
+
+
+
+i would you like you to re-write the html in full with the following upgrades:
+* include this webhook: [insert webhook]
+* we want the chats to be visible above the part where you enter the question
+* you will be given 9 responses from 3 people in turn, show them with their title.
+* make it look more like this:
+
+
+
+
+
+
+
+
+
+
+I am using make.com and webhooks to send and receive data.
+I have recieved the data from the website sucessfully. I know need to send the data back to the website with the responses for the chat.
+Please do three things:
+1) Create html code for the webhook response in make.com
+Here are the inputs: 
+Expert 1: {{29.role_1}}
+Expert 2: {{29.role_2}}
+Expert 3:{{29.role_3}}
+Expert 1's response:{{30.textResponse}}
+Expert 2's response: {{31.result}}
+Expert 3's response{{32.choices[].message.content}}
+2) Amend the html code and paste it in full, so that it can recieve the data from make and then present those answers in the whatsapp style chat. please include the expert's name
+3)  clarify if we need any headers for key and value in make
+
+
+
+
+
+
+
+
+
+
+
+
+The make automation worked well, however, the messages did not appear in the website. please re-write the entire html code to ensure that it both sends and recieves the data.
+please also:
+* add in a 30 second timer that stops once the data appears
+* add the confetti animation on submission back in
+* remove all of the dead whitespace underneath the submission bar

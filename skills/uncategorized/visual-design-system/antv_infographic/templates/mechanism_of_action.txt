@@ -1,0 +1,13 @@
+infographic list-row-simple-vertical
+data
+  items:
+    - label: Oral Administration
+      desc: Drug taken orally, absorbed in GI tract
+    - label: Systemic Distribution
+      desc: Reaches target organs via bloodstream
+    - label: Receptor Binding
+      desc: Binds to specific receptors at cellular level
+    - label: Cellular Response
+      desc: Triggers cascade of intracellular signaling
+    - label: Clinical Effect
+      desc: Measurable improvement in symptoms/outcomes

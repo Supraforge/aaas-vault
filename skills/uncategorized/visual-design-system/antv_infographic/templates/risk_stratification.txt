@@ -1,0 +1,11 @@
+infographic list-row-simple-vertical
+data
+  items:
+    - label: Low Risk (0-2 factors)
+      desc: 10-year CV risk <10%, lifestyle modification
+    - label: Moderate Risk (3-4 factors)
+      desc: 10-year CV risk 10-20%, consider statin
+    - label: High Risk (≥5 factors)
+      desc: 10-year CV risk >20%, intensive therapy
+    - label: Very High Risk
+      desc: Known CVD or diabetes, aggressive management

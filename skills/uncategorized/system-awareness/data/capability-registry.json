@@ -1,0 +1,4954 @@
+{
+  "metadata": {
+    "version": "1.2.0",
+    "last_updated": "2026-01-01",
+    "total_skills": 193,
+    "cardiology_skills": 59,
+    "scientific_skills": 134,
+    "auto_sync_enabled": true,
+    "last_sync": "2026-01-01"
+  },
+  "categories": {
+    "content-creation": {
+      "description": "Skills for creating various content formats",
+      "subcategories": [
+        "youtube",
+        "twitter",
+        "newsletter",
+        "editorial",
+        "long-form"
+      ]
+    },
+    "research": {
+      "description": "Skills for finding and synthesizing information",
+      "subcategories": [
+        "pubmed",
+        "trends",
+        "rag",
+        "literature"
+      ]
+    },
+    "visual": {
+      "description": "Skills for generating images and graphics",
+      "subcategories": [
+        "images",
+        "infographics",
+        "charts",
+        "diagrams"
+      ]
+    },
+    "quality": {
+      "description": "Skills for review and refinement",
+      "subcategories": [
+        "voice",
+        "accuracy",
+        "ai-detection"
+      ]
+    },
+    "databases": {
+      "description": "Skills for accessing scientific databases",
+      "subcategories": [
+        "genomics",
+        "proteins",
+        "chemicals",
+        "clinical"
+      ]
+    },
+    "analysis": {
+      "description": "Skills for data analysis and ML",
+      "subcategories": [
+        "bioinformatics",
+        "statistics",
+        "ml",
+        "visualization"
+      ]
+    },
+    "utilities": {
+      "description": "Supporting tools and automation",
+      "subcategories": [
+        "routing",
+        "extraction",
+        "automation"
+      ]
+    },
+    "research-amplification": {
+      "description": "Skills for faster research, competitor analysis, and content optimization",
+      "subcategories": [
+        "quick-research",
+        "competitor-analysis",
+        "seo",
+        "scoring",
+        "delivery-coaching"
+      ]
+    }
+  },
+  "skills": [
+    {
+      "id": "youtube-script-master",
+      "name": "YouTube Script Master",
+      "category": "cardiology",
+      "subcategory": "content-creation/youtube",
+      "description": "Data-driven Hinglish YouTube scripts (15-30 min)",
+      "inputs": [
+        "topic",
+        "research_data",
+        "target_duration",
+        "audience_archetype"
+      ],
+      "outputs": [
+        "hinglish_script",
+        "hooks",
+        "cta_suggestions",
+        "b-roll_notes"
+      ],
+      "dependencies": [
+        "research-engine",
+        "knowledge-pipeline",
+        "viral-content-predictor"
+      ],
+      "use_cases": [
+        "youtube_content",
+        "hinglish_video",
+        "educational_script",
+        "debunk_content"
+      ],
+      "coverage": [
+        "cardiology",
+        "patient-education",
+        "hinglish",
+        "myth-busting"
+      ],
+      "has_scripts": false,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "x-post-creator-skill",
+      "name": "X Post Creator",
+      "category": "cardiology",
+      "subcategory": "content-creation/twitter",
+      "description": "Twitter thought leadership with frameworks (batches of 10)",
+      "inputs": [
+        "topic",
+        "seed_ideas",
+        "modifiers",
+        "framework_type"
+      ],
+      "outputs": [
+        "tweet_batch",
+        "thread_option",
+        "engagement_predictions"
+      ],
+      "dependencies": [
+        "pubmed-database",
+        "knowledge-pipeline"
+      ],
+      "use_cases": [
+        "twitter_content",
+        "thought_leadership",
+        "medical_education"
+      ],
+      "coverage": [
+        "cardiology",
+        "twitter",
+        "eric-topol-voice"
+      ],
+      "has_scripts": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "cardiology-tweet-writer",
+      "name": "Cardiology Tweet Writer",
+      "category": "cardiology",
+      "subcategory": "content-creation/twitter",
+      "description": "Simplified tweet generation with seed + modifier permutation",
+      "inputs": [
+        "topic",
+        "seed_idea",
+        "modifier"
+      ],
+      "outputs": [
+        "tweets",
+        "variations"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "quick_tweets",
+        "batch_content"
+      ],
+      "coverage": [
+        "cardiology",
+        "twitter"
+      ],
+      "has_scripts": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "cardiology-newsletter-writer",
+      "name": "Cardiology Newsletter Writer",
+      "category": "cardiology",
+      "subcategory": "content-creation/newsletter",
+      "description": "Newsletter creation with Topol style + anti-AI guidelines",
+      "inputs": [
+        "topic",
+        "research_brief",
+        "target_length"
+      ],
+      "outputs": [
+        "newsletter_draft",
+        "subject_lines",
+        "preview_text"
+      ],
+      "dependencies": [
+        "knowledge-pipeline",
+        "authentic-voice"
+      ],
+      "use_cases": [
+        "email_newsletter",
+        "weekly_digest"
+      ],
+      "coverage": [
+        "cardiology",
+        "newsletter",
+        "topol-voice"
+      ],
+      "has_scripts": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "cardiology-trial-editorial",
+      "name": "Cardiology Trial Editorial",
+      "category": "cardiology",
+      "subcategory": "content-creation/editorial",
+      "description": "Landmark trial editorials with scoring + infographics",
+      "inputs": [
+        "trial_data",
+        "pmid",
+        "full_text_url"
+      ],
+      "outputs": [
+        "editorial_500_words",
+        "trial_score",
+        "html_infographic"
+      ],
+      "dependencies": [
+        "pubmed-database",
+        "knowledge-pipeline"
+      ],
+      "use_cases": [
+        "trial_analysis",
+        "jacc_style_editorial",
+        "infographic_creation"
+      ],
+      "coverage": [
+        "cardiology",
+        "clinical-trials",
+        "editorials"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "score_trial.py"
+      ],
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "viral-content-predictor",
+      "name": "Viral Content Predictor",
+      "category": "cardiology",
+      "subcategory": "research/trends",
+      "description": "ML-based viral potential scoring (0-100)",
+      "inputs": [
+        "content_ideas",
+        "topic",
+        "format"
+      ],
+      "outputs": [
+        "viral_score",
+        "predicted_views",
+        "content_blueprint",
+        "seo_recommendations"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "content_prioritization",
+        "topic_selection",
+        "viral_prediction"
+      ],
+      "coverage": [
+        "content-strategy",
+        "youtube",
+        "engagement"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "analyze_content_ideas.py"
+      ],
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "social-media-trends-research",
+      "name": "Social Media Trends Research",
+      "category": "cardiology",
+      "subcategory": "research/trends",
+      "description": "Zero-cost trend research using pytrends + Reddit + Perplexity",
+      "inputs": [
+        "keywords",
+        "subreddits",
+        "timeframe"
+      ],
+      "outputs": [
+        "trending_topics",
+        "rising_queries",
+        "reddit_discussions",
+        "recommendations"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "trend_discovery",
+        "content_ideas",
+        "audience_research"
+      ],
+      "coverage": [
+        "trends",
+        "google",
+        "reddit",
+        "social-media"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "trend_research.py",
+        "reddit_scraper.py"
+      ],
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "knowledge-pipeline",
+      "name": "Knowledge Pipeline",
+      "category": "cardiology",
+      "subcategory": "research/rag",
+      "description": "RAG system for AstraDB guidelines + PubMed synthesis",
+      "inputs": [
+        "query",
+        "max_chunks",
+        "max_articles"
+      ],
+      "outputs": [
+        "knowledge_context",
+        "citations",
+        "synthesis"
+      ],
+      "dependencies": [
+        "pubmed-database"
+      ],
+      "use_cases": [
+        "research_synthesis",
+        "guideline_lookup",
+        "evidence_gathering"
+      ],
+      "coverage": [
+        "guidelines",
+        "acc",
+        "esc",
+        "ada",
+        "pubmed"
+      ],
+      "has_scripts": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "cardiology-visual-system",
+      "name": "Cardiology Visual System",
+      "category": "cardiology",
+      "subcategory": "visual/routing",
+      "description": "Intelligent routing to optimal visual tool (Fal.ai, Gemini, Mermaid, Plotly)",
+      "inputs": [
+        "request_description",
+        "output_format"
+      ],
+      "outputs": [
+        "image_file",
+        "diagram_code",
+        "chart_html"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "blog_images",
+        "infographics",
+        "flowcharts",
+        "data_viz"
+      ],
+      "coverage": [
+        "images",
+        "diagrams",
+        "charts",
+        "infographics"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "fal_image.py",
+        "gemini_infographic.py"
+      ],
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "multi-model-writer",
+      "name": "Multi-Model Writer",
+      "category": "cardiology",
+      "subcategory": "utilities/routing",
+      "description": "Unified routing to 6 LLM models (Claude, GPT, Gemini, Grok, GLM)",
+      "inputs": [
+        "prompt",
+        "model_preference",
+        "task_type"
+      ],
+      "outputs": [
+        "response",
+        "model_used",
+        "tokens_used"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "model_comparison",
+        "cost_optimization",
+        "fallback_routing"
+      ],
+      "coverage": [
+        "llm",
+        "routing",
+        "multi-model"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "model_router.py"
+      ],
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "authentic-voice",
+      "name": "Authentic Voice",
+      "category": "cardiology",
+      "subcategory": "quality/ai-detection",
+      "description": "AI detection avoidance and human-sounding content verification",
+      "inputs": [
+        "content_draft"
+      ],
+      "outputs": [
+        "refined_content",
+        "ai_score",
+        "corrections_made"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "anti_ai_detection",
+        "voice_consistency",
+        "natural_writing"
+      ],
+      "coverage": [
+        "quality",
+        "ai-detection",
+        "voice"
+      ],
+      "has_scripts": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "pubmed-database",
+      "name": "PubMed Database",
+      "category": "scientific",
+      "subcategory": "databases/clinical",
+      "description": "35M+ biomedical articles via NCBI E-utilities API",
+      "inputs": [
+        "query",
+        "date_range",
+        "max_results"
+      ],
+      "outputs": [
+        "pmids",
+        "abstracts",
+        "citations",
+        "metadata"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "literature_search",
+        "citation_gathering",
+        "evidence_lookup"
+      ],
+      "coverage": [
+        "pubmed",
+        "medical-literature",
+        "research"
+      ],
+      "has_scripts": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "scanpy",
+      "name": "Scanpy",
+      "category": "scientific",
+      "subcategory": "analysis/bioinformatics",
+      "description": "Single-cell RNA-seq analysis with Leiden clustering, UMAP/t-SNE",
+      "inputs": [
+        "adata_file",
+        "analysis_type"
+      ],
+      "outputs": [
+        "clustering_results",
+        "visualizations",
+        "marker_genes"
+      ],
+      "dependencies": [
+        "anndata"
+      ],
+      "use_cases": [
+        "scrna_seq",
+        "cell_clustering",
+        "gene_expression"
+      ],
+      "coverage": [
+        "single-cell",
+        "genomics",
+        "bioinformatics"
+      ],
+      "has_scripts": false,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "alphafold-database",
+      "name": "AlphaFold Database",
+      "category": "scientific",
+      "subcategory": "databases/proteins",
+      "description": "AI-predicted protein structures, 200M+ proteins",
+      "inputs": [
+        "uniprot_id",
+        "sequence"
+      ],
+      "outputs": [
+        "structure_pdb",
+        "confidence_scores",
+        "pae_matrix"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "protein_structure",
+        "drug_design",
+        "structural_biology"
+      ],
+      "coverage": [
+        "proteins",
+        "structures",
+        "alphafold"
+      ],
+      "has_scripts": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "chembl-database",
+      "name": "ChEMBL Database",
+      "category": "scientific",
+      "subcategory": "databases/chemicals",
+      "description": "2M+ bioactive molecules with IC50/Ki data",
+      "inputs": [
+        "compound_name",
+        "target_protein",
+        "activity_type"
+      ],
+      "outputs": [
+        "compound_data",
+        "bioactivity",
+        "sar_analysis"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "drug_discovery",
+        "sar_studies",
+        "compound_search"
+      ],
+      "coverage": [
+        "chemistry",
+        "drugs",
+        "bioactivity"
+      ],
+      "has_scripts": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "quick-topic-researcher",
+      "name": "Quick Topic Researcher",
+      "category": "cardiology",
+      "subcategory": "research-amplification/quick-research",
+      "description": "5-min topic mastery: generates 5 questions → parallel PubMed + web search → McKinsey-style brief",
+      "inputs": [
+        "topic",
+        "domain",
+        "depth_level"
+      ],
+      "outputs": [
+        "research_brief",
+        "key_facts",
+        "citations",
+        "content_angles"
+      ],
+      "dependencies": [
+        "pubmed-database",
+        "perplexity-search"
+      ],
+      "use_cases": [
+        "video_prep",
+        "quick_research",
+        "topic_refresh",
+        "podcast_prep"
+      ],
+      "coverage": [
+        "research",
+        "cardiology",
+        "quick-turnaround"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "quick_research.py"
+      ],
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "content-seo-optimizer",
+      "name": "Content SEO Optimizer",
+      "category": "cardiology",
+      "subcategory": "research-amplification/seo",
+      "description": "3-agent SEO pipeline: scrapes content → analyzes SERP → P0/P1/P2 prioritized recommendations",
+      "inputs": [
+        "content_url",
+        "target_keyword",
+        "content_type"
+      ],
+      "outputs": [
+        "seo_audit",
+        "competitor_analysis",
+        "optimization_roadmap",
+        "priority_fixes"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "blog_optimization",
+        "youtube_seo",
+        "content_discoverability",
+        "organic_reach"
+      ],
+      "coverage": [
+        "seo",
+        "content-optimization",
+        "discoverability"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "seo_audit.py"
+      ],
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "influencer-analyzer",
+      "name": "Influencer Analyzer",
+      "category": "cardiology",
+      "subcategory": "research-amplification/competitor-analysis",
+      "description": "Track Topol, Attia, York Cardiology, Indian channels. Discovers content patterns, topics, gaps for Hinglish strategy",
+      "inputs": [
+        "influencer_name",
+        "platform",
+        "timeframe"
+      ],
+      "outputs": [
+        "content_patterns",
+        "topic_analysis",
+        "engagement_signals",
+        "gap_opportunities"
+      ],
+      "dependencies": [
+        "perplexity-search"
+      ],
+      "use_cases": [
+        "competitor_tracking",
+        "content_gap_analysis",
+        "strategy_planning",
+        "topic_discovery"
+      ],
+      "coverage": [
+        "competitor-analysis",
+        "influencers",
+        "content-strategy"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "analyze_influencer.py"
+      ],
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "video-delivery-coach",
+      "name": "Video Delivery Coach",
+      "category": "cardiology",
+      "subcategory": "research-amplification/delivery-coaching",
+      "description": "Analyze video recordings: voice (pace, pitch), facial (emotions, eye contact), content (fillers, structure). 5-dimension score",
+      "inputs": [
+        "video_file",
+        "analysis_depth"
+      ],
+      "outputs": [
+        "voice_analysis",
+        "facial_analysis",
+        "content_analysis",
+        "delivery_score",
+        "improvement_tips"
+      ],
+      "dependencies": [],
+      "use_cases": [
+        "video_improvement",
+        "presentation_coaching",
+        "delivery_practice",
+        "pre_upload_review"
+      ],
+      "coverage": [
+        "video",
+        "delivery",
+        "coaching",
+        "presentation"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "analyze_video.py"
+      ],
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "parallel-literature-search",
+      "name": "Parallel Literature Search",
+      "category": "cardiology",
+      "subcategory": "research-amplification/quick-research",
+      "description": "Parallel search across PubMed + Perplexity + RAG. All sources simultaneously, synthesizes with citations in 30-60 seconds",
+      "inputs": [
+        "query",
+        "max_sources",
+        "synthesis_depth"
+      ],
+      "outputs": [
+        "pubmed_results",
+        "web_results",
+        "rag_results",
+        "synthesis",
+        "citations"
+      ],
+      "dependencies": [
+        "pubmed-database",
+        "knowledge-pipeline",
+        "perplexity-search"
+      ],
+      "use_cases": [
+        "fast_evidence",
+        "clinical_questions",
+        "quick_literature_review",
+        "evidence_gathering"
+      ],
+      "coverage": [
+        "research",
+        "literature",
+        "parallel-search",
+        "evidence"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "parallel_search.py"
+      ],
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "ensemble-content-scorer",
+      "name": "Ensemble Content Scorer",
+      "category": "cardiology",
+      "subcategory": "research-amplification/scoring",
+      "description": "Multi-model consensus scoring: Claude + GPT-4o + Gemini score in parallel, aggregates for balanced verdict",
+      "inputs": [
+        "content_idea",
+        "scoring_criteria",
+        "models_to_use"
+      ],
+      "outputs": [
+        "individual_scores",
+        "consensus_score",
+        "verdict",
+        "reasoning"
+      ],
+      "dependencies": [
+        "multi-model-writer"
+      ],
+      "use_cases": [
+        "content_prioritization",
+        "idea_validation",
+        "viral_prediction",
+        "topic_selection"
+      ],
+      "coverage": [
+        "scoring",
+        "multi-model",
+        "content-strategy",
+        "ensemble"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "score_content.py"
+      ],
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null
+    },
+    {
+      "id": "content-research-writer",
+      "name": "Content Research Writer",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "This skill acts as your writing partner, helping you research, outline, draft, and refine content while maintaining your unique voice and style.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.400285"
+    },
+    {
+      "id": "content-os",
+      "name": "Content OS: Multi",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "**The \"produce everything\" button.** Give one seed idea → get all content types. Or give long-form content → get it split into short-form pieces.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.400761"
+    },
+    {
+      "id": "cardiology-science-for-people",
+      "name": "Cardiology Science for People",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Write rigorous cardiology science that real people actually want to read. Same accuracy as an academic editorial. Zero intimidation.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.402316"
+    },
+    {
+      "id": "cardiology-editorial",
+      "name": "Cardiology Editorial Writing System",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "This skill transforms you into a specialized cardiology editorial writer, creating thought leadership content in Eric Topol's style for interventional cardiologists building their professional reputat",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.403214"
+    },
+    {
+      "id": "perplexity-search",
+      "name": "Perplexity Search",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "setup_env.py",
+        "perplexity_search.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.404871"
+    },
+    {
+      "id": "content-reflection",
+      "name": "Content Reflection Agent",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "A rigorous pre-publication review system that evaluates cardiology content across multiple dimensions before it reaches your audience. This is your editorial quality gate.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.405469"
+    },
+    {
+      "id": "cardiology-youtube-scriptwriter",
+      "name": "Cardiology YouTube Scriptwriter",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Complete workflow from \"Hello\" to finished script. Combines social listening research with proven content frameworks to create engaging cardiology YouTube content.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.405832"
+    },
+    {
+      "id": "cardiology-content-repurposer",
+      "name": "Cardiology Content Repurposer",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.406657"
+    },
+    {
+      "id": "debunk-script-writer",
+      "name": "DEPRECATED",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "> Location: `/.claude/skills/youtube-script-master/SKILL.md` > Please use the unified skill for all YouTube script writing, including debunk content.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.407864"
+    },
+    {
+      "id": "research-synthesizer",
+      "name": "Skill: Research Synthesizer",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "## Metadata - **Name**: research-synthesizer - **Version**: 1.0 - **Purpose**: Analyze YouTube research data and identify content opportunities - **Token Budget**: Medium (Sonnet recommended)",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.408178"
+    },
+    {
+      "id": "content-marketing-social-listening",
+      "name": "Content Marketing & Social Listening",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "content_opportunity_analyzer.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.408610"
+    },
+    {
+      "id": "citation-management",
+      "name": "Citation Management",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Systematic citation management for accurate referencing in scientific and medical content.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.409283"
+    },
+    {
+      "id": "scientific-critical-thinking",
+      "name": "Scientific Critical Thinking",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Systematic evaluation of research rigor through methodology assessment, bias detection, and evidence quality frameworks.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.409450"
+    },
+    {
+      "id": "twitter-longform-medical",
+      "name": "Twitter Long",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Write data-driven, evidence-first long-form Twitter content on medicine and cardiology. Conclusions backed by data. No hedging. No dumbing down. No jargon walls.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.410287"
+    },
+    {
+      "id": "mcp-management",
+      "name": "MCP Management",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Skill for managing and interacting with Model Context Protocol (MCP) servers.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.410695"
+    },
+    {
+      "id": "youtube-comment-analyzer",
+      "name": "YouTube Comment Analyzer",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "**Trigger phrases:** - \"Analyze comments for [URL]\" - \"Analyze this video: [URL]\" - \"What are people asking about [URL]\" - \"Comment analysis for [VIDEO_ID]\" - \"YouTube comment insights for [URL]\"",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.410927"
+    },
+    {
+      "id": "medical-newsletter-writer",
+      "name": "Medical Newsletter Writer",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Create high-quality, evidence-based medical newsletters in the style of Eric Topol's Ground Truths. This skill guides the complete newsletter creation process: from analyzing your PDF of topic ideas, ",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.411258"
+    },
+    {
+      "id": "statistical-analysis",
+      "name": "Statistical Analysis",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Rigorous statistical analysis guidance for interpreting and reporting research findings in cardiology content.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.411386"
+    },
+    {
+      "id": "scientific-writing",
+      "name": "Scientific Writing",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Core skill for producing research manuscripts, evidence-based articles, and publication-quality scientific content with rigorous standards.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.411868"
+    },
+    {
+      "id": "clinical-decision-support",
+      "name": "Clinical Decision Support",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Generate professional clinical decision support documents with GRADE evidence grading and statistical analysis for cardiology content.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.411978"
+    },
+    {
+      "id": "carousel-generator",
+      "name": "Carousel Generator",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Generate branded Instagram carousels (1080x1080px) from text content.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.412823"
+    },
+    {
+      "id": "article-extractor",
+      "name": "Article Extractor",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "This skill extracts the main content from web articles and blog posts, removing navigation, ads, newsletter signups, and other clutter. Saves clean, readable text.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.413644"
+    },
+    {
+      "id": "carousel-generator-v2",
+      "name": "Carousel Generator v2",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "**World-class Instagram carousel generator** with AI content intelligence, multi-tool visual generation, and professional design systems.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "models.py",
+        "content_structurer.py",
+        "__init__.py",
+        "tokens.py",
+        "carousel_generator.py",
+        "visual_router.py",
+        "quality_checker.py",
+        "pillow_renderer.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.414066"
+    },
+    {
+      "id": "literature-review",
+      "name": "Literature Review",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Comprehensive, systematic literature reviews following rigorous academic methodology across biomedical and scientific domains.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.414674"
+    },
+    {
+      "id": "cardiology-topol-writer",
+      "name": "Cardiology Content Writer (Topol Voice)",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Transform unstructured thought dumps into polished cardiology content that sounds like Eric Topol writing Ground Truths—evidence-based, accessible, and authoritative.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.414959"
+    },
+    {
+      "id": "cardiology-writer",
+      "name": "Cardiology Content Writer (Topol Voice)",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Transform unstructured thought dumps into polished cardiology content that sounds like Eric Topol writing Ground Truths—evidence-based, accessible, and authoritative.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.415932"
+    },
+    {
+      "id": "academic-chapter-writer",
+      "name": "Academic Chapter Writer",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Transform topics into publishable textbook chapters with comprehensive research, proper citations, and human-sounding academic prose.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.416373"
+    },
+    {
+      "id": "hook-generator",
+      "name": "Skill: Hook Generator",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "## Metadata - **Name**: hook-generator - **Version**: 1.0 - **Purpose**: Generate viral hooks and thumbnail concepts for YouTube videos - **Token Budget**: Low (can use Haiku)",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.416559"
+    },
+    {
+      "id": "deep-researcher",
+      "name": "Deep Researcher v2.0",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Comprehensive research methodology with file-based tracking, parallel execution, and context management for investigations requiring 5+ sources.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.418440"
+    },
+    {
+      "id": "content-trend-researcher",
+      "name": "Content Trend Researcher",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "A comprehensive content research and analysis skill designed for content creators, marketers, and publishers who need to create high-performing content based on real-world trends and user intent signa",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.420868"
+    },
+    {
+      "id": "clinical-reports",
+      "name": "Clinical Reports",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Professional clinical documentation covering case reports, diagnostic reports, trial reports, and patient documentation.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.421210"
+    },
+    {
+      "id": "youtube-script-hinglish",
+      "name": "DEPRECATED",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "> Location: `/.claude/skills/youtube-script-master/SKILL.md` > Please use the unified skill for all YouTube script writing.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.422712"
+    },
+    {
+      "id": "browser-automation",
+      "name": "Browser Automation for AI Web Interfaces",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Use your **ChatGPT Plus** and **Gemini Advanced** subscriptions through browser automation. No API costs - just your monthly subscription.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.424693"
+    },
+    {
+      "id": "clinicaltrials-database",
+      "name": "ClinicalTrials.gov Database",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Query the U.S. National Library of Medicine's clinical trials registry through API v2. Public access, no authentication required.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.425074"
+    },
+    {
+      "id": "cremieux-cardio",
+      "name": "Cremieux",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "You're a cardiologist with a point of view, writing for someone who needs to hear it. Not a literature review. Not a textbook. A smart person making an argument backed by evidence.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.427037"
+    },
+    {
+      "id": "gemini-imagegen",
+      "name": "Gemini Image Generation (Nano Banana Pro)",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Generate and edit images using Google's Gemini API. The environment variable `GEMINI_API_KEY` must be set.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "gemini_images.py",
+        "compose_images.py",
+        "generate_image.py",
+        "multi_turn_chat.py",
+        "edit_image.py"
+      ],
+      "has_references": false,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.430534"
+    },
+    {
+      "id": "system-awareness",
+      "name": "System Awareness",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "## Philosophy",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "skill_proposer.py",
+        "generate_context.py",
+        "gap_analyzer.py",
+        "sync_skills.py",
+        "gap_logger.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.432219"
+    },
+    {
+      "id": "peer-review",
+      "name": "Peer Review",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Systematic framework for conducting rigorous peer review of scientific manuscripts and content.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.433291"
+    },
+    {
+      "id": "metabolomics-workbench-database",
+      "name": "Metabolomics Workbench Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.433777"
+    },
+    {
+      "id": "benchling-integration",
+      "name": "Benchling Integration",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.434177"
+    },
+    {
+      "id": "networkx",
+      "name": "NetworkX",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.434472"
+    },
+    {
+      "id": "anndata",
+      "name": "AnnData",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.435050"
+    },
+    {
+      "id": "scikit-survival",
+      "name": "scikit",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.436131"
+    },
+    {
+      "id": "qiskit",
+      "name": "Qiskit",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.436496"
+    },
+    {
+      "id": "uspto-database",
+      "name": "USPTO Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "patent_search.py",
+        "trademark_client.py",
+        "peds_client.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.436988"
+    },
+    {
+      "id": "scientific-brainstorming",
+      "name": "Scientific Brainstorming",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.437653"
+    },
+    {
+      "id": "kegg-database",
+      "name": "KEGG Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "kegg_api.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.438062"
+    },
+    {
+      "id": "pymc",
+      "name": "PyMC Bayesian Modeling",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "model_comparison.py",
+        "model_diagnostics.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.439074"
+    },
+    {
+      "id": "paper-2-web",
+      "name": "Paper2All: Academic Paper Transformation Pipeline",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.439669"
+    },
+    {
+      "id": "perplexity-search",
+      "name": "Perplexity Search",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "setup_env.py",
+        "perplexity_search.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.440183"
+    },
+    {
+      "id": "research-lookup",
+      "name": "Research Information Lookup",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "research_lookup.py"
+      ],
+      "has_references": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.440784"
+    },
+    {
+      "id": "shap",
+      "name": "SHAP (SHapley Additive exPlanations)",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.441531"
+    },
+    {
+      "id": "zinc-database",
+      "name": "ZINC Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.442023"
+    },
+    {
+      "id": "umap-learn",
+      "name": "UMAP",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.442333"
+    },
+    {
+      "id": "sympy",
+      "name": "SymPy",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.442991"
+    },
+    {
+      "id": "vaex",
+      "name": "Vaex",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.443402"
+    },
+    {
+      "id": "dask",
+      "name": "Dask",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.444014"
+    },
+    {
+      "id": "get-available-resources",
+      "name": "Get Available Resources",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "detect_resources.py"
+      ],
+      "has_references": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.444324"
+    },
+    {
+      "id": "exploratory-data-analysis",
+      "name": "Exploratory Data Analysis",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "eda_analyzer.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.444675"
+    },
+    {
+      "id": "cosmic-database",
+      "name": "COSMIC Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "download_cosmic.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.445020"
+    },
+    {
+      "id": "gene-database",
+      "name": "Gene Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "batch_gene_lookup.py",
+        "fetch_gene_data.py",
+        "query_gene.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.445390"
+    },
+    {
+      "id": "biorxiv-database",
+      "name": "bioRxiv Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "biorxiv_search.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.445713"
+    },
+    {
+      "id": "esm",
+      "name": "ESM: Evolutionary Scale Modeling",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.446474"
+    },
+    {
+      "id": "scientific-schematics",
+      "name": "Scientific Schematics and Diagrams",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "generate_schematic_ai.py",
+        "generate_schematic.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.447266"
+    },
+    {
+      "id": "arboreto",
+      "name": "Arboreto",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "basic_grn_inference.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.447968"
+    },
+    {
+      "id": "geniml",
+      "name": "Geniml: Genomic Interval Machine Learning",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.448388"
+    },
+    {
+      "id": "geopandas",
+      "name": "GeoPandas",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "GeoPandas extends pandas to enable spatial operations on geometric types. It combines the capabilities of pandas and shapely for geospatial data analysis.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.449090"
+    },
+    {
+      "id": "seaborn",
+      "name": "Seaborn Statistical Visualization",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.449642"
+    },
+    {
+      "id": "deeptools",
+      "name": "deepTools: NGS Data Analysis Toolkit",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "validate_files.py",
+        "workflow_generator.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.450066"
+    },
+    {
+      "id": "protocolsio-integration",
+      "name": "Protocols.io Integration",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.450411"
+    },
+    {
+      "id": "medchem",
+      "name": "Medchem",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "filter_molecules.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.450775"
+    },
+    {
+      "id": "fluidsim",
+      "name": "FluidSim",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.451057"
+    },
+    {
+      "id": "pymatgen",
+      "name": "Pymatgen",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "structure_analyzer.py",
+        "structure_converter.py",
+        "phase_diagram_generator.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.451416"
+    },
+    {
+      "id": "molfeat",
+      "name": "Molfeat",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.451951"
+    },
+    {
+      "id": "geo-database",
+      "name": "GEO Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.452552"
+    },
+    {
+      "id": "citation-management",
+      "name": "Citation Management",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "extract_metadata.py",
+        "format_bibtex.py",
+        "search_google_scholar.py",
+        "validate_citations.py",
+        "doi_to_bibtex.py",
+        "search_pubmed.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.453062"
+    },
+    {
+      "id": "scientific-critical-thinking",
+      "name": "Scientific Critical Thinking",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.453384"
+    },
+    {
+      "id": "pydicom",
+      "name": "Pydicom",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "anonymize_dicom.py",
+        "extract_metadata.py",
+        "dicom_to_image.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.453776"
+    },
+    {
+      "id": "markitdown",
+      "name": "MarkItDown",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "convert_literature.py",
+        "convert_with_ai.py",
+        "batch_convert.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.454387"
+    },
+    {
+      "id": "hmdb-database",
+      "name": "HMDB Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.454713"
+    },
+    {
+      "id": "pytdc",
+      "name": "PyTDC (Therapeutics Data Commons)",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "benchmark_evaluation.py",
+        "molecular_generation.py",
+        "load_and_split_data.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.455090"
+    },
+    {
+      "id": "histolab",
+      "name": "Histolab",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.455346"
+    },
+    {
+      "id": "clinvar-database",
+      "name": "ClinVar Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.455888"
+    },
+    {
+      "id": "pubchem-database",
+      "name": "PubChem Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "bioactivity_query.py",
+        "compound_search.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.456616"
+    },
+    {
+      "id": "drugbank-database",
+      "name": "DrugBank Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "drugbank_helper.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.457134"
+    },
+    {
+      "id": "cobrapy",
+      "name": "COBRApy",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.457363"
+    },
+    {
+      "id": "opentrons-integration",
+      "name": "Opentrons Integration",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "basic_protocol_template.py",
+        "pcr_setup_template.py",
+        "serial_dilution_template.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.457721"
+    },
+    {
+      "id": "brenda-database",
+      "name": "BRENDA Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "brenda_visualization.py",
+        "brenda_queries.py",
+        "enzyme_pathway_builder.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.458251"
+    },
+    {
+      "id": "fda-database",
+      "name": "FDA Database Access",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "fda_examples.py",
+        "fda_query.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.459020"
+    },
+    {
+      "id": "biopython",
+      "name": "Biopython: Computational Molecular Biology in Python",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.459511"
+    },
+    {
+      "id": "gtars",
+      "name": "Gtars: Genomic Tools and Algorithms in Rust",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.459852"
+    },
+    {
+      "id": "scvi-tools",
+      "name": "scvi",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.460143"
+    },
+    {
+      "id": "lamindb",
+      "name": "LaminDB",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.460494"
+    },
+    {
+      "id": "pptx-posters",
+      "name": "LaTeX Research Posters",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.461040"
+    },
+    {
+      "id": "datamol",
+      "name": "Datamol Cheminformatics Skill",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.461683"
+    },
+    {
+      "id": "research-grants",
+      "name": "Research Grant Writing",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.462118"
+    },
+    {
+      "id": "ensembl-database",
+      "name": "Ensembl Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "ensembl_query.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.462539"
+    },
+    {
+      "id": "treatment-plans",
+      "name": "Treatment Plan Writing",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "check_completeness.py",
+        "validate_treatment_plan.py",
+        "timeline_generator.py",
+        "generate_template.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.463757"
+    },
+    {
+      "id": "plotly",
+      "name": "Plotly",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "Python graphing library for creating interactive, publication-quality visualizations with 40+ chart types.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.464108"
+    },
+    {
+      "id": "statistical-analysis",
+      "name": "Statistical Analysis",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "assumption_checks.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.464576"
+    },
+    {
+      "id": "denario",
+      "name": "Denario",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.464854"
+    },
+    {
+      "id": "matchms",
+      "name": "Matchms",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.465116"
+    },
+    {
+      "id": "scientific-writing",
+      "name": "Scientific Writing",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.465388"
+    },
+    {
+      "id": "clinical-decision-support",
+      "name": "Clinical Decision Support Documents",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Description",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "generate_survival_analysis.py",
+        "validate_cds_document.py",
+        "biomarker_classifier.py",
+        "build_decision_tree.py",
+        "create_cohort_tables.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.465754"
+    },
+    {
+      "id": "diffdock",
+      "name": "DiffDock: Molecular Docking with Diffusion Models",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "analyze_results.py",
+        "setup_check.py",
+        "prepare_batch_csv.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.466514"
+    },
+    {
+      "id": "neurokit2",
+      "name": "NeuroKit2",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.467044"
+    },
+    {
+      "id": "clinpgx-database",
+      "name": "ClinPGx Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "query_clinpgx.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.467950"
+    },
+    {
+      "id": "pydeseq2",
+      "name": "PyDESeq2",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "run_deseq2_analysis.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.468492"
+    },
+    {
+      "id": "gwas-database",
+      "name": "GWAS Catalog Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.468983"
+    },
+    {
+      "id": "bioservices",
+      "name": "BioServices",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "compound_cross_reference.py",
+        "protein_analysis_workflow.py",
+        "pathway_analysis.py",
+        "batch_id_converter.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.471290"
+    },
+    {
+      "id": "scikit-bio",
+      "name": "scikit",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.471683"
+    },
+    {
+      "id": "gget",
+      "name": "gget",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "batch_sequence_analysis.py",
+        "gene_analysis.py",
+        "enrichment_pipeline.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.472153"
+    },
+    {
+      "id": "string-database",
+      "name": "STRING Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "string_api.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.472500"
+    },
+    {
+      "id": "literature-review",
+      "name": "Literature Review",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "verify_citations.py",
+        "search_databases.py",
+        "generate_pdf.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.472851"
+    },
+    {
+      "id": "pyhealth",
+      "name": "PyHealth: Healthcare AI Toolkit",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.473122"
+    },
+    {
+      "id": "qutip",
+      "name": "QuTiP: Quantum Toolbox in Python",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.473396"
+    },
+    {
+      "id": "transformers",
+      "name": "Transformers",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.473861"
+    },
+    {
+      "id": "scholar-evaluation",
+      "name": "Scholar Evaluation",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "calculate_scores.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.474207"
+    },
+    {
+      "id": "cirq",
+      "name": "Cirq",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "Cirq is Google Quantum AI's open-source framework for designing, simulating, and running quantum circuits on quantum computers and simulators.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.475013"
+    },
+    {
+      "id": "uniprot-database",
+      "name": "UniProt Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "uniprot_client.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.475950"
+    },
+    {
+      "id": "market-research-reports",
+      "name": "Market Research Reports",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "generate_market_visuals.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.476476"
+    },
+    {
+      "id": "torch_geometric",
+      "name": "PyTorch Geometric (PyG)",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "visualize_graph.py",
+        "benchmark_model.py",
+        "create_gnn_template.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.477056"
+    },
+    {
+      "id": "deepchem",
+      "name": "DeepChem",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "graph_neural_network.py",
+        "transfer_learning.py",
+        "predict_solubility.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.477589"
+    },
+    {
+      "id": "reactome-database",
+      "name": "Reactome Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "reactome_query.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.478004"
+    },
+    {
+      "id": "pathml",
+      "name": "PathML",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.478345"
+    },
+    {
+      "id": "omero-integration",
+      "name": "OMERO Integration",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.478643"
+    },
+    {
+      "id": "latex-posters",
+      "name": "LaTeX Research Posters",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.479442"
+    },
+    {
+      "id": "zarr-python",
+      "name": "Zarr Python",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.480238"
+    },
+    {
+      "id": "simpy",
+      "name": "SimPy",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "resource_monitor.py",
+        "basic_simulation_template.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.480844"
+    },
+    {
+      "id": "biomni",
+      "name": "Biomni",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "setup_environment.py",
+        "generate_report.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.481269"
+    },
+    {
+      "id": "pyopenms",
+      "name": "PyOpenMS",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.481548"
+    },
+    {
+      "id": "pysam",
+      "name": "Pysam",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.482168"
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "style_configurator.py",
+        "plot_template.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.482598"
+    },
+    {
+      "id": "adaptyv",
+      "name": "Adaptyv",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "Adaptyv is a cloud laboratory platform that provides automated protein testing and validation services. Submit protein sequences via API or web interface and receive experimental results in approximat",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": false,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.482876"
+    },
+    {
+      "id": "venue-templates",
+      "name": "Venue Templates",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "validate_format.py",
+        "query_template.py",
+        "customize_template.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.483254"
+    },
+    {
+      "id": "pytorch-lightning",
+      "name": "PyTorch Lightning",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "template_datamodule.py",
+        "quick_trainer_setup.py",
+        "template_lightning_module.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.483635"
+    },
+    {
+      "id": "clinical-reports",
+      "name": "Clinical Report Writing",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "generate_report_template.py",
+        "validate_trial_report.py",
+        "check_deidentification.py",
+        "compliance_checker.py",
+        "extract_clinical_data.py",
+        "terminology_validator.py",
+        "validate_case_report.py",
+        "format_adverse_events.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.484183"
+    },
+    {
+      "id": "scientific-slides",
+      "name": "Scientific Slides",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "validate_presentation.py",
+        "pdf_to_images.py",
+        "generate_slide_image_ai.py",
+        "slides_to_pdf.py",
+        "generate_slide_image.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.485014"
+    },
+    {
+      "id": "scientific-visualization",
+      "name": "Scientific Visualization",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "figure_export.py",
+        "style_presets.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.485580"
+    },
+    {
+      "id": "hypogenic",
+      "name": "Hypogenic",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.485955"
+    },
+    {
+      "id": "openalex-database",
+      "name": "OpenAlex Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "query_helpers.py",
+        "openalex_client.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.486446"
+    },
+    {
+      "id": "generate-image",
+      "name": "Generate Image",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "Generate and edit high-quality images using OpenRouter's image generation models including FLUX.2 Pro and Gemini 3 Pro.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "generate_image.py"
+      ],
+      "has_references": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.487059"
+    },
+    {
+      "id": "torchdrug",
+      "name": "TorchDrug",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.487460"
+    },
+    {
+      "id": "hypothesis-generation",
+      "name": "Scientific Hypothesis Generation",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.487775"
+    },
+    {
+      "id": "flowio",
+      "name": "FlowIO: Flow Cytometry Standard File Handler",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.488079"
+    },
+    {
+      "id": "datacommons-client",
+      "name": "Data Commons Client",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.488669"
+    },
+    {
+      "id": "rdkit",
+      "name": "RDKit Cheminformatics Toolkit",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "similarity_search.py",
+        "substructure_filter.py",
+        "molecular_properties.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.489209"
+    },
+    {
+      "id": "stable-baselines3",
+      "name": "Stable Baselines3",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "evaluate_agent.py",
+        "train_rl_agent.py",
+        "custom_env_template.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.489583"
+    },
+    {
+      "id": "pylabrobot",
+      "name": "PyLabRobot",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.489864"
+    },
+    {
+      "id": "aeon",
+      "name": "Aeon Time Series Machine Learning",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.490150"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.490418"
+    },
+    {
+      "id": "polars",
+      "name": "Polars",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.490920"
+    },
+    {
+      "id": "statsmodels",
+      "name": "Statsmodels: Statistical Modeling and Econometrics",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.491193"
+    },
+    {
+      "id": "astropy",
+      "name": "Astropy",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.491796"
+    },
+    {
+      "id": "clinicaltrials-database",
+      "name": "ClinicalTrials.gov Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "query_clinicaltrials.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.492432"
+    },
+    {
+      "id": "ena-database",
+      "name": "ENA Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.492689"
+    },
+    {
+      "id": "pennylane",
+      "name": "PennyLane",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.492970"
+    },
+    {
+      "id": "pufferlib",
+      "name": "PufferLib",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "train_template.py",
+        "env_template.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.493374"
+    },
+    {
+      "id": "pymoo",
+      "name": "Pymoo",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "decision_making_example.py",
+        "custom_problem_example.py",
+        "many_objective_example.py",
+        "single_objective_example.py",
+        "multi_objective_example.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.494124"
+    },
+    {
+      "id": "dnanexus-integration",
+      "name": "DNAnexus Integration",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.494969"
+    },
+    {
+      "id": "pdb-database",
+      "name": "PDB Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.495440"
+    },
+    {
+      "id": "opentargets-database",
+      "name": "Open Targets Database",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "query_opentargets.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.496964"
+    },
+    {
+      "id": "scikit-learn",
+      "name": "Scikit",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "clustering_analysis.py",
+        "classification_pipeline.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.497630"
+    },
+    {
+      "id": "etetoolkit",
+      "name": "ETE Toolkit Skill",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "tree_operations.py",
+        "quick_visualize.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.498052"
+    },
+    {
+      "id": "labarchive-integration",
+      "name": "LabArchives Integration",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "entry_operations.py",
+        "notebook_operations.py",
+        "setup_config.py"
+      ],
+      "has_references": true,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.498412"
+    },
+    {
+      "id": "peer-review",
+      "name": "Scientific Critical Evaluation and Peer Review",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.498769"
+    },
+    {
+      "id": "cellxgene-census",
+      "name": "CZ CELLxGENE Census",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.499565"
+    },
+    {
+      "id": "latchbio-integration",
+      "name": "LatchBio Integration",
+      "category": "scientific",
+      "subcategory": "scientific/general",
+      "description": "## Overview",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "scientific"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:03:56.499982"
+    },
+    {
+      "id": "analyze-ecg-waveforms-uploaded",
+      "name": "Analyze Ecg Waveforms Uploaded",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Analyze ECG waveforms from uploaded images to detect arrhythmias",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "analyze_ecg_waveforms_uploaded.py"
+      ],
+      "has_references": true,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:12:18.262725"
+    },
+    {
+      "id": "transcribe-audio-podcast-interviews",
+      "name": "Transcribe Audio Podcast Interviews",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Transcribe audio from podcast interviews",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": false,
+      "scripts": [],
+      "has_references": true,
+      "complexity": "low",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:13:21.903512"
+    },
+    {
+      "id": "research-paper-extractor",
+      "name": "Research Paper Extractor",
+      "category": "cardiology",
+      "subcategory": "cardiology/general",
+      "description": "Extract structured data from cardiology research paper PDFs for content creation.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "extract_paper.py"
+      ],
+      "has_references": false,
+      "complexity": "medium",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T11:22:43.594526"
+    },
+    {
+      "id": "visual-design-system",
+      "name": "Visual Design System",
+      "category": "cardiology",
+      "subcategory": "visual/images",
+      "description": "**Purpose:** Publication-grade design tokens and utilities for Nature/JACC/NEJM quality graphics.",
+      "inputs": [],
+      "outputs": [],
+      "dependencies": [],
+      "use_cases": [],
+      "coverage": [
+        "cardiology"
+      ],
+      "has_scripts": true,
+      "scripts": [
+        "__init__.py",
+        "token_validator.py",
+        "generate_infographic.py"
+      ],
+      "has_references": false,
+      "complexity": "high",
+      "usage_count": 0,
+      "last_used": null,
+      "auto_discovered": true,
+      "discovered_at": "2026-01-01T14:56:27.344449"
+    }
+  ],
+  "coverage_matrix": {
+    "domains": {
+      "cardiology": [
+        "youtube-script-master",
+        "x-post-creator-skill",
+        "cardiology-newsletter-writer",
+        "cardiology-trial-editorial",
+        "cardiology-visual-system"
+      ],
+      "research": [
+        "knowledge-pipeline",
+        "pubmed-database",
+        "social-media-trends-research",
+        "viral-content-predictor",
+        "quick-topic-researcher",
+        "parallel-literature-search"
+      ],
+      "research-amplification": [
+        "quick-topic-researcher",
+        "content-seo-optimizer",
+        "influencer-analyzer",
+        "video-delivery-coach",
+        "parallel-literature-search",
+        "ensemble-content-scorer"
+      ],
+      "genomics": [
+        "scanpy",
+        "alphafold-database",
+        "ensembl-database"
+      ],
+      "chemistry": [
+        "chembl-database",
+        "drugbank-database",
+        "rdkit"
+      ],
+      "clinical": [
+        "clinicaltrials-database",
+        "clinical-decision-support"
+      ]
+    },
+    "outputs": {
+      "text_content": [
+        "youtube-script-master",
+        "x-post-creator-skill",
+        "cardiology-newsletter-writer"
+      ],
+      "images": [
+        "cardiology-visual-system",
+        "gemini-imagegen"
+      ],
+      "data": [
+        "pubmed-database",
+        "knowledge-pipeline",
+        "scanpy",
+        "parallel-literature-search"
+      ],
+      "analysis": [
+        "viral-content-predictor",
+        "cardiology-trial-editorial",
+        "ensemble-content-scorer",
+        "influencer-analyzer",
+        "content-seo-optimizer"
+      ],
+      "research_briefs": [
+        "quick-topic-researcher",
+        "parallel-literature-search"
+      ],
+      "coaching": [
+        "video-delivery-coach"
+      ]
+    },
+    "formats": {
+      "hinglish": [
+        "youtube-script-master"
+      ],
+      "twitter": [
+        "x-post-creator-skill",
+        "cardiology-tweet-writer"
+      ],
+      "newsletter": [
+        "cardiology-newsletter-writer",
+        "medical-newsletter-writer"
+      ],
+      "editorial": [
+        "cardiology-trial-editorial",
+        "cardiology-editorial"
+      ]
+    }
+  },
+  "gap_indicators": {
+    "missing_capabilities": [],
+    "low_coverage_domains": [],
+    "requested_but_unavailable": []
+  }
+}

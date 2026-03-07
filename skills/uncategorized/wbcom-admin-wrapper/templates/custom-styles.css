@@ -1,0 +1,246 @@
+/**
+ * Wbcom Wrapper - Custom Styles Template
+ *
+ * Add plugin-specific styles that extend the base Wbcom wrapper.
+ * The base CSS variables are already defined in wbcom-admin-setting.css
+ */
+
+/* ============================================================================
+   USING CSS VARIABLES
+   These are already defined in the base CSS - just use them
+   ============================================================================ */
+
+.your-custom-element {
+    color: var(--primary-color);           /* #2A32EF - Wbcom blue */
+    background: var(--background-light);   /* #F6F7FE */
+    border: 1px solid var(--border-color); /* rgba(200, 197, 218, 0.30) */
+    border-radius: var(--border-radius-md); /* 8px */
+    padding: var(--spacing-md);            /* 16px */
+}
+
+.your-success-message {
+    color: var(--success-color);           /* #4fb845 */
+}
+
+.your-error-message {
+    color: var(--error-color);             /* #FF0000 */
+}
+
+/* ============================================================================
+   GRID LAYOUTS
+   Common patterns for checkbox/option grids
+   ============================================================================ */
+
+/* 2-column grid */
+.your-grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* 3-column grid */
+.your-grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Auto-fit grid (responsive) */
+.your-grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+/* ============================================================================
+   CHECKBOX/RADIO STYLING
+   Matches Wbcom wrapper patterns
+   ============================================================================ */
+
+.your-checkbox-option,
+.your-radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--background-lighter);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.your-checkbox-option:hover,
+.your-radio-option:hover {
+    background: var(--background-light);
+    border-color: var(--border-color-medium);
+}
+
+.your-checkbox-option input:checked + span,
+.your-radio-option input:checked + span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* ============================================================================
+   BUTTON STYLES
+   Extend WordPress buttons with Wbcom colors
+   ============================================================================ */
+
+/* Primary button (save, submit) */
+.your-button-primary {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+    padding: 8px 20px !important;
+    border-radius: var(--border-radius-sm) !important;
+}
+
+.your-button-primary:hover {
+    background: #1f28d9 !important;
+    border-color: #1f28d9 !important;
+}
+
+/* Success button (approve, add) */
+.your-button-success {
+    background: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+    color: #fff !important;
+}
+
+.your-button-success:hover {
+    background: #3da036 !important;
+    border-color: #3da036 !important;
+}
+
+/* Danger button (delete, remove) */
+.your-button-danger {
+    background: var(--error-color) !important;
+    border-color: var(--error-color) !important;
+    color: #fff !important;
+}
+
+.your-button-danger:hover {
+    background: #cc0000 !important;
+    border-color: #cc0000 !important;
+}
+
+/* ============================================================================
+   CARD/BOX STYLES
+   For feature boxes, info cards, etc.
+   ============================================================================ */
+
+.your-info-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.your-info-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.your-info-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.your-info-card-content {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   STATUS BADGES
+   For license status, feature status, etc.
+   ============================================================================ */
+
+.your-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.your-badge-active,
+.your-badge-success {
+    background: rgba(79, 184, 69, 0.15);
+    color: var(--success-color);
+}
+
+.your-badge-inactive {
+    background: rgba(100, 111, 137, 0.15);
+    color: var(--text-light);
+}
+
+.your-badge-expired,
+.your-badge-error {
+    background: rgba(255, 0, 0, 0.15);
+    color: var(--error-color);
+}
+
+.your-badge-pro {
+    background: linear-gradient(135deg, var(--primary-color), #6366f1);
+    color: #fff;
+}
+
+/* ============================================================================
+   NOTICES/ALERTS
+   Match WordPress admin notice styling with Wbcom colors
+   ============================================================================ */
+
+.your-notice {
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--primary-color);
+    background: var(--background-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.your-notice-success {
+    border-left-color: var(--success-color);
+    background: rgba(79, 184, 69, 0.1);
+}
+
+.your-notice-error {
+    border-left-color: var(--error-color);
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.your-notice-warning {
+    border-left-color: #dba617;
+    background: rgba(219, 166, 23, 0.1);
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+   Mobile-friendly patterns
+   ============================================================================ */
+
+@media screen and (max-width: 782px) {
+    .your-grid-2-col,
+    .your-grid-3-col {
+        grid-template-columns: 1fr;
+    }
+
+    .wbcom-settings-section-wrap {
+        flex-direction: column;
+    }
+
+    .wbcom-settings-section-options-heading,
+    .wbcom-settings-section-options {
+        width: 100%;
+    }
+}

@@ -1,0 +1,38 @@
+# WordPress Sites Registry
+# Global configuration for all WordPress documentation projects
+
+sites:
+  member-blog-local:
+    url: "http://member-blog.local"
+    admin_path: "/wp-admin"
+    login_path: "/wp-login.php"
+    plugin_path: "/Users/varundubey/Local Sites/member-blog/app/public/wp-content/plugins"
+    description: "BuddyPress Member Blog development site"
+
+  flavor-theme:
+    url: "http://flavor-theme.local"
+    admin_path: "/wp-admin"
+    login_path: "/wp-login.php"
+    plugin_path: "/Users/varundubey/Local Sites/flavor-theme/app/public/wp-content/plugins"
+    description: "Flavor theme development site"
+
+  flavor-developer:
+    url: "http://flavor-developer.local"
+    admin_path: "/wp-admin"
+    login_path: "/wp-login.php"
+    plugin_path: "/Users/varundubey/Local Sites/flavor-developer/app/public/wp-content/plugins"
+    description: "Developer flavor testing"
+
+# Default site when not specified
+default: member-blog-local
+
+# Global viewport settings
+viewport:
+  width: 1680
+  height: 1100
+
+# Browser settings
+browser:
+  headless: false
+  wait_after_navigation: 2
+  timeout: 30000

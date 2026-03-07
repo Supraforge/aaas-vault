@@ -1,0 +1,60 @@
+{
+    "europe": [
+        "germany",
+        "france",
+        "uk",
+        "united kingdom",
+        "italy",
+        "spain",
+        "netherlands",
+        "switzerland",
+        "sweden",
+        "norway",
+        "denmark",
+        "austria",
+        "belgium"
+    ],
+    "usa": [
+        "united states",
+        "america",
+        "california",
+        "new york",
+        "texas",
+        "florida",
+        "massachusetts"
+    ],
+    "asia": [
+        "china",
+        "india",
+        "japan",
+        "singapore",
+        "south korea",
+        "vietnam",
+        "thailand",
+        "indonesia"
+    ],
+    "nordics": [
+        "sweden",
+        "norway",
+        "denmark",
+        "finland",
+        "iceland"
+    ],
+    "daach": [
+        "germany",
+        "austria",
+        "switzerland"
+    ],
+    "benelux": [
+        "belgium",
+        "netherlands",
+        "luxembourg"
+    ],
+    "latam": [
+        "brazil",
+        "mexico",
+        "argentina",
+        "chile",
+        "colombia"
+    ]
+}

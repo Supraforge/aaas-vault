@@ -1,0 +1,27 @@
+{
+  "author": {
+    "name": "Dr Shailesh Singh",
+    "credentials": "Cardiologist | Evidence-Based Medicine",
+    "photo": "assets/5e4311be9235ba207024edfb13240abe8cf20f3f.png",
+    "accounts": {
+      "1": {
+        "handle": "@heartdocshailesh",
+        "platform": "Instagram",
+        "followerCount": "50K+",
+        "bio": "Follow for evidence-based cardiology insights"
+      },
+      "2": {
+        "handle": "@dr.shailesh.singh",
+        "platform": "Instagram",
+        "followerCount": "25K+",
+        "bio": "Clinical cardiology and lifestyle medicine"
+      }
+    },
+    "defaultAccount": "1"
+  },
+  "branding": {
+    "tagline": "Evidence-Based Cardiology",
+    "secondaryText": "New posts every week",
+    "valueProposition": "Follow for myth-busting cardiology content"
+  }
+}

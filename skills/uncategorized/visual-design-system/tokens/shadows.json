@@ -1,0 +1,68 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Visual Design System - Shadow Tokens",
+  "description": "Subtle, professional shadow definitions for depth without distraction",
+  "version": "1.0.0",
+
+  "usage_note": "Shadows should be used sparingly in scientific figures. Nature and JACC figures typically avoid shadows. Use only for infographics and social media content.",
+
+  "elevation": {
+    "none": {
+      "value": "none",
+      "use_case": "Scientific figures, charts"
+    },
+    "xs": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.05)",
+      "use_case": "Subtle lift for cards"
+    },
+    "sm": {
+      "value": "0 2px 4px rgba(0, 0, 0, 0.08)",
+      "use_case": "Light card elevation"
+    },
+    "md": {
+      "value": "0 4px 8px rgba(0, 0, 0, 0.1)",
+      "use_case": "Standard card elevation"
+    },
+    "lg": {
+      "value": "0 8px 16px rgba(0, 0, 0, 0.12)",
+      "use_case": "Elevated cards, modals"
+    },
+    "xl": {
+      "value": "0 12px 24px rgba(0, 0, 0, 0.15)",
+      "use_case": "High emphasis elements"
+    }
+  },
+
+  "inset": {
+    "sm": {
+      "value": "inset 0 1px 2px rgba(0, 0, 0, 0.05)",
+      "use_case": "Input fields, wells"
+    },
+    "md": {
+      "value": "inset 0 2px 4px rgba(0, 0, 0, 0.08)",
+      "use_case": "Recessed panels"
+    }
+  },
+
+  "colored": {
+    "primary": {
+      "value": "0 4px 14px rgba(30, 58, 95, 0.25)",
+      "use_case": "Primary action buttons"
+    },
+    "success": {
+      "value": "0 4px 14px rgba(46, 125, 50, 0.25)",
+      "use_case": "Success state emphasis"
+    },
+    "danger": {
+      "value": "0 4px 14px rgba(198, 40, 40, 0.25)",
+      "use_case": "Danger/alert emphasis"
+    }
+  },
+
+  "publication_guidelines": {
+    "scientific_figures": "No shadows - maintain flat, clean appearance",
+    "infographics": "xs to md shadows acceptable for visual hierarchy",
+    "social_media": "sm to lg shadows for engagement, depth",
+    "print": "Avoid - shadows don't reproduce well in print"
+  }
+}

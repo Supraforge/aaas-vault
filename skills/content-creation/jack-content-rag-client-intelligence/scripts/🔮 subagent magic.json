@@ -1,0 +1,232 @@
+{
+  "name": "🔮 subagent magic",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"website\": \"https://example.com\",\n  \"prompt\": \"Extract the list of features from the homepage\",\n  \"property\": \"features\",\n  \"required\": \"what is required back from the scraper\"\n}\n"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -380,
+        -120
+      ],
+      "id": "8bb3966a-de36-4d63-9327-afd333742e57",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v1/extract",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"urls\": [\n    \"{{ $json.website }}/\"\n  ],\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"{{ $json.property }}\": {\n        \"type\": \"string\"\n      }\n    },\n    \"required\": [\n      \"{{ $json.required }}\"\n    ]\n  },\n  \"enableWebSearch\": true,\n  \"includeSubdomains\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -140,
+        -120
+      ],
+      "id": "d5c3678b-44ed-4f67-a99e-73e202d1771c",
+      "name": "Scrape Data"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.firecrawl.dev/v1/extract/{{ $('Scrape Data').item.json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_API_KEY"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        300,
+        -120
+      ],
+      "id": "56acf171-ae1e-440a-8052-f3d3de9419ff",
+      "name": "Get Data1"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        60
+      ],
+      "id": "a6870c5c-1dcf-47bb-8836-9e26878d6cab",
+      "name": "Wait",
+      "webhookId": "3dcd758c-9262-4261-b270-27c7d3fbfbca"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bbf60d87-b07e-4be7-bac4-c0b6ace7427e",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "startsWith"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        520,
+        -120
+      ],
+      "id": "a04c9c58-5527-4959-8bce-3fde76c74eeb",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ccf24aa8-01ba-4416-bb55-83148c6ca5e7",
+              "name": "Extraction ID",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        80,
+        -120
+      ],
+      "id": "b66b96f5-df4d-4237-aa80-be2e6fd186fe",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Scrape Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Data": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Get Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a81a1fc1-8e41-435a-96c7-3ab62c8552b5",
+  "meta": {
+    "instanceId": "1ad5536c7c55ace0cd2d13b5ee509a9d5436e829bf5adf69ed3e58c359b43097"
+  },
+  "id": "YFbneVoDL3mdWI4V",
+  "tags": [
+    {
+      "createdAt": "2025-04-09T10:39:27.999Z",
+      "updatedAt": "2025-04-09T10:39:27.999Z",
+      "id": "C22lP7Wnkig81gDU",
+      "name": "knowledge base"
+    },
+    {
+      "createdAt": "2025-04-09T10:39:32.232Z",
+      "updatedAt": "2025-04-09T10:39:32.232Z",
+      "id": "Yop6w03Y9pO8sp4k",
+      "name": "chatbot"
+    }
+  ]
+}

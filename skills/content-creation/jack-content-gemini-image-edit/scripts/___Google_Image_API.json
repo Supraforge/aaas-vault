@@ -1,0 +1,182 @@
+{
+  "name": "🤩 Google Image API",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1qzflu1V_gLf1zwi5MVjL17gWzqM6qjUw",
+          "mode": "list",
+          "cachedResultName": "WhatsApp Image 2025-03-20 at 20.40.01_73f656f8.jpg",
+          "cachedResultUrl": "https://drive.google.com/file/d/1qzflu1V_gLf1zwi5MVjL17gWzqM6qjUw/view?usp=drivesdk"
+        },
+        "options": {
+          "binaryPropertyName": "data",
+          "googleFileConversion": {},
+          "fileName": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        180,
+        400
+      ],
+      "id": "fea38260-f1ea-448c-8e4e-ac2cb76c592c",
+      "name": "Google Drive1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=INSERTKEY",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Here's an image of a woman in the city with lots of people in the background. Please remove the people in the background and change them to aliens.\"\n        },\n        {\n          \"inline_data\": {\n            \"mime_type\": \"image/jpeg\",\n            \"data\": \"{{ $json.data }}\"\n          }\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseModalities\": [\"Text\", \"Image\"]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        400
+      ],
+      "id": "706374ba-1635-4700-acfa-02f45283cf28",
+      "name": "HTTP Request3"
+    },
+    {
+      "parameters": {
+        "jsCode": "const base64Data = $node[\"HTTP Request3\"].json.candidates[0].content.parts[0].inlineData.data;\nconst mimeType = $node[\"HTTP Request3\"].json.candidates[0].content.parts[0].inlineData.mimeType || \"image/png\";\n\n\n// 2) Convert to raw bytes\nconst fileBuffer = Buffer.from(base64Data, \"base64\");\n\n// 3) Return as n8n binary data\nreturn [\n  {\n    json: {},\n    binary: {\n      data: {\n        data: fileBuffer,\n        mimeType: mimeType,\n        fileName: \"gemini-edited-image.png\"\n      }\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        920,
+        400
+      ],
+      "id": "98f07345-246d-400b-a6fc-b05e97a88342",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "name": "file_updated.png",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1TFdkocy__oybVMV6WO3hHJiK3vo5dQx1",
+          "mode": "list",
+          "cachedResultName": "liveTest",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1TFdkocy__oybVMV6WO3hHJiK3vo5dQx1"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1140,
+        400
+      ],
+      "id": "afd14b1e-2814-44b0-8e78-d1293b6e6ddf",
+      "name": "Google Drive2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        400
+      ],
+      "id": "db2e53dc-c929-4cb1-a762-a8c4581c80b0",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        420,
+        400
+      ],
+      "id": "75d668c1-4f8b-45f3-a95d-4ce0435798ab",
+      "name": "Extract from File"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Drive1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9371e071-70c6-4396-ae94-0ed6db4dd186",
+  "meta": {
+    "instanceId": "1ad5536c7c55ace0cd2d13b5ee509a9d5436e829bf5adf69ed3e58c359b43097"
+  },
+  "id": "zckmM0zAXdhpKv1p",
+  "tags": []
+}

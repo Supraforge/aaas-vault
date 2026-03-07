@@ -1,0 +1,20 @@
+{
+  "name": "zapier-mcp",
+  "version": "1.0.0",
+  "description": "Zapier API MCP server",
+  "main": "scripts/zapier_mcp_server.js",
+  "scripts": {
+    "start": "node scripts/zapier_mcp_server.js",
+    "webhook": "python3 scripts/zapier_webhook.py",
+    "workflow": "python3 scripts/zapier_workflow.py",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

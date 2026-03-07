@@ -1,0 +1,11 @@
+{
+  "owner": "kesslerio",
+  "slug": "fitbit-analytics",
+  "displayName": "Fitbit Analytics",
+  "latest": {
+    "version": "0.1.1",
+    "publishedAt": 1769126542191,
+    "commit": "https://github.com/clawdbot/skills/commit/820d40d5a6ef09eaea115b1c8f54629a3a42847e"
+  },
+  "history": []
+}

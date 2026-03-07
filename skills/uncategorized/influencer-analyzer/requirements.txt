@@ -1,0 +1,9 @@
+# Influencer Analyzer dependencies
+
+anthropic>=0.18.0
+python-dotenv>=1.0.0
+rich>=13.0.0
+
+# Optional: for web scraping if needed later
+requests>=2.31.0
+beautifulsoup4>=4.12.0

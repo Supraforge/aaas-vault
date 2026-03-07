@@ -1,0 +1,19 @@
+{
+  "name": "google-ads-mcp",
+  "version": "1.0.0",
+  "description": "Google Ads MCP integration",
+  "main": "google_ads_api.js",
+  "scripts": {
+    "test": "node google_ads_api.js --test",
+    "report": "node google_ads_api.js --report json",
+    "start": "node google_ads_api.js"
+  },
+  "dependencies": {
+    "googleapis": "^105.0.0",
+    "axios": "^1.3.4",
+    "csv-writer": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "mailchimp-mcp",
+  "version": "1.0.0",
+  "description": "Mailchimp MCP server for email marketing automation",
+  "main": "scripts/mailchimp_mcp_server.js",
+  "scripts": {
+    "start": "node scripts/mailchimp_mcp_server.js",
+    "test": "bash test.sh",
+    "automation": "python3 scripts/mailchimp_automation.py",
+    "analytics": "python3 scripts/mailchimp_analytics.py"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "mailchimp-api-v3": "^1.15.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

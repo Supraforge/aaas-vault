@@ -1,0 +1,144 @@
+{
+  "research_dimensions": {
+    "company": {
+      "name": "Company Snapshot",
+      "role": "Context Engineering Research Agent",
+      "description": "Research everything publicly available about the target company",
+      "sources": ["website", "social media", "PR/news", "reviews", "interviews", "aggregators"],
+      "output_blocks": [
+        {"key": "overview", "description": "Company summary and mission"},
+        {"key": "product", "description": "Key product descriptions"},
+        {"key": "features", "description": "List of features"},
+        {"key": "use-cases", "description": "Real use cases"},
+        {"key": "audience", "description": "Target users"},
+        {"key": "proof", "description": "Social proof (testimonials, logos, metrics)"},
+        {"key": "positioning", "description": "Market positioning"},
+        {"key": "voice", "description": "Inferred brand voice"},
+        {"key": "pricing", "description": "Pricing information"}
+      ],
+      "search_queries": [
+        "{company} official website",
+        "{company} product features",
+        "{company} pricing plans",
+        "{company} customer reviews",
+        "{company} case studies",
+        "{company} LinkedIn company page"
+      ]
+    },
+    "competitors": {
+      "name": "Competitor Intelligence",
+      "role": "Competitive Intelligence Scanner",
+      "description": "Map the competitive landscape for the target company",
+      "sources": ["competitor websites", "G2/Capterra", "industry reports", "news", "social"],
+      "output_blocks": [
+        {"key": "competitors", "description": "List of main competitors"},
+        {"key": "competitor.summary", "description": "Competitive landscape overview"}
+      ],
+      "per_competitor_blocks": [
+        {"key": "profile", "description": "Basic company profile"},
+        {"key": "positioning", "description": "Their market position"},
+        {"key": "strengths", "description": "Key strengths"},
+        {"key": "weaknesses", "description": "Key weaknesses"},
+        {"key": "pricing", "description": "Pricing model"}
+      ],
+      "search_queries": [
+        "{company} competitors",
+        "{company} alternatives",
+        "{company} vs comparison",
+        "best {industry} software 2026",
+        "{company} G2 reviews competitors"
+      ]
+    },
+    "market": {
+      "name": "Market Intelligence",
+      "role": "Market Intelligence Analyst",
+      "description": "Research the market the company operates in",
+      "sources": ["industry reports", "analyst coverage", "news", "market research"],
+      "output_blocks": [
+        {"key": "market", "description": "Market definition"},
+        {"key": "market-trends", "description": "Current trends"},
+        {"key": "market-size", "description": "TAM/SAM/SOM estimates"},
+        {"key": "market-insights", "description": "Non-obvious insights"},
+        {"key": "gap-analysis", "description": "Market gaps and opportunities"}
+      ],
+      "search_queries": [
+        "{industry} market size 2026",
+        "{industry} market trends",
+        "{industry} growth forecast",
+        "{industry} analyst reports",
+        "{industry} market dynamics"
+      ]
+    },
+    "audience": {
+      "name": "Audience Intelligence",
+      "role": "Audience Intelligence Agent",
+      "description": "Scan pains, desires, objections of target audiences",
+      "sources": ["forums", "Reddit", "reviews", "social", "surveys", "interviews"],
+      "output_blocks": [
+        {"key": "audience", "description": "Audience overview"},
+        {"key": "segments", "description": "Key segments"},
+        {"key": "jobs-to-be-done", "description": "Primary JTBD"},
+        {"key": "pains", "description": "Pain points"},
+        {"key": "desires", "description": "Goals and desires"},
+        {"key": "objections", "description": "Buying objections"},
+        {"key": "language", "description": "Phrases they use"}
+      ],
+      "search_queries": [
+        "{company} customer reviews",
+        "{industry} pain points Reddit",
+        "{industry} buyer challenges",
+        "{company} user feedback",
+        "why buy {product_type}",
+        "{industry} jobs to be done"
+      ]
+    },
+    "brand": {
+      "name": "Brand Voice Forensics",
+      "role": "Brand Forensics Analyst",
+      "description": "Reverse-engineer the public brand voice",
+      "sources": ["website copy", "blog", "social posts", "press releases", "marketing"],
+      "output_blocks": [
+        {"key": "voice", "description": "Tone guidelines"},
+        {"key": "style", "description": "Writing style principles"},
+        {"key": "messages", "description": "Key brand messages"},
+        {"key": "examples", "description": "Example passages"},
+        {"key": "templates", "description": "Messaging templates"}
+      ],
+      "search_queries": [
+        "{company} blog",
+        "{company} press release",
+        "{company} LinkedIn posts",
+        "{company} Twitter/X posts",
+        "{company} about us"
+      ]
+    },
+    "strategy": {
+      "name": "Strategy Pattern Scan",
+      "role": "Strategy Pattern Analyst",
+      "description": "Detect GTM, growth loops, strategic frameworks",
+      "sources": ["website", "news", "interviews", "investor materials", "job postings"],
+      "output_blocks": [
+        {"key": "strategy", "description": "High-level strategy"},
+        {"key": "gtm", "description": "Go-to-market approach"},
+        {"key": "frameworks", "description": "Strategic frameworks used"},
+        {"key": "growth-loops", "description": "Growth mechanisms"},
+        {"key": "ecosystem", "description": "Partner/integration ecosystem"},
+        {"key": "ai-strategy", "description": "Role of AI in strategy"},
+        {"key": "angle-library", "description": "Campaign angles and ideas"}
+      ],
+      "search_queries": [
+        "{company} go to market strategy",
+        "{company} growth strategy",
+        "{company} partnerships integrations",
+        "{company} funding news",
+        "{company} CEO interview strategy",
+        "{company} AI features"
+      ]
+    }
+  },
+  "output_format": {
+    "block_pattern": "===== ce.{company}.{key} =====",
+    "reliability_block": "===== reliability-report =====",
+    "confidence_levels": ["HIGH", "MEDIUM", "LOW", "UNVERIFIED"]
+  }
+}

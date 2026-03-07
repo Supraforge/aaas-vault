@@ -1,0 +1,14 @@
+{
+  "description": "Simple batch example with just topics",
+  "carousels": [
+    {
+      "topic": "Statin side effects"
+    },
+    {
+      "topic": "Heart healthy diet"
+    },
+    {
+      "topic": "Exercise for heart health"
+    }
+  ]
+}

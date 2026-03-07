@@ -1,0 +1,30 @@
+[
+  {
+    "study": "PARADIGM-HF",
+    "estimate": 0.80,
+    "lower_ci": 0.73,
+    "upper_ci": 0.87,
+    "weight": 84
+  },
+  {
+    "study": "DAPA-HF",
+    "estimate": 0.74,
+    "lower_ci": 0.65,
+    "upper_ci": 0.85,
+    "weight": 60
+  },
+  {
+    "study": "EMPEROR-Reduced",
+    "estimate": 0.75,
+    "lower_ci": 0.65,
+    "upper_ci": 0.86,
+    "weight": 50
+  },
+  {
+    "study": "VICTORIA",
+    "estimate": 0.90,
+    "lower_ci": 0.82,
+    "upper_ci": 0.98,
+    "weight": 40
+  }
+]

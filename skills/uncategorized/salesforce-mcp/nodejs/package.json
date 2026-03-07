@@ -1,0 +1,18 @@
+{
+  "name": "salesforce-mcp-server",
+  "version": "1.0.0",
+  "description": "Salesforce MCP Server for CRM automation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Run test.sh for health check\" && exit 0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "jsforce": "^1.11.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

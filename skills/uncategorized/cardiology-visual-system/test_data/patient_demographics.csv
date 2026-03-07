@@ -1,0 +1,9 @@
+age_group,count,percentage,gender
+<50,150,15.0,Male
+50-60,280,28.0,Male
+60-70,320,32.0,Male
+>70,250,25.0,Male
+<50,120,12.0,Female
+50-60,240,24.0,Female
+60-70,290,29.0,Female
+>70,350,35.0,Female

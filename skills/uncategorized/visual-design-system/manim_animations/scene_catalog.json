@@ -1,0 +1,429 @@
+{
+  "mechanism": {
+    "class": "MechanismOfActionScene",
+    "category": "core",
+    "description": "Generic 4-step mechanism of action flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "kaplan_meier": {
+    "class": "KaplanMeierScene",
+    "category": "statistics",
+    "description": "Kaplan-Meier survival curve with HR annotation",
+    "duration_s": 18,
+    "file": "scenes.py"
+  },
+  "ecg_wave": {
+    "class": "ECGWaveScene",
+    "category": "arrhythmia",
+    "description": "Normal sinus rhythm waveform",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "ecg_afib": {
+    "class": "ECGAtrialFibrillationScene",
+    "category": "arrhythmia",
+    "description": "Atrial fibrillation waveform",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "sglt2_moa": {
+    "class": "SGLT2MechanismScene",
+    "category": "cardiometabolic",
+    "description": "SGLT2 inhibitor mechanism flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "glp1_moa": {
+    "class": "GLP1MechanismScene",
+    "category": "cardiometabolic",
+    "description": "GLP-1 agonist pathway",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "arni_pathway": {
+    "class": "ARNIPathwayScene",
+    "category": "cardiometabolic",
+    "description": "ARNi mechanism of action",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "hf_quad_therapy": {
+    "class": "HFQuadTherapyScene",
+    "category": "cardiometabolic",
+    "description": "Quad therapy steps for HFrEF",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "ldl_reduction": {
+    "class": "LDLReductionScene",
+    "category": "cardiometabolic",
+    "description": "LDL-C reduction ladder",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "bp_targets": {
+    "class": "BloodPressureTargetsScene",
+    "category": "cardiometabolic",
+    "description": "Blood pressure target bars",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "acs_pathway": {
+    "class": "ACSPathwayScene",
+    "category": "acs_cad",
+    "description": "ACS rapid pathway flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "stemi_timeline": {
+    "class": "STEMITimelineScene",
+    "category": "acs_cad",
+    "description": "STEMI door-to-balloon timeline",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "plaque_rupture": {
+    "class": "PlaqueRuptureScene",
+    "category": "acs_cad",
+    "description": "Plaque rupture cascade",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "dapt_timeline": {
+    "class": "DAPTTimelineScene",
+    "category": "acs_cad",
+    "description": "DAPT duration timeline",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "af_management": {
+    "class": "AFManagementScene",
+    "category": "arrhythmia",
+    "description": "AF management flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "rate_vs_rhythm": {
+    "class": "RateRhythmComparisonScene",
+    "category": "arrhythmia",
+    "description": "Rate vs rhythm comparison",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "conduction_system": {
+    "class": "ConductionSystemScene",
+    "category": "arrhythmia",
+    "description": "Conduction system layout",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "heart_chambers": {
+    "class": "HeartChambersScene",
+    "category": "anatomy",
+    "description": "Heart chamber overview",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "troponin_kinetics": {
+    "class": "TroponinKineticsScene",
+    "category": "imaging_dx",
+    "description": "Troponin rise and fall curve",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "echo_views": {
+    "class": "EchoViewsScene",
+    "category": "imaging_dx",
+    "description": "Echo view grid",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "cta_workup": {
+    "class": "CTAWorkupScene",
+    "category": "imaging_dx",
+    "description": "CTA chest pain workup flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "stress_test_flow": {
+    "class": "StressTestFlowScene",
+    "category": "imaging_dx",
+    "description": "Stress test workflow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "arr_rrr": {
+    "class": "ARRRRScene",
+    "category": "statistics",
+    "description": "ARR vs RRR comparison",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "nnt_explainer": {
+    "class": "NNTExplainerScene",
+    "category": "statistics",
+    "description": "NNT comparison bars",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "forest_plot_summary": {
+    "class": "ForestPlotSummaryScene",
+    "category": "statistics",
+    "description": "Forest plot summary",
+    "duration_s": 16,
+    "file": "scenes.py"
+  },
+  "events_per_1000": {
+    "class": "EventsPer1000Scene",
+    "category": "statistics",
+    "description": "Events per 1000 comparison",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "icd_decision": {
+    "class": "ICDDecisionScene",
+    "category": "devices",
+    "description": "ICD decision pathway",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "crt_selection": {
+    "class": "CRTSelectionScene",
+    "category": "devices",
+    "description": "CRT selection flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "tavr_pathway": {
+    "class": "TAVRPathwayScene",
+    "category": "devices",
+    "description": "TAVR pathway flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "lvad_bridge": {
+    "class": "LVADBridgeScene",
+    "category": "devices",
+    "description": "LVAD bridge timeline",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "statin_moa": {
+    "class": "StatinMechanismScene",
+    "category": "drug_mechanisms",
+    "description": "HMG-CoA reductase inhibition pathway",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "pcsk9_moa": {
+    "class": "PCSK9MechanismScene",
+    "category": "drug_mechanisms",
+    "description": "PCSK9 inhibitor LDL-receptor recycling",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "doac_moa": {
+    "class": "DOACMechanismScene",
+    "category": "drug_mechanisms",
+    "description": "Factor Xa/IIa inhibition for anticoagulation",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "beta_blocker_moa": {
+    "class": "BetaBlockerMechanismScene",
+    "category": "drug_mechanisms",
+    "description": "Beta-receptor blockade mechanism",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "ccb_moa": {
+    "class": "CCBMechanismScene",
+    "category": "drug_mechanisms",
+    "description": "Calcium channel blocker vasodilation",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "diuretic_moa": {
+    "class": "DiureticMechanismScene",
+    "category": "drug_mechanisms",
+    "description": "Loop diuretic natriuresis mechanism",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "ecg_stemi": {
+    "class": "ECGSTEMIScene",
+    "category": "arrhythmia",
+    "description": "ST-elevation MI ECG pattern",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "ecg_heart_block": {
+    "class": "ECGHeartBlockScene",
+    "category": "arrhythmia",
+    "description": "Complete heart block with AV dissociation",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "ascvd_risk": {
+    "class": "ASCVDRiskScene",
+    "category": "clinical_decision",
+    "description": "ASCVD risk assessment pathway",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "cha2ds2_vasc": {
+    "class": "CHA2DS2VAScScene",
+    "category": "clinical_decision",
+    "description": "CHA2DS2-VASc score visualization",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "has_bled": {
+    "class": "HASBLEDScene",
+    "category": "clinical_decision",
+    "description": "HAS-BLED bleeding risk score",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "heart_score": {
+    "class": "HeartScoreScene",
+    "category": "clinical_decision",
+    "description": "HEART score for chest pain",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "paradigm_hf": {
+    "class": "PARADIGMHFScene",
+    "category": "trials",
+    "description": "PARADIGM-HF sacubitril/valsartan survival",
+    "duration_s": 18,
+    "file": "scenes.py"
+  },
+  "dapa_hf": {
+    "class": "DAPAHFScene",
+    "category": "trials",
+    "description": "DAPA-HF dapagliflozin in HFrEF",
+    "duration_s": 18,
+    "file": "scenes.py"
+  },
+  "emperor_reduced": {
+    "class": "EMPERORReducedScene",
+    "category": "trials",
+    "description": "EMPEROR-Reduced empagliflozin results",
+    "duration_s": 18,
+    "file": "scenes.py"
+  },
+  "fourier": {
+    "class": "FOURIERTrialScene",
+    "category": "trials",
+    "description": "FOURIER evolocumab PCSK9i trial",
+    "duration_s": 18,
+    "file": "scenes.py"
+  },
+  "select": {
+    "class": "SELECTTrialScene",
+    "category": "trials",
+    "description": "SELECT semaglutide CV outcomes",
+    "duration_s": 18,
+    "file": "scenes.py"
+  },
+  "statin_intensity": {
+    "class": "StatinIntensityScene",
+    "category": "comparisons",
+    "description": "Moderate vs high-intensity statin comparison",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "doac_vs_warfarin": {
+    "class": "DOACvsWarfarinScene",
+    "category": "comparisons",
+    "description": "DOAC vs warfarin comparison",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "hfpef_vs_hfref": {
+    "class": "HFpEFvsHFrEFScene",
+    "category": "comparisons",
+    "description": "HFpEF vs HFrEF phenotype comparison",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "hf_gdmt_mortality": {
+    "class": "HeartFailureGDMTScene",
+    "category": "cardiometabolic",
+    "description": "GDMT mortality reduction bars",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "ldl_targets": {
+    "class": "LDLTargetsScene",
+    "category": "cardiometabolic",
+    "description": "LDL-C targets by CV risk category",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "a1c_targets": {
+    "class": "A1cTargetsScene",
+    "category": "cardiometabolic",
+    "description": "HbA1c targets in diabetes",
+    "duration_s": 12,
+    "file": "scenes.py"
+  },
+  "acs_treatment_timeline": {
+    "class": "ACSTreatmentTimelineScene",
+    "category": "acs_cad",
+    "description": "ACS medication timeline",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "post_mi_rehab": {
+    "class": "PostMIRehabScene",
+    "category": "acs_cad",
+    "description": "Post-MI cardiac rehabilitation timeline",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "hf_discharge": {
+    "class": "HFHospDischargeScene",
+    "category": "cardiometabolic",
+    "description": "HF hospital discharge checklist",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "chest_pain_triage": {
+    "class": "ChestPainTriageScene",
+    "category": "clinical_decision",
+    "description": "ED chest pain triage flow",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "syncope_workup": {
+    "class": "SyncopeWorkupScene",
+    "category": "clinical_decision",
+    "description": "Syncope evaluation pathway",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "pe_workup": {
+    "class": "PEWorkupScene",
+    "category": "clinical_decision",
+    "description": "Pulmonary embolism diagnostic pathway",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "htn_workup": {
+    "class": "HypertensionWorkupScene",
+    "category": "clinical_decision",
+    "description": "Hypertension evaluation and treatment",
+    "duration_s": 14,
+    "file": "scenes.py"
+  },
+  "preop_cardiac": {
+    "class": "PreopCardiacScene",
+    "category": "clinical_decision",
+    "description": "Preoperative cardiac risk assessment",
+    "duration_s": 14,
+    "file": "scenes.py"
+  }
+}

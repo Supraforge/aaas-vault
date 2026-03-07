@@ -1,0 +1,84 @@
+{
+  "description": "Terms to avoid and their preferred replacements",
+  "patterns": [
+    {
+      "avoid": "ai tool",
+      "use_instead": "Neural Quality Layer",
+      "context": "When describing [PROJECT_NAME]'s core functionality",
+      "severity": "high"
+    },
+    {
+      "avoid": "compliance tool",
+      "use_instead": "Real-Time Audit Companion",
+      "context": "When positioning the product",
+      "severity": "medium"
+    },
+    {
+      "avoid": "delayed feedback",
+      "use_instead": "late visibility",
+      "context": "When describing timing issues",
+      "severity": "low"
+    },
+    {
+      "avoid": "fast compliance",
+      "use_instead": "compliance at the speed of code",
+      "context": "When describing speed benefits",
+      "severity": "low"
+    },
+    {
+      "avoid": "automated output",
+      "use_instead": "by-product of development",
+      "context": "When describing generated artifacts",
+      "severity": "low"
+    },
+    {
+      "avoid": "ai magic",
+      "use_instead": "evidence-based analysis",
+      "context": "When describing how it works",
+      "severity": "high"
+    },
+    {
+      "avoid": "machine learning solution",
+      "use_instead": "Neuro-Symbolic architecture",
+      "context": "When describing technical approach",
+      "severity": "medium"
+    },
+    {
+      "avoid": "checks your code",
+      "use_instead": "scans for architecture erosion",
+      "context": "When describing code analysis",
+      "severity": "medium"
+    },
+    {
+      "avoid": "audit the engineers",
+      "use_instead": "audit the artifacts",
+      "context": "Always - we audit work, not people",
+      "severity": "high"
+    },
+    {
+      "avoid": "replaces",
+      "use_instead": "empowers",
+      "context": "When describing relationship to engineers",
+      "severity": "high"
+    },
+    {
+      "avoid": "simple",
+      "use_instead": "streamlined",
+      "context": "Avoid oversimplification",
+      "severity": "low"
+    },
+    {
+      "avoid": "easy",
+      "use_instead": "efficient",
+      "context": "Avoid trivializing complexity",
+      "severity": "low"
+    },
+    {
+      "avoid": "helps you manage",
+      "use_instead": "ensures continuous visibility",
+      "context": "Avoid generic helper language",
+      "severity": "medium"
+    }
+  ],
+  "note": "Severity levels: high (always fix), medium (fix when possible), low (consider context)"
+}

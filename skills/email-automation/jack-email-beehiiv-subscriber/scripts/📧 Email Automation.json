@@ -1,0 +1,235 @@
+{
+    "name": "📧 Email Automation",
+    "flow": [
+        {
+            "id": 3,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 3609591,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -308,
+                    "y": -4
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "data": {
+                                "editable": "true"
+                            },
+                            "label": "email list"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "email",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "module": "beehiiv:CreateSubscriber",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 8247227
+            },
+            "mapper": {
+                "tier": "free",
+                "email": "{{3.email}}",
+                "utm_source": "AI Jack Form",
+                "send_welcome_email": false,
+                "double_opt_override": "not_set",
+                "reactivate_existing": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 33,
+                    "y": -4
+                },
+                "restore": {
+                    "expect": {
+                        "tier": {
+                            "label": "Free"
+                        },
+                        "double_opt_override": {
+                            "label": "Not Set"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "beehiiv"
+                            },
+                            "label": "My beehiiv connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:beehiiv",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "email",
+                        "type": "email",
+                        "label": "Email address",
+                        "required": true
+                    },
+                    {
+                        "name": "reactivate_existing",
+                        "type": "boolean",
+                        "label": "Reactivate Existing?",
+                        "required": true
+                    },
+                    {
+                        "name": "send_welcome_email",
+                        "type": "boolean",
+                        "label": "Send Welcome Email?",
+                        "required": true
+                    },
+                    {
+                        "name": "utm_source",
+                        "type": "text",
+                        "label": "Source"
+                    },
+                    {
+                        "name": "utm_medium",
+                        "type": "text",
+                        "label": "Medium"
+                    },
+                    {
+                        "name": "utm_campaign",
+                        "type": "text",
+                        "label": "Campaign"
+                    },
+                    {
+                        "name": "Referring Site",
+                        "type": "text"
+                    },
+                    {
+                        "name": "referral_code",
+                        "type": "text",
+                        "label": "Referral Code"
+                    },
+                    {
+                        "name": "custom_fields",
+                        "spec": [
+                            {
+                                "mode": "choose",
+                                "name": "name",
+                                "type": "select",
+                                "label": "Custom Field",
+                                "dynamic": true,
+                                "options": {
+                                    "store": [],
+                                    "placeholder": "Select a custom field"
+                                },
+                                "required": true
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Custom Fields"
+                    },
+                    {
+                        "name": "double_opt_override",
+                        "type": "select",
+                        "label": "Double Opt-in Setting",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "on",
+                                "off",
+                                "not_set"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "tier",
+                        "type": "select",
+                        "label": "Tier",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "free",
+                                "premium"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "stripe_customer_id",
+                        "type": "text",
+                        "label": "Stripe Customer ID"
+                    },
+                    {
+                        "mode": "choose",
+                        "name": "automation_ids",
+                        "spec": {
+                            "name": "value",
+                            "type": "select",
+                            "label": "Automation",
+                            "dynamic": true,
+                            "options": {
+                                "store": [],
+                                "placeholder": "Select an automation"
+                            },
+                            "required": true
+                        },
+                        "type": "array",
+                        "label": "Add to Automation(s)"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com",
+        "notes": []
+    }
+}

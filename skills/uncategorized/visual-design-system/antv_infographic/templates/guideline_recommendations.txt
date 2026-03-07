@@ -1,0 +1,11 @@
+infographic list-row-simple-vertical
+data
+  items:
+    - label: Class I Recommendation
+      desc: Treatment is recommended (Level A evidence)
+    - label: Class IIa Recommendation
+      desc: Treatment is reasonable (Level B evidence)
+    - label: Class IIb Recommendation
+      desc: Treatment may be considered (Level C evidence)
+    - label: Class III Recommendation
+      desc: Treatment is not recommended (Harm)

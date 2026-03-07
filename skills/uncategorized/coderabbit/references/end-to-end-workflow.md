@@ -1,0 +1,43 @@
+# CodeRabbit End-to-End Workflow
+
+Complete workflow from running a review to implementing fixes.
+
+## When to use
+
+- You want a structured, pre-PR review to catch correctness/security issues early.
+- You want to use CodeRabbit output as an input for a focused, minimal-fix workflow.
+
+## Inputs
+
+- Target scope: repo root or a subfolder (e.g. `src/`).
+- CodeRabbit output (prompt-only) for triage.
+
+## Process
+
+1. Run CodeRabbit (prompt-only) for the relevant scope.
+2. If the review fails (rate limit/auth/network), stop and resolve the failure first.
+3. Triage findings with `triage.md`.
+4. Implement fixes with `fix.md` (one issue at a time).
+5. Verify quality gates (project checks, tests).
+
+## Critical prohibitions
+
+- Do not introduce fallbacks, mocks, or stubs in production code.
+- Do not "fix" style nits if tooling already covers them.
+- Do not broaden the scope beyond the reviewed findings.
+
+## Reporting & Metrics
+
+### Data Export (Dashboard)
+
+Use **Data Export** to download per‑PR review metrics as CSV for a selected date range (last 7/30/90 days or a custom range within the last year). The export includes fields like complexity scores, review times, and comment breakdowns by severity/category.
+
+### Review Metrics API
+
+REST API for programmatic access to review metrics. Query by date range, filter by repository or user, and retrieve results in JSON or CSV.
+
+## Related references
+
+- CLI usage: `cli-usage.md`
+- Triage workflow: `triage.md`
+- Single issue fix: `fix.md`

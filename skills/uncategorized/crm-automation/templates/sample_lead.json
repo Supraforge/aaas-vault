@@ -1,0 +1,14 @@
+{
+  "email": "new.lead@targetcompany.com",
+  "first_name": "Alex",
+  "last_name": "Johnson",
+  "company": "Target Company Inc",
+  "job_title": "Director of Technology",
+  "source": "website",
+  "notes": "Interested in enterprise solution. Downloaded whitepaper.",
+  "custom_fields": {
+    "industry": "Technology",
+    "employee_count": 250,
+    "annual_revenue": 50000000
+  }
+}

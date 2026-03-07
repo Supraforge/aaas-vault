@@ -1,0 +1,22 @@
+{
+    "options": [
+        {
+            "id": "traction-first",
+            "name": "Option 1: Traction First",
+            "subject": "Validating with VW Group + Closing Pre-Seed (SupraForge)",
+            "body": "Hi [Name],\n\n[Blurb]Compliance is the single biggest bottleneck in automotive software, costing engineers 40% of their time.\n\nWe built **SupraForge ([PROJECT_NAME] AI)** to fix this—an AI \"Quality Gateway\" that automates compliance for safety-critical software.\n\n**Why now?**\n\n1. **Traction:** We are currently in validation talks with the **VW Group** and in commercial negotiations with **Audi**.\n2. **Funding:** We are closing our **€190k Pre-Seed** round. A strategic industry partner (**Digital Gateway**) is finalizing their commitment, and we have room for one final ticket.\n3. **Next Step:** Seed round targeting June 2026.\n\nInstead of a static PDF, we’ve built an **Interactive Pitch Deck**. You can interview my autonomous AI proxy directly to vet our business model:\n\n👉 [**Interview the Founder Proxy Here**](https://www.supra-forge.com/pitch-deck.html)\n\nBest,\n\n**Tobias Müller &**\n**Jorian Bos**\n\nCEO & CRO | SUPRAFORGE\n\n[https://www.supra-forge.com](https://www.supra-forge.com)"
+        },
+        {
+            "id": "tech-forward",
+            "name": "Option 2: Tech-Forward",
+            "subject": "Don’t read our deck—interview it. (SupraForge Pre-Seed)",
+            "body": "Hi [Name],\n\n[Blurb]Most pitch decks are static. Since we are building the \"Intelligence Layer\" for automotive engineering, we made ours autonomous.\n\n**SupraForge ([PROJECT_NAME] AI)** automates audit compliance for Tier-1s and OEMs. To prove our tech, I invite you to **interview our AI Founder Proxy**. It can answer your questions about our **VW Group validation** and our **€190k closing round** in real-time.\n\n[**Click here to speak with the AI**](https://www.supra-forge.com/pitch-deck.html)\n\n**The Deal:**\n\nWe are finalizing a strategic investment from a major technology partner. We are looking for one value-add investor to complete this Pre-Seed round before we scale toward our Seed raise in mid-2026.\n\nCurious to hear your feedback on the AI.\n\nBest,\n\n**Tobias Müller &**\n**Jorian Bos**\n\nCEO & CRO | SUPRAFORGE"
+        },
+        {
+            "id": "problem-solution",
+            "name": "Option 3: Problem/Solution",
+            "subject": "Automating the \"Compliance Tax\" (VW & Audi interested)",
+            "body": "Hi [Name],\n\n[Blurb]Engineers in regulated industries (Auto/MedTech) spend 30-50% of their time on manual compliance documentation. It’s a massive waste of R&D budget.\n\n**SupraForge** has built the solution: **[PROJECT_NAME] AI**. We integrate with existing toolchains (Jira, Polarion) to automate the audit trail in real-time.\n\n**Momentum:**\n\n1. **Product:** MVP is live.\n2. **Market:** Validating with **VW Group**; negotiating with **Audi**.\n3. **Round:** Closing €190k Pre-Seed now (Strategic Lead secured); Seed planned for June 2026.\n\nI’d love to send you the details. You can also vet the opportunity instantly via our **Interactive Deck**:\n\n[**See the Deck & Avatar**](https://www.supra-forge.com/pitch-deck.html)\n\nDo you have time for a 10-minute intro call next Tuesday?\n\nBest,\n\n**Tobias Müller &**\n**Jorian Bos**\n\nCEO & CRO | SUPRAFORGE"
+        }
+    ]
+}

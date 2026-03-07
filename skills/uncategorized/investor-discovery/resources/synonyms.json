@@ -1,0 +1,53 @@
+{
+    "ai": [
+        "artificial intelligence",
+        "machine learning",
+        "neural networks",
+        "deep learning",
+        "nlp",
+        "computer vision"
+    ],
+    "automotive": [
+        "mobility",
+        "autonomous vehicles",
+        "electric vehicles",
+        "ev",
+        "connected cars",
+        "transportation"
+    ],
+    "fintech": [
+        "financial technology",
+        "banking",
+        "payments",
+        "insurance",
+        "crypto",
+        "blockchain"
+    ],
+    "saas": [
+        "software as a service",
+        "enterprise software",
+        "b2b software",
+        "cloud software"
+    ],
+    "compliance": [
+        "regtech",
+        "regulatory",
+        "risk management",
+        "security",
+        "legaltech"
+    ],
+    "healthcare": [
+        "healthtech",
+        "medtech",
+        "digital health",
+        "biotech",
+        "life sciences"
+    ],
+    "sustainability": [
+        "climatetech",
+        "greentech",
+        "clean energy",
+        "circular economy",
+        "esg"
+    ]
+}

@@ -1,0 +1,58 @@
+{
+  "brand_voice": "professional yet approachable",
+  "target_audience": "tech professionals, entrepreneurs, and business leaders",
+  "content_themes": [
+    "industry insights",
+    "product updates",
+    "team culture",
+    "customer stories",
+    "thought leadership",
+    "how-to guides",
+    "industry trends",
+    "company news"
+  ],
+  "posting_frequency": {
+    "twitter": "3/day",
+    "linkedin": "2/day",
+    "facebook": "1/day",
+    "instagram": "1/day",
+    "tiktok": "3/week"
+  },
+  "optimal_posting_times": {
+    "twitter": ["09:00", "12:00", "17:00"],
+    "linkedin": ["10:00", "14:00"],
+    "facebook": ["13:00", "19:00"],
+    "instagram": ["11:00", "17:00", "20:00"]
+  },
+  "content_mix": {
+    "educational": 40,
+    "promotional": 20,
+    "engaging": 25,
+    "entertaining": 15
+  },
+  "campaigns": [
+    {
+      "name": "Product Launch Q1",
+      "duration": "4 weeks",
+      "themes": ["announcement", "features", "testimonials", "tutorials"],
+      "platforms": ["twitter", "linkedin", "facebook", "instagram"]
+    },
+    {
+      "name": "Industry Conference",
+      "duration": "2 weeks",
+      "themes": ["preview", "live updates", "recap", "highlights"],
+      "platforms": ["twitter", "linkedin"]
+    }
+  ],
+  "hashtag_strategy": {
+    "branded": ["#YourBrand", "#YourProduct"],
+    "industry": ["#Tech", "#Innovation", "#DigitalTransformation"],
+    "community": ["#Business", "#Leadership", "#Entrepreneurship"]
+  },
+  "goals": {
+    "engagement_rate": 3.5,
+    "follower_growth": "10% monthly",
+    "website_traffic": "1000 visits/month",
+    "lead_generation": "50 leads/month"
+  }
+}

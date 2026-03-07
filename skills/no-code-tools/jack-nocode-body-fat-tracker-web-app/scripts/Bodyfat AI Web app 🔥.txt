@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Percentage Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        .body-fat-tracker-container {
+            font-family: 'Arial', sans-serif;
+            background-color: #27293d;
+            color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .body-fat-tracker-container h1 {
+            text-align: center;
+            color: #e14eca;
+            margin-bottom: 20px;
+        }
+        .body-fat-tracker-container #loading {
+            text-align: center;
+            font-size: 18px;
+            color: #e14eca;
+        }
+        .body-fat-tracker-container #prediction-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #00f2c3;
+        }
+        .body-fat-tracker-container #predict-button,
+        .body-fat-tracker-container #submit-client-id {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #e14eca;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .body-fat-tracker-container #predict-button:hover,
+        .body-fat-tracker-container #submit-client-id:hover {
+            background-color: #ff6ec7;
+        }
+        .body-fat-tracker-container #client-id-input {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        #input-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="body-fat-tracker-container">
+        <h1>Body Fat Percentage Tracker</h1>
+        <div id="input-container">
+            <input type="text" id="client-id-input" placeholder="Enter Your Email" required>
+            <button id="submit-client-id">Show the Magic 🔮</button>
+        </div>
+        <div id="loading" style="display: none;">Loading data...</div>
+        <canvas id="bodyFatChart" style="display: none;"></canvas>
+        <div id="prediction-info"></div>
+        <button id="predict-button" style="display: none;">Predict Next 7 Days</button>
+    </div>
+
+
+    <script>
+        let chart;
+        let data = {
+            labels: [],
+            datasets: [{
+                label: 'Body Fat Percentage',
+                data: [],
+                borderColor: '#e14eca',
+                backgroundColor: 'rgba(225, 78, 202, 0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                pointBackgroundColor: '#e14eca'
+            }]
+        };
+
+
+        async function fetchData(clientId) {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('input-container').style.display = 'none';
+
+
+                const response = await fetch('https://hook.eu2.make.com/wis9mc1cqkdsqhgyjgohr5q4bf9wwb5o', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ clientId: clientId }),
+                });
+
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                const lines = text.trim().split('\n');
+
+
+                data.labels = [];
+                data.datasets[0].data = [];
+
+
+                lines.forEach(line => {
+                    const [day, percentage] = line.split(',');
+                    data.labels.push(`Day ${day.trim()}`);
+                    data.datasets[0].data.push(parseFloat(percentage.trim()));
+                });
+
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('bodyFatChart').style.display = 'block';
+                createChart();
+                document.getElementById('predict-button').style.display = 'block';
+                
+                // Trigger confetti
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loading').textContent = 'Error loading data. Please try again.';
+                document.getElementById('input-container').style.display = 'block';
+            }
+        }
+
+
+        function createChart() {
+            const ctx = document.getElementById('bodyFatChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                            titleColor: '#e14eca',
+                            bodyColor: '#ffffff',
+                            borderColor: '#e14eca',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#ffffff' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        },
+                        y: {
+                            ticks: { color: '#ffffff' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            title: {
+                                display: true,
+                                text: 'Body Fat Percentage',
+                                color: '#ffffff'
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+        }
+
+
+        function predictNextWeek() {
+            const lastSevenDays = data.datasets[0].data.slice(-7);
+            const averageChange = lastSevenDays.reduce((acc, curr, i, arr) => {
+                if (i === 0) return acc;
+                return acc + (curr - arr[i-1]);
+            }, 0) / 6;
+
+
+            const predictions = [];
+            let lastValue = data.datasets[0].data[data.datasets[0].data.length - 1];
+
+
+            for (let i = 1; i <= 7; i++) {
+                lastValue += averageChange;
+                predictions.push(parseFloat(lastValue.toFixed(2)));
+                data.labels.push(`Day ${parseInt(data.labels[data.labels.length - 1].split(' ')[1]) + 1}`);
+            }
+
+
+            data.datasets[0].data = [...data.datasets[0].data, ...predictions];
+            chart.update();
+
+
+            document.getElementById('prediction-info').textContent = `Predicted body fat percentage after 7 days: ${predictions[predictions.length - 1]}%`;
+        }
+
+
+        document.getElementById('client-id-input').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('submit-client-id').click();
+            }
+        });
+
+
+        document.getElementById('submit-client-id').addEventListener('click', function() {
+            const clientId = document.getElementById('client-id-input').value;
+            if (clientId) {
+                fetchData(clientId);
+            } else {
+                alert('Please enter a valid Client ID');
+            }
+        });
+
+
+        document.getElementById('predict-button').addEventListener('click', predictNextWeek);
+    </script>
+</body>
+</html>

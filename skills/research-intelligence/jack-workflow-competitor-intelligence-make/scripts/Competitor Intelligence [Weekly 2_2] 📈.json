@@ -1,0 +1,1637 @@
+{
+    "name": "Competitor Intelligence [Weekly 2/2] 📈",
+    "flow": [
+        {
+            "id": 36,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818
+            },
+            "mapper": {
+                "base": "app48mhFtTvSa4S2c",
+                "useColumnId": false,
+                "table": "tbl3WQWQyhAm7jpEA",
+                "maxRecords": "1",
+                "fields": [
+                    "Name 😊",
+                    "Website 🔗",
+                    "Reason 🧠",
+                    "Original File",
+                    "Changes?",
+                    "Changes made 🔮",
+                    "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                    "Review Sentiment 🧠",
+                    "created time",
+                    "Last Modified",
+                    "Client",
+                    "Client Industry",
+                    "Client Email "
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 22,
+                    "y": 5
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "Competitor Intelligence"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "Table 1"
+                        },
+                        "sort": {
+                            "mode": "chose"
+                        },
+                        "view": {
+                            "mode": "chose"
+                        },
+                        "fields": {
+                            "mode": "chose",
+                            "label": [
+                                "Name 😊",
+                                "Website 🔗",
+                                "Reason 🧠",
+                                "Original File",
+                                "Changes?",
+                                "Changes made 🔮",
+                                "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                                "Review Sentiment 🧠",
+                                "created time",
+                                "Last Modified",
+                                "Client",
+                                "Client Industry",
+                                "Client Email "
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "array",
+                        "label": "Sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "options": [],
+                                "dynamic": true
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "label": "Total number of bundles",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "label": "Bundle order position",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Name 😊",
+                        "label": "Name 😊",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Website 🔗",
+                        "label": "Website 🔗",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Reason 🧠",
+                        "label": "Reason 🧠",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Original File",
+                        "label": "Original File",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Changes?",
+                        "label": "Changes?",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Changes made 🔮",
+                        "label": "Changes made 🔮",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                        "label": "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Review Sentiment 🧠",
+                        "label": "Review Sentiment 🧠",
+                        "type": "text"
+                    },
+                    {
+                        "name": "created time",
+                        "label": "created time",
+                        "type": "date"
+                    },
+                    {
+                        "name": "Last Modified",
+                        "label": "Last Modified",
+                        "type": "date"
+                    },
+                    {
+                        "name": "Client",
+                        "label": "Client",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Client Industry",
+                        "label": "Client Industry",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Client Email ",
+                        "label": "Client Email ",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 26,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 1532818
+            },
+            "mapper": {
+                "base": "app48mhFtTvSa4S2c",
+                "useColumnId": false,
+                "table": "tbl3WQWQyhAm7jpEA",
+                "maxRecords": "20",
+                "fields": [
+                    "Name 😊",
+                    "Website 🔗",
+                    "Reason 🧠",
+                    "Original File",
+                    "Changes?",
+                    "Changes made 🔮",
+                    "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                    "Review Sentiment 🧠",
+                    "created time",
+                    "Last Modified",
+                    "Client",
+                    "Client Industry",
+                    "Client Email "
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Airtable OAuth connection (User ID: usrWHZndszJIS5AWQ)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "Competitor Intelligence"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "Table 1"
+                        },
+                        "sort": {
+                            "mode": "chose"
+                        },
+                        "view": {
+                            "mode": "chose"
+                        },
+                        "fields": {
+                            "mode": "chose",
+                            "label": [
+                                "Name 😊",
+                                "Website 🔗",
+                                "Reason 🧠",
+                                "Original File",
+                                "Changes?",
+                                "Changes made 🔮",
+                                "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                                "Review Sentiment 🧠",
+                                "created time",
+                                "Last Modified",
+                                "Client",
+                                "Client Industry",
+                                "Client Email "
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "array",
+                        "label": "Sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "options": [],
+                                "dynamic": true
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "label": "Total number of bundles",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "label": "Bundle order position",
+                        "type": "uinteger"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Name 😊",
+                        "label": "Name 😊",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Website 🔗",
+                        "label": "Website 🔗",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Reason 🧠",
+                        "label": "Reason 🧠",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Original File",
+                        "label": "Original File",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Changes?",
+                        "label": "Changes?",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Changes made 🔮",
+                        "label": "Changes made 🔮",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                        "label": "Reviews ⭐️⭐️⭐️⭐️⭐️",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Review Sentiment 🧠",
+                        "label": "Review Sentiment 🧠",
+                        "type": "text"
+                    },
+                    {
+                        "name": "created time",
+                        "label": "created time",
+                        "type": "date"
+                    },
+                    {
+                        "name": "Last Modified",
+                        "label": "Last Modified",
+                        "type": "date"
+                    },
+                    {
+                        "name": "Client",
+                        "label": "Client",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Client Industry",
+                        "label": "Client Industry",
+                        "type": "text",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Client Email ",
+                        "label": "Client Email ",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 27,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 26
+            },
+            "mapper": {
+                "__IMTLENGTH__": "{{26.`__IMTLENGTH__`}}",
+                "__IMTINDEX__": "{{26.`__IMTINDEX__`}}",
+                "id": "{{26.id}}",
+                "createdTime": "{{26.createdTime}}",
+                "Name 😊": "{{26.`Name 😊`}}",
+                "Website 🔗": "{{26.`Website 🔗`}}",
+                "Reason 🧠": "{{26.`Reason 🧠`}}",
+                "Original File": "{{26.`Original File`}}",
+                "Changes?": "{{26.`Changes?`}}",
+                "Changes made 🔮": "{{26.`Changes made 🔮`}}",
+                "Reviews ⭐️⭐️⭐️⭐️⭐️": "{{26.`Reviews ⭐️⭐️⭐️⭐️⭐️`}}",
+                "Review Sentiment 🧠": "{{26.`Review Sentiment 🧠`}}",
+                "created time": "{{26.`created time`}}",
+                "Last Modified": "{{26.`Last Modified`}}",
+                "Client": "{{26.Client}}",
+                "Client Industry": "{{26.`Client Industry`}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 0
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Airtable - Search Records [26]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 29,
+            "module": "builtin:BasicFeeder",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "array": "{{27.array[1].`Name 😊`}}\n{{27.array[1].`Changes made 🔮`}}\n\n{{27.array[2].`Name 😊`}}\n{{27.array[2].`Changes made 🔮`}}\n\n{{27.array[3].`Name 😊`}}\n{{27.array[3].`Changes made 🔮`}}\n\n{{27.array[4].`Name 😊`}}\n{{27.array[4].`Changes made 🔮`}}\n\n{{27.array[5].`Name 😊`}}\n{{27.array[5].`Changes made 🔮`}}\n\n{{27.array[6].`Name 😊`}}\n{{27.array[6].`Changes made 🔮`}}\n\n{{27.array[7].`Name 😊`}}\n{{27.array[7].`Changes made 🔮`}}\n\n{{27.array[8].`Name 😊`}}\n{{27.array[8].`Changes made 🔮`}}\n\n{{27.array[9].`Name 😊`}}\n{{27.array[9].`Changes made 🔮`}}\n\n{{27.array[10].`Name 😊`}}\n{{27.array[10].`Changes made 🔮`}}\n\n{{27.array[11].`Name 😊`}}\n{{27.array[11].`Changes made 🔮`}}\n\n{{27.array[12].`Name 😊`}}\n{{27.array[12].`Changes made 🔮`}}\n\n{{27.array[13].`Name 😊`}}\n{{27.array[13].`Changes made 🔮`}}\n\n{{27.array[14].`Name 😊`}}\n{{27.array[14].`Changes made 🔮`}}\n\n{{27.array[15].`Name 😊`}}\n{{27.array[15].`Changes made 🔮`}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 0,
+                    "name": "Website Analysis 💻"
+                },
+                "restore": {
+                    "expect": {
+                        "array": {
+                            "mode": "edit"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "array",
+                        "type": "array",
+                        "label": "Array",
+                        "mode": "edit",
+                        "spec": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": 30,
+            "module": "builtin:BasicFeeder",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "array": "{{27.array[1].`Review Sentiment 🧠`}}\n{{27.array[2].`Review Sentiment 🧠`}}\n{{27.array[3].`Review Sentiment 🧠`}}\n{{27.array[4].`Review Sentiment 🧠`}}\n{{27.array[5].`Review Sentiment 🧠`}}\n{{27.array[7].`Review Sentiment 🧠`}}\n{{27.array[8].`Review Sentiment 🧠`}}\n{{27.array[9].`Review Sentiment 🧠`}}\n{{27.array[10].`Review Sentiment 🧠`}}\n{{27.array[11].`Review Sentiment 🧠`}}\n{{27.array[12].`Review Sentiment 🧠`}}\n{{27.array[13].`Review Sentiment 🧠`}}\n{{27.array[14].`Review Sentiment 🧠`}}\n{{27.array[15].`Review Sentiment 🧠`}}\n"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1212,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "array": {
+                            "mode": "edit"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "array",
+                        "type": "array",
+                        "label": "Array",
+                        "mode": "edit",
+                        "spec": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": 31,
+            "module": "openai-gpt-3:CreateCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1425946
+            },
+            "mapper": {
+                "select": "chat",
+                "max_tokens": "0",
+                "temperature": "1",
+                "top_p": "1",
+                "n_completions": "1",
+                "response_format": "text",
+                "model": "gpt-4o",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": "Task Overview:\nAnalyze aggregated customer reviews from multiple competitors in our industry. Your goal is to identify and list 10 positive aspects, 10 negative aspects with corresponding customer quotes, and provide actionable insights mentioned in the reviews. Provide a concise 80-word summary of the overall sentiment and key trends. Use specific examples from individual competitors to support each point. Based on this analysis, suggest opportunities for our company to stand out and offer additional insights into customer preferences and expectations.\n\nInstructions:\n1. Provide an 80-word summary of the overall sentiment and key trends found in the reviews.\n\n2. List 10 positive aspects mentioned in the reviews:\n✅ Customer Favourites ✅\n✅ A\n\"Customer quote illustrating the positivr aspect A\"\n✅ B\n\"Customer quote illustrating the positive aspect A\"\n(continue to J)\n\n3. List 10 negative aspects mentioned in the reviews, each followed by a relevant customer quote:\n❌ Customer Complaints ❌\n❌ A\n\"Customer quote illustrating the negative aspect A\"\n❌ B\n\"Customer quote illustrating the negative aspect B\"\n(continue to J)\n\n💎 Actionable Insights: 💎\nBased on those negatives, list practical suggestions based on the review analysis. Include as many as you can think of, without a specific quota.\n💎 A\n💎 B\n(Continue with additional actionable insights)\n\n🤩 Additional Insights 🤩\nIn 100 words or less: Identify emerging trends in customer preferences or expectations, Share specific insights from competitor reviews that could affect our positioning. Provide tangible examples that show how customers react to certain features or services offered by competitors. L\n\nOutput Guidelines:\n- Ensure all insights are drawn directly from the provided reviews and contain both sentiments and specific examples from competitors.\n- Use bullet points to enhance readability and focus on key points.\n- Keep your report concise while incorporating sentiment analysis and examples from competitors.\n\nReviews: {{30.value}}"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1554,
+                    "y": 0,
+                    "name": "Review Analysis ⭐️⭐️⭐️⭐️⭐️"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My OpenAI connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "openai-gpt-3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "select": {
+                            "label": "Create a Chat Completion (GPT Models)"
+                        },
+                        "logit_bias": {
+                            "mode": "chose"
+                        },
+                        "response_format": {
+                            "mode": "chose",
+                            "label": "Text"
+                        },
+                        "stop": {
+                            "mode": "chose"
+                        },
+                        "additionalParameters": {
+                            "mode": "chose"
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "gpt-4o (system)"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:openai-gpt-3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Select Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "chat",
+                                "prompt"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "number",
+                        "label": "Max Tokens",
+                        "required": true
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "n_completions",
+                        "type": "number",
+                        "label": "Number"
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "logit_bias",
+                        "type": "array",
+                        "label": "Token Probability",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "token",
+                                    "type": "text",
+                                    "label": "Token ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "probability",
+                                    "type": "number",
+                                    "label": "Probability",
+                                    "required": true,
+                                    "validate": {
+                                        "max": 100,
+                                        "min": -100
+                                    }
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Token Probability",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "response_format",
+                        "type": "select",
+                        "label": "Response Format",
+                        "validate": {
+                            "enum": [
+                                "text",
+                                "json_object"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "stop",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "validate": {
+                            "maxItems": 4
+                        },
+                        "spec": {
+                            "type": "text",
+                            "label": "Stop Sequence",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "additionalParameters",
+                        "type": "array",
+                        "label": "Other Input Parameters",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "key",
+                                    "type": "text",
+                                    "label": "Parameter Name",
+                                    "required": true
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "select",
+                                    "label": "Input Type",
+                                    "options": [
+                                        {
+                                            "label": "Text",
+                                            "value": "text",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ],
+                                            "default": true
+                                        },
+                                        {
+                                            "label": "Number",
+                                            "value": "number",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "number",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "boolean",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "boolean",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date",
+                                            "value": "date",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "date",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Any",
+                                            "value": "any",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "any",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Input Parameter",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": [
+                                        {
+                                            "label": "System",
+                                            "value": "system"
+                                        },
+                                        {
+                                            "label": "User",
+                                            "value": "user"
+                                        },
+                                        {
+                                            "label": "Assistant",
+                                            "value": "assistant"
+                                        }
+                                    ],
+                                    "required": true
+                                },
+                                {
+                                    "name": "content",
+                                    "type": "text",
+                                    "label": "Message Content"
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message",
+                            "name": "value"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 38,
+            "module": "openai-gpt-3:CreateCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1425946
+            },
+            "mapper": {
+                "select": "chat",
+                "max_tokens": "0",
+                "temperature": "1",
+                "top_p": "1",
+                "n_completions": "1",
+                "response_format": "text",
+                "model": "gpt-4o",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": "Using Avenir font, please combine both pieces of html text together below into one HTML document (write it as html) and make the formatting gorgeous and excellent.\n\nYou MUST begin every output with: <!DOCTYPE html>\n\nTitle of the document: 👾 Competitor intelligence Download 👾\n\nCompetitor Website Changes 💻\n{{29.value}}\n\nCompetitor Reviews 💎\n{{31.result}}\n"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1938,
+                    "y": -3,
+                    "name": "HTML Convertor"
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My OpenAI connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "openai-gpt-3"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "select": {
+                            "label": "Create a Chat Completion (GPT Models)"
+                        },
+                        "logit_bias": {
+                            "mode": "chose"
+                        },
+                        "response_format": {
+                            "mode": "chose",
+                            "label": "Text"
+                        },
+                        "stop": {
+                            "mode": "chose"
+                        },
+                        "additionalParameters": {
+                            "mode": "chose"
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "gpt-4o (system)"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:openai-gpt-3",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Select Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "chat",
+                                "prompt"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "number",
+                        "label": "Max Tokens",
+                        "required": true
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "n_completions",
+                        "type": "number",
+                        "label": "Number"
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "logit_bias",
+                        "type": "array",
+                        "label": "Token Probability",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "token",
+                                    "type": "text",
+                                    "label": "Token ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "probability",
+                                    "type": "number",
+                                    "label": "Probability",
+                                    "required": true,
+                                    "validate": {
+                                        "max": 100,
+                                        "min": -100
+                                    }
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Token Probability",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "response_format",
+                        "type": "select",
+                        "label": "Response Format",
+                        "validate": {
+                            "enum": [
+                                "text",
+                                "json_object"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "stop",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "validate": {
+                            "maxItems": 4
+                        },
+                        "spec": {
+                            "type": "text",
+                            "label": "Stop Sequence",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "additionalParameters",
+                        "type": "array",
+                        "label": "Other Input Parameters",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "key",
+                                    "type": "text",
+                                    "label": "Parameter Name",
+                                    "required": true
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "select",
+                                    "label": "Input Type",
+                                    "options": [
+                                        {
+                                            "label": "Text",
+                                            "value": "text",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ],
+                                            "default": true
+                                        },
+                                        {
+                                            "label": "Number",
+                                            "value": "number",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "number",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "boolean",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "boolean",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date",
+                                            "value": "date",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "date",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Any",
+                                            "value": "any",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "any",
+                                                    "label": "Parameter Value"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Input Parameter",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "role",
+                                    "type": "select",
+                                    "label": "Role",
+                                    "options": [
+                                        {
+                                            "label": "System",
+                                            "value": "system"
+                                        },
+                                        {
+                                            "label": "User",
+                                            "value": "user"
+                                        },
+                                        {
+                                            "label": "Assistant",
+                                            "value": "assistant"
+                                        }
+                                    ],
+                                    "required": true
+                                },
+                                {
+                                    "name": "content",
+                                    "type": "text",
+                                    "label": "Message Content"
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Message",
+                            "name": "value"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 39,
+            "module": "pdf-co:HTMLtoPDF",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 3014965
+            },
+            "mapper": {
+                "convert": {
+                    "convertType": "fromHtml",
+                    "html": "{{38.result}}"
+                },
+                "name": "{{36.createdTime}} ({{36.Client}})",
+                "orientation": "portrait",
+                "paperSize": "letter",
+                "printBackground": true,
+                "doNotWaitFullLoad": false,
+                "async": 15000,
+                "expiration": "60",
+                "export": {
+                    "exportType": "downloadFile"
+                }
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2313,
+                    "y": -2
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My PDF.co connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "pdf-co"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "convert": {
+                            "nested": {
+                                "convertType": {
+                                    "label": "HTML to PDF"
+                                }
+                            }
+                        },
+                        "orientation": {
+                            "label": "Portrait"
+                        },
+                        "paperSize": {
+                            "label": "Letter"
+                        },
+                        "printBackground": {
+                            "mode": "chose"
+                        },
+                        "doNotWaitFullLoad": {
+                            "mode": "chose"
+                        },
+                        "async": {
+                            "mode": "chose",
+                            "label": "Async"
+                        },
+                        "export": {
+                            "nested": {
+                                "exportType": {
+                                    "label": "Download a File"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:pdf-co",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "convert",
+                        "type": "collection",
+                        "label": "Convert Options",
+                        "required": true,
+                        "spec": [
+                            {
+                                "name": "convertType",
+                                "type": "select",
+                                "label": "Convert Type",
+                                "required": true,
+                                "validate": {
+                                    "enum": [
+                                        "fromHtml",
+                                        "fromHtmlTemplate",
+                                        "fromWebsite"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "html",
+                                "type": "text",
+                                "label": "Input HTML Code",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "name",
+                        "type": "text",
+                        "label": "Output File Name"
+                    },
+                    {
+                        "name": "orientation",
+                        "type": "select",
+                        "label": "Orientation",
+                        "validate": {
+                            "enum": [
+                                "portrait",
+                                "landscape"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "paperSize",
+                        "type": "select",
+                        "label": "Paper Size ",
+                        "validate": {
+                            "enum": [
+                                "a0",
+                                "a1",
+                                "a2",
+                                "a3",
+                                "a4",
+                                "a5",
+                                "a6",
+                                "legal",
+                                "letter",
+                                "tabloid",
+                                "custom"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "printBackground",
+                        "type": "boolean",
+                        "label": "Render Page Background"
+                    },
+                    {
+                        "name": "doNotWaitFullLoad",
+                        "type": "boolean",
+                        "label": "Do not wait for full load"
+                    },
+                    {
+                        "name": "margins",
+                        "type": "text",
+                        "label": "Margins"
+                    },
+                    {
+                        "name": "async",
+                        "type": "select",
+                        "label": "Execution Mode",
+                        "validate": {
+                            "enum": [
+                                false,
+                                15000,
+                                "asyncCheckLater"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "profiles",
+                        "type": "text",
+                        "label": "Profiles"
+                    },
+                    {
+                        "name": "expiration",
+                        "type": "number",
+                        "label": "Output Links Expiration"
+                    },
+                    {
+                        "name": "export",
+                        "type": "collection",
+                        "label": "Export Options",
+                        "required": true,
+                        "spec": [
+                            {
+                                "name": "exportType",
+                                "type": "select",
+                                "label": "Export Type",
+                                "required": true,
+                                "validate": {
+                                    "enum": [
+                                        "downloadFile",
+                                        "inline"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 41,
+            "module": "google-email:ActionCreateDraft",
+            "version": 2,
+            "parameters": {
+                "account": 3087040
+            },
+            "mapper": {
+                "folder": "[Gmail]/Drafts",
+                "to": [
+                    "{{36.`Client Email `}}"
+                ],
+                "subject": "{{36.Client}} Competitive Intelligence Report",
+                "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Competitive Intelligence Report</title>\n    <style>\n        body {\n            font-family: Avenir, 'Helvetica Neue', Arial, sans-serif;\n            line-height: 1.6;\n            color: #333;\n            max-width: 600px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #f4f4f4;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 30px;\n            border-radius: 5px;\n            box-shadow: 0 2px 5px rgba(0,0,0,0.1);\n        }\n        h1 {\n            color: #2c3e50;\n            border-bottom: 2px solid #3498db;\n            padding-bottom: 10px;\n        }\n        .signature {\n            margin-top: 20px;\n            font-weight: bold;\n            color: #2c3e50;\n        }\n        .footer {\n            margin-top: 20px;\n            font-size: 0.9em;\n            color: #7f8c8d;\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Competitive Intelligence Update</h1>\n        \n        <p>Hello,</p>\n        \n        <p>I hope this email finds you well. I'm pleased to inform you that your latest competitive intelligence report is now ready and attached to this email.</p>\n        \n        <p>This report includes:</p>\n        <ul>\n            <li>An overview of recent market changes</li>\n            <li>Detailed analysis of our top competitors' strategies</li>\n            <li>Emerging trends in our industry</li>\n            <li>Recommendations for our next steps</li>\n        </ul>\n        \n        <p>Please review the report at your earliest convenience. If you have any questions or need further clarification on any points, don't hesitate to reach out.</p>\n        \n        <p>Best regards,</p>\n        \n        <p class=\"signature\">Jack</p>\n    </div>\n    \n    <div class=\"footer\">\n        <p>This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed.</p>\n    </div>\n</body>\n</html>",
+                "attachments": [
+                    {
+                        "fileName": "{{39.name}}",
+                        "data": "{{39.data}}"
+                    }
+                ],
+                "cc": [],
+                "bcc": []
+            },
+            "metadata": {
+                "designer": {
+                    "x": 2651,
+                    "y": 6
+                },
+                "restore": {
+                    "parameters": {
+                        "account": {
+                            "label": "My Google Restricted connection (jack@aiautomationswithjack.com)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google-restricted"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "folder": {
+                            "mode": "chose",
+                            "path": [
+                                "Drafts",
+                                "Drafts"
+                            ]
+                        },
+                        "to": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "attachments": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "cc": {
+                            "mode": "chose"
+                        },
+                        "bcc": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "account",
+                        "type": "account:google-restricted",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "folder",
+                        "type": "folder",
+                        "label": "Folder",
+                        "required": true
+                    },
+                    {
+                        "name": "to",
+                        "type": "array",
+                        "label": "To",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address",
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "subject",
+                        "type": "text",
+                        "label": "Subject"
+                    },
+                    {
+                        "name": "html",
+                        "type": "text",
+                        "label": "Content"
+                    },
+                    {
+                        "name": "attachments",
+                        "type": "array",
+                        "label": "Attachments",
+                        "spec": [
+                            {
+                                "name": "fileName",
+                                "label": "File name",
+                                "type": "filename",
+                                "required": true,
+                                "semantic": "file:name"
+                            },
+                            {
+                                "name": "data",
+                                "label": "Data",
+                                "type": "buffer",
+                                "required": true,
+                                "semantic": "file:data"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "cc",
+                        "type": "array",
+                        "label": "Copy recipient",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address",
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "bcc",
+                        "type": "array",
+                        "label": "Blind copy recipient",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address",
+                            "required": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

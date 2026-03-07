@@ -1,0 +1,36 @@
+==================================================
+CAROUSEL QUALITY REPORT
+==================================================
+
+CAROUSEL CHECKS:
+  [FAIL] slide_count: Slide count: 6 (optimal: 8-10)
+  [PASS] cta_presence: Ends with CTA
+
+SLIDE CHECKS:
+
+  Slide 1:
+    [PASS] text_density: Word count: 0/15
+    [PASS] anti_ai: No AI patterns
+    [PASS] hook_quality: Hook is effective
+
+  Slide 2:
+    [PASS] text_density: Word count: 0/15
+    [PASS] anti_ai: No AI patterns
+
+  Slide 3:
+    [PASS] text_density: Word count: 0/15
+    [PASS] anti_ai: No AI patterns
+
+  Slide 4:
+    [PASS] text_density: Word count: 0/15
+    [PASS] anti_ai: No AI patterns
+
+  Slide 5:
+    [PASS] text_density: Word count: 0/15
+
+  Slide 6:
+    [PASS] text_density: Word count: 0/15
+
+==================================================
+SUMMARY: 12/13 checks passed
+==================================================

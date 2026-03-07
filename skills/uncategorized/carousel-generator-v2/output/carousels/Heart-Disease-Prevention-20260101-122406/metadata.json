@@ -1,0 +1,81 @@
+{
+  "topic": "Heart Disease Prevention",
+  "template": "tips_5",
+  "framework": "actionable",
+  "slide_count": 8,
+  "created": "2026-01-01T12:24:08.085864",
+  "slides": [
+    {
+      "number": 1,
+      "type": "hook",
+      "title": "7 heart disease prevention myths that could hurt you",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 2,
+      "type": "tips",
+      "title": "Tip #1",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 3,
+      "type": "tips",
+      "title": "Tip #2",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 4,
+      "type": "tips",
+      "title": "Tip #3",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 5,
+      "type": "tips",
+      "title": "Key Point #4",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 6,
+      "type": "tips",
+      "title": "Key Point #5",
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    },
+    {
+      "number": 7,
+      "type": "stats",
+      "title": null,
+      "myth": null,
+      "truth": null,
+      "statistic": "1 in 4",
+      "stat_label": "deaths in the US are from heart disease"
+    },
+    {
+      "number": 8,
+      "type": "cta",
+      "title": null,
+      "myth": null,
+      "truth": null,
+      "statistic": null,
+      "stat_label": null
+    }
+  ]
+}

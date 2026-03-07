@@ -1,0 +1,267 @@
+{
+    "name": "Autonomous Research Agents 🤓",
+    "flow": [
+        {
+            "id": 1,
+            "module": "app#perplexity-ai-2cmiq4:createAChatCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 1367079
+            },
+            "mapper": {
+                "model": "mistral-7b-instruct",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": " Context:You are a summarisation expert who can identify the most salient and exciting aspects of any Reddit post and comment section. You will summarise the URL and also complete further research on the topic to provide data points. You will summarise this URL: https://www.reddit.com/r/personalfinance/comments/1bdrlri/please_pay_close_attention_to_your_companys_401k/ Once you receive that URL, you must do the following. Actions:1) Read through the post2) Improve the clarity, language, and grammar of the below post. If it is not in first person, make it so. Keep the most interesting parts of the post, and its conversational language. Remove aspects of the story that aren't relevant. The purpose is to share this story with others in an engaging way3) Read through the comments section4) Summarise the comments to this post, including reactions, advice and anything else relevant. maximum 100 words. This will be labelled 'perspective'5) Complete research on this topic in the Reddit post. Provide 3 insights or relevant data points on this topic. This will be labelled ‘data’ (list your sources)"
+                    }
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": -159,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "model": {
+                            "mode": "chose",
+                            "label": "mistral-7b-instruct"
+                        },
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "app#perplexity-ai-2cmiq4"
+                            },
+                            "label": "My Perplexity AI connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:app#perplexity-ai-2cmiq4",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "pplx-7b-chat",
+                                "pplx-70b-chat",
+                                "pplx-7b-online",
+                                "pplx-70b-online",
+                                "llama-2-70b-chat",
+                                "codellama-34b-instruct",
+                                "mistral-7b-instruct",
+                                "mixtral-8x7b-instruct",
+                                "sonar-small-chat",
+                                "sonar-medium-chat",
+                                "sonar-small-online",
+                                "sonar-medium-online"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "messages",
+                        "spec": [
+                            {
+                                "name": "content",
+                                "type": "text",
+                                "label": "Content",
+                                "required": true
+                            },
+                            {
+                                "name": "role",
+                                "type": "select",
+                                "label": "Role",
+                                "options": [
+                                    {
+                                        "label": "User",
+                                        "value": "user"
+                                    },
+                                    {
+                                        "label": "Assistant",
+                                        "value": "assistant"
+                                    },
+                                    {
+                                        "label": "System",
+                                        "value": "system"
+                                    }
+                                ],
+                                "required": true
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "number",
+                        "label": "Max Tokens"
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 1.999,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_k",
+                        "type": "number",
+                        "label": "Top K",
+                        "validate": {
+                            "max": 2048,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "min": 0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 141,
+                    "y": 0
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 7,
+                            "module": "google-docs:appendADocument",
+                            "version": 1,
+                            "metadata": {
+                                "designer": {
+                                    "x": 143,
+                                    "y": -296,
+                                    "messages": [
+                                        {
+                                            "category": "setup",
+                                            "severity": "error",
+                                            "message": "Value must not be empty."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 8,
+                            "module": "openai-gpt-3:sendMessageToAssistant",
+                            "version": 1,
+                            "metadata": {
+                                "designer": {
+                                    "x": 436,
+                                    "y": 16,
+                                    "messages": [
+                                        {
+                                            "category": "setup",
+                                            "severity": "error",
+                                            "message": "Value must not be empty."
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": 9,
+                            "module": "linkedin:CreatePost",
+                            "version": 2,
+                            "metadata": {
+                                "designer": {
+                                    "x": 736,
+                                    "y": 16,
+                                    "messages": [
+                                        {
+                                            "category": "setup",
+                                            "severity": "error",
+                                            "message": "Value must not be empty."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com"
+    }
+}

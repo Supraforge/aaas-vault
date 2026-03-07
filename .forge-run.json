@@ -1,0 +1,17 @@
+{
+  "id": "forge-1772882603086",
+  "startedAt": "2026-03-07T11:23:23.086Z",
+  "totalScanned": 5612,
+  "tierDistribution": {
+    "gold": 707,
+    "silver": 4651,
+    "bronze": 72,
+    "reject": 136
+  },
+  "doeConverted": 45,
+  "llmEnriched": 11,
+  "exported": 5475,
+  "failed": 137,
+  "errors": [],
+  "completedAt": "2026-03-07T11:26:03.222Z"
+}
