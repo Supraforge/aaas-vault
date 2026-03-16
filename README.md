@@ -2,18 +2,17 @@
 
 Production-ready AI agent skills for [Agent Zero](https://github.com/frdel/agent-zero), Claude Code, Cursor, and other agentic platforms.
 
-**5475 skills** across **47 categories** — validated, scored, and organized for cross-platform discovery.
+**5,422 skills** across **52 categories** — validated, scored, and organized for cross-platform discovery.
 
 ## Quality Tiers
 
-Every skill is scored on 6 dimensions (frontmatter, naming, description, body, structure, metadata) and assigned a tier:
+Every skill is scored on 7 dimensions (SKILL.md presence, description, instruction depth, examples, references, content depth, copyright cleanliness) and assigned a tier:
 
-| Tier | Score | Count | Description |
-|------|-------|-------|-------------|
-| Gold | >= 8.0 | 707 | Production-ready, fully documented |
-| Silver | >= 5.0 | 4651 | Good quality, normalized frontmatter |
-| Bronze | >= 3.0 | 72 | Usable, may have been LLM-enriched |
-| Converted | — | 45 | Converted from directives/scripts |
+| Tier | Threshold | Count | Description |
+|------|-----------|-------|-------------|
+| Gold | 100% | 544 | Perfect score — all quality criteria met including references |
+| Silver | ≥ 66.5% | 4,809 | Good quality, well-structured, normalized frontmatter |
+| Bronze | ≥ 45% | 69 | Usable, basic structure present |
 
 ## Categories
 
@@ -109,12 +108,12 @@ README.md                  # This file
 
 ## Processing Stats
 
-- **Scanned**: 5612 vault assets
-- **Exported**: 5475 skills
-- **DOE Converted**: 45 (directives, scripts, workflows)
-- **LLM Enriched**: 11 skills
-- **Failed/Rejected**: 137
-- **Generated**: 2026-03-07T11:26:03.222Z
+- **Total Skills**: 5,422
+- **Publishable (Gold + Silver)**: 5,353
+- **Categories**: 52
+- **Copyright-stripped**: All attribution removed for public distribution
+- **Manifest Version**: 2.0.0
+- **Last Scored**: 2026-03-16
 
 ## SKILL.md Format
 

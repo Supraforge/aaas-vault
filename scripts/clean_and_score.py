@@ -55,11 +55,15 @@ QUALITY_WEIGHTS = {
 MAX_SCORE = sum(QUALITY_WEIGHTS.values())
 
 # Tier thresholds (percentage of max score)
+# Aligned with GitHub README distribution:
+#   Gold   = perfect score (all criteria met incl. references)
+#   Silver = solid quality, well-structured skills
+#   Bronze = basic quality, usable but minimal
 TIER_THRESHOLDS = {
-    "gold": 0.80,       # ≥ 80% of max
-    "silver": 0.60,     # ≥ 60% of max
-    "bronze": 0.40,     # ≥ 40% of max
-    "unrated": 0.0,     # Below 40%
+    "gold": 1.00,       # 100% of max — all quality criteria met
+    "silver": 0.665,    # ≥ 66.5% of max — good quality
+    "bronze": 0.45,     # ≥ 45% of max — basic quality
+    "unrated": 0.0,     # Below 45%
 }
 
 # ─── Scoring Engine ──────────────────────────────────────────────────────────
