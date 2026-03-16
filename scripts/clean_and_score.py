@@ -146,11 +146,24 @@ def score_skill(skill_path: Path) -> dict:
             tier = t
             break
 
+    # Determine context_enhanced eligibility
+    # Requires: Gold tier + ≥2 code blocks + ≥500 words + references + clean copyright
+    code_blocks = len(re.findall(r'```', content)) // 2  # Count paired code fences
+    word_count = len(content.split())
+    context_enhanced = (
+        tier == "gold"
+        and code_blocks >= 2
+        and word_count >= 500
+        and scores.get("has_references", 0) > 0
+        and scores.get("no_copyright_issues", 0) > 0
+    )
+
     return {
         "total_score": round(total, 2),
         "max_score": MAX_SCORE,
         "percentage": round(percentage * 100, 1),
         "tier": tier,
+        "context_enhanced": context_enhanced,
         "breakdown": scores,
         "issues": issues,
     }
@@ -209,6 +222,7 @@ def build_manifest(skills_root: Path, scores: dict) -> dict:
     """Build a fresh SKILLS_MANIFEST.json from the scored skills."""
     categories = {}
     tier_counts = {"gold": 0, "silver": 0, "bronze": 0, "unrated": 0}
+    context_enhanced_count = 0
 
     for cat_dir in sorted(skills_root.iterdir()):
         if not cat_dir.is_dir() or cat_dir.name.startswith('.'):
@@ -240,6 +254,10 @@ def build_manifest(skills_root: Path, scores: dict) -> dict:
                     if desc_match:
                         description = ' '.join(desc_match.group(1).split())
 
+            is_context_enhanced = score_info.get("context_enhanced", False)
+            if is_context_enhanced:
+                context_enhanced_count += 1
+
             cat_skills.append({
                 "id": skill_dir.name,
                 "name": skill_dir.name.replace('-', ' ').title(),
@@ -252,6 +270,7 @@ def build_manifest(skills_root: Path, scores: dict) -> dict:
                 "tags": [],
                 "source": "aaas-vault",
                 "publishable": tier in ("gold", "silver"),
+                "context_enhanced": is_context_enhanced,
             })
 
         if cat_skills:
@@ -269,10 +288,11 @@ def build_manifest(skills_root: Path, scores: dict) -> dict:
     )
 
     return {
-        "version": "2.0.0",
+        "version": "3.0.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_skills": total,
         "publishable_skills": publishable,
+        "context_enhanced_count": context_enhanced_count,
         "quality_distribution": tier_counts,
         "categories": categories,
     }
@@ -326,11 +346,15 @@ def main():
     for s in all_scores.values():
         tiers[s["tier"]] = tiers.get(s["tier"], 0) + 1
 
+    # Count context-enhanced skills
+    ce_count = sum(1 for s in all_scores.values() if s.get("context_enhanced", False))
+
     print(f"  Total skills scanned: {total_skills}")
-    print(f"  {G}Gold   (≥80%): {tiers['gold']}{RESET}")
-    print(f"  {B}Silver (≥60%): {tiers['silver']}{RESET}")
-    print(f"  {Y}Bronze (≥40%): {tiers['bronze']}{RESET}")
-    print(f"  {R}Unrated (<40%): {tiers['unrated']}{RESET}")
+    print(f"  {G}Gold   (100%): {tiers['gold']}{RESET}")
+    print(f"  {B}Silver (≥66.5%): {tiers['silver']}{RESET}")
+    print(f"  {Y}Bronze (≥45%): {tiers['bronze']}{RESET}")
+    print(f"  {R}Unrated (<45%): {tiers['unrated']}{RESET}")
+    print(f"  {G}Context-Enhanced (AaaS): {ce_count}{RESET}")
     print(f"  Copyright issues: {len(copyright_issues)}")
     print()
 
