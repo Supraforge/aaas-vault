@@ -1,7 +1,7 @@
 ---
 name: gdrive-deliver
 description: Intelligent file delivery to Google Drive with 3-tier format selection. Converts human-readable docs to Google Docs, uploads AI-targeted files as raw .md, and ensures dual-purpose files are well-formatted markdown that renders readably in Drive's preview.
-
+license: MIT
 metadata:
   version: 1.0.0
   author: Enora AI

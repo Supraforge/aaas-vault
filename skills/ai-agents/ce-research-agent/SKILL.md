@@ -1,7 +1,7 @@
 ---
 name: ce-research-agent
 description: Autonomous Context Engineering research agent. Takes a company name, runs 6 research dimensions via web search, validates quality, and synthesizes into a SQUR-pattern contextual framework document. Use for company research, competitive intelligence, market analysis, and contextual framework generation.
-
+license: MIT
 metadata:
   version: 1.0.0
   author: [PROJECT_NAME] AI
