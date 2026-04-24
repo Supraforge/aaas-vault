@@ -17,6 +17,7 @@ The agentic ecosystem is fragmented across multiple disconnected registries:
 | Source                                   | Assets                                                | Discovery                            |
 | ---------------------------------------- | ----------------------------------------------------- | ------------------------------------ |
 | **aaas-vault** (GitHub)                  | 5,441 skills / 52 categories                          | Browse folders or keyword grep       |
+| **aaas-blocks** (MCP + GitHub)           | 12 composable code blocks / 3 layers                  | MCP tools, but limited to Next.js    |
 | **aaas.blog** (Firestore)                | 800+ entities / 11 types                              | Web UI + API, but not MCP-accessible |
 | **Harness index** (~/.claude)            | 4,326 components (agents, skills, plugins, templates) | `search-harness.mjs` keyword search  |
 | **MCP Registries** (npm, GitHub)         | 1,000+ MCP servers                                    | Manual npm search                    |
@@ -59,7 +60,7 @@ model                             api-endpoint
 agent                             execution-file
 skill                             plugin
 script                            template
-benchmark
+benchmark                         code-block
 dataset
 paper
 provider
@@ -152,7 +153,8 @@ type AssetType =
   | "api-endpoint"
   | "execution-file"
   | "plugin"
-  | "template";
+  | "template"
+  | "code-block";
 ```
 
 ### 3.3 Type-Specific Extensions
@@ -206,6 +208,25 @@ interface TemplateAsset extends AgenticAsset {
   templateType: "project" | "file" | "workflow" | "prompt";
   outputFormat: string;
   variables: string[]; // Template variables
+}
+
+// === CODE BLOCK (NEW — from aaas-blocks) ===
+interface CodeBlockAsset extends AgenticAsset {
+  type: "code-block";
+  layer: "foundation" | "integration" | "feature";
+  framework: string; // "nextjs", "remix", etc.
+  frameworkVersion: string; // ">=16.0.0"
+  files: { src: string; dest: string }[]; // Installable files
+  dependencies: Record<string, string>; // npm packages
+  devDependencies: Record<string, string>;
+  envVars: {
+    key: string;
+    required?: boolean;
+    default?: string;
+    description?: string;
+  }[];
+  verifiedWith: Record<string, string>; // Version-pinned verification
+  installCommand: string; // "npx aaas-blocks add auth/clerk"
 }
 
 // === SKILL (extended from vault + blog) ===
@@ -448,6 +469,12 @@ Query: "playwright e2e testing for next.js"
 │  └──────────────┘    └────────────┬────────────┘   │
 │                                   │                 │
 │  ┌──────────────┐    ┌───────────▼─────────────┐   │
+│  │  aaas-blocks  │───▶│  blocks-ingester.ts     │   │
+│  │  (12 code     │   │  Parse block.json +     │   │
+│  │   blocks)     │   │  registry/index.json    │   │
+│  └──────────────┘    └────────────┬────────────┘   │
+│                                   │                 │
+│  ┌──────────────┐    ┌───────────▼─────────────┐   │
 │  │  MCP Registry │───▶│  mcp-registry-ingester  │   │
 │  │  (npm, GitHub) │   │  npm search @modelcon.. │   │
 │  │              │   │  + awesome-mcp-servers  │   │
@@ -513,6 +540,27 @@ Map:    agents → type="agent", agentType="core"|"pool"
 Output: ~4,326 records (deduplicated against vault)
 ```
 
+#### blocks-ingester.ts
+
+```
+Input:  Supraforge/aaas-blocks registry/index.json
+        + registry/{layer}/{block-name}/block.json (full metadata)
+        + registry/{layer}/{block-name}/README.md (documentation)
+Auth:   GitHub API or local clone
+Parse:  block.json → name, title, description, layer, category, tags,
+        framework, frameworkVersion, requires, enhances, files,
+        dependencies, devDependencies, envVars, verifiedWith
+Map:    type="code-block", source="aaas-blocks"
+        layer → subcategory
+        requires/enhances → asset_relations
+        verifiedWith → metadata.verifiedWith
+        installCommand = "npx aaas-blocks add {name}"
+        sourceUrl="https://github.com/Supraforge/aaas-blocks/tree/main/registry/..."
+Routing: Discovery via Agentic Index → installation via aaas-blocks MCP
+         (Index finds, Blocks installs — complementary, not redundant)
+Output: ~12 CodeBlockAsset records (growing as blocks are added)
+```
+
 #### mcp-registry-ingester.ts
 
 ```
@@ -534,8 +582,8 @@ For each new record:
   3. No match → INSERT as new
 
 Merge priority (when same asset exists in multiple sources):
-  aaas-blog > aaas-vault > harness > npm/github
-  (Blog has richest metadata; vault has deepest content)
+  aaas-blog > aaas-blocks > aaas-vault > harness > npm/github
+  (Blog has richest metadata; blocks have verified code; vault has deepest content)
 
   Merge rule: take non-null field from highest-priority source
 ```
@@ -656,6 +704,7 @@ aaas-vault/
 │   │   │   ├── vault.ts         # aaas-vault SKILL.md parser
 │   │   │   ├── firestore.ts     # aaas.blog Firestore reader
 │   │   │   ├── harness.ts       # ~/.claude harness reader
+│   │   │   ├── blocks.ts        # aaas-blocks registry reader
 │   │   │   ├── mcp-registry.ts  # npm/GitHub MCP discovery
 │   │   │   └── dedup.ts         # Cross-source deduplication
 │   │   ├── search/              # Search engine
@@ -867,8 +916,8 @@ CREATE INDEX idx_relations_target ON asset_relations(target_id);
 | Metric             | Phase 1   | Phase 2 | Phase 3 | Phase 5         |
 | ------------------ | --------- | ------- | ------- | --------------- |
 | **Total entities** | 5,441     | ~11,000 | ~11,000 | 15,000+         |
-| **Entity types**   | 1 (skill) | 16      | 16      | 16              |
-| **Sources**        | 1 (vault) | 4       | 4       | 4+              |
+| **Entity types**   | 1 (skill) | 17      | 17      | 17              |
+| **Sources**        | 1 (vault) | 5       | 5       | 5+              |
 | **Search modes**   | Keyword   | Keyword | Hybrid  | Hybrid + remote |
 | **DB size**        | ~10MB     | ~30MB   | ~50MB   | ~60MB           |
 | **Query latency**  | <50ms     | <100ms  | <200ms  | <200ms          |
@@ -940,6 +989,45 @@ This MCP is unique because:
 6. **Platform-agnostic** — works with any MCP-compatible agent platform
 7. **Self-healing** — ingestion pipeline auto-discovers new assets from registries
 8. **ask.blog synergy** — public web discovery + private agent discovery from same data
+9. **aaas-blocks chain** — Index discovers, Blocks installs: two MCPs that compose into a complete workflow
+
+---
+
+## 12a. Relationship to aaas-blocks
+
+**aaas-blocks** (`@supraforge/aaas-blocks`) is an existing MCP server with 5 tools that serves as a **specialized installer** for composable Next.js code patterns. The Agentic Index is the **universal finder**.
+
+```
+Role separation:
+┌─────────────────────────┐     ┌──────────────────────────┐
+│   Agentic Index MCP     │     │   aaas-blocks MCP        │
+│   (horizontal discovery)│     │   (vertical installer)   │
+│                         │     │                          │
+│   search / resolve      │────▶│   get_block / get_code   │
+│   "what solves auth     │     │   "install auth/clerk"   │
+│    for Next.js?"        │     │                          │
+│                         │     │   check_compatibility    │
+│   17 asset types        │     │   12 code blocks         │
+│   5+ data sources       │     │   3 layers               │
+│   11,000+ entities      │     │   Next.js 16 only        │
+└─────────────────────────┘     └──────────────────────────┘
+```
+
+**Integration pattern:**
+
+1. Agent queries Agentic Index: `resolve("auth for Next.js app")`
+2. Index returns `code-block:auth/clerk` (score: 95) among other results
+3. Agent sees `installCommand: "npx aaas-blocks add auth/clerk"` or routes to blocks MCP
+4. Blocks MCP handles installation: `get_block_code("auth/clerk")` → files + deps
+
+**Shared schema lineage:**
+
+- `BlockJson.requires` / `enhances` → maps to `AgenticAsset.requires` / `enhances`
+- `BlockJson.tags` → maps to `AgenticAsset.tags`
+- `BlockJson.layer` → maps to `CodeBlockAsset.layer` (foundation/integration/feature)
+- `BlockJson.verifiedWith` → maps to `CodeBlockAsset.verifiedWith` (version pinning)
+
+**Not redundant:** Blocks MCP stays focused on its strength (curated, installable, version-verified code). The Index adds cross-ecosystem discovery that blocks alone cannot provide.
 
 ---
 
